@@ -103,7 +103,10 @@ describe('the nudge', () => {
         const nudge = nudgeFor(q);
         const steps = q.explanation.steps;
         const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
-        if (steps.length < 3 || listsAnswer) {
+        if (q.explanation.hint) {
+          // A generator's own hint is offered first, whatever its steps (the wording audit, Nov 22, 2026).
+          expect(nudge?.text, skill.id).toBe(q.explanation.hint.text);
+        } else if (steps.length < 3 || listsAnswer) {
           expect(nudge, `${skill.id} has ${steps.length} steps and is a ${q.type}`).toBeNull();
           withheld += 1;
         } else if (givesAway(q, steps[0] ?? '', null)) {
@@ -171,8 +174,12 @@ describe('the nudge', () => {
       ['M-2-A7', 2, 1, 'Six hundred nine is 6 hundreds, 0 tens and 9 ones.'],
       ['M-3-A2', 3, 1, 'six thousand thirty-nine'],
     ];
+    // Where the content has since been reworded (M-2-C12 and M-2-A7, Nov 22, 2026), the old line is put back as
+    // the first of three steps, with no hint of the generator's own, so the guard is still tested on it.
+    const reworded = new Set(['M-2-C12', 'M-2-A7']);
     for (const [skillId, level, seed, first] of cases) {
-      const q = question(skillId, level, seed);
+      const now = question(skillId, level, seed);
+      const q: Question = reworded.has(skillId) ? { ...now, explanation: { speak: now.explanation.speak, steps: [first, 'Look again.', 'That is it.'] } } : now;
       expect(q.explanation.steps[0], skillId).toBe(first);
       expect(q.explanation.steps.length, skillId).toBeGreaterThanOrEqual(3);
       expect(nudgeFor(q), `${skillId}: ${first}`).toBeNull();

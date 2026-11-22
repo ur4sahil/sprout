@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-B8",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
@@ -48,6 +48,9 @@
     "rows": 2,
     "cols": 3,
     "emoji": "🐞"
+   },
+   "hint": {
+    "text": "Add one row at a time."
    }
   },
   "type": "choice",
@@ -152,6 +155,9 @@
       "rows": 3,
       "cols": 2,
       "emoji": "⚽"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -254,6 +260,9 @@
       "rows": 3,
       "cols": 2,
       "emoji": "🎈"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -356,6 +365,9 @@
       "rows": 3,
       "cols": 2,
       "emoji": "🍪"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -458,6 +470,9 @@
       "rows": 3,
       "cols": 2,
       "emoji": "🚗"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -560,6 +575,9 @@
       "rows": 3,
       "cols": 3,
       "emoji": "🚗"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -662,6 +680,9 @@
       "rows": 3,
       "cols": 2,
       "emoji": "🐸"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -760,6 +781,9 @@
       "rows": 2,
       "cols": 2,
       "emoji": "🍌"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -858,6 +882,9 @@
       "rows": 2,
       "cols": 3,
       "emoji": "🎈"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -956,6 +983,9 @@
       "rows": 2,
       "cols": 3,
       "emoji": "🐟"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -1058,6 +1088,9 @@
       "rows": 3,
       "cols": 3,
       "emoji": "🍓"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "choice",
@@ -1125,9 +1158,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -1195,19 +1228,21 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 2
+      },
+      ".",
       "There are",
       {
        "number": 3
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 2
       },
-      "in each row.",
-      {
-       "number": 2
-      },
-      "plus",
+      "three times.",
+      "That is",
       {
        "number": 2
       },
@@ -1215,21 +1250,25 @@
       {
        "number": 2
       },
-      "is",
+      "plus",
       {
-       "number": 6
+       "number": 2
       },
       "."
      ],
      "steps": [
-      "There are 3 rows with 2 in each row.",
-      "2 + 2 + 2 = 6."
+      "Each row has 2.",
+      "There are 3 rows, so add 2 three times.",
+      "That is 2 + 2 + 2."
      ],
      "visual": {
       "kind": "array",
       "rows": 3,
       "cols": 2,
       "emoji": "⚽"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -1251,9 +1290,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -1321,15 +1360,21 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 4
+      },
+      ".",
       "There are",
       {
        "number": 2
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 4
       },
-      "in each row.",
+      "two times.",
+      "That is",
       {
        "number": 4
       },
@@ -1337,21 +1382,21 @@
       {
        "number": 4
       },
-      "is",
-      {
-       "number": 8
-      },
       "."
      ],
      "steps": [
-      "There are 2 rows with 4 in each row.",
-      "4 + 4 = 8."
+      "Each row has 4.",
+      "There are 2 rows, so add 4 two times.",
+      "That is 4 + 4."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 4,
       "emoji": "🐢"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -1373,9 +1418,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -1443,19 +1488,21 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 2
+      },
+      ".",
       "There are",
       {
        "number": 3
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 2
       },
-      "in each row.",
-      {
-       "number": 2
-      },
-      "plus",
+      "three times.",
+      "That is",
       {
        "number": 2
       },
@@ -1463,21 +1510,25 @@
       {
        "number": 2
       },
-      "is",
+      "plus",
       {
-       "number": 6
+       "number": 2
       },
       "."
      ],
      "steps": [
-      "There are 3 rows with 2 in each row.",
-      "2 + 2 + 2 = 6."
+      "Each row has 2.",
+      "There are 3 rows, so add 2 three times.",
+      "That is 2 + 2 + 2."
      ],
      "visual": {
       "kind": "array",
       "rows": 3,
       "cols": 2,
       "emoji": "🍪"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -1499,9 +1550,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -1569,15 +1620,21 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 4
+      },
+      ".",
       "There are",
       {
        "number": 2
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 4
       },
-      "in each row.",
+      "two times.",
+      "That is",
       {
        "number": 4
       },
@@ -1585,21 +1642,21 @@
       {
        "number": 4
       },
-      "is",
-      {
-       "number": 8
-      },
       "."
      ],
      "steps": [
-      "There are 2 rows with 4 in each row.",
-      "4 + 4 = 8."
+      "Each row has 4.",
+      "There are 2 rows, so add 4 two times.",
+      "That is 4 + 4."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 4,
       "emoji": "⭐"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -1621,9 +1678,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -1703,19 +1760,21 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 5
+      },
+      ".",
       "There are",
       {
        "number": 3
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 5
       },
-      "in each row.",
-      {
-       "number": 5
-      },
-      "plus",
+      "three times.",
+      "That is",
       {
        "number": 5
       },
@@ -1723,21 +1782,25 @@
       {
        "number": 5
       },
-      "is",
+      "plus",
       {
-       "number": 15
+       "number": 5
       },
       "."
      ],
      "steps": [
-      "There are 3 rows with 5 in each row.",
-      "5 + 5 + 5 = 15."
+      "Each row has 5.",
+      "There are 3 rows, so add 5 three times.",
+      "That is 5 + 5 + 5."
      ],
      "visual": {
       "kind": "array",
       "rows": 3,
       "cols": 5,
       "emoji": "🚗"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -1759,9 +1822,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -1829,19 +1892,21 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 2
+      },
+      ".",
       "There are",
       {
        "number": 3
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 2
       },
-      "in each row.",
-      {
-       "number": 2
-      },
-      "plus",
+      "three times.",
+      "That is",
       {
        "number": 2
       },
@@ -1849,21 +1914,25 @@
       {
        "number": 2
       },
-      "is",
+      "plus",
       {
-       "number": 6
+       "number": 2
       },
       "."
      ],
      "steps": [
-      "There are 3 rows with 2 in each row.",
-      "2 + 2 + 2 = 6."
+      "Each row has 2.",
+      "There are 3 rows, so add 2 three times.",
+      "That is 2 + 2 + 2."
      ],
      "visual": {
       "kind": "array",
       "rows": 3,
       "cols": 2,
       "emoji": "🐸"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -1885,9 +1954,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -1963,19 +2032,21 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 4
+      },
+      ".",
       "There are",
       {
        "number": 3
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 4
       },
-      "in each row.",
-      {
-       "number": 4
-      },
-      "plus",
+      "three times.",
+      "That is",
       {
        "number": 4
       },
@@ -1983,21 +2054,25 @@
       {
        "number": 4
       },
-      "is",
+      "plus",
       {
-       "number": 12
+       "number": 4
       },
       "."
      ],
      "steps": [
-      "There are 3 rows with 4 in each row.",
-      "4 + 4 + 4 = 12."
+      "Each row has 4.",
+      "There are 3 rows, so add 4 three times.",
+      "That is 4 + 4 + 4."
      ],
      "visual": {
       "kind": "array",
       "rows": 3,
       "cols": 4,
       "emoji": "⚽"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -2019,9 +2094,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -2089,15 +2164,21 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 4
+      },
+      ".",
       "There are",
       {
        "number": 2
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 4
       },
-      "in each row.",
+      "two times.",
+      "That is",
       {
        "number": 4
       },
@@ -2105,21 +2186,21 @@
       {
        "number": 4
       },
-      "is",
-      {
-       "number": 8
-      },
       "."
      ],
      "steps": [
-      "There are 2 rows with 4 in each row.",
-      "4 + 4 = 8."
+      "Each row has 4.",
+      "There are 2 rows, so add 4 two times.",
+      "That is 4 + 4."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 4,
       "emoji": "🎈"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -2141,9 +2222,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -2215,15 +2296,21 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 5
+      },
+      ".",
       "There are",
       {
        "number": 2
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 5
       },
-      "in each row.",
+      "two times.",
+      "That is",
       {
        "number": 5
       },
@@ -2231,21 +2318,21 @@
       {
        "number": 5
       },
-      "is",
-      {
-       "number": 10
-      },
       "."
      ],
      "steps": [
-      "There are 2 rows with 5 in each row.",
-      "5 + 5 = 10."
+      "Each row has 5.",
+      "There are 2 rows, so add 5 two times.",
+      "That is 5 + 5."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 5,
       "emoji": "🐟"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -2267,9 +2354,9 @@
      ]
     },
     "prompt": {
-     "text": "Which adding matches the rows?",
+     "text": "Which addition adds up the rows?",
      "speak": [
-      "Which adding matches the rows?"
+      "Which addition adds up the rows?"
      ]
     },
     "stimulus": {
@@ -2349,19 +2436,21 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Each row has",
+      {
+       "number": 5
+      },
+      ".",
       "There are",
       {
        "number": 3
       },
-      "rows with",
+      "rows, so add",
       {
        "number": 5
       },
-      "in each row.",
-      {
-       "number": 5
-      },
-      "plus",
+      "three times.",
+      "That is",
       {
        "number": 5
       },
@@ -2369,21 +2458,25 @@
       {
        "number": 5
       },
-      "is",
+      "plus",
       {
-       "number": 15
+       "number": 5
       },
       "."
      ],
      "steps": [
-      "There are 3 rows with 5 in each row.",
-      "5 + 5 + 5 = 15."
+      "Each row has 5.",
+      "There are 3 rows, so add 5 three times.",
+      "That is 5 + 5 + 5."
      ],
      "visual": {
       "kind": "array",
       "rows": 3,
       "cols": 5,
       "emoji": "🍓"
+     },
+     "hint": {
+      "text": "Count how many are in one row."
      }
     },
     "skillId": "M-2-B8",
@@ -2448,6 +2541,9 @@
       "rows": 4,
       "cols": 2,
       "emoji": "⚽"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2518,6 +2614,9 @@
       "rows": 4,
       "cols": 3,
       "emoji": "🎈"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2588,6 +2687,9 @@
       "rows": 4,
       "cols": 2,
       "emoji": "🍪"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2662,6 +2764,9 @@
       "rows": 5,
       "cols": 3,
       "emoji": "🚗"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2732,6 +2837,9 @@
       "rows": 4,
       "cols": 5,
       "emoji": "🚗"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2802,6 +2910,9 @@
       "rows": 4,
       "cols": 2,
       "emoji": "🐸"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2876,6 +2987,9 @@
       "rows": 5,
       "cols": 4,
       "emoji": "⚽"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2938,6 +3052,9 @@
       "rows": 2,
       "cols": 4,
       "emoji": "🎈"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -3000,6 +3117,9 @@
       "rows": 2,
       "cols": 5,
       "emoji": "🐟"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",
@@ -3070,6 +3190,9 @@
       "rows": 4,
       "cols": 5,
       "emoji": "🍓"
+     },
+     "hint": {
+      "text": "Add one row at a time."
      }
     },
     "type": "numberPad",

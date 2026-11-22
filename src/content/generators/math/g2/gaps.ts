@@ -2,17 +2,24 @@ import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
-import { numeral } from '../../../generator';
+import { listText, numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
+import { line, together } from './addSubtract';
+import type { Explanation } from './addSubtract';
 
 // Grade 2 skills added by the Nov 17, 2026 curriculum check: B.11 add up to four numbers, C.5 inches,
 // feet and centimeters, C.6 compare lengths, C.7 line plots, D.3 rows and columns of squares.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 // Words with numbers in them, said with each number as a number.
 const spoken = (words: string): Say => words.split(/(\d+)/).filter((part) => part.length > 0).map((part) => (/^\d+$/.test(part) ? { number: Number(part) } : part));
 const say = (value: string): Visual => ({ kind: 'text', value, size: 'l', speak: spoken(value) });
 const ruler = (object: 'pencil' | 'crayon' | 'ribbon', lengthUnits: number): Visual => ({ kind: 'ruler', object, startUnit: 0, lengthUnits });
+const cap = (text: string): string => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+// A count said number by number: "Count them: 1, 2, 3."
+const counted = (lead: string, upTo: number): { text: string; speak: Say } => {
+  const values = Array.from({ length: upTo }, (_, i) => i + 1);
+  return { text: `${lead} ${listText(values)}.`, speak: [lead, ...values.flatMap((value, i): Say => (i === 0 ? [{ number: value }] : [',', { number: value }])), '.'] };
+};
 
 // ---- B.11 Add up to four numbers ----
 // Levels: three numbers to 30 / four two-digit numbers to 100 / typed. Oracle: sumList.
@@ -25,15 +32,17 @@ function addMany(level: Level, rng: Rng): QuestionDraft {
   const total = numbers.reduce((s, n) => s + n, 0);
   const parts = numbers.flatMap((n, i) => (i === 0 ? [n] : ['+', n]));
   const said: Say = numbers.flatMap((n, i): Say => (i === 0 ? [{ number: n }] : ['plus', { number: n }]));
-  // Make a ten first when two of the ones do.
-  const steps: string[] = [];
-  let running = numbers[0] as number;
-  for (const n of numbers.slice(1)) {
-    steps.push(`${running} + ${n} = ${running + n}`);
+  // One sum for each step. With one-digit numbers, two that make a ten are added first, as the lesson teaches.
+  const pairAt = level === 1 ? [[0, 1], [0, 2], [1, 2]].find(([i, j]) => (numbers[i as number] as number) + (numbers[j as number] as number) === 10) : undefined;
+  const order = pairAt ? [numbers[pairAt[0] as number] as number, numbers[pairAt[1] as number] as number, ...numbers.filter((_, k) => !pairAt.includes(k))] : numbers;
+  const sums: ReturnType<typeof line>[] = [];
+  let running = order[0] as number;
+  order.slice(1).forEach((n, k) => {
+    sums.push(line(...(pairAt && k === 0 ? ['Make a ten first:'] : []), running, '+', n, '=', running + n, '.'));
     running += n;
-  }
-  const explanation: Explanation = { speak: ['Add two at a time.', ...said, 'is', { number: total }, '.'], steps: ['Add two at a time.', steps.join(', '), `The total is ${total}.`].slice(0, 4), visual: { kind: 'equation', parts: [...parts, '=', total] } };
-  const base = { mode: 'look' as const, facts: { numbers }, prompt: { text: `${numbers.join(' + ')} equals what?`, speak: [...said, 'equals what?'] as Say }, stimulus: { kind: 'equation', parts: [...parts, '=', 'blank'] } as Visual, explanation };
+  });
+  const explanation = together([...sums, line('The total is', total, '.')], { kind: 'equation', parts: [...parts, '=', total] }, { text: pairAt ? 'Look for two numbers that make a ten. Add those first.' : 'Add two numbers at a time.' });
+  const base = { mode: 'look' as const, facts: { numbers }, prompt: { text: `What is ${numbers.join(' plus ')}?`, speak: ['What is', ...said, '?'] as Say }, stimulus: { kind: 'equation', parts: [...parts, '=', 'blank'] } as Visual, explanation };
   if (level === 3) return { ...base, type: 'numberPad', answer: total, maxDigits: 3 };
   const values = numeralChoices(total, [total + 10, total - 10, total + 1, total - 1], 1, 120, rng);
   return { ...base, type: 'choice', facts: { numbers, options: values }, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(total) };
@@ -59,61 +68,74 @@ export const addManyGenerator: SkillGenerator = {
 // ---- C.5 Inches, feet and centimeters ----
 // Levels: the unit that fits / which number is bigger in smaller units / about how long. Oracle: unitChoice.
 
+// A door is tall, the rest are long. The thing is in the facts: a phone and a spoon are both 6 inches.
 const OBJECTS = [
-  { emoji: '✏️', name: 'a pencil', unit: 'inches', inches: 7 },
-  { emoji: '📱', name: 'a phone', unit: 'inches', inches: 6 },
-  { emoji: '🥄', name: 'a spoon', unit: 'inches', inches: 6 },
-  { emoji: '🚪', name: 'a door', unit: 'feet', inches: 84 },
-  { emoji: '🛏️', name: 'a bed', unit: 'feet', inches: 72 },
-  { emoji: '🚗', name: 'a car', unit: 'feet', inches: 168 },
+  { emoji: '✏️', name: 'a pencil', unit: 'inches', inches: 7, way: 'long' },
+  { emoji: '📱', name: 'a phone', unit: 'inches', inches: 6, way: 'long' },
+  { emoji: '🥄', name: 'a spoon', unit: 'inches', inches: 6, way: 'long' },
+  { emoji: '🚪', name: 'a door', unit: 'feet', inches: 84, way: 'tall' },
+  { emoji: '🛏️', name: 'a bed', unit: 'feet', inches: 72, way: 'long' },
+  { emoji: '🚗', name: 'a car', unit: 'feet', inches: 168, way: 'long' },
 ] as const;
+type MeasuredThing = (typeof OBJECTS)[number];
+const SMALL_OBJECTS = OBJECTS.filter((each) => each.unit === 'inches');
+const pictureOf = (thing: MeasuredThing): Visual => ({ kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row', speak: [thing.name.slice(2)] });
+// Whether it fits in one hand is the question a child can answer: small things are measured in inches.
+const sizeLine = (thing: MeasuredThing): ReturnType<typeof line> => line(`${cap(thing.name)} is ${thing.unit === 'inches' ? 'small' : 'big'}, so we measure it in ${thing.unit}.`);
 
 function units(level: Level, rng: Rng): QuestionDraft {
+  if (level === 2) {
+    // Something small, measured both ways. The steps end on the side the question asks about.
+    const thing = rng.pick(SMALL_OBJECTS);
+    const the = `the ${thing.name.slice(2)}`;
+    const more = rng.bool();
+    const prompt = `${cap(thing.name)} is measured in inches and in centimeters. Which number is ${more ? 'bigger' : 'smaller'}?`;
+    const steps = [
+      line('An inch is longer than a centimeter.'),
+      line(more ? `So more centimeters than inches fit along ${the}.` : `So fewer inches than centimeters fit along ${the}.`),
+      line(more ? 'The centimeters number is bigger.' : 'The inches number is smaller.'),
+    ];
+    return {
+      type: 'choice',
+      mode: 'look',
+      fixedOrder: true,
+      facts: { ask: more ? 'moreUnits' : 'fewerUnits', thing: thing.name.slice(2), options: ['the inches', 'the centimeters'] },
+      prompt: { text: prompt, speak: [prompt] },
+      stimulus: pictureOf(thing),
+      options: ['the inches', 'the centimeters'].map(say),
+      answerIndex: more ? 1 : 0,
+      explanation: together(steps, pictureOf(thing), { text: 'Which is longer: an inch or a centimeter?' }),
+    };
+  }
   const thing = rng.pick(OBJECTS);
-  const picture: Visual = { kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row', speak: [thing.name.slice(2)] };
+  const picture = pictureOf(thing);
   if (level === 1) {
     const prompt = `Would you measure ${thing.name} in inches or in feet?`;
     return {
       type: 'choice',
       mode: 'look',
       fixedOrder: true,
-      facts: { ask: 'unit', inches: thing.inches, options: ['inches', 'feet'] },
+      facts: { ask: 'unit', inches: thing.inches, thing: thing.name.slice(2), options: ['inches', 'feet'] },
       prompt: { text: prompt, speak: [prompt] },
       stimulus: picture,
       options: ['inches', 'feet'].map(say),
       answerIndex: thing.unit === 'inches' ? 0 : 1,
-      explanation: { speak: ['Small things are measured in inches. Big things are measured in feet. A foot is twelve inches.'], steps: ['Small things: inches. Big things: feet.', 'A foot is 12 inches.'], visual: picture },
-    };
-  }
-  if (level === 2) {
-    const n = rng.int(3, 9);
-    const more = rng.bool();
-    const prompt = `A ribbon is measured in inches and in centimeters. Which number is ${more ? 'bigger' : 'smaller'}?`;
-    return {
-      type: 'choice',
-      mode: 'look',
-      fixedOrder: true,
-      facts: { ask: more ? 'moreUnits' : 'fewerUnits', options: ['the inches', 'the centimeters'] },
-      prompt: { text: prompt, speak: [prompt] },
-      stimulus: ruler('ribbon', n),
-      options: ['the inches', 'the centimeters'].map(say),
-      answerIndex: more ? 1 : 0,
-      explanation: { speak: ['A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger.'], steps: ['A centimeter is smaller than an inch.', 'Smaller units fit more times.', 'So the centimeters number is bigger.'], visual: ruler('ribbon', n) },
+      explanation: together([line('Inches are for small things. Feet are for big things.'), sizeLine(thing), line('A foot is', 12, 'inches.')], picture, { text: 'Could you hold it in one hand?' }),
     };
   }
   // About how long: the real length, ten times too long, ten times too short.
   const near = thing.unit === 'inches' ? thing.inches : Math.round(thing.inches / 12);
   const choices = rng.shuffle([`${near} ${thing.unit}`, `${near * 10} ${thing.unit}`, `${near} ${thing.unit === 'inches' ? 'feet' : 'inches'}`]);
-  const prompt = `About how long is ${thing.name}?`;
+  const prompt = `About how ${thing.way} is ${thing.name}?`;
   return {
     type: 'choice',
     mode: 'look',
-    facts: { ask: 'estimate', inches: thing.inches, options: choices },
+    facts: { ask: 'estimate', inches: thing.inches, thing: thing.name.slice(2), options: choices },
     prompt: { text: prompt, speak: [prompt] },
     stimulus: picture,
     options: choices.map(say),
     answerIndex: choices.indexOf(`${near} ${thing.unit}`),
-    explanation: { speak: spoken(`${thing.name} is about ${near} ${thing.unit} long.`), steps: [`${thing.name[0]?.toUpperCase()}${thing.name.slice(1)} is about ${near} ${thing.unit} long.`], visual: picture },
+    explanation: together([sizeLine(thing), line('It is about', near, `${thing.unit} ${thing.way}.`)], picture, { text: 'Pick the unit first: inches or feet? Then pick the number.' }),
   };
 }
 
@@ -122,7 +144,7 @@ export const unitsGenerator: SkillGenerator = {
   maxLevel: 3,
   itemTypes: ['choice'],
   lists: [],
-  pool: { 1: 5, 2: 2, 3: 5 },
+  pool: { 1: 6, 2: 6, 3: 6 },
   generate: units,
   exampleSeed: 662,
   example: () => units(1, makeRng(662)),
@@ -154,12 +176,21 @@ function compareLengths(level: Level, rng: Rng): QuestionDraft {
       stimulus: picture,
       options: [say('the pencil'), say('the crayon')],
       answerIndex: a > b ? 0 : 1,
-      explanation: { speak: ['The pencil is', { number: a }, 'centimeters. The crayon is', { number: b }, 'centimeters.'], steps: [`Pencil: ${a} cm. Crayon: ${b} cm.`, `The ${a > b ? 'pencil' : 'crayon'} is longer.`], visual: picture },
+      explanation: together(
+        [line('The pencil is', a, 'centimeters long.'), line('The crayon is', b, 'centimeters long.'), line(Math.max(a, b), 'is more than', Math.min(a, b), `, so the ${a > b ? 'pencil' : 'crayon'} is longer.`)],
+        picture,
+        { text: 'Look at where each one ends on its ruler.' },
+      ),
     };
   }
   const [long, short] = a > b ? [a, b] : [b, a];
-  const prompt = { text: `The pencil is ${a} centimeters. The crayon is ${b} centimeters. How much longer is the ${a > b ? 'pencil' : 'crayon'}?`, speak: ['The pencil is', { number: a }, 'centimeters. The crayon is', { number: b }, `centimeters. How much longer is the ${a > b ? 'pencil' : 'crayon'}?`] as Say };
-  const explanation: Explanation = { speak: [{ number: long }, 'minus', { number: short }, 'is', { number: long - short }, 'centimeters.'], steps: [`${long} − ${short} = ${long - short}.`, `It is ${long - short} centimeters longer.`], visual: picture };
+  const longer = a > b ? 'pencil' : 'crayon';
+  const prompt = { text: `The pencil is ${a} centimeters. The crayon is ${b} centimeters. How much longer is the ${longer}?`, speak: ['The pencil is', { number: a }, 'centimeters. The crayon is', { number: b }, `centimeters. How much longer is the ${longer}?`] as Say };
+  const explanation: Explanation = together(
+    [line('To find how much longer, subtract the short length from the long one.'), line(long, '−', short, '=', long - short, '.'), line(`The ${longer} is`, long - short, long - short === 1 ? 'centimeter longer.' : 'centimeters longer.')],
+    picture,
+    { text: 'How much longer? Subtract.' },
+  );
   const base = { mode: 'look' as const, facts: { a: long, b: short, oracle: 'subtract' }, prompt, stimulus: picture, explanation };
   if (level === 3) return { ...base, type: 'numberPad', answer: long - short, maxDigits: 1 };
   const values = numeralChoices(long - short, [long, long + short, long - short + 1, short], 1, 20, rng, [1, 2, 2]);
@@ -193,17 +224,26 @@ function linePlots2(level: Level, rng: Rng): QuestionDraft {
   const visual: Visual = { kind: 'linePlot', min, max: min + 4, denominator: 1, counts, unit: 'Length of shoes (inches)' };
   if (level === 3) {
     const total = counts.reduce((s, c) => s + c, 0);
-    return { type: 'numberPad', mode: 'look', facts: { values: counts, ask: 'total' }, prompt: { text: 'Each X is one shoe. How many shoes were measured?', speak: ['Each X is one shoe. How many shoes were measured?'] }, stimulus: visual, answer: total, maxDigits: 2, explanation: { speak: ['Count every X:', { number: total }, '.'], steps: [`${counts.join(' + ')} = ${total}.`], visual } };
+    // The stacks with marks, added up: an empty stack adds nothing.
+    const stacks = counts.filter((count) => count > 0);
+    const sum = stacks.length > 1 ? line(...stacks.flatMap((count, i) => (i === 0 ? [count] : ['+', count])), '=', total, '.') : line('There are', total, 'X marks.');
+    const explanation = together([line('Count the X marks above each number.'), sum, line(total, 'shoes were measured.')], visual, { text: 'Count every X mark.' });
+    return { type: 'numberPad', mode: 'look', facts: { values: counts, ask: 'total' }, prompt: { text: 'Each X is one shoe. How many shoes were measured?', speak: ['Each X is one shoe. How many shoes were measured?'] }, stimulus: visual, answer: total, maxDigits: 2, explanation };
   }
   if (level === 2) {
     const offered = rng.shuffle([top, ...rng.sample([0, 1, 2, 3, 4].filter((i) => i !== top), 2)]);
-    const prompt = 'Which length did the most shoes have?';
-    return { type: 'choice', mode: 'look', facts: { values: offered.map((i) => counts[i] as number), ask: 'most', options: offered.map((i) => min + i) }, prompt: { text: prompt, speak: [prompt] }, stimulus: visual, options: offered.map((i) => say(`${min + i} inches`)), answerIndex: offered.indexOf(top), explanation: { speak: ['The tallest stack of X marks is at', { number: min + top }, 'inches.'], steps: [`The tallest stack is at ${min + top} inches.`], visual } };
+    const prompt = 'Which length has the most shoes?';
+    const explanation = together([line('Find the tallest stack of X marks.'), line('It is above', min + top, '.'), line('The most shoes are', min + top, 'inches long.')], visual, { text: 'Look for the tallest stack of X marks.' });
+    return { type: 'choice', mode: 'look', facts: { values: offered.map((i) => counts[i] as number), ask: 'most', options: offered.map((i) => min + i) }, prompt: { text: prompt, speak: [prompt] }, stimulus: visual, options: offered.map((i) => say(`${min + i} inches`)), answerIndex: offered.indexOf(top), explanation };
   }
   const index = rng.int(0, 4);
   const answer = counts[index] as number;
+  const at = min + index;
   const values = numeralChoices(answer, [answer + 1, answer - 1, counts[(index + 1) % 5] as number], 0, 6, rng);
-  return { type: 'choice', mode: 'look', facts: { values: counts, ask: 'value', index, options: values }, prompt: { text: `How many shoes are ${min + index} inches long?`, speak: ['How many shoes are', { number: min + index }, 'inches long?'] }, stimulus: visual, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(answer), explanation: { speak: ['Count the X marks above', { number: min + index }, ':', { number: answer }, '.'], steps: [`Count the X marks above ${min + index}: ${answer}.`], visual } };
+  const count = answer === 0 ? line('There are no X marks above it.') : counted('Count the X marks above it:', answer);
+  const shoes = answer === 0 ? line('No shoes are', at, 'inches long.') : line(answer, answer === 1 ? 'shoe is' : 'shoes are', at, 'inches long.');
+  const explanation = together([line('Find', at, 'on the line.'), count, shoes], visual, { text: 'Find the number on the line. Then count the X marks above it.' });
+  return { type: 'choice', mode: 'look', facts: { values: counts, ask: 'value', index, options: values }, prompt: { text: `How many shoes are ${at} inches long?`, speak: ['How many shoes are', { number: at }, 'inches long?'] }, stimulus: visual, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(answer), explanation };
 }
 
 export const linePlots2Generator: SkillGenerator = {
@@ -234,13 +274,24 @@ function rowsColumns(level: Level, rng: Rng): QuestionDraft {
   let cols = rng.int(2, 5);
   if (cols === rows) cols = rows === 5 ? 4 : rows + 1;
   const grid: Visual = { kind: 'array', rows, cols, emoji: '🟩' };
-  const explanation: Explanation = { speak: ['There are', { number: rows }, 'rows of', { number: cols }, 'squares.', { number: rows }, 'times', { number: cols }, 'is', { number: rows * cols }, '.'], steps: [`${rows} rows of ${cols} squares.`, `${rows} × ${cols} = ${rows * cols} squares.`], visual: grid };
+  // Grade 2 adds the rows, one number for each row, as B.8 does: times comes in grade 3.
+  const rowSum = Array.from({ length: rows }, () => cols);
+  const explanation = together(
+    [line('There are', rows, 'rows, with', cols, 'squares in each row.'), line(...rowSum.flatMap((part, i) => (i === 0 ? [part] : ['+', part])), '=', rows * cols, '.'), line('There are', rows * cols, 'squares.')],
+    grid,
+    { text: 'Count the squares in one row. Then add one row at a time.' },
+  );
   if (level === 2) {
     const ask = rng.pick(['rows', 'cols'] as const);
     const answer = ask === 'rows' ? rows : cols;
     const values = numeralChoices(answer, [ask === 'rows' ? cols : rows, answer + 1, answer - 1], 1, 8, rng);
     const prompt = ask === 'rows' ? 'How many rows go across?' : 'How many columns go up and down?';
-    return { type: 'choice', mode: 'look', facts: { rows, cols, ask: 'missing', blank: ask, options: values }, prompt: { text: prompt, speak: [prompt] }, stimulus: grid, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(answer), explanation };
+    // The steps count what was asked, not the squares.
+    const counting =
+      ask === 'rows'
+        ? together([line('Rows go across.'), counted('Count down one side, one row at a time:', rows), line('There are', rows, 'rows.')], grid, { text: 'Count the squares down one side.' })
+        : together([line('Columns go up and down.'), counted('Count along the top, one column at a time:', cols), line('There are', cols, 'columns.')], grid, { text: 'Count the squares along the top row.' });
+    return { type: 'choice', mode: 'look', facts: { rows, cols, ask: 'missing', blank: ask, options: values }, prompt: { text: prompt, speak: [prompt] }, stimulus: grid, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(answer), explanation: counting };
   }
   const prompt = 'The rectangle is cut into rows and columns of squares. How many squares are there?';
   const base = { mode: 'look' as const, facts: { rows, cols, ask: 'total' }, prompt: { text: prompt, speak: [prompt] as Say }, stimulus: grid, explanation };

@@ -5,33 +5,30 @@ import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
+import { line, together } from './addSubtract';
+import type { Explanation } from './addSubtract';
 
 // Math grade 2 A.1 to A.6: place value to 999, expanded form, comparing, skip counting, even and odd, number lines.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
 const digitsOf = (n: number): { hundreds: number; tens: number; ones: number } => ({ hundreds: Math.floor(n / 100), tens: Math.floor((n % 100) / 10), ones: n % 10 });
 const blocks = (n: number): Visual => ({ kind: 'baseTen', ...digitsOf(n) });
-const many = (count: number, one: string): string => `${count} ${count === 1 ? one : `${one}s`}`;
 
 // ---- A.1 Hundreds, tens, ones ----
 // Levels: blocks to numeral to 199 / to 999 / typed / choice: value of a digit. Oracle: place.
 
+// The blocks are named as the A.1 lesson names them, so "1 big square is 100." says what the block is worth
+// (said aloud, "1 hundred is 100" would be "one hundred is one hundred"). A place with no blocks holds a 0.
+const BLOCK: Record<'hundreds' | 'tens' | 'ones', [string, string, number]> = { hundreds: ['big square', 'big squares', 100], tens: ['long block', 'long blocks', 10], ones: ['small block', 'small blocks', 1] };
+function blockLine(count: number, place: 'hundreds' | 'tens' | 'ones'): ReturnType<typeof line> {
+  const [one, many, worth] = BLOCK[place];
+  if (count === 0) return line(`There are no ${many}, so a`, 0, `holds the ${place} place.`);
+  return line(count, count === 1 ? `${one} is` : `${many} are`, count * worth, '.');
+}
+
 function blocksExplanation(n: number): Explanation {
   const { hundreds, tens, ones } = digitsOf(n);
-  const speak: Say = [{ number: hundreds }, hundreds === 1 ? 'hundred is' : 'hundreds is', { number: hundreds * 100 }, '.'];
-  const steps = [`${many(hundreds, 'hundred')} is ${hundreds * 100}.`];
-  if (tens > 0) {
-    speak.push({ number: tens }, tens === 1 ? 'ten is' : 'tens is', { number: tens * 10 }, '.');
-    steps.push(`${many(tens, 'ten')} is ${tens * 10}.`);
-  }
-  if (ones > 0) {
-    speak.push({ number: ones }, ones === 1 ? 'one.' : 'ones.');
-    steps.push(`${many(ones, 'one')}.`);
-  }
-  speak.push('That makes', { number: n }, '.');
-  steps.push(`That makes ${n}.`);
-  return { speak, steps, visual: blocks(n) };
+  return together([blockLine(hundreds, 'hundreds'), blockLine(tens, 'tens'), blockLine(ones, 'ones'), line('That makes', n, '.')], blocks(n), { text: 'Count by hundreds, then by tens, then by ones.' });
 }
 
 const WHAT_NUMBER = 'What number is this?';
@@ -39,10 +36,17 @@ const PLACES = ['hundreds', 'tens', 'ones'] as const;
 
 function hundredsTensOnes(level: Level, rng: Rng): QuestionDraft {
   const n = level === 1 ? rng.int(101, 199) : rng.int(200, 999);
-  const digits = digitsOf(n);
   if (level === 4) {
-    // The value of one digit: the 4 in 347 is worth 40. A zero is never asked about.
-    const place = rng.pick(PLACES.filter((each) => digits[each] > 0));
+    // The value of one digit: the 4 in 347 is worth 40. A zero is never asked about, and neither is a digit
+    // that shows twice: the 9 in 599 could be either 9.
+    let m = n;
+    const once = (value: number): (typeof PLACES)[number][] => {
+      const d = digitsOf(value);
+      return PLACES.filter((each) => d[each] > 0 && PLACES.filter((other) => d[other] === d[each]).length === 1);
+    };
+    while (once(m).length === 0) m = rng.int(200, 999);
+    const digits = digitsOf(m);
+    const place = rng.pick(once(m));
     const digit = digits[place];
     const worth = digit * (place === 'hundreds' ? 100 : place === 'tens' ? 10 : 1);
     const values = [digit, digit * 10, digit * 100];
@@ -51,13 +55,14 @@ function hundredsTensOnes(level: Level, rng: Rng): QuestionDraft {
       mode: 'look',
       fixedOrder: true,
       facts: { ...digits, ask: `${place}Value`, options: values },
-      prompt: { text: `What is the ${digit} worth in ${n}?`, speak: ['What is the', { number: digit }, 'worth in', { number: n }, '?'] },
-      stimulus: numeral(n),
+      prompt: { text: `What is the ${digit} worth in ${m}?`, speak: ['What is the', { number: digit }, 'worth in', { number: m }, '?'] },
+      stimulus: numeral(m),
       options: values.map((value) => numeral(value, 'l')),
       answerIndex: values.indexOf(worth),
-      explanation: { speak: ['The', { number: digit }, `is in the ${place} place. It is worth`, { number: worth }, '.'], steps: [`The ${digit} is in the ${place} place.`, `It is worth ${worth}.`], visual: blocks(n) },
+      explanation: { ...together([line('The', digit, `is in the ${place} place.`), line('It is worth', worth, '.')], blocks(m)), hint: { text: 'Find the place the digit is in: hundreds, tens or ones.' } },
     };
   }
+  const digits = digitsOf(n);
   const base = { mode: 'look' as const, prompt: { text: WHAT_NUMBER, speak: [WHAT_NUMBER] as Say }, stimulus: blocks(n), explanation: blocksExplanation(n) };
   if (level === 3) return { ...base, type: 'numberPad', facts: { ...digits, ask: 'number' }, answer: n, maxDigits: 3 };
   // The slips: two digits the wrong way round, or one ten or one hundred out.
@@ -94,13 +99,22 @@ const expandedText = (parts: number[]): string => parts.join(' + ');
 const expandedVisual = (parts: number[], last: number | 'blank' | null): Visual => equation(...parts.flatMap((part, i) => (i === 0 ? [part] : ['+', part])), ...(last === null ? [] : ['=', last]));
 const expandedSpeak = (parts: number[]): Say => parts.flatMap((part, i): Say => (i === 0 ? [{ number: part }] : ['plus', { number: part }]));
 
+// From the parts to the number: each part gives one digit, and a missing part gives a 0.
 function expandedExplanation(n: number): Explanation {
   const { hundreds, tens, ones } = digitsOf(n);
-  return {
-    speak: [{ number: hundreds }, hundreds === 1 ? 'hundred,' : 'hundreds,', { number: tens }, tens === 1 ? 'ten and' : 'tens and', { number: ones }, ones === 1 ? 'one is' : 'ones is', { number: n }, '.'],
-    steps: [`${many(hundreds, 'hundred')}, ${many(tens, 'ten')} and ${many(ones, 'one')} is ${n}.`],
-    visual: expandedVisual(expandedParts(n), n),
-  };
+  const give = (part: number, digit: number, place: string): ReturnType<typeof line> => (part === 0 ? line(`There is no ${place} part, so the ${place} digit is`, 0, '.') : line(part, `gives the ${place} digit:`, digit, '.'));
+  return together([give(hundreds * 100, hundreds, 'hundreds'), give(tens * 10, tens, 'tens'), give(ones, ones, 'ones'), line('The number is', n, '.')], expandedVisual(expandedParts(n), n), { text: 'Each part gives one digit: the hundreds, the tens and the ones.' });
+}
+
+// From the number to the parts: what each digit is worth in its place.
+function worthExplanation(n: number): Explanation {
+  const { hundreds, tens, ones } = digitsOf(n);
+  const parts = expandedParts(n);
+  return together(
+    [line('The', hundreds, 'is in the hundreds place:', hundreds * 100, '.'), line('The', tens, 'is in the tens place:', tens * 10, '.'), line('The', ones, 'is in the ones place:', ones, '.'), line('So', n, 'is', ...parts.flatMap((part, i) => (i === 0 ? [part] : ['+', part])), '.')],
+    expandedVisual(parts, n),
+    { text: 'Find what each digit is worth in its place.' },
+  );
 }
 
 function expandedForm(level: Level, rng: Rng): QuestionDraft {
@@ -112,7 +126,7 @@ function expandedForm(level: Level, rng: Rng): QuestionDraft {
   }
   const n = digits.hundreds * 100 + digits.tens * 10 + digits.ones;
   const parts = expandedParts(n);
-  const sumPrompt = { text: `${parts.join(' plus ')} is what number?`, speak: [...expandedSpeak(parts), 'is what number?'] as Say };
+  const sumPrompt = { text: `What is ${parts.join(' plus ')}?`, speak: ['What is', ...expandedSpeak(parts), '?'] as Say };
   if (level === 3) return { type: 'numberPad', mode: 'look', facts: { ...digits, ask: 'number' }, prompt: sumPrompt, stimulus: expandedVisual(parts, 'blank'), answer: n, maxDigits: 3, explanation: expandedExplanation(n) };
   if (level === 1) {
     // The slips: the parts read as digits in the wrong places, or one part left out.
@@ -135,7 +149,7 @@ function expandedForm(level: Level, rng: Rng): QuestionDraft {
     stimulus: numeral(n),
     options: options.map((each): Visual => ({ kind: 'text', value: expandedText(each), size: 'l', speak: expandedSpeak(each) })),
     answerIndex: options.indexOf(parts),
-    explanation: expandedExplanation(n),
+    explanation: worthExplanation(n),
   };
 }
 
@@ -150,7 +164,7 @@ export const expandedFormGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'A number can be written as its hundreds, tens and ones added up.', speak: ['A number can be written as its hundreds, tens and ones added up.'], visual: expandedVisual([300, 40, 2], 342) },
     { beat: 'watch', text: expandedExplanation(342).steps.join(' '), speak: expandedExplanation(342).speak, visual: blocks(342) },
-    { beat: 'try', text: '200 plus 50 plus 6 is what number?', speak: [...expandedSpeak([200, 50, 6]), 'is what number?'], visual: expandedVisual([200, 50, 6], 'blank'), reveal: { text: expandedExplanation(256).steps.join(' '), speak: expandedExplanation(256).speak, visual: expandedVisual([200, 50, 6], 256) } },
+    { beat: 'try', text: 'What is 200 plus 50 plus 6?', speak: ['What is', ...expandedSpeak([200, 50, 6]), '?'], visual: expandedVisual([200, 50, 6], 'blank'), reveal: { text: expandedExplanation(256).steps.join(' '), speak: expandedExplanation(256).speak, visual: expandedVisual([200, 50, 6], 256) } },
     { beat: 'remember', text: 'Each digit has its own place.', speak: ['Each digit has its own place.'], visual: expandedVisual([300, 40, 2], 342) },
   ],
   oracle: 'place',
@@ -163,16 +177,26 @@ type Ask = 'most' | 'least';
 const SIGNS = ['>', '<', '='] as const;
 const SIGN_WORDS: Record<string, string> = { '>': 'is greater than', '<': 'is less than', '=': 'is equal to' };
 
-function compareExplanation(a: number, b: number, ask: Ask = 'most'): Explanation {
+// Comparing reads the place that differs, then says the answer. When the sign is asked, the last step reads the
+// two numbers in the question's order and names the sign: "102 is less than 574, so the sign is <."
+const COMPARE_HINT = { text: 'Compare the hundreds first.' };
+
+function compareExplanation(a: number, b: number, ask: Ask | 'sign' = 'most'): Explanation {
   const visual = equation(a, a > b ? '>' : a < b ? '<' : '=', b);
-  if (a === b) return { speak: [{ number: a }, 'and', { number: b }, 'are the same number. They are equal.'], steps: [`${a} and ${b} are the same number.`, 'They are equal.'], visual };
+  if (a === b) {
+    // The sign named on its own is said by its word, as "<" is "less than": "so the sign is equals".
+    const same = together([line(a, 'and', b, 'are the same number.'), line('They are equal, so the sign is =.')], visual, COMPARE_HINT);
+    return { ...same, speak: [{ number: a }, 'and', { number: b }, 'are the same number. They are equal, so the sign is equals.'] };
+  }
   const [big, small] = a > b ? [a, b] : [b, a];
   const [x, y] = [digitsOf(big), digitsOf(small)];
   const place = x.hundreds !== y.hundreds ? 'hundreds' : x.tens !== y.tens ? 'tens' : 'ones';
-  const look = place === 'hundreds' ? 'Look at the biggest place first.' : place === 'tens' ? 'The hundreds are the same. Look at the tens.' : 'The hundreds and tens are the same. Look at the ones.';
-  const last: Say = ask === 'most' ? [{ number: big }, 'is greater than', { number: small }, '.'] : [{ number: small }, 'is less than', { number: big }, '.'];
-  const lastText = ask === 'most' ? `${big} is greater than ${small}.` : `${small} is less than ${big}.`;
-  return { speak: [look, { number: big }, `has more ${place}.`, ...last], steps: [look, `${big} has more ${place}.`, lastText], visual };
+  const look = place === 'hundreds' ? 'Compare the hundreds first.' : place === 'tens' ? 'The hundreds are the same. Compare the tens.' : 'The hundreds and tens are the same. Compare the ones.';
+  const last =
+    ask === 'sign' ? (a > b ? line(a, 'is greater than', b, ', so the sign is >.') : line(a, 'is less than', b, ', so the sign is <.')) : ask === 'most' ? line(big, 'is greater than', small, '.') : line(small, 'is less than', big, '.');
+  const lastSaid: Say = ask === 'sign' ? [{ number: a }, a > b ? 'is greater than' : 'is less than', { number: b }, a > b ? ', so the sign is greater than.' : ', so the sign is less than.'] : last.speak;
+  const walk = together([line(look), line(big, `has more ${place}.`), last], visual, COMPARE_HINT);
+  return { ...walk, speak: [...walk.speak.slice(0, -last.speak.length), ...lastSaid] };
 }
 
 function threeDigit(sameHundreds: boolean, rng: Rng): [number, number] {
@@ -198,7 +222,7 @@ function compareThreeDigit(level: Level, rng: Rng): QuestionDraft {
       stimulus: equation(a, 'blank', b),
       options: SIGNS.map((sign): Visual => ({ kind: 'text', value: sign, size: 'xl', speak: [SIGN_WORDS[sign] as string] })),
       answerIndex: SIGNS.indexOf(answer),
-      explanation: compareExplanation(a, b),
+      explanation: compareExplanation(a, b, 'sign'),
     };
   }
   const values = threeDigit(level === 2, rng);
@@ -299,10 +323,17 @@ function inPairs(emoji: string, n: number): Visual {
   return { kind: 'row', children: [...Array.from({ length: Math.floor(n / 2) }, () => pair), ...(n % 2 === 1 ? [single] : [])] };
 }
 
-function parityExplanation(n: number, visual: Visual): Explanation {
+// Things in a picture are put in pairs. A numeral has nothing to pair, so it is found by counting by 2s.
+function parityExplanation(n: number, visual: Visual, shown: 'pictures' | 'numeral' = 'pictures'): Explanation {
   const odd = n % 2 === 1;
+  const kind = line(n, odd ? 'is odd.' : 'is even.');
+  if (shown === 'numeral') {
+    const evens = Array.from({ length: Math.ceil(n / 2) }, (_, i) => 2 * (i + 1));
+    const count = { text: `Count by 2s: ${listText(evens)}.`, speak: ['Count by twos:', ...evens.flatMap((value, i): Say => (i === 0 ? [{ number: value }] : [',', { number: value }])), '.'] as Say };
+    return together([count, line(n, odd ? 'is not in the count.' : 'is in the count.'), kind], visual, { text: `Draw ${n} dots in pairs. Is one left over?` });
+  }
   const middle = odd ? 'One is left over.' : 'Every one has a partner.';
-  return { speak: ['Make pairs.', middle, { number: n }, odd ? 'is odd.' : 'is even.'], steps: ['Make pairs.', middle, `${n} is ${odd ? 'odd' : 'even'}.`], visual };
+  return together([line('Make pairs.'), line(middle), kind], visual, { text: 'Look at the pairs. Is one left over?' });
 }
 
 function evenOdd(level: Level, rng: Rng): QuestionDraft {
@@ -327,6 +358,7 @@ function evenOdd(level: Level, rng: Rng): QuestionDraft {
           speak: ['Look at the last digit. Even numbers end in', { number: 0 }, { number: 2 }, { number: 4 }, { number: 6 }, 'or', { number: 8 }, '.'],
           steps: ['Look at the last digit.', `Even: ${listText(evens)}.`, `Odd: ${listText(odds)}.`],
           visual: { kind: 'row', children: evens.map((value) => numeral(value, 'l')) },
+          hint: { text: 'Look at the last digit. 0, 2, 4, 6 or 8 at the end means even.' },
         },
       };
     }
@@ -345,7 +377,7 @@ function evenOdd(level: Level, rng: Rng): QuestionDraft {
     stimulus: level === 1 ? pictured : numeral(n),
     options: EVEN_ODD(),
     answerIndex: n % 2,
-    explanation: parityExplanation(n, pictured),
+    explanation: parityExplanation(n, pictured, level === 1 ? 'pictures' : 'numeral'),
   };
 }
 
@@ -379,13 +411,12 @@ const lineVisual = (min: number, step: number, index: number, hide: boolean): Vi
   return hide ? { kind: 'numberLine', min, max: min + step * TICKS, step, marked: [at], hidden: [at] } : { kind: 'numberLine', min, max: min + step * TICKS, step, marked: [at] };
 };
 
-function lineExplanation(min: number, step: number, index: number): Explanation {
+// The jump size, then the count itself from the first number, then where it lands.
+function lineExplanation(min: number, step: number, index: number, place = false): Explanation {
   const answer = min + step * index;
-  return {
-    speak: ['The marks go up by', { number: step }, '. Count along. The dot is at', { number: answer }, '.'],
-    steps: [`The marks go up by ${step}.`, 'Count along.', `The dot is at ${answer}.`],
-    visual: lineVisual(min, step, index, false),
-  };
+  const counted = Array.from({ length: index }, (_, i) => min + step * (i + 1));
+  const count = { text: `Count by ${step}s from ${min}: ${listText(counted)}.`, speak: [`Count by ${step === 1 ? 'ones' : step === 5 ? 'fives' : 'tens'} from`, { number: min }, ':', ...counted.flatMap((value, i): Say => (i === 0 ? [{ number: value }] : [',', { number: value }])), '.'] as Say };
+  return together([line('The marks go up by', step, '.'), count, line(place ? 'So the dot goes on' : 'The dot is at', answer, '.')], lineVisual(min, step, index, false), { text: 'Find the size of each jump first.' });
 }
 
 function numberLine(level: Level, rng: Rng): QuestionDraft {
@@ -402,7 +433,7 @@ function numberLine(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: `Put the dot on ${answer}.`, speak: ['Put the dot on', { number: answer }, '.'] },
       line: { min, max: min + step * TICKS, step },
       answer,
-      explanation: lineExplanation(min, step, index),
+      explanation: lineExplanation(min, step, index, true),
     };
   }
   const step = level === 1 ? 10 : level === 2 ? 5 : 1;

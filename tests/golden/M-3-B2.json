@@ -1,11 +1,12 @@
 {
  "skillId": "M-3-B2",
- "version": 2,
+ "version": 3,
  "example": {
   "mode": "look",
   "prompt": {
-   "text": "395 minus 219 equals what?",
+   "text": "What is 395 minus 219?",
    "speak": [
+    "What is",
     {
      "number": 395
     },
@@ -13,7 +14,7 @@
     {
      "number": 219
     },
-    "equals what?"
+    "?"
    ]
   },
   "stimulus": {
@@ -28,11 +29,12 @@
   },
   "explanation": {
    "speak": [
-    "There are not enough ones. Break a ten into",
+    "There are not enough ones, so break a ten.",
+    "Now there are",
     {
-     "number": 10
+     "number": 15
     },
-    "ones.",
+    "ones:",
     {
      "number": 15
     },
@@ -51,7 +53,7 @@
      "number": 8
     },
     "tens.",
-    "Take away the tens:",
+    "Subtract the tens:",
     {
      "number": 8
     },
@@ -64,7 +66,7 @@
      "number": 7
     },
     ".",
-    "Take away the hundreds:",
+    "Subtract the hundreds:",
     {
      "number": 3
     },
@@ -84,9 +86,9 @@
     "."
    ],
    "steps": [
-    "There are not enough ones. Break a ten into 10 ones. 15 minus 9 is 6.",
-    "Now there are 8 tens. Take away the tens: 8 minus 1 is 7.",
-    "Take away the hundreds: 3 minus 2 is 1.",
+    "There are not enough ones, so break a ten. Now there are 15 ones: 15 − 9 = 6.",
+    "Now there are 8 tens. Subtract the tens: 8 − 1 = 7.",
+    "Subtract the hundreds: 3 − 2 = 1.",
     "The answer is 176."
    ],
    "visual": {
@@ -98,6 +100,9 @@
      "=",
      176
     ]
+   },
+   "hint": {
+    "text": "Start with the ones. If there are not enough, break a ten."
    }
   },
   "type": "choice",
@@ -153,8 +158,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "728 minus 676 equals what?",
+     "text": "What is 728 minus 676?",
      "speak": [
+      "What is",
       {
        "number": 728
       },
@@ -162,7 +168,7 @@
       {
        "number": 676
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -177,7 +183,7 @@
     },
     "explanation": {
      "speak": [
-      "Take away the ones:",
+      "Subtract the ones:",
       {
        "number": 8
       },
@@ -190,11 +196,12 @@
        "number": 2
       },
       ".",
-      "There are not enough tens. Break a hundred into",
+      "There are not enough tens, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "tens.",
+      "tens:",
       {
        "number": 12
       },
@@ -213,7 +220,7 @@
        "number": 6
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 6
       },
@@ -233,9 +240,9 @@
       "."
      ],
      "steps": [
-      "Take away the ones: 8 minus 6 is 2.",
-      "There are not enough tens. Break a hundred into 10 tens. 12 minus 7 is 5.",
-      "Now there are 6 hundreds. Take away the hundreds: 6 minus 6 is 0.",
+      "Subtract the ones: 8 − 6 = 2.",
+      "There are not enough tens, so break a hundred. Now there are 12 tens: 12 − 7 = 5.",
+      "Now there are 6 hundreds. Subtract the hundreds: 6 − 6 = 0.",
       "The answer is 52."
      ],
      "visual": {
@@ -247,6 +254,9 @@
        "=",
        52
       ]
+     },
+     "hint": {
+      "text": "Start with the ones, then the tens. If there are not enough tens, break a hundred."
      }
     },
     "type": "choice",
@@ -300,8 +310,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "912 minus 605 equals what?",
+     "text": "What is 912 minus 605?",
      "speak": [
+      "What is",
       {
        "number": 912
       },
@@ -309,7 +320,7 @@
       {
        "number": 605
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -324,11 +335,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -342,7 +354,7 @@
       },
       ".",
       "Now there are no tens.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 9
       },
@@ -362,9 +374,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 5 is 7.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 5 = 7.",
       "Now there are no tens.",
-      "Take away the hundreds: 9 minus 6 is 3.",
+      "Subtract the hundreds: 9 − 6 = 3.",
       "The answer is 307."
      ],
      "visual": {
@@ -376,6 +388,9 @@
        "=",
        307
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -429,8 +444,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "804 minus 131 equals what?",
+     "text": "What is 804 minus 131?",
      "speak": [
+      "What is",
       {
        "number": 804
       },
@@ -438,7 +454,7 @@
       {
        "number": 131
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -453,7 +469,7 @@
     },
     "explanation": {
      "speak": [
-      "Take away the ones:",
+      "Subtract the ones:",
       {
        "number": 4
       },
@@ -466,11 +482,12 @@
        "number": 3
       },
       ".",
-      "There are not enough tens. Break a hundred into",
+      "There are not enough tens, so break a hundred.",
+      "Now there are",
       {
        "number": 10
       },
-      "tens.",
+      "tens:",
       {
        "number": 10
       },
@@ -489,7 +506,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -509,9 +526,9 @@
       "."
      ],
      "steps": [
-      "Take away the ones: 4 minus 1 is 3.",
-      "There are not enough tens. Break a hundred into 10 tens. 10 minus 3 is 7.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 1 is 6.",
+      "Subtract the ones: 4 − 1 = 3.",
+      "There are not enough tens, so break a hundred. Now there are 10 tens: 10 − 3 = 7.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 1 = 6.",
       "The answer is 673."
      ],
      "visual": {
@@ -523,6 +540,9 @@
        "=",
        673
       ]
+     },
+     "hint": {
+      "text": "Start with the ones, then the tens. If there are not enough tens, break a hundred."
      }
     },
     "type": "choice",
@@ -576,8 +596,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "735 minus 652 equals what?",
+     "text": "What is 735 minus 652?",
      "speak": [
+      "What is",
       {
        "number": 735
       },
@@ -585,7 +606,7 @@
       {
        "number": 652
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -600,7 +621,7 @@
     },
     "explanation": {
      "speak": [
-      "Take away the ones:",
+      "Subtract the ones:",
       {
        "number": 5
       },
@@ -613,11 +634,12 @@
        "number": 3
       },
       ".",
-      "There are not enough tens. Break a hundred into",
+      "There are not enough tens, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -636,7 +658,7 @@
        "number": 6
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 6
       },
@@ -656,9 +678,9 @@
       "."
      ],
      "steps": [
-      "Take away the ones: 5 minus 2 is 3.",
-      "There are not enough tens. Break a hundred into 10 tens. 13 minus 5 is 8.",
-      "Now there are 6 hundreds. Take away the hundreds: 6 minus 6 is 0.",
+      "Subtract the ones: 5 − 2 = 3.",
+      "There are not enough tens, so break a hundred. Now there are 13 tens: 13 − 5 = 8.",
+      "Now there are 6 hundreds. Subtract the hundreds: 6 − 6 = 0.",
       "The answer is 83."
      ],
      "visual": {
@@ -670,6 +692,9 @@
        "=",
        83
       ]
+     },
+     "hint": {
+      "text": "Start with the ones, then the tens. If there are not enough tens, break a hundred."
      }
     },
     "type": "choice",
@@ -723,8 +748,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "782 minus 718 equals what?",
+     "text": "What is 782 minus 718?",
      "speak": [
+      "What is",
       {
        "number": 782
       },
@@ -732,7 +758,7 @@
       {
        "number": 718
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -747,11 +773,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -770,7 +797,7 @@
        "number": 7
       },
       "tens.",
-      "Take away the tens:",
+      "Subtract the tens:",
       {
        "number": 7
       },
@@ -783,7 +810,7 @@
        "number": 6
       },
       ".",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -803,9 +830,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 8 is 4.",
-      "Now there are 7 tens. Take away the tens: 7 minus 1 is 6.",
-      "Take away the hundreds: 7 minus 7 is 0.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 8 = 4.",
+      "Now there are 7 tens. Subtract the tens: 7 − 1 = 6.",
+      "Subtract the hundreds: 7 − 7 = 0.",
       "The answer is 64."
      ],
      "visual": {
@@ -817,6 +844,9 @@
        "=",
        64
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -870,8 +900,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "953 minus 406 equals what?",
+     "text": "What is 953 minus 406?",
      "speak": [
+      "What is",
       {
        "number": 953
       },
@@ -879,7 +910,7 @@
       {
        "number": 406
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -894,11 +925,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "ones.",
+      "ones:",
       {
        "number": 13
       },
@@ -917,7 +949,7 @@
        "number": 4
       },
       "tens.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 9
       },
@@ -937,9 +969,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 13 minus 6 is 7.",
+      "There are not enough ones, so break a ten. Now there are 13 ones: 13 − 6 = 7.",
       "Now there are 4 tens.",
-      "Take away the hundreds: 9 minus 4 is 5.",
+      "Subtract the hundreds: 9 − 4 = 5.",
       "The answer is 547."
      ],
      "visual": {
@@ -951,6 +983,9 @@
        "=",
        547
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -1004,8 +1039,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "983 minus 659 equals what?",
+     "text": "What is 983 minus 659?",
      "speak": [
+      "What is",
       {
        "number": 983
       },
@@ -1013,7 +1049,7 @@
       {
        "number": 659
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1028,11 +1064,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "ones.",
+      "ones:",
       {
        "number": 13
       },
@@ -1051,7 +1088,7 @@
        "number": 7
       },
       "tens.",
-      "Take away the tens:",
+      "Subtract the tens:",
       {
        "number": 7
       },
@@ -1064,7 +1101,7 @@
        "number": 2
       },
       ".",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 9
       },
@@ -1084,9 +1121,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 13 minus 9 is 4.",
-      "Now there are 7 tens. Take away the tens: 7 minus 5 is 2.",
-      "Take away the hundreds: 9 minus 6 is 3.",
+      "There are not enough ones, so break a ten. Now there are 13 ones: 13 − 9 = 4.",
+      "Now there are 7 tens. Subtract the tens: 7 − 5 = 2.",
+      "Subtract the hundreds: 9 − 6 = 3.",
       "The answer is 324."
      ],
      "visual": {
@@ -1098,6 +1135,9 @@
        "=",
        324
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -1151,8 +1191,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "873 minus 291 equals what?",
+     "text": "What is 873 minus 291?",
      "speak": [
+      "What is",
       {
        "number": 873
       },
@@ -1160,7 +1201,7 @@
       {
        "number": 291
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1175,7 +1216,7 @@
     },
     "explanation": {
      "speak": [
-      "Take away the ones:",
+      "Subtract the ones:",
       {
        "number": 3
       },
@@ -1188,11 +1229,12 @@
        "number": 2
       },
       ".",
-      "There are not enough tens. Break a hundred into",
+      "There are not enough tens, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 17
       },
-      "tens.",
+      "tens:",
       {
        "number": 17
       },
@@ -1211,7 +1253,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -1231,9 +1273,9 @@
       "."
      ],
      "steps": [
-      "Take away the ones: 3 minus 1 is 2.",
-      "There are not enough tens. Break a hundred into 10 tens. 17 minus 9 is 8.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 2 is 5.",
+      "Subtract the ones: 3 − 1 = 2.",
+      "There are not enough tens, so break a hundred. Now there are 17 tens: 17 − 9 = 8.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 2 = 5.",
       "The answer is 582."
      ],
      "visual": {
@@ -1245,6 +1287,9 @@
        "=",
        582
       ]
+     },
+     "hint": {
+      "text": "Start with the ones, then the tens. If there are not enough tens, break a hundred."
      }
     },
     "type": "choice",
@@ -1298,8 +1343,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "806 minus 651 equals what?",
+     "text": "What is 806 minus 651?",
      "speak": [
+      "What is",
       {
        "number": 806
       },
@@ -1307,7 +1353,7 @@
       {
        "number": 651
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1322,7 +1368,7 @@
     },
     "explanation": {
      "speak": [
-      "Take away the ones:",
+      "Subtract the ones:",
       {
        "number": 6
       },
@@ -1335,11 +1381,12 @@
        "number": 5
       },
       ".",
-      "There are not enough tens. Break a hundred into",
+      "There are not enough tens, so break a hundred.",
+      "Now there are",
       {
        "number": 10
       },
-      "tens.",
+      "tens:",
       {
        "number": 10
       },
@@ -1358,7 +1405,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -1378,9 +1425,9 @@
       "."
      ],
      "steps": [
-      "Take away the ones: 6 minus 1 is 5.",
-      "There are not enough tens. Break a hundred into 10 tens. 10 minus 5 is 5.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 6 is 1.",
+      "Subtract the ones: 6 − 1 = 5.",
+      "There are not enough tens, so break a hundred. Now there are 10 tens: 10 − 5 = 5.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 6 = 1.",
       "The answer is 155."
      ],
      "visual": {
@@ -1392,6 +1439,9 @@
        "=",
        155
       ]
+     },
+     "hint": {
+      "text": "Start with the ones, then the tens. If there are not enough tens, break a hundred."
      }
     },
     "type": "choice",
@@ -1445,8 +1495,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "955 minus 227 equals what?",
+     "text": "What is 955 minus 227?",
      "speak": [
+      "What is",
       {
        "number": 955
       },
@@ -1454,7 +1505,7 @@
       {
        "number": 227
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1469,11 +1520,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 15
       },
-      "ones.",
+      "ones:",
       {
        "number": 15
       },
@@ -1492,7 +1544,7 @@
        "number": 4
       },
       "tens.",
-      "Take away the tens:",
+      "Subtract the tens:",
       {
        "number": 4
       },
@@ -1505,7 +1557,7 @@
        "number": 2
       },
       ".",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 9
       },
@@ -1525,9 +1577,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 15 minus 7 is 8.",
-      "Now there are 4 tens. Take away the tens: 4 minus 2 is 2.",
-      "Take away the hundreds: 9 minus 2 is 7.",
+      "There are not enough ones, so break a ten. Now there are 15 ones: 15 − 7 = 8.",
+      "Now there are 4 tens. Subtract the tens: 4 − 2 = 2.",
+      "Subtract the hundreds: 9 − 2 = 7.",
       "The answer is 728."
      ],
      "visual": {
@@ -1539,6 +1591,9 @@
        "=",
        728
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -1594,8 +1649,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "642 minus 154 equals what?",
+     "text": "What is 642 minus 154?",
      "speak": [
+      "What is",
       {
        "number": 642
       },
@@ -1603,7 +1659,7 @@
       {
        "number": 154
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1618,11 +1674,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -1641,11 +1698,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -1664,7 +1722,7 @@
        "number": 5
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 5
       },
@@ -1684,9 +1742,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 4 is 8.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 5 is 8.",
-      "Now there are 5 hundreds. Take away the hundreds: 5 minus 1 is 4.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 4 = 8.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 5 = 8.",
+      "Now there are 5 hundreds. Subtract the hundreds: 5 − 1 = 4.",
       "The answer is 488."
      ],
      "visual": {
@@ -1698,6 +1756,9 @@
        "=",
        488
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -1751,8 +1812,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "850 minus 262 equals what?",
+     "text": "What is 850 minus 262?",
      "speak": [
+      "What is",
       {
        "number": 850
       },
@@ -1760,7 +1822,7 @@
       {
        "number": 262
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1775,11 +1837,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
        "number": 10
       },
-      "ones.",
+      "ones:",
       {
        "number": 10
       },
@@ -1798,11 +1861,12 @@
        "number": 4
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 14
       },
-      "tens.",
+      "tens:",
       {
        "number": 14
       },
@@ -1821,7 +1885,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -1841,9 +1905,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 10 minus 2 is 8.",
-      "Now there are 4 tens. There are not enough tens. Break a hundred into 10 tens. 14 minus 6 is 8.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 2 is 5.",
+      "There are not enough ones, so break a ten. Now there are 10 ones: 10 − 2 = 8.",
+      "Now there are 4 tens. That is not enough, so break a hundred. Now there are 14 tens: 14 − 6 = 8.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 2 = 5.",
       "The answer is 588."
      ],
      "visual": {
@@ -1855,6 +1919,9 @@
        "=",
        588
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -1908,8 +1975,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "834 minus 485 equals what?",
+     "text": "What is 834 minus 485?",
      "speak": [
+      "What is",
       {
        "number": 834
       },
@@ -1917,7 +1985,7 @@
       {
        "number": 485
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1932,11 +2000,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 14
       },
-      "ones.",
+      "ones:",
       {
        "number": 14
       },
@@ -1955,11 +2024,12 @@
        "number": 2
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "tens.",
+      "tens:",
       {
        "number": 12
       },
@@ -1978,7 +2048,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -1998,9 +2068,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 14 minus 5 is 9.",
-      "Now there are 2 tens. There are not enough tens. Break a hundred into 10 tens. 12 minus 8 is 4.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 4 is 3.",
+      "There are not enough ones, so break a ten. Now there are 14 ones: 14 − 5 = 9.",
+      "Now there are 2 tens. That is not enough, so break a hundred. Now there are 12 tens: 12 − 8 = 4.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 4 = 3.",
       "The answer is 349."
      ],
      "visual": {
@@ -2012,6 +2082,9 @@
        "=",
        349
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -2065,8 +2138,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "946 minus 367 equals what?",
+     "text": "What is 946 minus 367?",
      "speak": [
+      "What is",
       {
        "number": 946
       },
@@ -2074,7 +2148,7 @@
       {
        "number": 367
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2089,11 +2163,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 16
       },
-      "ones.",
+      "ones:",
       {
        "number": 16
       },
@@ -2112,11 +2187,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -2135,7 +2211,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -2155,9 +2231,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 16 minus 7 is 9.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 6 is 7.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 3 is 5.",
+      "There are not enough ones, so break a ten. Now there are 16 ones: 16 − 7 = 9.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 6 = 7.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 3 = 5.",
       "The answer is 579."
      ],
      "visual": {
@@ -2169,6 +2245,9 @@
        "=",
        579
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -2222,8 +2301,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "933 minus 284 equals what?",
+     "text": "What is 933 minus 284?",
      "speak": [
+      "What is",
       {
        "number": 933
       },
@@ -2231,7 +2311,7 @@
       {
        "number": 284
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2246,11 +2326,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "ones.",
+      "ones:",
       {
        "number": 13
       },
@@ -2269,11 +2350,12 @@
        "number": 2
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "tens.",
+      "tens:",
       {
        "number": 12
       },
@@ -2292,7 +2374,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -2312,9 +2394,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 13 minus 4 is 9.",
-      "Now there are 2 tens. There are not enough tens. Break a hundred into 10 tens. 12 minus 8 is 4.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 2 is 6.",
+      "There are not enough ones, so break a ten. Now there are 13 ones: 13 − 4 = 9.",
+      "Now there are 2 tens. That is not enough, so break a hundred. Now there are 12 tens: 12 − 8 = 4.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 2 = 6.",
       "The answer is 649."
      ],
      "visual": {
@@ -2326,6 +2408,9 @@
        "=",
        649
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -2379,8 +2464,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "741 minus 485 equals what?",
+     "text": "What is 741 minus 485?",
      "speak": [
+      "What is",
       {
        "number": 741
       },
@@ -2388,7 +2474,7 @@
       {
        "number": 485
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2403,11 +2489,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "ones.",
+      "ones:",
       {
        "number": 11
       },
@@ -2426,11 +2513,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -2449,7 +2537,7 @@
        "number": 6
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 6
       },
@@ -2469,9 +2557,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 8 is 5.",
-      "Now there are 6 hundreds. Take away the hundreds: 6 minus 4 is 2.",
+      "There are not enough ones, so break a ten. Now there are 11 ones: 11 − 5 = 6.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 8 = 5.",
+      "Now there are 6 hundreds. Subtract the hundreds: 6 − 4 = 2.",
       "The answer is 256."
      ],
      "visual": {
@@ -2483,6 +2571,9 @@
        "=",
        256
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -2536,8 +2627,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "422 minus 386 equals what?",
+     "text": "What is 422 minus 386?",
      "speak": [
+      "What is",
       {
        "number": 422
       },
@@ -2545,7 +2637,7 @@
       {
        "number": 386
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2560,11 +2652,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -2583,11 +2676,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -2606,7 +2700,7 @@
        "number": 3
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 3
       },
@@ -2626,9 +2720,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 6 is 6.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 8 is 3.",
-      "Now there are 3 hundreds. Take away the hundreds: 3 minus 3 is 0.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 6 = 6.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 8 = 3.",
+      "Now there are 3 hundreds. Subtract the hundreds: 3 − 3 = 0.",
       "The answer is 36."
      ],
      "visual": {
@@ -2640,6 +2734,9 @@
        "=",
        36
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -2693,8 +2790,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "826 minus 188 equals what?",
+     "text": "What is 826 minus 188?",
      "speak": [
+      "What is",
       {
        "number": 826
       },
@@ -2702,7 +2800,7 @@
       {
        "number": 188
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2717,11 +2815,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 16
       },
-      "ones.",
+      "ones:",
       {
        "number": 16
       },
@@ -2740,11 +2839,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -2763,7 +2863,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -2783,9 +2883,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 16 minus 8 is 8.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 8 is 3.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 1 is 6.",
+      "There are not enough ones, so break a ten. Now there are 16 ones: 16 − 8 = 8.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 8 = 3.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 1 = 6.",
       "The answer is 638."
      ],
      "visual": {
@@ -2797,6 +2897,9 @@
        "=",
        638
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -2850,8 +2953,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "911 minus 252 equals what?",
+     "text": "What is 911 minus 252?",
      "speak": [
+      "What is",
       {
        "number": 911
       },
@@ -2859,7 +2963,7 @@
       {
        "number": 252
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2874,11 +2978,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "ones.",
+      "ones:",
       {
        "number": 11
       },
@@ -2892,11 +2997,12 @@
       },
       ".",
       "Now there are no tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
        "number": 10
       },
-      "tens.",
+      "tens:",
       {
        "number": 10
       },
@@ -2915,7 +3021,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -2935,9 +3041,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 11 minus 2 is 9.",
-      "Now there are no tens. There are not enough tens. Break a hundred into 10 tens. 10 minus 5 is 5.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 2 is 6.",
+      "There are not enough ones, so break a ten. Now there are 11 ones: 11 − 2 = 9.",
+      "Now there are no tens. That is not enough, so break a hundred. Now there are 10 tens: 10 − 5 = 5.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 2 = 6.",
       "The answer is 659."
      ],
      "visual": {
@@ -2949,6 +3055,9 @@
        "=",
        659
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -3002,8 +3111,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "620 minus 459 equals what?",
+     "text": "What is 620 minus 459?",
      "speak": [
+      "What is",
       {
        "number": 620
       },
@@ -3011,7 +3121,7 @@
       {
        "number": 459
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3026,11 +3136,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
        "number": 10
       },
-      "ones.",
+      "ones:",
       {
        "number": 10
       },
@@ -3049,11 +3160,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -3072,7 +3184,7 @@
        "number": 5
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 5
       },
@@ -3092,9 +3204,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 10 minus 9 is 1.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 5 is 6.",
-      "Now there are 5 hundreds. Take away the hundreds: 5 minus 4 is 1.",
+      "There are not enough ones, so break a ten. Now there are 10 ones: 10 − 9 = 1.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 5 = 6.",
+      "Now there are 5 hundreds. Subtract the hundreds: 5 − 4 = 1.",
       "The answer is 161."
      ],
      "visual": {
@@ -3106,6 +3218,9 @@
        "=",
        161
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "choice",
@@ -3161,8 +3276,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "642 minus 154 equals what?",
+     "text": "What is 642 minus 154?",
      "speak": [
+      "What is",
       {
        "number": 642
       },
@@ -3170,7 +3286,7 @@
       {
        "number": 154
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3185,11 +3301,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -3208,11 +3325,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -3231,7 +3349,7 @@
        "number": 5
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 5
       },
@@ -3251,9 +3369,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 4 is 8.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 5 is 8.",
-      "Now there are 5 hundreds. Take away the hundreds: 5 minus 1 is 4.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 4 = 8.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 5 = 8.",
+      "Now there are 5 hundreds. Subtract the hundreds: 5 − 1 = 4.",
       "The answer is 488."
      ],
      "visual": {
@@ -3265,6 +3383,9 @@
        "=",
        488
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -3282,8 +3403,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "850 minus 262 equals what?",
+     "text": "What is 850 minus 262?",
      "speak": [
+      "What is",
       {
        "number": 850
       },
@@ -3291,7 +3413,7 @@
       {
        "number": 262
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3306,11 +3428,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
        "number": 10
       },
-      "ones.",
+      "ones:",
       {
        "number": 10
       },
@@ -3329,11 +3452,12 @@
        "number": 4
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 14
       },
-      "tens.",
+      "tens:",
       {
        "number": 14
       },
@@ -3352,7 +3476,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -3372,9 +3496,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 10 minus 2 is 8.",
-      "Now there are 4 tens. There are not enough tens. Break a hundred into 10 tens. 14 minus 6 is 8.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 2 is 5.",
+      "There are not enough ones, so break a ten. Now there are 10 ones: 10 − 2 = 8.",
+      "Now there are 4 tens. That is not enough, so break a hundred. Now there are 14 tens: 14 − 6 = 8.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 2 = 5.",
       "The answer is 588."
      ],
      "visual": {
@@ -3386,6 +3510,9 @@
        "=",
        588
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -3403,8 +3530,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "834 minus 485 equals what?",
+     "text": "What is 834 minus 485?",
      "speak": [
+      "What is",
       {
        "number": 834
       },
@@ -3412,7 +3540,7 @@
       {
        "number": 485
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3427,11 +3555,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 14
       },
-      "ones.",
+      "ones:",
       {
        "number": 14
       },
@@ -3450,11 +3579,12 @@
        "number": 2
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "tens.",
+      "tens:",
       {
        "number": 12
       },
@@ -3473,7 +3603,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -3493,9 +3623,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 14 minus 5 is 9.",
-      "Now there are 2 tens. There are not enough tens. Break a hundred into 10 tens. 12 minus 8 is 4.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 4 is 3.",
+      "There are not enough ones, so break a ten. Now there are 14 ones: 14 − 5 = 9.",
+      "Now there are 2 tens. That is not enough, so break a hundred. Now there are 12 tens: 12 − 8 = 4.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 4 = 3.",
       "The answer is 349."
      ],
      "visual": {
@@ -3507,6 +3637,9 @@
        "=",
        349
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -3524,8 +3657,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "946 minus 367 equals what?",
+     "text": "What is 946 minus 367?",
      "speak": [
+      "What is",
       {
        "number": 946
       },
@@ -3533,7 +3667,7 @@
       {
        "number": 367
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3548,11 +3682,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 16
       },
-      "ones.",
+      "ones:",
       {
        "number": 16
       },
@@ -3571,11 +3706,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -3594,7 +3730,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -3614,9 +3750,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 16 minus 7 is 9.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 6 is 7.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 3 is 5.",
+      "There are not enough ones, so break a ten. Now there are 16 ones: 16 − 7 = 9.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 6 = 7.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 3 = 5.",
       "The answer is 579."
      ],
      "visual": {
@@ -3628,6 +3764,9 @@
        "=",
        579
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -3645,8 +3784,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "933 minus 284 equals what?",
+     "text": "What is 933 minus 284?",
      "speak": [
+      "What is",
       {
        "number": 933
       },
@@ -3654,7 +3794,7 @@
       {
        "number": 284
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3669,11 +3809,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "ones.",
+      "ones:",
       {
        "number": 13
       },
@@ -3692,11 +3833,12 @@
        "number": 2
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "tens.",
+      "tens:",
       {
        "number": 12
       },
@@ -3715,7 +3857,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -3735,9 +3877,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 13 minus 4 is 9.",
-      "Now there are 2 tens. There are not enough tens. Break a hundred into 10 tens. 12 minus 8 is 4.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 2 is 6.",
+      "There are not enough ones, so break a ten. Now there are 13 ones: 13 − 4 = 9.",
+      "Now there are 2 tens. That is not enough, so break a hundred. Now there are 12 tens: 12 − 8 = 4.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 2 = 6.",
       "The answer is 649."
      ],
      "visual": {
@@ -3749,6 +3891,9 @@
        "=",
        649
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -3766,8 +3911,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "741 minus 485 equals what?",
+     "text": "What is 741 minus 485?",
      "speak": [
+      "What is",
       {
        "number": 741
       },
@@ -3775,7 +3921,7 @@
       {
        "number": 485
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3790,11 +3936,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "ones.",
+      "ones:",
       {
        "number": 11
       },
@@ -3813,11 +3960,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -3836,7 +3984,7 @@
        "number": 6
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 6
       },
@@ -3856,9 +4004,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 8 is 5.",
-      "Now there are 6 hundreds. Take away the hundreds: 6 minus 4 is 2.",
+      "There are not enough ones, so break a ten. Now there are 11 ones: 11 − 5 = 6.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 8 = 5.",
+      "Now there are 6 hundreds. Subtract the hundreds: 6 − 4 = 2.",
       "The answer is 256."
      ],
      "visual": {
@@ -3870,6 +4018,9 @@
        "=",
        256
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -3887,8 +4038,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "422 minus 386 equals what?",
+     "text": "What is 422 minus 386?",
      "speak": [
+      "What is",
       {
        "number": 422
       },
@@ -3896,7 +4048,7 @@
       {
        "number": 386
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3911,11 +4063,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -3934,11 +4087,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -3957,7 +4111,7 @@
        "number": 3
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 3
       },
@@ -3977,9 +4131,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 6 is 6.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 8 is 3.",
-      "Now there are 3 hundreds. Take away the hundreds: 3 minus 3 is 0.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 6 = 6.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 8 = 3.",
+      "Now there are 3 hundreds. Subtract the hundreds: 3 − 3 = 0.",
       "The answer is 36."
      ],
      "visual": {
@@ -3991,6 +4145,9 @@
        "=",
        36
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -4008,8 +4165,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "826 minus 188 equals what?",
+     "text": "What is 826 minus 188?",
      "speak": [
+      "What is",
       {
        "number": 826
       },
@@ -4017,7 +4175,7 @@
       {
        "number": 188
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -4032,11 +4190,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 16
       },
-      "ones.",
+      "ones:",
       {
        "number": 16
       },
@@ -4055,11 +4214,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -4078,7 +4238,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -4098,9 +4258,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 16 minus 8 is 8.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 8 is 3.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 1 is 6.",
+      "There are not enough ones, so break a ten. Now there are 16 ones: 16 − 8 = 8.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 8 = 3.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 1 = 6.",
       "The answer is 638."
      ],
      "visual": {
@@ -4112,6 +4272,9 @@
        "=",
        638
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -4129,8 +4292,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "911 minus 252 equals what?",
+     "text": "What is 911 minus 252?",
      "speak": [
+      "What is",
       {
        "number": 911
       },
@@ -4138,7 +4302,7 @@
       {
        "number": 252
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -4153,11 +4317,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "ones.",
+      "ones:",
       {
        "number": 11
       },
@@ -4171,11 +4336,12 @@
       },
       ".",
       "Now there are no tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
        "number": 10
       },
-      "tens.",
+      "tens:",
       {
        "number": 10
       },
@@ -4194,7 +4360,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -4214,9 +4380,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 11 minus 2 is 9.",
-      "Now there are no tens. There are not enough tens. Break a hundred into 10 tens. 10 minus 5 is 5.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 2 is 6.",
+      "There are not enough ones, so break a ten. Now there are 11 ones: 11 − 2 = 9.",
+      "Now there are no tens. That is not enough, so break a hundred. Now there are 10 tens: 10 − 5 = 5.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 2 = 6.",
       "The answer is 659."
      ],
      "visual": {
@@ -4228,6 +4394,9 @@
        "=",
        659
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -4245,8 +4414,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "620 minus 459 equals what?",
+     "text": "What is 620 minus 459?",
      "speak": [
+      "What is",
       {
        "number": 620
       },
@@ -4254,7 +4424,7 @@
       {
        "number": 459
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -4269,11 +4439,12 @@
     },
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
        "number": 10
       },
-      "ones.",
+      "ones:",
       {
        "number": 10
       },
@@ -4292,11 +4463,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -4315,7 +4487,7 @@
        "number": 5
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 5
       },
@@ -4335,9 +4507,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 10 minus 9 is 1.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 5 is 6.",
-      "Now there are 5 hundreds. Take away the hundreds: 5 minus 4 is 1.",
+      "There are not enough ones, so break a ten. Now there are 10 ones: 10 − 9 = 1.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 5 = 6.",
+      "Now there are 5 hundreds. Subtract the hundreds: 5 − 4 = 1.",
       "The answer is 161."
      ],
      "visual": {
@@ -4349,6 +4521,9 @@
        "=",
        161
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "type": "numberPad",
@@ -4392,11 +4567,12 @@
     "answer": 488,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -4415,11 +4591,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -4438,7 +4615,7 @@
        "number": 5
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 5
       },
@@ -4458,9 +4635,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 4 is 8.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 5 is 8.",
-      "Now there are 5 hundreds. Take away the hundreds: 5 minus 1 is 4.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 4 = 8.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 5 = 8.",
+      "Now there are 5 hundreds. Subtract the hundreds: 5 − 1 = 4.",
       "The answer is 488."
      ],
      "visual": {
@@ -4472,6 +4649,9 @@
        "=",
        488
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -4506,11 +4686,12 @@
     "answer": 588,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
        "number": 10
       },
-      "ones.",
+      "ones:",
       {
        "number": 10
       },
@@ -4529,11 +4710,12 @@
        "number": 4
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 14
       },
-      "tens.",
+      "tens:",
       {
        "number": 14
       },
@@ -4552,7 +4734,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -4572,9 +4754,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 10 minus 2 is 8.",
-      "Now there are 4 tens. There are not enough tens. Break a hundred into 10 tens. 14 minus 6 is 8.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 2 is 5.",
+      "There are not enough ones, so break a ten. Now there are 10 ones: 10 − 2 = 8.",
+      "Now there are 4 tens. That is not enough, so break a hundred. Now there are 14 tens: 14 − 6 = 8.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 2 = 5.",
       "The answer is 588."
      ],
      "visual": {
@@ -4586,6 +4768,9 @@
        "=",
        588
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -4620,11 +4805,12 @@
     "answer": 349,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 14
       },
-      "ones.",
+      "ones:",
       {
        "number": 14
       },
@@ -4643,11 +4829,12 @@
        "number": 2
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "tens.",
+      "tens:",
       {
        "number": 12
       },
@@ -4666,7 +4853,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -4686,9 +4873,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 14 minus 5 is 9.",
-      "Now there are 2 tens. There are not enough tens. Break a hundred into 10 tens. 12 minus 8 is 4.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 4 is 3.",
+      "There are not enough ones, so break a ten. Now there are 14 ones: 14 − 5 = 9.",
+      "Now there are 2 tens. That is not enough, so break a hundred. Now there are 12 tens: 12 − 8 = 4.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 4 = 3.",
       "The answer is 349."
      ],
      "visual": {
@@ -4700,6 +4887,9 @@
        "=",
        349
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -4734,11 +4924,12 @@
     "answer": 579,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 16
       },
-      "ones.",
+      "ones:",
       {
        "number": 16
       },
@@ -4757,11 +4948,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -4780,7 +4972,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -4800,9 +4992,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 16 minus 7 is 9.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 6 is 7.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 3 is 5.",
+      "There are not enough ones, so break a ten. Now there are 16 ones: 16 − 7 = 9.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 6 = 7.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 3 = 5.",
       "The answer is 579."
      ],
      "visual": {
@@ -4814,6 +5006,9 @@
        "=",
        579
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -4848,11 +5043,12 @@
     "answer": 649,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "ones.",
+      "ones:",
       {
        "number": 13
       },
@@ -4871,11 +5067,12 @@
        "number": 2
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "tens.",
+      "tens:",
       {
        "number": 12
       },
@@ -4894,7 +5091,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -4914,9 +5111,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 13 minus 4 is 9.",
-      "Now there are 2 tens. There are not enough tens. Break a hundred into 10 tens. 12 minus 8 is 4.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 2 is 6.",
+      "There are not enough ones, so break a ten. Now there are 13 ones: 13 − 4 = 9.",
+      "Now there are 2 tens. That is not enough, so break a hundred. Now there are 12 tens: 12 − 8 = 4.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 2 = 6.",
       "The answer is 649."
      ],
      "visual": {
@@ -4928,6 +5125,9 @@
        "=",
        649
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -4962,11 +5162,12 @@
     "answer": 256,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "ones.",
+      "ones:",
       {
        "number": 11
       },
@@ -4985,11 +5186,12 @@
        "number": 3
       },
       "tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 13
       },
-      "tens.",
+      "tens:",
       {
        "number": 13
       },
@@ -5008,7 +5210,7 @@
        "number": 6
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 6
       },
@@ -5028,9 +5230,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6.",
-      "Now there are 3 tens. There are not enough tens. Break a hundred into 10 tens. 13 minus 8 is 5.",
-      "Now there are 6 hundreds. Take away the hundreds: 6 minus 4 is 2.",
+      "There are not enough ones, so break a ten. Now there are 11 ones: 11 − 5 = 6.",
+      "Now there are 3 tens. That is not enough, so break a hundred. Now there are 13 tens: 13 − 8 = 5.",
+      "Now there are 6 hundreds. Subtract the hundreds: 6 − 4 = 2.",
       "The answer is 256."
      ],
      "visual": {
@@ -5042,6 +5244,9 @@
        "=",
        256
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -5076,11 +5281,12 @@
     "answer": 36,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 12
       },
-      "ones.",
+      "ones:",
       {
        "number": 12
       },
@@ -5099,11 +5305,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -5122,7 +5329,7 @@
        "number": 3
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 3
       },
@@ -5142,9 +5349,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 12 minus 6 is 6.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 8 is 3.",
-      "Now there are 3 hundreds. Take away the hundreds: 3 minus 3 is 0.",
+      "There are not enough ones, so break a ten. Now there are 12 ones: 12 − 6 = 6.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 8 = 3.",
+      "Now there are 3 hundreds. Subtract the hundreds: 3 − 3 = 0.",
       "The answer is 36."
      ],
      "visual": {
@@ -5156,6 +5363,9 @@
        "=",
        36
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -5190,11 +5400,12 @@
     "answer": 638,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 16
       },
-      "ones.",
+      "ones:",
       {
        "number": 16
       },
@@ -5213,11 +5424,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -5236,7 +5448,7 @@
        "number": 7
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 7
       },
@@ -5256,9 +5468,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 16 minus 8 is 8.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 8 is 3.",
-      "Now there are 7 hundreds. Take away the hundreds: 7 minus 1 is 6.",
+      "There are not enough ones, so break a ten. Now there are 16 ones: 16 − 8 = 8.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 8 = 3.",
+      "Now there are 7 hundreds. Subtract the hundreds: 7 − 1 = 6.",
       "The answer is 638."
      ],
      "visual": {
@@ -5270,6 +5482,9 @@
        "=",
        638
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -5304,11 +5519,12 @@
     "answer": 659,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "ones.",
+      "ones:",
       {
        "number": 11
       },
@@ -5322,11 +5538,12 @@
       },
       ".",
       "Now there are no tens.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
        "number": 10
       },
-      "tens.",
+      "tens:",
       {
        "number": 10
       },
@@ -5345,7 +5562,7 @@
        "number": 8
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 8
       },
@@ -5365,9 +5582,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 11 minus 2 is 9.",
-      "Now there are no tens. There are not enough tens. Break a hundred into 10 tens. 10 minus 5 is 5.",
-      "Now there are 8 hundreds. Take away the hundreds: 8 minus 2 is 6.",
+      "There are not enough ones, so break a ten. Now there are 11 ones: 11 − 2 = 9.",
+      "Now there are no tens. That is not enough, so break a hundred. Now there are 10 tens: 10 − 5 = 5.",
+      "Now there are 8 hundreds. Subtract the hundreds: 8 − 2 = 6.",
       "The answer is 659."
      ],
      "visual": {
@@ -5379,6 +5596,9 @@
        "=",
        659
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",
@@ -5413,11 +5633,12 @@
     "answer": 161,
     "explanation": {
      "speak": [
-      "There are not enough ones. Break a ten into",
+      "There are not enough ones, so break a ten.",
+      "Now there are",
       {
        "number": 10
       },
-      "ones.",
+      "ones:",
       {
        "number": 10
       },
@@ -5436,11 +5657,12 @@
        "number": 1
       },
       "ten.",
-      "There are not enough tens. Break a hundred into",
+      "That is not enough, so break a hundred.",
+      "Now there are",
       {
-       "number": 10
+       "number": 11
       },
-      "tens.",
+      "tens:",
       {
        "number": 11
       },
@@ -5459,7 +5681,7 @@
        "number": 5
       },
       "hundreds.",
-      "Take away the hundreds:",
+      "Subtract the hundreds:",
       {
        "number": 5
       },
@@ -5479,9 +5701,9 @@
       "."
      ],
      "steps": [
-      "There are not enough ones. Break a ten into 10 ones. 10 minus 9 is 1.",
-      "Now there is 1 ten. There are not enough tens. Break a hundred into 10 tens. 11 minus 5 is 6.",
-      "Now there are 5 hundreds. Take away the hundreds: 5 minus 4 is 1.",
+      "There are not enough ones, so break a ten. Now there are 10 ones: 10 − 9 = 1.",
+      "Now there is 1 ten. That is not enough, so break a hundred. Now there are 11 tens: 11 − 5 = 6.",
+      "Now there are 5 hundreds. Subtract the hundreds: 5 − 4 = 1.",
       "The answer is 161."
      ],
      "visual": {
@@ -5493,6 +5715,9 @@
        "=",
        161
       ]
+     },
+     "hint": {
+      "text": "Start with the ones. If there are not enough, break a ten."
      }
     },
     "skillId": "M-3-B2",

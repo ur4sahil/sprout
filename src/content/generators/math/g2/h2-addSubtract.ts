@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import type { Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
-import { COLLECTED, STORY_NAMES } from '../../../data/h2-stories';
+import { COLLECTED, PRONOUN, STORY_NAMES } from '../../../data/h2-stories';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
@@ -38,14 +38,23 @@ function acrossZeros(level: Level, rng: Rng): QuestionDraft {
   }
   const answer = a - b;
   const [h, o] = [digit(a, 2), digit(a, 0)];
+  const [bh, bt, bo] = [digit(b, 2), digit(b, 1), digit(b, 0)];
+  const hundreds = (k: number): string => (k === 1 ? 'hundred' : 'hundreds');
+  // Why and how to break, then how many of each there are now, then each place in turn. A place with nothing
+  // to subtract just stays: no "9 − 0".
+  const rest =
+    bt === 0 && bh === 0
+      ? line('The', 9, 'tens and', h - 1, `${hundreds(h - 1)} stay.`)
+      : bh === 0
+        ? line('Subtract the tens:', 9, '−', bt, '=', 9 - bt, '. The', h - 1, `${hundreds(h - 1)} stay.`)
+        : line('Subtract the tens:', 9, '−', bt, '=', 9 - bt, '. Subtract the hundreds:', h - 1, '−', bh, '=', h - 1 - bh, '.');
   const lines = [
-    line('There are not enough ones, and there are no tens to break.'),
-    line('Break', 1, 'hundred into', 10, 'tens. Then break', 1, 'ten into', 10, 'ones.'),
-    line('Ones:', o + 10, '−', digit(b, 0), '=', o + 10 - digit(b, 0), '. Tens:', 9, '−', digit(b, 1), '=', 9 - digit(b, 1), '. Hundreds:', h - 1, '−', digit(b, 2), '=', h - 1 - digit(b, 2), '.'),
+    line('There are not enough ones and no tens. Break a hundred into', 10, 'tens, then a ten into', 10, 'ones.'),
+    line('Now there are', h - 1, `${hundreds(h - 1)},`, 9, 'tens and', o + 10, 'ones. Subtract the ones:', o + 10, '−', bo, '=', o + 10 - bo, '.'),
+    rest,
     line('The answer is', answer, '.'),
   ];
-  // The minus signs are said as "minus".
-  const explanation = together(lines.map((each) => ({ text: each.text, speak: each.speak.map((part) => (part === '−' ? 'minus' : part === '=' ? 'is' : part)) })), equation(a, '-', b, '=', answer));
+  const explanation = together(lines, equation(a, '-', b, '=', answer), { text: 'There are no tens to break, so break a hundred first.' });
   const base = { mode: 'look' as const, prompt: minusPrompt(a, b), stimulus: equation(a, '-', b, '=', 'blank'), explanation };
   if (level === 3) return { ...base, type: 'numberPad', facts: { a, b }, answer, maxDigits: 3 };
   // The slips: the hundred not made one less, or the tens left at 10.
@@ -109,8 +118,9 @@ function missingTo100(level: Level, rng: Rng): QuestionDraft {
     }
   }
   lines.push(jumps.length > 1 ? line('The jumps make', ...jumps.flatMap((jump, i) => (i === 0 ? [jump] : ['+', jump])), '=', answer, '.') : line('That is', answer, '.'));
-  const said = lines.map((each) => ({ text: each.text, speak: each.speak.map((part) => (part === '+' ? 'plus' : part === '=' ? 'is' : part)) }));
-  const explanation = together(said, equation(...(blank === 'a' ? [answer, '+', b] : [a, '+', answer]), '=', total));
+  // The hint is the first move of the same walk, with no number worked out (and no "ten": the answer can be 10).
+  const hint = next >= total ? 'Count on from the number you know.' : next === known ? 'Count up by tens from the number you know.' : 'Count up from the number you know. First jump to a number that ends in 0.';
+  const explanation = together(lines, equation(...(blank === 'a' ? [answer, '+', b] : [a, '+', answer]), '=', total), { text: hint });
   const stimulus = equation(...(blank === 'a' ? ['blank', '+', b] : [a, '+', 'blank']), '=', total);
   const base = { mode: 'look' as const, prompt: { text, speak }, stimulus, explanation };
   const facts = { a, b, total, blank };
@@ -136,27 +146,57 @@ export const missingTo100Generator: SkillGenerator = skill({
 
 type Form = 'gotSome' | 'hadSome' | 'gaveSome' | 'hadSomeGave';
 
+// The story names its one person once, then says "he" or "she". The steps say what the story tells (the start,
+// the end or the change), then the sum that finds the part not told, and why it is that sum.
 function storyOf(form: Form, name: string, thing: string, a: number, b: number): { text: string; speak: Say; answer: number; why: Explanation } {
   const total = a + b;
-  const says = (pieces: (string | number)[]): { text: string; speak: Say } => line(...pieces);
-  const pick: Record<Form, { story: (string | number)[]; ask: string; answer: number; why: (string | number)[]; eq: (number | string)[] }> = {
+  const he = PRONOUN[name] ?? name;
+  const He = `${he.charAt(0).toUpperCase()}${he.slice(1)}`;
+  const pick: Record<Form, { story: (string | number)[]; ask: string; answer: number; why: (string | number)[][]; hint: string; eq: (number | string)[] }> = {
     // a + ? = total
-    gotSome: { story: [`${name} had`, a, `${thing}. ${name} got some more. Now ${name} has`, total, '.'], ask: `How many more did ${name} get?`, answer: b, why: [total, '−', a, '=', b, `. ${name} got`, b, 'more.'], eq: [a, '+', 'blank', '=', total] },
+    gotSome: {
+      story: [`${name} had`, a, `${thing}. ${He} got some more. Now ${he} has`, total, '.'],
+      ask: `How many more did ${he} get?`,
+      answer: b,
+      why: [[`${name} went from`, a, 'to', total, '.'], ['To find the change, subtract:', total, '−', a, '=', b, '.'], [`${name} got`, b, 'more.']],
+      hint: 'The story tells the start and the end. Find the change between them.',
+      eq: [a, '+', 'blank', '=', total],
+    },
     // ? + b = total
-    hadSome: { story: [`${name} had some ${thing}. ${name} got`, b, `more. Now ${name} has`, total, '.'], ask: `How many did ${name} have at first?`, answer: a, why: [total, '−', b, '=', a, `. ${name} had`, a, 'at first.'], eq: ['blank', '+', b, '=', total] },
+    hadSome: {
+      story: [`${name} had some ${thing}. ${He} got`, b, `more. Now ${he} has`, total, '.'],
+      ask: `How many did ${he} have at first?`,
+      answer: a,
+      why: [[`${name} got`, b, 'more and ended with', total, '.'], [`Take away the`, b, `${he} got:`, total, '−', b, '=', a, '.'], [`${name} had`, a, 'at first.']],
+      hint: 'Start from the end. Take away what was added.',
+      eq: ['blank', '+', b, '=', total],
+    },
     // total − ? = a, which is a + ? = total
-    gaveSome: { story: [`${name} had`, total, `${thing}. ${name} gave some away. Now ${name} has`, a, '.'], ask: `How many did ${name} give away?`, answer: b, why: [total, '−', a, '=', b, `. ${name} gave away`, b, '.'], eq: [total, '-', 'blank', '=', a] },
+    gaveSome: {
+      story: [`${name} had`, total, `${thing}. ${He} gave some away. Now ${he} has`, a, '.'],
+      ask: `How many did ${he} give away?`,
+      answer: b,
+      why: [[`${name} went from`, total, 'down to', a, '.'], ['To find the change, subtract:', total, '−', a, '=', b, '.'], [`${name} gave away`, b, '.']],
+      hint: 'The story tells the start and the end. Find the change between them.',
+      eq: [total, '-', 'blank', '=', a],
+    },
     // ? − b = a, which is a + b = ?
-    hadSomeGave: { story: [`${name} had some ${thing}. ${name} gave`, b, `away. Now ${name} has`, a, '.'], ask: `How many did ${name} have at first?`, answer: total, why: [a, '+', b, '=', total, `. ${name} had`, total, 'at first.'], eq: ['blank', '-', b, '=', a] },
+    hadSomeGave: {
+      story: [`${name} had some ${thing}. ${He} gave`, b, `away. Now ${he} has`, a, '.'],
+      ask: `How many did ${he} have at first?`,
+      answer: total,
+      why: [[`${name} gave away`, b, 'and has', a, 'left.'], ['Put back the', b, `${he} gave away:`, a, '+', b, '=', total, '.'], [`${name} had`, total, 'at first.']],
+      hint: 'Start from the end. Put back what was given away.',
+      eq: ['blank', '-', b, '=', a],
+    },
   };
   const chosen = pick[form];
-  const told = says([...chosen.story, chosen.ask]);
-  const reason = says(chosen.why);
+  const told = line(...chosen.story, chosen.ask);
   return {
     text: told.text,
     speak: told.speak,
     answer: chosen.answer,
-    why: { speak: reason.speak.map((part) => (part === '−' ? 'minus' : part === '+' ? 'plus' : part === '=' ? 'is' : part)), steps: [reason.text], visual: equation(...chosen.eq.map((part) => (part === 'blank' ? chosen.answer : part))) },
+    why: together(chosen.why.map((pieces) => line(...pieces)), equation(...chosen.eq.map((part) => (part === 'blank' ? chosen.answer : part))), { text: chosen.hint }),
   };
 }
 
@@ -194,6 +234,7 @@ export const storyProblemsGenerator: SkillGenerator = skill({
 // Oracles: h2Split at level 1, missing after.
 
 const splitText = (parts: number[]): string => parts.join(' + ');
+const SPLIT_HINT = { text: 'Split each number into tens and ones.' };
 const splitVisual = (parts: number[]): Visual => ({ kind: 'text', value: splitText(parts), size: 'l', speak: parts.flatMap((part, i): Say => (i === 0 ? [{ number: part }] : ['plus', { number: part }])) });
 
 function placeSplit(level: Level, rng: Rng): QuestionDraft {
@@ -202,12 +243,13 @@ function placeSplit(level: Level, rng: Rng): QuestionDraft {
   const b = big ? rng.int(1, 4) * 100 + rng.int(1, 9) * 10 + rng.int(1, 9) : rng.int(1, 3) * 10 + rng.int(1, 9);
   const tens = a - (a % 10) + b - (b % 10);
   const ones = (a % 10) + (b % 10);
-  const prompt = { text: `${a} + ${b} = ${tens} + what?`, speak: [{ number: a }, 'plus', { number: b }, 'equals', { number: tens }, 'plus what?'] as Say };
+  // Asked in words, as every sum is: "41 plus 29 is the same as 60 plus what?"
+  const prompt = { text: `${a} plus ${b} is the same as ${tens} plus what?`, speak: [{ number: a }, 'plus', { number: b }, 'is the same as', { number: tens }, 'plus what?'] as Say };
   const lines = big
-    ? [line('Add the hundreds and the tens:', a - (a % 10), 'plus', b - (b % 10), 'is', tens, '.'), line('Add the ones:', a % 10, 'plus', b % 10, 'is', ones, '.')]
-    : [line('Add the tens:', a - (a % 10), 'plus', b - (b % 10), 'is', tens, '.'), line('Add the ones:', a % 10, 'plus', b % 10, 'is', ones, '.')];
+    ? [line('Add the hundreds and the tens:', a - (a % 10), '+', b - (b % 10), '=', tens, '.'), line('Add the ones:', a % 10, '+', b % 10, '=', ones, '.')]
+    : [line('Add the tens:', a - (a % 10), '+', b - (b % 10), '=', tens, '.'), line('Add the ones:', a % 10, '+', b % 10, '=', ones, '.')];
   lines.push(line('So the missing number is', ones, '.'));
-  const explanation = together(lines, equation(a, '+', b, '=', tens, '+', ones));
+  const explanation = together(lines, equation(a, '+', b, '=', tens, '+', ones), SPLIT_HINT);
   if (level === 1) {
     const [ta, oa, tb, ob] = [a - (a % 10), a % 10, b - (b % 10), b % 10];
     const right = [ta, tb, oa, ob];
@@ -226,7 +268,7 @@ function placeSplit(level: Level, rng: Rng): QuestionDraft {
     }).slice(0, 2);
     for (let k = 2; wrong.length < 2; k += 1) if (!sums.has(a + b + 10 * k)) wrong.push([ta, tb + 10 * k, oa, ob]);
     const offered = rng.shuffle([right, ...wrong]);
-    const text = `Which is the same as ${a} + ${b}?`;
+    const text = `Which is the same as ${a} plus ${b}?`;
     return {
       type: 'choice',
       mode: 'look',
@@ -234,7 +276,7 @@ function placeSplit(level: Level, rng: Rng): QuestionDraft {
       prompt: { text, speak: ['Which is the same as', { number: a }, 'plus', { number: b }, '?'] },
       options: offered.map(splitVisual),
       answerIndex: offered.indexOf(right),
-      explanation: { speak: ['Split each number into tens and ones.', { number: a }, 'is', { number: ta }, 'plus', { number: oa }, '.', { number: b }, 'is', { number: tb }, 'plus', { number: ob }, '.'], steps: ['Split each number into tens and ones.', `${a} = ${ta} + ${oa}. ${b} = ${tb} + ${ob}.`, `So ${a} + ${b} = ${splitText(right)}.`], visual: splitVisual(right) },
+      explanation: { speak: ['Split each number into tens and ones.', { number: a }, 'is', { number: ta }, 'plus', { number: oa }, '.', { number: b }, 'is', { number: tb }, 'plus', { number: ob }, '.'], steps: ['Split each number into tens and ones.', `${a} = ${ta} + ${oa}. ${b} = ${tb} + ${ob}.`, `So ${a} + ${b} = ${splitText(right)}.`], visual: splitVisual(right), hint: SPLIT_HINT },
     };
   }
   const facts = { a: tens, b: ones, total: a + b, blank: 'b', oracle: 'missing', x: a, y: b };
@@ -258,14 +300,17 @@ export const placeSplitGenerator: SkillGenerator = skill({
 // Levels: is a sum to 20 even or odd / numbers to 50 / which sum is odd or even. Oracle: h2Even.
 
 const parity = (n: number): 'even' | 'odd' => (n % 2 === 0 ? 'even' : 'odd');
-const sayWord = (value: string): Visual => ({ kind: 'text', value, size: 'l', speak: [value] });
+// The choices are written "Even" and "Odd", as in A.5. The plain value stays lower case for the answer check.
+const sayWord = (value: string): Visual => ({ kind: 'text', value: `${value.charAt(0).toUpperCase()}${value.slice(1)}`, size: 'l', speak: [value] });
 
+// The rule is said in the sum's own order: 7 + 2 is "odd plus even is odd".
 function sumRule(x: number, y: number): Explanation {
-  const rule = parity(x) === parity(y) ? `${parity(x)} plus ${parity(y)} is even` : 'even plus odd is odd';
+  const rule = `${parity(x).charAt(0).toUpperCase()}${parity(x).slice(1)} plus ${parity(y)} is ${parity(x + y)}.`;
   return {
-    speak: [{ number: x }, `is ${parity(x)} and`, { number: y }, `is ${parity(y)}. ${rule.charAt(0).toUpperCase()}${rule.slice(1)}.`, { number: x }, 'plus', { number: y }, 'is', { number: x + y }, '.'],
-    steps: [`${x} is ${parity(x)}. ${y} is ${parity(y)}.`, `${rule.charAt(0).toUpperCase()}${rule.slice(1)}.`, `${x} + ${y} = ${x + y}, which is ${parity(x + y)}.`],
+    speak: [{ number: x }, `is ${parity(x)} and`, { number: y }, `is ${parity(y)}. ${rule}`, { number: x }, 'plus', { number: y }, 'is', { number: x + y }, '.'],
+    steps: [`${x} is ${parity(x)}. ${y} is ${parity(y)}.`, rule, `${x} + ${y} = ${x + y}, which is ${parity(x + y)}.`],
     visual: equation(x, '+', y, '=', x + y),
+    hint: { text: 'Look at the last digit of each number.' },
   };
 }
 
@@ -293,7 +338,7 @@ function evenOddSums(level: Level, rng: Rng): QuestionDraft {
   }
   const top = level === 1 ? 10 : 50;
   const [a, b] = [rng.int(1, top), rng.int(1, top)];
-  const prompt = { text: `Is ${a} + ${b} even or odd?`, speak: ['Is', { number: a }, 'plus', { number: b }, 'even or odd?'] as Say };
+  const prompt = { text: `Is ${a} plus ${b} even or odd?`, speak: ['Is', { number: a }, 'plus', { number: b }, 'even or odd?'] as Say };
   return { type: 'choice', mode: 'look', fixedOrder: true, facts: { ask: 'sumParity', a, b, options: ['even', 'odd'] }, prompt, stimulus: equation(a, '+', b), options: ['even', 'odd'].map(sayWord), answerIndex: parity(a + b) === 'even' ? 0 : 1, explanation: sumRule(a, b) };
 }
 

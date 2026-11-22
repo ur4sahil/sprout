@@ -115,7 +115,7 @@ describe('B.5 to B.7: within 1,000', () => {
         const answer = question.facts.oracle === 'add' ? a + b : a - b;
         expect(answer).toBeGreaterThanOrEqual(0);
         expect(answer).toBeLessThanOrEqual(999);
-        expect(question.prompt.text).toBe(`${a} ${question.facts.oracle === 'add' ? 'plus' : 'minus'} ${b} equals what?`);
+        expect(question.prompt.text).toBe(`What is ${a} ${question.facts.oracle === 'add' ? 'plus' : 'minus'} ${b}?`);
         // Level 1 stays in its hundred. Level 3 always leaves it.
         if (by === 10) expect(Math.floor(a / 100) === Math.floor(answer / 100)).toBe(level === 1);
       }
@@ -125,23 +125,23 @@ describe('B.5 to B.7: within 1,000', () => {
 });
 
 describe('the explanations, place by place', () => {
-  it('adding: a place with nothing added is skipped, and a new ten is named', () => {
-    expect(addExplanation(21, 4).steps).toEqual(['Add the ones: 1 plus 4 is 5.', 'The tens stay the same.', 'The answer is 25.']);
-    expect(addExplanation(38, 24).steps).toEqual(['Add the ones: 8 plus 4 is 12. That is 1 ten and 2 ones.', 'Add the tens: 3 plus 2 plus 1 more is 6.', 'The answer is 62.']);
-    expect(addExplanation(52, 9).steps).toEqual(['Add the ones: 2 plus 9 is 11. That is 1 ten and 1 one.', 'The new ten makes 6 tens.', 'The answer is 61.']);
-    expect(addExplanation(431, 200).steps).toEqual(['Add the hundreds: 4 plus 2 is 6.', 'The ones and tens stay the same.', 'The answer is 631.']);
-    expect(addExplanation(295, 10).steps).toEqual(['Add the tens: 9 plus 1 is 10. That is 1 hundred and 0 tens.', 'The new hundred makes 3 hundreds.', 'The ones stay the same.', 'The answer is 305.']);
+  it('adding: place by place from the ones, the one place that changes said first, a new ten added in the next place', () => {
+    expect(addExplanation(21, 4).steps).toEqual(['Only the ones change.', 'Add the ones: 1 + 4 = 5.', 'The answer is 25.']);
+    expect(addExplanation(38, 24).steps).toEqual(['Add the ones: 8 + 4 = 12. That is 1 ten and 2 ones.', 'Add the tens and the new ten: 3 + 2 + 1 = 6.', 'The answer is 62.']);
+    expect(addExplanation(52, 9).steps).toEqual(['Add the ones: 2 + 9 = 11. That is 1 ten and 1 more.', 'Add the new ten: 5 + 1 = 6.', 'The answer is 61.']);
+    expect(addExplanation(431, 200).steps).toEqual(['Only the hundreds change.', 'Add the hundreds: 4 + 2 = 6.', 'The answer is 631.']);
+    expect(addExplanation(295, 10).steps).toEqual(['The ones stay the same.', 'Add the tens: 9 + 1 = 10. That is 1 hundred and no tens.', 'Add the new hundred: 2 + 1 = 3.', 'The answer is 305.']);
   });
 
-  it('taking away: a ten or a hundred is broken up when there are not enough', () => {
-    expect(subtractExplanation(68, 25).steps).toEqual(['Take away the ones: 8 minus 5 is 3.', 'Take away the tens: 6 minus 2 is 4.', 'The answer is 43.']);
-    expect(subtractExplanation(53, 26).steps).toEqual(['There are not enough ones. Break a ten into 10 ones. 13 minus 6 is 7.', 'Now there are 4 tens. Take away the tens: 4 minus 2 is 2.', 'The answer is 27.']);
-    expect(subtractExplanation(21, 5).steps).toEqual(['There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6.', 'Now there is 1 ten.', 'The answer is 16.']);
-    expect(subtractExplanation(105, 10).steps).toEqual(['There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.', 'Now there are no hundreds.', 'The ones stay the same.', 'The answer is 95.']);
+  it('subtracting: a ten or a hundred is broken up when there are not enough, and the step says how many there are now', () => {
+    expect(subtractExplanation(68, 25).steps).toEqual(['Subtract the ones: 8 − 5 = 3.', 'Subtract the tens: 6 − 2 = 4.', 'The answer is 43.']);
+    expect(subtractExplanation(53, 26).steps).toEqual(['There are not enough ones, so break a ten. Now there are 13 ones: 13 − 6 = 7.', 'Now there are 4 tens. Subtract the tens: 4 − 2 = 2.', 'The answer is 27.']);
+    expect(subtractExplanation(21, 5).steps).toEqual(['There are not enough ones, so break a ten. Now there are 11 ones: 11 − 5 = 6.', 'Now there is 1 ten.', 'The answer is 16.']);
+    expect(subtractExplanation(105, 10).steps).toEqual(['The ones stay the same.', 'There are not enough tens, so break a hundred. Now there are 10 tens: 10 − 1 = 9.', 'Now there are no hundreds.', 'The answer is 95.']);
   });
 
   it('the spoken words say each number as a number', () => {
-    expect(addExplanation(21, 4).speak).toEqual(['Add the ones:', { number: 1 }, 'plus', { number: 4 }, 'is', { number: 5 }, '.', 'The tens stay the same.', 'The answer is', { number: 25 }, '.']);
+    expect(addExplanation(21, 4).speak).toEqual(['Only the ones change.', 'Add the ones:', { number: 1 }, 'plus', { number: 4 }, 'is', { number: 5 }, '.', 'The answer is', { number: 25 }, '.']);
   });
 
   it('never runs past four steps, for any pair the skills can make', () => {
@@ -220,7 +220,7 @@ describe('B.8 Arrays, B.9 and B.10 stories', () => {
         expect(answer).toBeGreaterThanOrEqual(1);
         expect(answer).toBeLessThanOrEqual(99);
         expect(question.prompt.text).toMatch(op2 === '+' ? /Then \w+ gets \d+ more\./ : /Then \w+ gives away \d+\./);
-        expect(question.explanation.steps).toEqual([`First step: ${a} plus ${b} is ${a + b}.`, `Second step: ${a + b} ${op2 === '+' ? 'plus' : 'minus'} ${c} is ${answer}.`]);
+        expect(question.explanation.steps).toEqual([`First step: ${a} + ${b} = ${a + b}.`, `Second step: ${a + b} ${op2 === '+' ? '+' : '−'} ${c} = ${answer}.`]);
       }
     }
   });

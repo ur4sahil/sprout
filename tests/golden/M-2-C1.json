@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-C1",
- "version": 2,
+ "version": 3,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -68,24 +68,35 @@
   "answerIndex": 2,
   "explanation": {
    "speak": [
-    "The short hand is past",
-    {
-     "number": 3
-    },
-    "and getting close to",
-    {
-     "number": 4
-    },
-    ".",
     "The long hand points to",
     {
      "number": 9
     },
-    ". Count by fives to",
+    ".",
+    "Count by fives up to the",
+    {
+     "number": 9
+    },
+    ":",
     {
      "number": 45
     },
-    ". It is",
+    "minutes.",
+    "The short hand is",
+    "past",
+    {
+     "number": 3
+    },
+    "but not yet at",
+    {
+     "number": 4
+    },
+    ", so the hour is",
+    {
+     "number": 3
+    },
+    ".",
+    "It is",
     {
      "time": {
       "hour": 3,
@@ -95,15 +106,18 @@
     "."
    ],
    "steps": [
-    "The short hand is past 3 and getting close to 4.",
     "The long hand points to 9.",
-    "Count by fives to 45.",
+    "Count by fives up to the 9: 45 minutes.",
+    "The short hand is past 3 but not yet at 4, so the hour is 3.",
     "It is 3:45."
    ],
    "visual": {
     "kind": "clock",
     "hour": 3,
     "minute": 45
+   },
+   "hint": {
+    "text": "The long hand shows the minutes. Count by fives."
    }
   },
   "skillId": "M-2-C1",
@@ -180,7 +194,22 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The short hand is halfway between",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 6
+      },
+      ":",
+      {
+       "number": 30
+      },
+      "minutes.",
+      "The short hand is",
+      "halfway between",
       {
        "number": 1
       },
@@ -188,16 +217,12 @@
       {
        "number": 2
       },
+      ", so the hour is",
+      {
+       "number": 1
+      },
       ".",
-      "The long hand points to",
-      {
-       "number": 6
-      },
-      ". Count by fives to",
-      {
-       "number": 30
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -207,15 +232,18 @@
       "."
      ],
      "steps": [
-      "The short hand is halfway between 1 and 2.",
       "The long hand points to 6.",
-      "Count by fives to 30.",
+      "Count by fives up to the 6: 30 minutes.",
+      "The short hand is halfway between 1 and 2, so the hour is 1.",
       "It is 1:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 30
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -290,24 +318,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 4
-      },
-      "and getting close to",
-      {
-       "number": 5
-      },
-      ".",
       "The long hand points to",
       {
        "number": 9
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 9
+      },
+      ":",
       {
        "number": 45
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 4
+      },
+      "but not yet at",
+      {
+       "number": 5
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 4,
@@ -317,15 +356,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 4 and getting close to 5.",
       "The long hand points to 9.",
-      "Count by fives to 45.",
+      "Count by fives up to the 9: 45 minutes.",
+      "The short hand is past 4 but not yet at 5, so the hour is 4.",
       "It is 4:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 45
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -400,24 +442,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 1
-      },
-      "and getting close to",
-      {
-       "number": 2
-      },
-      ".",
       "The long hand points to",
       {
        "number": 9
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 9
+      },
+      ":",
       {
        "number": 45
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 1
+      },
+      "but not yet at",
+      {
+       "number": 2
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -427,15 +480,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 1 and getting close to 2.",
       "The long hand points to 9.",
-      "Count by fives to 45.",
+      "Count by fives up to the 9: 45 minutes.",
+      "The short hand is past 1 but not yet at 2, so the hour is 1.",
       "It is 1:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 45
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -510,24 +566,35 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 4
-      },
-      "and getting close to",
-      {
-       "number": 5
-      },
-      ".",
       "The long hand points to",
       {
        "number": 9
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 9
+      },
+      ":",
       {
        "number": 45
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 4
+      },
+      "but not yet at",
+      {
+       "number": 5
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 4,
@@ -537,15 +604,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 4 and getting close to 5.",
       "The long hand points to 9.",
-      "Count by fives to 45.",
+      "Count by fives up to the 9: 45 minutes.",
+      "The short hand is past 4 but not yet at 5, so the hour is 4.",
       "It is 4:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 45
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -620,24 +690,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 10
-      },
-      "and getting close to",
-      {
-       "number": 11
-      },
-      ".",
       "The long hand points to",
       {
        "number": 9
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 9
+      },
+      ":",
       {
        "number": 45
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 10
+      },
+      "but not yet at",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 10
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 10,
@@ -647,15 +728,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 10 and getting close to 11.",
       "The long hand points to 9.",
-      "Count by fives to 45.",
+      "Count by fives up to the 9: 45 minutes.",
+      "The short hand is past 10 but not yet at 11, so the hour is 10.",
       "It is 10:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 45
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -730,7 +814,22 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is halfway between",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 6
+      },
+      ":",
+      {
+       "number": 30
+      },
+      "minutes.",
+      "The short hand is",
+      "halfway between",
       {
        "number": 1
       },
@@ -738,16 +837,12 @@
       {
        "number": 2
       },
+      ", so the hour is",
+      {
+       "number": 1
+      },
       ".",
-      "The long hand points to",
-      {
-       "number": 6
-      },
-      ". Count by fives to",
-      {
-       "number": 30
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -757,15 +852,18 @@
       "."
      ],
      "steps": [
-      "The short hand is halfway between 1 and 2.",
       "The long hand points to 6.",
-      "Count by fives to 30.",
+      "Count by fives up to the 6: 30 minutes.",
+      "The short hand is halfway between 1 and 2, so the hour is 1.",
       "It is 1:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 30
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -840,20 +938,31 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 1
-      },
-      ".",
       "The long hand points to",
       {
        "number": 3
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 3
+      },
+      ":",
       {
        "number": 15
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -863,15 +972,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 1.",
       "The long hand points to 3.",
-      "Count by fives to 15.",
+      "Count by fives up to the 3: 15 minutes.",
+      "The short hand is just past 1, so the hour is 1.",
       "It is 1:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 15
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -946,20 +1058,31 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 8
-      },
-      ".",
       "The long hand points to",
       {
        "number": 3
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 3
+      },
+      ":",
       {
        "number": 15
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 8
+      },
+      ", so the hour is",
+      {
+       "number": 8
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 8,
@@ -969,15 +1092,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 8.",
       "The long hand points to 3.",
-      "Count by fives to 15.",
+      "Count by fives up to the 3: 15 minutes.",
+      "The short hand is just past 8, so the hour is 8.",
       "It is 8:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 8,
       "minute": 15
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1052,20 +1178,31 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 11
-      },
-      ".",
       "The long hand points to",
       {
        "number": 3
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 3
+      },
+      ":",
       {
        "number": 15
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 11
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 11,
@@ -1075,15 +1212,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 11.",
       "The long hand points to 3.",
-      "Count by fives to 15.",
+      "Count by fives up to the 3: 15 minutes.",
+      "The short hand is just past 11, so the hour is 11.",
       "It is 11:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 11,
       "minute": 15
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1158,7 +1298,22 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is halfway between",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 6
+      },
+      ":",
+      {
+       "number": 30
+      },
+      "minutes.",
+      "The short hand is",
+      "halfway between",
       {
        "number": 12
       },
@@ -1166,16 +1321,12 @@
       {
        "number": 1
       },
+      ", so the hour is",
+      {
+       "number": 12
+      },
       ".",
-      "The long hand points to",
-      {
-       "number": 6
-      },
-      ". Count by fives to",
-      {
-       "number": 30
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 12,
@@ -1185,15 +1336,18 @@
       "."
      ],
      "steps": [
-      "The short hand is halfway between 12 and 1.",
       "The long hand points to 6.",
-      "Count by fives to 30.",
+      "Count by fives up to the 6: 30 minutes.",
+      "The short hand is halfway between 12 and 1, so the hour is 12.",
       "It is 12:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 12,
       "minute": 30
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1270,24 +1424,35 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 1
-      },
-      "and getting close to",
-      {
-       "number": 2
-      },
-      ".",
       "The long hand points to",
       {
        "number": 7
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 7
+      },
+      ":",
       {
        "number": 35
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 1
+      },
+      "but not yet at",
+      {
+       "number": 2
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -1297,15 +1462,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 1 and getting close to 2.",
       "The long hand points to 7.",
-      "Count by fives to 35.",
+      "Count by fives up to the 7: 35 minutes.",
+      "The short hand is past 1 but not yet at 2, so the hour is 1.",
       "It is 1:35."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 35
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1380,24 +1548,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 4
-      },
-      "and getting close to",
-      {
-       "number": 5
-      },
-      ".",
       "The long hand points to",
       {
        "number": 9
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 9
+      },
+      ":",
       {
        "number": 45
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 4
+      },
+      "but not yet at",
+      {
+       "number": 5
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 4,
@@ -1407,15 +1586,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 4 and getting close to 5.",
       "The long hand points to 9.",
-      "Count by fives to 45.",
+      "Count by fives up to the 9: 45 minutes.",
+      "The short hand is past 4 but not yet at 5, so the hour is 4.",
       "It is 4:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 45
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1490,24 +1672,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 1
-      },
-      "and getting close to",
-      {
-       "number": 2
-      },
-      ".",
       "The long hand points to",
       {
        "number": 8
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 8
+      },
+      ":",
       {
        "number": 40
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 1
+      },
+      "but not yet at",
+      {
+       "number": 2
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -1517,15 +1710,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 1 and getting close to 2.",
       "The long hand points to 8.",
-      "Count by fives to 40.",
+      "Count by fives up to the 8: 40 minutes.",
+      "The short hand is past 1 but not yet at 2, so the hour is 1.",
       "It is 1:40."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 40
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1600,24 +1796,35 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 4
-      },
-      "and getting close to",
-      {
-       "number": 5
-      },
-      ".",
       "The long hand points to",
       {
        "number": 11
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 11
+      },
+      ":",
       {
        "number": 55
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 4
+      },
+      "but not yet at",
+      {
+       "number": 5
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 4,
@@ -1627,15 +1834,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 4 and getting close to 5.",
       "The long hand points to 11.",
-      "Count by fives to 55.",
+      "Count by fives up to the 11: 55 minutes.",
+      "The short hand is past 4 but not yet at 5, so the hour is 4.",
       "It is 4:55."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 55
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1710,24 +1920,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 10
-      },
-      "and getting close to",
-      {
-       "number": 11
-      },
-      ".",
       "The long hand points to",
       {
        "number": 8
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 8
+      },
+      ":",
       {
        "number": 40
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 10
+      },
+      "but not yet at",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 10
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 10,
@@ -1737,15 +1958,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 10 and getting close to 11.",
       "The long hand points to 8.",
-      "Count by fives to 40.",
+      "Count by fives up to the 8: 40 minutes.",
+      "The short hand is past 10 but not yet at 11, so the hour is 10.",
       "It is 10:40."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 40
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1820,7 +2044,22 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is halfway between",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 6
+      },
+      ":",
+      {
+       "number": 30
+      },
+      "minutes.",
+      "The short hand is",
+      "halfway between",
       {
        "number": 1
       },
@@ -1828,16 +2067,12 @@
       {
        "number": 2
       },
+      ", so the hour is",
+      {
+       "number": 1
+      },
       ".",
-      "The long hand points to",
-      {
-       "number": 6
-      },
-      ". Count by fives to",
-      {
-       "number": 30
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -1847,15 +2082,18 @@
       "."
      ],
      "steps": [
-      "The short hand is halfway between 1 and 2.",
       "The long hand points to 6.",
-      "Count by fives to 30.",
+      "Count by fives up to the 6: 30 minutes.",
+      "The short hand is halfway between 1 and 2, so the hour is 1.",
       "It is 1:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 30
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -1930,20 +2168,31 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 1
-      },
-      ".",
       "The long hand points to",
       {
        "number": 1
       },
-      ". Count by fives to",
+      ".",
+      "The",
+      {
+       "number": 1
+      },
+      "means",
       {
        "number": 5
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -1953,15 +2202,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 1.",
       "The long hand points to 1.",
-      "Count by fives to 5.",
+      "The 1 means 5 minutes.",
+      "The short hand is just past 1, so the hour is 1.",
       "It is 1:05."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 5
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2036,20 +2288,31 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 8
-      },
-      ".",
       "The long hand points to",
       {
        "number": 2
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 2
+      },
+      ":",
       {
        "number": 10
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 8
+      },
+      ", so the hour is",
+      {
+       "number": 8
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 8,
@@ -2059,15 +2322,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 8.",
       "The long hand points to 2.",
-      "Count by fives to 10.",
+      "Count by fives up to the 2: 10 minutes.",
+      "The short hand is just past 8, so the hour is 8.",
       "It is 8:10."
      ],
      "visual": {
       "kind": "clock",
       "hour": 8,
       "minute": 10
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2142,20 +2408,31 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 11
-      },
-      ".",
       "The long hand points to",
       {
        "number": 3
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 3
+      },
+      ":",
       {
        "number": 15
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 11
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 11,
@@ -2165,15 +2442,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 11.",
       "The long hand points to 3.",
-      "Count by fives to 15.",
+      "Count by fives up to the 3: 15 minutes.",
+      "The short hand is just past 11, so the hour is 11.",
       "It is 11:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 11,
       "minute": 15
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2248,7 +2528,22 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is halfway between",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 6
+      },
+      ":",
+      {
+       "number": 30
+      },
+      "minutes.",
+      "The short hand is",
+      "halfway between",
       {
        "number": 12
       },
@@ -2256,16 +2551,12 @@
       {
        "number": 1
       },
+      ", so the hour is",
+      {
+       "number": 12
+      },
       ".",
-      "The long hand points to",
-      {
-       "number": 6
-      },
-      ". Count by fives to",
-      {
-       "number": 30
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 12,
@@ -2275,15 +2566,18 @@
       "."
      ],
      "steps": [
-      "The short hand is halfway between 12 and 1.",
       "The long hand points to 6.",
-      "Count by fives to 30.",
+      "Count by fives up to the 6: 30 minutes.",
+      "The short hand is halfway between 12 and 1, so the hour is 12.",
       "It is 12:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 12,
       "minute": 30
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2352,24 +2646,35 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 1
-      },
-      "and getting close to",
-      {
-       "number": 2
-      },
-      ".",
       "The long hand points to",
       {
        "number": 7
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 7
+      },
+      ":",
       {
        "number": 35
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 1
+      },
+      "but not yet at",
+      {
+       "number": 2
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -2379,15 +2684,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 1 and getting close to 2.",
       "The long hand points to 7.",
-      "Count by fives to 35.",
+      "Count by fives up to the 7: 35 minutes.",
+      "The short hand is past 1 but not yet at 2, so the hour is 1.",
       "It is 1:35."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 35
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2454,24 +2762,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 4
-      },
-      "and getting close to",
-      {
-       "number": 5
-      },
-      ".",
       "The long hand points to",
       {
        "number": 9
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 9
+      },
+      ":",
       {
        "number": 45
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 4
+      },
+      "but not yet at",
+      {
+       "number": 5
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 4,
@@ -2481,15 +2800,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 4 and getting close to 5.",
       "The long hand points to 9.",
-      "Count by fives to 45.",
+      "Count by fives up to the 9: 45 minutes.",
+      "The short hand is past 4 but not yet at 5, so the hour is 4.",
       "It is 4:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 45
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2556,24 +2878,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 1
-      },
-      "and getting close to",
-      {
-       "number": 2
-      },
-      ".",
       "The long hand points to",
       {
        "number": 8
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 8
+      },
+      ":",
       {
        "number": 40
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 1
+      },
+      "but not yet at",
+      {
+       "number": 2
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -2583,15 +2916,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 1 and getting close to 2.",
       "The long hand points to 8.",
-      "Count by fives to 40.",
+      "Count by fives up to the 8: 40 minutes.",
+      "The short hand is past 1 but not yet at 2, so the hour is 1.",
       "It is 1:40."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 40
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2658,24 +2994,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 4
-      },
-      "and getting close to",
-      {
-       "number": 5
-      },
-      ".",
       "The long hand points to",
       {
        "number": 11
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 11
+      },
+      ":",
       {
        "number": 55
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 4
+      },
+      "but not yet at",
+      {
+       "number": 5
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 4,
@@ -2685,15 +3032,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 4 and getting close to 5.",
       "The long hand points to 11.",
-      "Count by fives to 55.",
+      "Count by fives up to the 11: 55 minutes.",
+      "The short hand is past 4 but not yet at 5, so the hour is 4.",
       "It is 4:55."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 55
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2760,24 +3110,35 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The short hand is past",
-      {
-       "number": 10
-      },
-      "and getting close to",
-      {
-       "number": 11
-      },
-      ".",
       "The long hand points to",
       {
        "number": 8
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 8
+      },
+      ":",
       {
        "number": 40
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "past",
+      {
+       "number": 10
+      },
+      "but not yet at",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 10
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 10,
@@ -2787,15 +3148,18 @@
       "."
      ],
      "steps": [
-      "The short hand is past 10 and getting close to 11.",
       "The long hand points to 8.",
-      "Count by fives to 40.",
+      "Count by fives up to the 8: 40 minutes.",
+      "The short hand is past 10 but not yet at 11, so the hour is 10.",
       "It is 10:40."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 40
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2862,7 +3226,22 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The short hand is halfway between",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 6
+      },
+      ":",
+      {
+       "number": 30
+      },
+      "minutes.",
+      "The short hand is",
+      "halfway between",
       {
        "number": 1
       },
@@ -2870,16 +3249,12 @@
       {
        "number": 2
       },
+      ", so the hour is",
+      {
+       "number": 1
+      },
       ".",
-      "The long hand points to",
-      {
-       "number": 6
-      },
-      ". Count by fives to",
-      {
-       "number": 30
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -2889,15 +3264,18 @@
       "."
      ],
      "steps": [
-      "The short hand is halfway between 1 and 2.",
       "The long hand points to 6.",
-      "Count by fives to 30.",
+      "Count by fives up to the 6: 30 minutes.",
+      "The short hand is halfway between 1 and 2, so the hour is 1.",
       "It is 1:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 30
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -2964,20 +3342,31 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 1
-      },
-      ".",
       "The long hand points to",
       {
        "number": 1
       },
-      ". Count by fives to",
+      ".",
+      "The",
+      {
+       "number": 1
+      },
+      "means",
       {
        "number": 5
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -2987,15 +3376,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 1.",
       "The long hand points to 1.",
-      "Count by fives to 5.",
+      "The 1 means 5 minutes.",
+      "The short hand is just past 1, so the hour is 1.",
       "It is 1:05."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 5
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3062,20 +3454,31 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 8
-      },
-      ".",
       "The long hand points to",
       {
        "number": 2
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 2
+      },
+      ":",
       {
        "number": 10
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 8
+      },
+      ", so the hour is",
+      {
+       "number": 8
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 8,
@@ -3085,15 +3488,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 8.",
       "The long hand points to 2.",
-      "Count by fives to 10.",
+      "Count by fives up to the 2: 10 minutes.",
+      "The short hand is just past 8, so the hour is 8.",
       "It is 8:10."
      ],
      "visual": {
       "kind": "clock",
       "hour": 8,
       "minute": 10
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3160,20 +3566,31 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is just past",
-      {
-       "number": 11
-      },
-      ".",
       "The long hand points to",
       {
        "number": 3
       },
-      ". Count by fives to",
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 3
+      },
+      ":",
       {
        "number": 15
       },
-      ". It is",
+      "minutes.",
+      "The short hand is",
+      "just past",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 11
+      },
+      ".",
+      "It is",
       {
        "time": {
         "hour": 11,
@@ -3183,15 +3600,18 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 11.",
       "The long hand points to 3.",
-      "Count by fives to 15.",
+      "Count by fives up to the 3: 15 minutes.",
+      "The short hand is just past 11, so the hour is 11.",
       "It is 11:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 11,
       "minute": 15
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3258,7 +3678,22 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The short hand is halfway between",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ".",
+      "Count by fives up to the",
+      {
+       "number": 6
+      },
+      ":",
+      {
+       "number": 30
+      },
+      "minutes.",
+      "The short hand is",
+      "halfway between",
       {
        "number": 12
       },
@@ -3266,16 +3701,12 @@
       {
        "number": 1
       },
+      ", so the hour is",
+      {
+       "number": 12
+      },
       ".",
-      "The long hand points to",
-      {
-       "number": 6
-      },
-      ". Count by fives to",
-      {
-       "number": 30
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 12,
@@ -3285,15 +3716,18 @@
       "."
      ],
      "steps": [
-      "The short hand is halfway between 12 and 1.",
       "The long hand points to 6.",
-      "Count by fives to 30.",
+      "Count by fives up to the 6: 30 minutes.",
+      "The short hand is halfway between 12 and 1, so the hour is 12.",
       "It is 12:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 12,
       "minute": 30
+     },
+     "hint": {
+      "text": "The long hand shows the minutes. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3334,20 +3768,22 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is just past",
+      "Move the long hand to",
+      {
+       "number": 1
+      },
+      ": that is",
+      {
+       "number": 5
+      },
+      "minutes.",
+      "The short hand moves by itself, to",
+      "just past",
       {
        "number": 7
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 1
-      },
-      ". Count by fives to",
-      {
-       "number": 5
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 7,
@@ -3357,15 +3793,17 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 7.",
-      "The long hand points to 1.",
-      "Count by fives to 5.",
+      "Move the long hand to 1: that is 5 minutes.",
+      "The short hand moves by itself, to just past 7.",
       "It is 7:05."
      ],
      "visual": {
       "kind": "clock",
       "hour": 7,
       "minute": 5
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3404,20 +3842,22 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is just past",
+      "Move the long hand to",
+      {
+       "number": 4
+      },
+      ": count by fives to",
+      {
+       "number": 20
+      },
+      ".",
+      "The short hand moves by itself, to",
+      "just past",
       {
        "number": 9
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 4
-      },
-      ". Count by fives to",
-      {
-       "number": 20
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 9,
@@ -3427,15 +3867,17 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 9.",
-      "The long hand points to 4.",
-      "Count by fives to 20.",
+      "Move the long hand to 4: count by fives to 20.",
+      "The short hand moves by itself, to just past 9.",
       "It is 9:20."
      ],
      "visual": {
       "kind": "clock",
       "hour": 9,
       "minute": 20
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3474,20 +3916,22 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is just past",
+      "Move the long hand to",
+      {
+       "number": 1
+      },
+      ": that is",
+      {
+       "number": 5
+      },
+      "minutes.",
+      "The short hand moves by itself, to",
+      "just past",
       {
        "number": 8
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 1
-      },
-      ". Count by fives to",
-      {
-       "number": 5
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 8,
@@ -3497,15 +3941,17 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 8.",
-      "The long hand points to 1.",
-      "Count by fives to 5.",
+      "Move the long hand to 1: that is 5 minutes.",
+      "The short hand moves by itself, to just past 8.",
       "It is 8:05."
      ],
      "visual": {
       "kind": "clock",
       "hour": 8,
       "minute": 5
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3544,20 +3990,22 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is just past",
+      "Move the long hand to",
+      {
+       "number": 4
+      },
+      ": count by fives to",
+      {
+       "number": 20
+      },
+      ".",
+      "The short hand moves by itself, to",
+      "just past",
       {
        "number": 11
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 4
-      },
-      ". Count by fives to",
-      {
-       "number": 20
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 11,
@@ -3567,15 +4015,17 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 11.",
-      "The long hand points to 4.",
-      "Count by fives to 20.",
+      "Move the long hand to 4: count by fives to 20.",
+      "The short hand moves by itself, to just past 11.",
       "It is 11:20."
      ],
      "visual": {
       "kind": "clock",
       "hour": 11,
       "minute": 20
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3614,24 +4064,26 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is past",
+      "Move the long hand to",
+      {
+       "number": 9
+      },
+      ": count by fives to",
+      {
+       "number": 45
+      },
+      ".",
+      "The short hand moves by itself, to",
+      "past",
       {
        "number": 8
       },
-      "and getting close to",
+      "but not yet at",
       {
        "number": 9
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 9
-      },
-      ". Count by fives to",
-      {
-       "number": 45
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 8,
@@ -3641,15 +4093,17 @@
       "."
      ],
      "steps": [
-      "The short hand is past 8 and getting close to 9.",
-      "The long hand points to 9.",
-      "Count by fives to 45.",
+      "Move the long hand to 9: count by fives to 45.",
+      "The short hand moves by itself, to past 8 but not yet at 9.",
       "It is 8:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 8,
       "minute": 45
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3688,20 +4142,22 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is just past",
+      "Move the long hand to",
+      {
+       "number": 1
+      },
+      ": that is",
+      {
+       "number": 5
+      },
+      "minutes.",
+      "The short hand moves by itself, to",
+      "just past",
       {
        "number": 6
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 1
-      },
-      ". Count by fives to",
-      {
-       "number": 5
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 6,
@@ -3711,15 +4167,17 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 6.",
-      "The long hand points to 1.",
-      "Count by fives to 5.",
+      "Move the long hand to 1: that is 5 minutes.",
+      "The short hand moves by itself, to just past 6.",
       "It is 6:05."
      ],
      "visual": {
       "kind": "clock",
       "hour": 6,
       "minute": 5
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3758,20 +4216,22 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is just past",
+      "Move the long hand to",
+      {
+       "number": 1
+      },
+      ": that is",
+      {
+       "number": 5
+      },
+      "minutes.",
+      "The short hand moves by itself, to",
+      "just past",
       {
        "number": 1
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 1
-      },
-      ". Count by fives to",
-      {
-       "number": 5
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -3781,15 +4241,17 @@
       "."
      ],
      "steps": [
-      "The short hand is just past 1.",
-      "The long hand points to 1.",
-      "Count by fives to 5.",
+      "Move the long hand to 1: that is 5 minutes.",
+      "The short hand moves by itself, to just past 1.",
       "It is 1:05."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 5
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3828,24 +4290,26 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is past",
+      "Move the long hand to",
+      {
+       "number": 7
+      },
+      ": count by fives to",
+      {
+       "number": 35
+      },
+      ".",
+      "The short hand moves by itself, to",
+      "past",
       {
        "number": 2
       },
-      "and getting close to",
+      "but not yet at",
       {
        "number": 3
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 7
-      },
-      ". Count by fives to",
-      {
-       "number": 35
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 2,
@@ -3855,15 +4319,17 @@
       "."
      ],
      "steps": [
-      "The short hand is past 2 and getting close to 3.",
-      "The long hand points to 7.",
-      "Count by fives to 35.",
+      "Move the long hand to 7: count by fives to 35.",
+      "The short hand moves by itself, to past 2 but not yet at 3.",
       "It is 2:35."
      ],
      "visual": {
       "kind": "clock",
       "hour": 2,
       "minute": 35
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3902,24 +4368,26 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is past",
+      "Move the long hand to",
+      {
+       "number": 10
+      },
+      ": count by fives to",
+      {
+       "number": 50
+      },
+      ".",
+      "The short hand moves by itself, to",
+      "past",
       {
        "number": 3
       },
-      "and getting close to",
+      "but not yet at",
       {
        "number": 4
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 10
-      },
-      ". Count by fives to",
-      {
-       "number": 50
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 3,
@@ -3929,15 +4397,17 @@
       "."
      ],
      "steps": [
-      "The short hand is past 3 and getting close to 4.",
-      "The long hand points to 10.",
-      "Count by fives to 50.",
+      "Move the long hand to 10: count by fives to 50.",
+      "The short hand moves by itself, to past 3 but not yet at 4.",
       "It is 3:50."
      ],
      "visual": {
       "kind": "clock",
       "hour": 3,
       "minute": 50
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",
@@ -3976,24 +4446,26 @@
     },
     "explanation": {
      "speak": [
-      "The short hand is past",
+      "Move the long hand to",
+      {
+       "number": 11
+      },
+      ": count by fives to",
+      {
+       "number": 55
+      },
+      ".",
+      "The short hand moves by itself, to",
+      "past",
       {
        "number": 6
       },
-      "and getting close to",
+      "but not yet at",
       {
        "number": 7
       },
       ".",
-      "The long hand points to",
-      {
-       "number": 11
-      },
-      ". Count by fives to",
-      {
-       "number": 55
-      },
-      ". It is",
+      "It is",
       {
        "time": {
         "hour": 6,
@@ -4003,15 +4475,17 @@
       "."
      ],
      "steps": [
-      "The short hand is past 6 and getting close to 7.",
-      "The long hand points to 11.",
-      "Count by fives to 55.",
+      "Move the long hand to 11: count by fives to 55.",
+      "The short hand moves by itself, to past 6 but not yet at 7.",
       "It is 6:55."
      ],
      "visual": {
       "kind": "clock",
       "hour": 6,
       "minute": 55
+     },
+     "hint": {
+      "text": "Move the long hand first. Count by fives."
      }
     },
     "skillId": "M-2-C1",

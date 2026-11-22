@@ -2,6 +2,7 @@ import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { COUNTABLES, STORY_COUNTABLES } from '../../../data/countables';
+import { PRONOUN } from '../../../data/h2-stories';
 import type { StoryKind } from '../../../data/storyProblems';
 import { STORY_NAMES } from '../../../data/storyProblems';
 import type { SkillGenerator } from '../../../generator';
@@ -14,6 +15,39 @@ import { borrows, carries, equation, line, together } from './addSubtract';
 
 // Math grade 2 B.8, B.9 and B.10: arrays and repeated addition, and word problems in one and two steps.
 
+// A story with one person in it names them once, then says "he" or "she" (the wording audit, Nov 22, 2026):
+// "Sam has 24 apples. He gets 15 more." The stories come from the shared templates, so the name is swapped here.
+export function withPronoun(story: { text: string; speak: Say }, name: string): { text: string; speak: Say } {
+  const pronoun = PRONOUN[name];
+  if (pronoun === undefined) return story;
+  const swapper = (): ((text: string, atStart: boolean) => string) => {
+    let seen = false;
+    return (text, atStart) =>
+      text.replace(new RegExp(`\\b${name}\\b`, 'g'), (match: string, offset: number) => {
+        if (!seen) {
+          seen = true;
+          return match;
+        }
+        const before = text.slice(0, offset);
+        const start = before.trim() === '' ? atStart : /[.?!]\s*$/.test(before);
+        return start ? `${pronoun.charAt(0).toUpperCase()}${pronoun.slice(1)}` : pronoun;
+      });
+  };
+  const inText = swapper();
+  const inSpeech = swapper();
+  let atStart = true;
+  const speak = story.speak.map((part) => {
+    if (typeof part !== 'string') {
+      atStart = false;
+      return part;
+    }
+    const swapped = inSpeech(part, atStart);
+    atStart = /[.?!]\s*$/.test(part);
+    return swapped;
+  });
+  return { text: inText(story.text, true), speak };
+}
+
 // ---- B.8 Arrays and repeated addition ----
 // Levels: count an array to 3 by 3 / match array to 3 plus 3 plus 3 / to 5 by 5, typed. Oracle: multiply.
 
@@ -21,6 +55,7 @@ const array = (rows: number, cols: number, emoji: string): Visual => ({ kind: 'a
 const addition = (rows: number, cols: number): number[] => Array.from({ length: rows }, () => cols);
 const additionText = (parts: number[]): string => parts.join(' + ');
 const additionSpeak = (parts: number[]): Say => parts.flatMap((part, i): Say => (i === 0 ? [{ number: part }] : ['plus', { number: part }]));
+const TIMES_WORD = ['zero', 'one', 'two', 'three', 'four', 'five'];
 
 function arrayExplanation(rows: number, cols: number, emoji: string): Explanation {
   const parts = addition(rows, cols);
@@ -28,7 +63,18 @@ function arrayExplanation(rows: number, cols: number, emoji: string): Explanatio
     speak: ['There are', { number: rows }, 'rows with', { number: cols }, 'in each row.', ...additionSpeak(parts), 'is', { number: rows * cols }, '.'],
     steps: [`There are ${rows} rows with ${cols} in each row.`, `${additionText(parts)} = ${rows * cols}.`],
     visual: array(rows, cols, emoji),
+    hint: { text: 'Add one row at a time.' },
   };
+}
+
+// Which addition adds up the rows: one number for each row, so the rows and columns swapped is the slip.
+function rowsExplanation(rows: number, cols: number, emoji: string): Explanation {
+  const parts = addition(rows, cols);
+  return together(
+    [line('Each row has', cols, '.'), line('There are', rows, `rows, so add`, cols, `${TIMES_WORD[rows]} times.`), { text: `That is ${additionText(parts)}.`, speak: ['That is', ...additionSpeak(parts), '.'] }],
+    array(rows, cols, emoji),
+    { text: 'Count how many are in one row.' },
+  );
 }
 
 const HOW_MANY_ALL = 'How many are there in all?';
@@ -48,7 +94,7 @@ function arrays(level: Level, rng: Rng): QuestionDraft {
   if (level === 2) {
     // The slips: the rows and columns swapped, or one row too many.
     const options = rng.shuffle([addition(rows, cols), addition(cols, rows), addition(rows + 1, cols)]);
-    const prompt = 'Which adding matches the rows?';
+    const prompt = 'Which addition adds up the rows?';
     return {
       type: 'choice',
       mode: 'look',
@@ -57,7 +103,7 @@ function arrays(level: Level, rng: Rng): QuestionDraft {
       stimulus: array(rows, cols, emoji),
       options: options.map((parts): Visual => ({ kind: 'text', value: additionText(parts), size: 'l', speak: additionSpeak(parts) })),
       answerIndex: options.findIndex((parts) => parts.length === rows && parts[0] === cols),
-      explanation,
+      explanation: rowsExplanation(rows, cols, emoji),
     };
   }
   const base = { mode: 'look' as const, prompt: { text: HOW_MANY_ALL, speak: [HOW_MANY_ALL] as Say }, stimulus: array(rows, cols, emoji), explanation };
@@ -88,9 +134,10 @@ export const arraysGenerator: SkillGenerator = {
 // ---- B.9 One-step word problems to 100 ----
 // Levels: add / subtract / compare, typed. Family: Stories. Oracles: add, subtract.
 
+// The clue word says what to do, then the number sentence. The clue is the hint too: it is the move, not the answer.
 function storyExplanation(a: number, b: number, plus: boolean, why: string): Explanation {
   const answer = plus ? a + b : a - b;
-  return together([line(why), line(a, plus ? 'plus' : 'minus', b, 'is', answer, '.')], equation(a, plus ? '+' : '-', b, '=', answer));
+  return together([line(why), line(a, plus ? '+' : '−', b, '=', answer, '.')], equation(a, plus ? '+' : '-', b, '=', answer), { text: why });
 }
 const WHY: Record<string, string> = { gets: 'Getting more means add.', table: 'In all means add.', givesAway: 'Giving away means subtract.', takes: 'Taking away means subtract.', compare: 'How many more means subtract.' };
 
@@ -111,7 +158,9 @@ function wordProblem(level: Level, rng: Rng): QuestionDraft {
   const answer = plus ? a + b : a - b;
   const named = kind !== 'table';
   const facts: QuestionDraft['facts'] = { a, b, thing: thing.one, story: kind, oracle: plus ? 'add' : 'subtract', ...(named ? { name } : {}), ...(level === 3 ? { name2 } : {}) };
-  const base = { mode: 'look' as const, prompt: tellStory(told), explanation: storyExplanation(a, b, plus, WHY[kind] as string) };
+  // A compare story has two people, so both keep their names.
+  const story = kind === 'compare' ? tellStory(told) : withPronoun(tellStory(told), name);
+  const base = { mode: 'look' as const, prompt: story, explanation: storyExplanation(a, b, plus, WHY[kind] as string) };
   if (level === 3) return { ...base, type: 'numberPad', facts, answer, maxDigits: 2 };
   // The slips: the other operation, ten out, or one off.
   const values = numeralChoices(answer, [plus ? Math.abs(a - b) : a + b, answer - 10, answer + 10], 0, 120, rng);
@@ -124,7 +173,7 @@ export const wordProblems100Generator: SkillGenerator = {
   skillId: 'M-2-B9',
   maxLevel: 3,
   itemTypes: ['choice', 'numberPad'],
-  lists: ['countables', 'storyProblems'],
+  lists: ['countables', 'storyProblems', 'h2-stories'],
   generate: wordProblem,
   exampleSeed: 219,
   example: () => wordProblem(1, makeRng(219)),
@@ -148,8 +197,9 @@ function twoStepExplanation(a: number, b: number, c: number, plus: boolean): Exp
   const first = a + b;
   const answer = plus ? first + c : first - c;
   return together(
-    [line('First step:', a, 'plus', b, 'is', first, '.'), line('Second step:', first, plus ? 'plus' : 'minus', c, 'is', answer, '.')],
+    [line('First step:', a, '+', b, '=', first, '.'), line('Second step:', first, plus ? '+' : '−', c, '=', answer, '.')],
     { kind: 'row', children: [equation(a, '+', b, '=', first), equation(first, plus ? '+' : '-', c, '=', answer)] },
+    { text: 'Work it out step by step. Start with what happens first.' },
   );
 }
 
@@ -164,7 +214,7 @@ function twoStepProblem(level: Level, rng: Rng): QuestionDraft {
     type: 'numberPad',
     mode: 'look',
     facts: { a, op1: '+', b, op2: plus ? '+' : '-', c, name: told.name, thing: told.thing.one, story: told.kind },
-    prompt: tellStory(told),
+    prompt: withPronoun(tellStory(told), told.name),
     answer,
     maxDigits: 2,
     explanation: twoStepExplanation(a, b, c, plus),
@@ -175,7 +225,7 @@ export const twoStepGenerator: SkillGenerator = {
   skillId: 'M-2-B10',
   maxLevel: 2,
   itemTypes: ['numberPad'],
-  lists: ['countables', 'storyProblems'],
+  lists: ['countables', 'storyProblems', 'h2-stories'],
   generate: twoStepProblem,
   exampleSeed: 220,
   example: () => twoStepProblem(1, makeRng(220)),

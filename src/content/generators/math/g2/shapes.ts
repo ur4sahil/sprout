@@ -17,6 +17,8 @@ const sidesOf = (form: ShapeName): number => SIDES[form] as number;
 const WORD = ['no', 'one', 'two', 'three', 'four', 'five', 'six'];
 const cap = (text: string): string => text.charAt(0).toUpperCase() + text.slice(1);
 
+const SIDES_HINT = { text: 'Count the sides of each shape.' };
+
 // One shape for each number of sides, so no two options tie.
 function oneOfEach(counts: number[], rng: Rng): ShapeName[] {
   return counts.map((count) => rng.pick((Object.keys(SIDES) as ShapeName[]).filter((form) => sidesOf(form) === count)));
@@ -38,7 +40,7 @@ function nameBySides(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: `Which shape has ${corners} corners?`, speak: ['Which shape has', { number: corners }, 'corners?'] },
       options: options.map((form) => shape(form, color)),
       answerIndex: options.indexOf(answer),
-      explanation: { speak: [`${cap(a(answer))} has ${WORD[corners]} corners.`], steps: [line], visual: shape(answer, color, 'l') },
+      explanation: { speak: [`${cap(a(answer))} has ${WORD[corners]} corners.`], steps: [line], visual: shape(answer, color, 'l'), hint: { text: 'Count the corners of each shape.' } },
     };
   }
   // Level 1: a triangle against four-sided shapes, or one four-sided shape against others. Level 2: pentagon or hexagon.
@@ -57,7 +59,7 @@ function nameBySides(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: 'Which shape has 4 sides?', speak: ['Which shape has', { number: 4 }, 'sides?'] },
       options: options.map((form) => shape(form, color)),
       answerIndex: options.indexOf(answer),
-      explanation: { speak: [spoken], steps: [line], visual: shape(answer, color, 'l') },
+      explanation: { speak: [spoken], steps: [line], visual: shape(answer, color, 'l'), hint: SIDES_HINT },
     };
   }
   const prompt = `Which shape is ${a(answer)}?`;
@@ -68,7 +70,7 @@ function nameBySides(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: options.map((form) => shape(form, color)),
     answerIndex: options.indexOf(answer),
-    explanation: { speak: [spoken], steps: [line], visual: shape(answer, color, 'l') },
+    explanation: { speak: [spoken], steps: [line], visual: shape(answer, color, 'l'), hint: SIDES_HINT },
   };
 }
 
@@ -119,6 +121,7 @@ function shares(level: Level, rng: Rng): QuestionDraft {
         speak: [`The shape has ${WORD[parts]} equal parts. One is shaded. That is ${ONE[parts]}.`],
         steps: [`The shape has ${parts} equal parts.`, '1 is shaded.', `That is ${ONE[parts]}.`],
         visual: cut(whole, parts, 1),
+        hint: { text: 'Count the equal parts. Then count the shaded ones.' },
       },
     };
   }
@@ -140,7 +143,7 @@ function shares(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: options.map((option) => option.picture),
     answerIndex: answerAt,
-    explanation: { speak: [equalSpoken(parts)], steps: [equalLine(parts)], visual: options[answerAt]?.picture ?? cut(whole, parts, 0) },
+    explanation: { speak: [equalSpoken(parts)], steps: [equalLine(parts)], visual: options[answerAt]?.picture ?? cut(whole, parts, 0), hint: { text: 'Look for parts that are all the same size. Then count them.' } },
   };
 }
 

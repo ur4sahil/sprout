@@ -1,40 +1,72 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
 
 // Math grade 2 B.1 to B.7: adding and subtracting within 100 and within 1,000, by places.
 
-export type Explanation = { speak: Say; steps: string[]; visual: Visual };
+export type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint; stepsSay?: (Say | null)[] };
 export const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
-export const plusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} plus ${b} equals what?`, speak: [{ number: a }, 'plus', { number: b }, 'equals what?'] });
-export const minusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} minus ${b} equals what?`, speak: [{ number: a }, 'minus', { number: b }, 'equals what?'] });
+// A sum is asked the natural way, "What is 21 plus 4?" (the owner's choice, Nov 22, 2026). Grade 3 asks with these too.
+export const plusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `What is ${a} plus ${b}?`, speak: ['What is', { number: a }, 'plus', { number: b }, '?'] });
+export const minusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `What is ${a} minus ${b}?`, speak: ['What is', { number: a }, 'minus', { number: b }, '?'] });
 
-// One sentence, written and spoken. Numbers are said as numbers. A piece that starts with a full stop joins the word before it.
+// One sentence, written and spoken. Numbers are said as numbers, and a sign written on its own is said as its
+// word: "1 + 4 = 5." is "one plus four is five". A piece that starts with a stop or a comma joins the word before it.
 interface Line {
   text: string;
   speak: Say;
 }
+const SIGN_SAID: Record<string, string> = { '+': 'plus', '−': 'minus', '-': 'minus', '=': 'is' };
 export function line(...pieces: (string | number)[]): Line {
   let text = '';
   const speak: Say = [];
   for (const piece of pieces) {
     const word = String(piece);
-    text += text.length === 0 || word.startsWith('.') ? word : ` ${word}`;
-    speak.push(typeof piece === 'number' ? { number: piece } : piece);
+    text += text.length === 0 || /^[.,:;?!]/.test(word) ? word : ` ${word}`;
+    speak.push(typeof piece === 'number' ? { number: piece } : (SIGN_SAID[piece] ?? piece));
   }
   return { text, speak };
 }
 // Several sentences shown as one step.
 const merge = (lines: Line[]): Line => ({ text: lines.map((each) => each.text).join(' '), speak: lines.flatMap((each) => each.speak) });
-export const together = (lines: Line[], visual: Visual): Explanation => ({ speak: lines.flatMap((each) => each.speak), steps: lines.map((each) => each.text), visual });
+export const together = (lines: Line[], visual: Visual, hint?: Hint): Explanation => ({ speak: lines.flatMap((each) => each.speak), steps: lines.map((each) => each.text), visual, ...(hint ? { hint } : {}) });
 
 const PLACES = ['ones', 'tens', 'hundreds'] as const;
-const ONE_OF = ['one', 'ten', 'hundred'] as const;
+const ONE_OF = ['one', 'ten', 'hundred', 'thousand'] as const;
 const digit = (n: number, place: number): number => Math.floor(n / 10 ** place) % 10;
-const stay = (places: string[]): Line[] => (places.length === 0 ? [] : [line(`The ${places.join(' and ')} stay the same.`)]);
+const placeName = (place: number): string => PLACES[place] as string;
+const oneName = (place: number): string => ONE_OF[place] as string;
+const stayLine = (place: number): Line => line(`The ${placeName(place)} stay the same.`);
+
+// What a place does in a sum: its line, and whether anything changes there.
+interface PlaceStep {
+  place: number;
+  changes: boolean;
+  line: Line;
+}
+
+// When only one place changes, the walk says so first, so its first line works nothing out: "Only the ones
+// change." Otherwise each place gets its line, ones first, then the answer. Never more than four steps.
+function walk(work: PlaceStep[], regroups: boolean, answer: Line, visual: Visual, hint: string): Explanation {
+  const changed = work.filter((each) => each.changes);
+  const only = changed[0];
+  if (changed.length === 1 && only && !regroups) {
+    const lead = line(`Only the ${placeName(only.place)} change.`);
+    return together([lead, only.line, answer], visual, { text: lead.text });
+  }
+  return together([...work.map((each) => each.line), answer], visual, { text: hint });
+}
+
+// "That is 1 ten and 2 ones." With none left it says so, and "1 ten and 1 one" is said "1 ten and 1 more".
+function regroupLine(left: number, place: number): Line {
+  const next = oneName(place + 1);
+  if (left === 0) return line('That is', 1, `${next} and no ${placeName(place)}.`);
+  if (left === 1 && place === 0) return line('That is', 1, `${next} and`, 1, 'more.');
+  return line('That is', 1, `${next} and`, left, `${left === 1 ? oneName(place) : placeName(place)}.`);
+}
 
 // The places where adding a and b makes a new ten or a new hundred.
 export function carries(a: number, b: number): number[] {
@@ -58,51 +90,66 @@ export function borrows(a: number, b: number): number[] {
   return at;
 }
 
-// Adding place by place, ones first. A place where nothing is added is not talked through.
+// Adding place by place, ones first. A place with nothing to add stays the same, and a new ten or hundred is
+// added in the next place: "Add the new ten: 5 + 1 = 6." Number sentences are written with their signs.
 export function addExplanation(a: number, b: number): Explanation {
-  const lines: Line[] = [];
-  const same: string[] = [];
+  const work: PlaceStep[] = [];
   let carry = 0;
+  let firstCarry = -1;
   for (let place = 0; place < 3 && (a >= 10 ** place || b >= 10 ** place || carry === 1); place += 1) {
     const [x, y] = [digit(a, place), digit(b, place)];
     if (y === 0 && carry === 0) {
-      same.push(PLACES[place] as string);
+      work.push({ place, changes: false, line: stayLine(place) });
       continue;
     }
     const total = x + y + carry;
-    // One step for each place.
-    // Nothing to add here but the new ten or hundred: "The new ten makes 6 tens."
-    const first = y === 0 ? line(`The new ${ONE_OF[place]} makes`, total, total === 1 ? `${ONE_OF[place]}.` : `${PLACES[place]}.`) : carry === 1 ? line(`Add the ${PLACES[place]}:`, x, 'plus', y, 'plus', 1, 'more is', total, '.') : line(`Add the ${PLACES[place]}:`, x, 'plus', y, 'is', total, '.');
-    const step = [first];
+    const added =
+      y === 0 && a < 10 ** place
+        ? line(`The new ${oneName(place)} makes`, 1, `${oneName(place)}.`)
+        : y === 0
+          ? line(`Add the new ${oneName(place)}:`, x, '+', 1, '=', total, '.')
+          : carry === 1
+            ? line(`Add the ${placeName(place)} and the new ${oneName(place)}:`, x, '+', y, '+', 1, '=', total, '.')
+            : line(`Add the ${placeName(place)}:`, x, '+', y, '=', total, '.');
     carry = total >= 10 ? 1 : 0;
-    if (carry === 1) step.push(line('That is', 1, `${ONE_OF[place + 1]} and`, total - 10, total - 10 === 1 ? `${ONE_OF[place]}.` : `${PLACES[place]}.`));
-    lines.push(merge(step));
+    if (carry === 1 && firstCarry === -1) firstCarry = place;
+    work.push({ place, changes: true, line: carry === 1 ? merge([added, regroupLine(total - 10, place)]) : added });
   }
-  return together([...lines, ...stay(same), line('The answer is', a + b, '.')], equation(a, '+', b, '=', a + b));
+  // The hint is the move, never its result. It never says "one" or "ten": the answer can be 1 or 10.
+  const hint = firstCarry === 0 ? 'Add the ones first. 10 ones make a new ten.' : firstCarry === 1 ? 'Add place by place, starting with the ones. 10 tens make a new hundred.' : 'Add place by place, starting with the ones.';
+  return walk(work, firstCarry !== -1, line('The answer is', a + b, '.'), equation(a, '+', b, '=', a + b), hint);
 }
 
-// Taking away place by place, ones first, breaking up a ten or a hundred when there are not enough.
+// Subtracting place by place, ones first. When a place has too few, one of the next place is broken up and the
+// step says how many there are now: "There are not enough ones, so break a ten. Now there are 13 ones: 13 − 5 = 8."
 export function subtractExplanation(a: number, b: number): Explanation {
-  const lines: Line[] = [];
-  const same: string[] = [];
+  const work: PlaceStep[] = [];
   let borrow = 0;
+  let firstBorrow = -1;
   for (let place = 0; place < 3 && a >= 10 ** place; place += 1) {
     const [x, y] = [digit(a, place) - borrow, digit(b, place)];
     if (y === 0 && borrow === 0) {
-      same.push(PLACES[place] as string);
+      work.push({ place, changes: false, line: stayLine(place) });
       continue;
     }
-    // One step for each place.
-    const step: Line[] = [];
-    if (borrow === 1) step.push(x === 0 ? line(`Now there are no ${PLACES[place]}.`) : line('Now there', x === 1 ? 'is' : 'are', x, x === 1 ? `${ONE_OF[place]}.` : `${PLACES[place]}.`));
+    const name = placeName(place);
+    const lent = borrow === 1;
+    // After lending one to the place before: "Now there are 4 tens."
+    const now = x === 0 ? line(`Now there are no ${name}.`) : line('Now there', x === 1 ? 'is' : 'are', x, `${x === 1 ? oneName(place) : name}.`);
     borrow = x < y ? 1 : 0;
+    if (borrow === 1 && firstBorrow === -1) firstBorrow = place;
+    let step: Line;
     if (borrow === 1) {
-      step.push(line(`There are not enough ${PLACES[place]}. Break a ${ONE_OF[place + 1]} into`, 10, `${PLACES[place]}.`));
-      step.push(line(x + 10, 'minus', y, 'is', x + 10 - y, '.'));
-    } else if (y > 0) step.push(line(`Take away the ${PLACES[place]}:`, x, 'minus', y, 'is', x - y, '.'));
-    lines.push(merge(step));
+      const broken = line('Now there are', x + 10, `${name}:`, x + 10, '−', y, '=', x + 10 - y, '.');
+      step = lent ? merge([now, line(`That is not enough, so break a ${oneName(place + 1)}.`), broken]) : merge([line(`There are not enough ${name}, so break a ${oneName(place + 1)}.`), broken]);
+    } else if (y > 0) {
+      const taken = line(`Subtract the ${name}:`, x, '−', y, '=', x - y, '.');
+      step = lent ? merge([now, taken]) : taken;
+    } else step = now;
+    work.push({ place, changes: true, line: step });
   }
-  return together([...lines, ...stay(same), line('The answer is', a - b, '.')], equation(a, '-', b, '=', a - b));
+  const hint = firstBorrow === 0 ? 'Start with the ones. If there are not enough, break a ten.' : firstBorrow === 1 ? 'Start with the ones, then the tens. If there are not enough tens, break a hundred.' : 'Subtract place by place, starting with the ones.';
+  return walk(work, firstBorrow !== -1, line('The answer is', a - b, '.'), equation(a, '-', b, '=', a - b), hint);
 }
 
 export function addQuestion(a: number, b: number, typed: boolean, rng: Rng, named = false): QuestionDraft {

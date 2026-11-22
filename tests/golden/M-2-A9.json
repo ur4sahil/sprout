@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-A9",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
@@ -21,26 +21,38 @@
   "explanation": {
    "speak": [
     {
-     "number": 11
+     "number": 10
     },
-    "tens is one hundred and",
+    "tens make",
     {
      "number": 1
     },
-    "tens.",
-    "That makes",
+    "hundred.",
+    {
+     "number": 11
+    },
+    "tens is",
+    {
+     "number": 1
+    },
+    "hundred and",
+    {
+     "number": 1
+    },
+    "ten.",
+    "So the hundreds digit is",
     {
      "number": 9
     },
-    "hundreds,",
+    ", the tens digit is",
     {
      "number": 1
     },
-    "ten and",
+    "and the ones digit is",
     {
      "number": 0
     },
-    "ones.",
+    ".",
     "The number is",
     {
      "number": 910
@@ -48,8 +60,9 @@
     "."
    ],
    "steps": [
-    "11 tens is 1 hundred and 1 tens.",
-    "That makes 9 hundreds, 1 ten and 0 ones.",
+    "10 tens make 1 hundred.",
+    "11 tens is 1 hundred and 1 ten.",
+    "So the hundreds digit is 9, the tens digit is 1 and the ones digit is 0.",
     "The number is 910."
    ],
    "visual": {
@@ -57,6 +70,9 @@
     "hundreds": 9,
     "tens": 1,
     "ones": 0
+   },
+   "hint": {
+    "text": "10 tens make 1 hundred."
    }
   },
   "type": "choice",
@@ -133,24 +149,33 @@
       {
        "number": 10
       },
-      "tens is one hundred and",
+      "tens make",
       {
-       "number": 0
+       "number": 1
       },
-      "tens.",
-      "That makes",
+      "hundred.",
+      "So the",
+      {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "more hundred.",
+      "So the hundreds digit is",
       {
        "number": 7
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 0
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 700
@@ -158,8 +183,9 @@
       "."
      ],
      "steps": [
-      "10 tens is 1 hundred and 0 tens.",
-      "That makes 7 hundreds, 0 tens and 0 ones.",
+      "10 tens make 1 hundred.",
+      "So the 10 tens make 1 more hundred.",
+      "So the hundreds digit is 7, the tens digit is 0 and the ones digit is 0.",
       "The number is 700."
      ],
      "visual": {
@@ -167,6 +193,9 @@
       "hundreds": 7,
       "tens": 0,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -239,26 +268,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 13
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 3
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 7
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 3
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 730
@@ -266,8 +307,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "13 tens is 1 hundred and 3 tens.",
-      "That makes 7 hundreds, 3 tens and 0 ones.",
+      "So the hundreds digit is 7, the tens digit is 3 and the ones digit is 0.",
       "The number is 730."
      ],
      "visual": {
@@ -275,6 +317,9 @@
       "hundreds": 7,
       "tens": 3,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -349,24 +394,33 @@
       {
        "number": 10
       },
-      "tens is one hundred and",
+      "tens make",
       {
-       "number": 0
+       "number": 1
       },
-      "tens.",
-      "That makes",
+      "hundred.",
+      "So the",
+      {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "more hundred.",
+      "So the hundreds digit is",
       {
        "number": 7
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 0
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 700
@@ -374,8 +428,9 @@
       "."
      ],
      "steps": [
-      "10 tens is 1 hundred and 0 tens.",
-      "That makes 7 hundreds, 0 tens and 0 ones.",
+      "10 tens make 1 hundred.",
+      "So the 10 tens make 1 more hundred.",
+      "So the hundreds digit is 7, the tens digit is 0 and the ones digit is 0.",
       "The number is 700."
      ],
      "visual": {
@@ -383,6 +438,9 @@
       "hundreds": 7,
       "tens": 0,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -455,26 +513,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 13
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 3
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 9
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 3
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 930
@@ -482,8 +552,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "13 tens is 1 hundred and 3 tens.",
-      "That makes 9 hundreds, 3 tens and 0 ones.",
+      "So the hundreds digit is 9, the tens digit is 3 and the ones digit is 0.",
       "The number is 930."
      ],
      "visual": {
@@ -491,6 +562,9 @@
       "hundreds": 9,
       "tens": 3,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -563,26 +637,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 17
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 7
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 7
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 7
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 770
@@ -590,8 +676,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "17 tens is 1 hundred and 7 tens.",
-      "That makes 7 hundreds, 7 tens and 0 ones.",
+      "So the hundreds digit is 7, the tens digit is 7 and the ones digit is 0.",
       "The number is 770."
      ],
      "visual": {
@@ -599,6 +686,9 @@
       "hundreds": 7,
       "tens": 7,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -673,24 +763,33 @@
       {
        "number": 10
       },
-      "tens is one hundred and",
+      "tens make",
       {
-       "number": 0
+       "number": 1
       },
-      "tens.",
-      "That makes",
+      "hundred.",
+      "So the",
+      {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "more hundred.",
+      "So the hundreds digit is",
       {
        "number": 6
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 0
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 600
@@ -698,8 +797,9 @@
       "."
      ],
      "steps": [
-      "10 tens is 1 hundred and 0 tens.",
-      "That makes 6 hundreds, 0 tens and 0 ones.",
+      "10 tens make 1 hundred.",
+      "So the 10 tens make 1 more hundred.",
+      "So the hundreds digit is 6, the tens digit is 0 and the ones digit is 0.",
       "The number is 600."
      ],
      "visual": {
@@ -707,6 +807,9 @@
       "hundreds": 6,
       "tens": 0,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -781,24 +884,33 @@
       {
        "number": 10
       },
-      "tens is one hundred and",
+      "tens make",
       {
-       "number": 0
+       "number": 1
       },
-      "tens.",
-      "That makes",
+      "hundred.",
+      "So the",
+      {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "more hundred.",
+      "So the hundreds digit is",
       {
        "number": 2
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 0
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 200
@@ -806,8 +918,9 @@
       "."
      ],
      "steps": [
-      "10 tens is 1 hundred and 0 tens.",
-      "That makes 2 hundreds, 0 tens and 0 ones.",
+      "10 tens make 1 hundred.",
+      "So the 10 tens make 1 more hundred.",
+      "So the hundreds digit is 2, the tens digit is 0 and the ones digit is 0.",
       "The number is 200."
      ],
      "visual": {
@@ -815,6 +928,9 @@
       "hundreds": 2,
       "tens": 0,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -887,26 +1003,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 16
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 6
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 3
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 6
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 360
@@ -914,8 +1042,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "16 tens is 1 hundred and 6 tens.",
-      "That makes 3 hundreds, 6 tens and 0 ones.",
+      "So the hundreds digit is 3, the tens digit is 6 and the ones digit is 0.",
       "The number is 360."
      ],
      "visual": {
@@ -923,6 +1052,9 @@
       "hundreds": 3,
       "tens": 6,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -995,26 +1127,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 18
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 8
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 3
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 8
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 380
@@ -1022,8 +1166,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "18 tens is 1 hundred and 8 tens.",
-      "That makes 3 hundreds, 8 tens and 0 ones.",
+      "So the hundreds digit is 3, the tens digit is 8 and the ones digit is 0.",
       "The number is 380."
      ],
      "visual": {
@@ -1031,6 +1176,9 @@
       "hundreds": 3,
       "tens": 8,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -1103,26 +1251,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 19
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 9
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 6
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 9
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 0
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 690
@@ -1130,8 +1290,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "19 tens is 1 hundred and 9 tens.",
-      "That makes 6 hundreds, 9 tens and 0 ones.",
+      "So the hundreds digit is 6, the tens digit is 9 and the ones digit is 0.",
       "The number is 690."
      ],
      "visual": {
@@ -1139,6 +1300,9 @@
       "hundreds": 6,
       "tens": 9,
       "ones": 0
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -1217,26 +1381,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 15
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 5
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 7
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 5
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 9
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 759
@@ -1244,8 +1420,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "15 tens is 1 hundred and 5 tens.",
-      "That makes 7 hundreds, 5 tens and 9 ones.",
+      "So the hundreds digit is 7, the tens digit is 5 and the ones digit is 9.",
       "The number is 759."
      ],
      "visual": {
@@ -1253,6 +1430,9 @@
       "hundreds": 7,
       "tens": 5,
       "ones": 9
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -1329,26 +1509,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 12
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 2
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 7
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 2
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 5
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 725
@@ -1356,8 +1548,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "12 tens is 1 hundred and 2 tens.",
-      "That makes 7 hundreds, 2 tens and 5 ones.",
+      "So the hundreds digit is 7, the tens digit is 2 and the ones digit is 5.",
       "The number is 725."
      ],
      "visual": {
@@ -1365,6 +1558,9 @@
       "hundreds": 7,
       "tens": 2,
       "ones": 5
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -1441,26 +1637,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 14
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 4
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 7
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 4
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 1
       },
-      "one.",
+      ".",
       "The number is",
       {
        "number": 741
@@ -1468,8 +1676,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "14 tens is 1 hundred and 4 tens.",
-      "That makes 7 hundreds, 4 tens and 1 one.",
+      "So the hundreds digit is 7, the tens digit is 4 and the ones digit is 1.",
       "The number is 741."
      ],
      "visual": {
@@ -1477,6 +1686,9 @@
       "hundreds": 7,
       "tens": 4,
       "ones": 1
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -1553,26 +1765,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 12
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 2
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 9
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 2
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 1
       },
-      "one.",
+      ".",
       "The number is",
       {
        "number": 921
@@ -1580,8 +1804,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "12 tens is 1 hundred and 2 tens.",
-      "That makes 9 hundreds, 2 tens and 1 one.",
+      "So the hundreds digit is 9, the tens digit is 2 and the ones digit is 1.",
       "The number is 921."
      ],
      "visual": {
@@ -1589,6 +1814,9 @@
       "hundreds": 9,
       "tens": 2,
       "ones": 1
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -1665,26 +1893,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "ones make",
+      {
+       "number": 1
+      },
+      "ten.",
+      {
        "number": 16
       },
-      "ones is one ten and",
+      "ones is",
+      {
+       "number": 1
+      },
+      "ten and",
       {
        "number": 6
       },
       "ones.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 6
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 3
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 6
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 636
@@ -1692,8 +1932,9 @@
       "."
      ],
      "steps": [
+      "10 ones make 1 ten.",
       "16 ones is 1 ten and 6 ones.",
-      "That makes 6 hundreds, 3 tens and 6 ones.",
+      "So the hundreds digit is 6, the tens digit is 3 and the ones digit is 6.",
       "The number is 636."
      ],
      "visual": {
@@ -1701,6 +1942,9 @@
       "hundreds": 6,
       "tens": 3,
       "ones": 6
+     },
+     "hint": {
+      "text": "10 ones make 1 ten."
      }
     },
     "type": "choice",
@@ -1777,26 +2021,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 16
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 6
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 6
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 6
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 2
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 662
@@ -1804,8 +2060,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "16 tens is 1 hundred and 6 tens.",
-      "That makes 6 hundreds, 6 tens and 2 ones.",
+      "So the hundreds digit is 6, the tens digit is 6 and the ones digit is 2.",
       "The number is 662."
      ],
      "visual": {
@@ -1813,6 +2070,9 @@
       "hundreds": 6,
       "tens": 6,
       "ones": 2
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -1889,26 +2149,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "tens make",
+      {
+       "number": 1
+      },
+      "hundred.",
+      {
        "number": 19
       },
-      "tens is one hundred and",
+      "tens is",
+      {
+       "number": 1
+      },
+      "hundred and",
       {
        "number": 9
       },
       "tens.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 2
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 9
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 7
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 297
@@ -1916,8 +2188,9 @@
       "."
      ],
      "steps": [
+      "10 tens make 1 hundred.",
       "19 tens is 1 hundred and 9 tens.",
-      "That makes 2 hundreds, 9 tens and 7 ones.",
+      "So the hundreds digit is 2, the tens digit is 9 and the ones digit is 7.",
       "The number is 297."
      ],
      "visual": {
@@ -1925,6 +2198,9 @@
       "hundreds": 2,
       "tens": 9,
       "ones": 7
+     },
+     "hint": {
+      "text": "10 tens make 1 hundred."
      }
     },
     "type": "choice",
@@ -2001,26 +2277,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "ones make",
+      {
+       "number": 1
+      },
+      "ten.",
+      {
        "number": 16
       },
-      "ones is one ten and",
+      "ones is",
+      {
+       "number": 1
+      },
+      "ten and",
       {
        "number": 6
       },
       "ones.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 2
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 4
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 6
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 246
@@ -2028,8 +2316,9 @@
       "."
      ],
      "steps": [
+      "10 ones make 1 ten.",
       "16 ones is 1 ten and 6 ones.",
-      "That makes 2 hundreds, 4 tens and 6 ones.",
+      "So the hundreds digit is 2, the tens digit is 4 and the ones digit is 6.",
       "The number is 246."
      ],
      "visual": {
@@ -2037,6 +2326,9 @@
       "hundreds": 2,
       "tens": 4,
       "ones": 6
+     },
+     "hint": {
+      "text": "10 ones make 1 ten."
      }
     },
     "type": "choice",
@@ -2113,26 +2405,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "ones make",
+      {
+       "number": 1
+      },
+      "ten.",
+      {
        "number": 18
       },
-      "ones is one ten and",
+      "ones is",
+      {
+       "number": 1
+      },
+      "ten and",
       {
        "number": 8
       },
       "ones.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 2
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 3
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 8
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 238
@@ -2140,8 +2444,9 @@
       "."
      ],
      "steps": [
+      "10 ones make 1 ten.",
       "18 ones is 1 ten and 8 ones.",
-      "That makes 2 hundreds, 3 tens and 8 ones.",
+      "So the hundreds digit is 2, the tens digit is 3 and the ones digit is 8.",
       "The number is 238."
      ],
      "visual": {
@@ -2149,6 +2454,9 @@
       "hundreds": 2,
       "tens": 3,
       "ones": 8
+     },
+     "hint": {
+      "text": "10 ones make 1 ten."
      }
     },
     "type": "choice",
@@ -2225,26 +2533,38 @@
     "explanation": {
      "speak": [
       {
+       "number": 10
+      },
+      "ones make",
+      {
+       "number": 1
+      },
+      "ten.",
+      {
        "number": 18
       },
-      "ones is one ten and",
+      "ones is",
+      {
+       "number": 1
+      },
+      "ten and",
       {
        "number": 8
       },
       "ones.",
-      "That makes",
+      "So the hundreds digit is",
       {
        "number": 5
       },
-      "hundreds,",
+      ", the tens digit is",
       {
        "number": 8
       },
-      "tens and",
+      "and the ones digit is",
       {
        "number": 8
       },
-      "ones.",
+      ".",
       "The number is",
       {
        "number": 588
@@ -2252,8 +2572,9 @@
       "."
      ],
      "steps": [
+      "10 ones make 1 ten.",
       "18 ones is 1 ten and 8 ones.",
-      "That makes 5 hundreds, 8 tens and 8 ones.",
+      "So the hundreds digit is 5, the tens digit is 8 and the ones digit is 8.",
       "The number is 588."
      ],
      "visual": {
@@ -2261,6 +2582,9 @@
       "hundreds": 5,
       "tens": 8,
       "ones": 8
+     },
+     "hint": {
+      "text": "10 ones make 1 ten."
      }
     },
     "type": "choice",
@@ -2325,13 +2649,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 610?",
+     "text": "A hundred is 10 tens. How many tens are in 610 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 610
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2344,31 +2672,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 6
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 60
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "is",
       {
        "number": 1
       },
-      "more tens:",
+      "more ten.",
+      {
+       "number": 60
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
       {
        "number": 61
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "6 hundreds is 60 tens.",
+      "6 hundreds are 60 tens.",
+      "There is 1 more ten.",
       "60 + 1 = 61 tens."
      ],
      "visual": {
@@ -2376,6 +2709,9 @@
       "hundreds": 6,
       "tens": 1,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2393,13 +2729,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 730?",
+     "text": "A hundred is 10 tens. How many tens are in 730 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 730
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2412,31 +2752,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 7
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 70
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "are",
       {
        "number": 3
       },
-      "more tens:",
+      "more tens.",
+      {
+       "number": 70
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
       {
        "number": 73
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "7 hundreds is 70 tens.",
+      "7 hundreds are 70 tens.",
+      "There are 3 more tens.",
       "70 + 3 = 73 tens."
      ],
      "visual": {
@@ -2444,6 +2789,9 @@
       "hundreds": 7,
       "tens": 3,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2461,13 +2809,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 710?",
+     "text": "A hundred is 10 tens. How many tens are in 710 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 710
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2480,31 +2832,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 7
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 70
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "is",
       {
        "number": 1
       },
-      "more tens:",
+      "more ten.",
+      {
+       "number": 70
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
       {
        "number": 71
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "7 hundreds is 70 tens.",
+      "7 hundreds are 70 tens.",
+      "There is 1 more ten.",
       "70 + 1 = 71 tens."
      ],
      "visual": {
@@ -2512,6 +2869,9 @@
       "hundreds": 7,
       "tens": 1,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2529,13 +2889,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 930?",
+     "text": "A hundred is 10 tens. How many tens are in 930 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 930
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2548,31 +2912,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 9
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 90
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "are",
       {
        "number": 3
       },
-      "more tens:",
+      "more tens.",
+      {
+       "number": 90
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
       {
        "number": 93
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "9 hundreds is 90 tens.",
+      "9 hundreds are 90 tens.",
+      "There are 3 more tens.",
       "90 + 3 = 93 tens."
      ],
      "visual": {
@@ -2580,6 +2949,9 @@
       "hundreds": 9,
       "tens": 3,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2597,13 +2969,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 770?",
+     "text": "A hundred is 10 tens. How many tens are in 770 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 770
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2616,31 +2992,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 7
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 70
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "are",
       {
        "number": 7
       },
-      "more tens:",
+      "more tens.",
+      {
+       "number": 70
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
       {
        "number": 77
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "7 hundreds is 70 tens.",
+      "7 hundreds are 70 tens.",
+      "There are 7 more tens.",
       "70 + 7 = 77 tens."
      ],
      "visual": {
@@ -2648,6 +3029,9 @@
       "hundreds": 7,
       "tens": 7,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2665,13 +3049,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 510?",
+     "text": "A hundred is 10 tens. How many tens are in 510 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 510
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2684,31 +3072,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 5
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 50
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "is",
       {
        "number": 1
       },
-      "more tens:",
+      "more ten.",
+      {
+       "number": 50
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
       {
        "number": 51
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "5 hundreds is 50 tens.",
+      "5 hundreds are 50 tens.",
+      "There is 1 more ten.",
       "50 + 1 = 51 tens."
      ],
      "visual": {
@@ -2716,6 +3109,9 @@
       "hundreds": 5,
       "tens": 1,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2733,13 +3129,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 110?",
+     "text": "A hundred is 10 tens. How many tens are in 110 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 110
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2752,23 +3152,28 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 1
       },
-      "hundreds is",
+      "hundred is",
       {
        "number": 10
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "is",
       {
        "number": 1
       },
-      "more tens:",
+      "more ten.",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
       {
        "number": 11
       },
@@ -2776,7 +3181,7 @@
      ],
      "steps": [
       "1 hundred is 10 tens.",
-      "1 hundred is 10 tens.",
+      "There is 1 more ten.",
       "10 + 1 = 11 tens."
      ],
      "visual": {
@@ -2784,6 +3189,9 @@
       "hundreds": 1,
       "tens": 1,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2801,13 +3209,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 260?",
+     "text": "A hundred is 10 tens. How many tens are in 260 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 260
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2820,31 +3232,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 2
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 20
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "are",
       {
        "number": 6
       },
-      "more tens:",
+      "more tens.",
+      {
+       "number": 20
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
       {
        "number": 26
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "2 hundreds is 20 tens.",
+      "2 hundreds are 20 tens.",
+      "There are 6 more tens.",
       "20 + 6 = 26 tens."
      ],
      "visual": {
@@ -2852,6 +3269,9 @@
       "hundreds": 2,
       "tens": 6,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2869,13 +3289,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 280?",
+     "text": "A hundred is 10 tens. How many tens are in 280 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 280
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2888,31 +3312,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 2
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 20
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "are",
       {
        "number": 8
       },
-      "more tens:",
+      "more tens.",
+      {
+       "number": 20
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
       {
        "number": 28
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "2 hundreds is 20 tens.",
+      "2 hundreds are 20 tens.",
+      "There are 8 more tens.",
       "20 + 8 = 28 tens."
      ],
      "visual": {
@@ -2920,6 +3349,9 @@
       "hundreds": 2,
       "tens": 8,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",
@@ -2937,13 +3369,17 @@
      "ask": "tensIn"
     },
     "prompt": {
-     "text": "How many tens are in 590?",
+     "text": "A hundred is 10 tens. How many tens are in 590 in all?",
      "speak": [
-      "How many tens are in",
+      "A hundred is",
+      {
+       "number": 10
+      },
+      "tens. How many tens are in",
       {
        "number": 590
       },
-      "?"
+      "in all?"
      ]
     },
     "stimulus": {
@@ -2956,31 +3392,36 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "One hundred is",
-      {
-       "number": 10
-      },
-      "tens. So",
       {
        "number": 5
       },
-      "hundreds is",
+      "hundreds are",
       {
        "number": 50
       },
-      "tens. Add",
+      "tens.",
+      "There",
+      "are",
       {
        "number": 9
       },
-      "more tens:",
+      "more tens.",
+      {
+       "number": 50
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "is",
       {
        "number": 59
       },
       "tens."
      ],
      "steps": [
-      "1 hundred is 10 tens.",
-      "5 hundreds is 50 tens.",
+      "5 hundreds are 50 tens.",
+      "There are 9 more tens.",
       "50 + 9 = 59 tens."
      ],
      "visual": {
@@ -2988,6 +3429,9 @@
       "hundreds": 5,
       "tens": 9,
       "ones": 0
+     },
+     "hint": {
+      "text": "Count 10 tens for each hundred. Then add the other tens."
      }
     },
     "skillId": "M-2-A9",

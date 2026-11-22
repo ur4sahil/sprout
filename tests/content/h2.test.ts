@@ -24,8 +24,9 @@ describe('the wave', () => {
     expect(ROWS.filter((row) => row.grade === 'PK')).toHaveLength(16);
     expect(ROWS.filter((row) => row.grade === '2')).toHaveLength(19);
     for (const row of ROWS) {
-      // Version 1 as shipped; 2 for the two whose wording changed (color, American spelling).
-      expect(row.version).toBe(['M-PK-C6', 'M-PK-C7'].includes(row.id) ? 2 : 1);
+      // Version 1 as shipped; 2 for the two whose wording changed (color, American spelling), and 2 for every
+      // grade 2 row, reworded in the wording audit (Nov 22, 2026).
+      expect(row.version).toBe(row.grade === '2' || ['M-PK-C6', 'M-PK-C7'].includes(row.id) ? 2 : 1);
       expect(row.maxLevel).toBe(3);
       expect(CATALOGUE.filter((skill) => skill.id === row.id)).toHaveLength(1);
       if (row.grade === '2') expect(row.ccss, row.id).toMatch(/^2\./);
