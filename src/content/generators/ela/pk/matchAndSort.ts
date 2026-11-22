@@ -1,10 +1,12 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, SortBin, Visual } from '../../../../engine/types';
+import type { LessonStep, Level, QuestionDraft, Say, SayPart, SortBin, Visual } from '../../../../engine/types';
 import { ALPHABET, DIFFERENT_SHAPES, LOOK_ALIKE_LOWER, SORT_EXCLUDED_DIGITS, SORT_EXCLUDED_LETTERS } from '../../../data/letters';
 import type { SkillGenerator } from '../../../generator';
 import type { Explanation } from './parts';
 import { letterSaid, letterTile, pickApart, row } from './parts';
+import type { Line } from './h3-parts';
+import { spoken, working } from './h3-parts';
 
 // Language Arts pre-K A.3 and A.5.
 
@@ -22,6 +24,9 @@ export function pairsExplanation(letters: string[]): Explanation {
 }
 
 const MATCH = 'Match each big letter to its small letter.';
+// A match has no step to nudge with (its steps list the pairs), so its hint is a way to work: big and small
+// shapes can differ (A and a), but the name is the same.
+const MATCH_HINT = { text: 'Say the name of each big letter. Find the small letter with the same name.' };
 
 // `letters` is the left column, top to bottom, as small letters. `smalls` is the right column.
 export function matchQuestion(letters: string[], smalls: string[]): QuestionDraft {
@@ -33,7 +38,7 @@ export function matchQuestion(letters: string[], smalls: string[]): QuestionDraf
     left: letters.map((letter) => letterTile(letter.toUpperCase())),
     right: smalls.map((letter) => letterTile(letter)),
     answerPairs: letters.map((letter, l): [number, number] => [l, smalls.indexOf(letter)]),
-    explanation: pairsExplanation(letters),
+    explanation: { ...pairsExplanation(letters), hint: MATCH_HINT },
   };
 }
 
@@ -108,22 +113,27 @@ const KINDS = ['letter', 'number'];
 
 const isDigit = (item: string): boolean => /^[0-9]$/.test(item);
 
+// "t and M", "V, Q and P": a list as a child says it, written and with each item a typed part.
+function listed(items: readonly string[], part: (item: string) => SayPart): Line {
+  const text = items.length === 1 ? (items[0] as string) : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1] as string}`;
+  const speak: Say = items.flatMap((item, i): Say => [...(i === 0 ? [] : [i === items.length - 1 ? 'and' : ',']), part(item)]);
+  return { text, speak };
+}
+
+// One full sentence for each group: "The letters are t and M." "The numbers are 4 and 9."
+function groupLine(items: readonly string[], one: string, many: string, part: (item: string) => SayPart): Line {
+  const named = items.length === 1 ? `The ${one} is` : `The ${many} are`;
+  const list = listed(items, part);
+  return spoken(`${named} ${list.text}.`, [named, ...list.speak, '.']);
+}
+
+const SORT_HINT = spoken('Look at each card. Is it a letter, or is it a number?', ['Look at each card. Is it a letter, or is it a number?']);
+
 function sortExplanation(items: string[]): Explanation {
   const letters = items.filter((item) => !isDigit(item));
   const digits = items.filter(isDigit);
-  const one = (count: number, single: string, many: string): string => (count === 1 ? single : many);
-  const speak: Say = [
-    one(letters.length, 'The letter is', 'The letters are'),
-    ...letters.map((letter) => ({ letter })),
-    one(digits.length, '. The number is', '. The numbers are'),
-    ...digits.map((digit) => ({ number: Number(digit) })),
-    '.',
-  ];
-  return {
-    speak,
-    steps: [`${one(letters.length, 'Letter', 'Letters')}: ${letters.join(', ')}.`, `${one(digits.length, 'Number', 'Numbers')}: ${digits.join(', ')}.`],
-    visual: row(...letters.map((letter) => letterSaid(letter))),
-  };
+  const steps = [groupLine(letters, 'letter', 'letters', (letter) => ({ letter })), groupLine(digits, 'number', 'numbers', (digit) => ({ number: Number(digit) }))];
+  return working(steps, row(...letters.map((letter) => letterSaid(letter))), SORT_HINT);
 }
 
 const SORT = 'Put each one in its group.';

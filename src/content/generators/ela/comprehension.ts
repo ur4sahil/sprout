@@ -16,7 +16,9 @@ const pic = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 1, l
 
 // ---- Kindergarten: the story or fact text is heard, the answer is a picture. ----
 
-function heard(id: string, text: string, q: PictureAnswer, intro: string, rng: Rng): QuestionDraft {
+// After a miss: the text again, then the sentence that holds the answer, tied to the question.
+// The hint is a way to listen; it never names the answer, and (a listen question) never shows it.
+function heard(id: string, text: string, q: PictureAnswer, intro: string, hint: string, rng: Rng): QuestionDraft {
   const order = rng.shuffle([0, 1, 2]);
   const right = q.answers[0];
   return {
@@ -26,13 +28,14 @@ function heard(id: string, text: string, q: PictureAnswer, intro: string, rng: R
     prompt: { text: `${intro} ${q.ask}`, speak: [intro, ...text.split(/(?<=\.)\s+/), q.ask] },
     options: order.map((i) => pic(q.answers[i]?.emoji as string)),
     answerIndex: order.indexOf(0),
-    explanation: { speak: ['Listen again.', text], steps: [text], visual: pic(right.emoji) },
+    explanation: { speak: ['Listen again.', text, q.because], steps: [text, q.because], visual: pic(right.emoji), hint: { text: hint } },
   };
 }
 
 function kStory(level: Level, rng: Rng): QuestionDraft {
   const story = rng.pick(K_STORIES);
-  return heard(`${story.id}-${level === 1 ? 'who' : 'where'}`, story.text, level === 1 ? story.who : story.where, 'Listen to the story.', rng);
+  const listen = level === 1 ? 'Listen for the people and animals in it.' : 'Listen for the places in it.';
+  return heard(`${story.id}-${level === 1 ? 'who' : 'where'}`, story.text, level === 1 ? story.who : story.where, 'Listen to the story.', `Tap the speaker to hear the story again. ${listen}`, rng);
 }
 
 export const kCharactersGenerator: SkillGenerator = {
@@ -55,7 +58,7 @@ export const kCharactersGenerator: SkillGenerator = {
 
 function kFacts(level: Level, rng: Rng): QuestionDraft {
   const fact = rng.pick(K_FACTS);
-  return heard(`${fact.id}-${level}`, fact.text, level === 1 ? fact.first : fact.later, 'Listen.', rng);
+  return heard(`${fact.id}-${level}`, fact.text, level === 1 ? fact.first : fact.later, 'Listen.', 'Tap the speaker to hear it again. Listen for the words of the question.', rng);
 }
 
 export const kFactsGenerator: SkillGenerator = {

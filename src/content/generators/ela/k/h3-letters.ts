@@ -7,9 +7,9 @@ import { VOWEL_SETS } from '../../../data/h3-sounds';
 import { COUNT_SENTENCES } from '../../../data/h3-stories';
 import { ALPHABET } from '../../../data/letters';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from '../pk/parts';
-import { letterSaid, letterTile, pickApart, row } from '../pk/parts';
-import { beats, letters, line, plain } from '../pk/h3-parts';
+import { cap, letterSaid, letterTile, pickApart, row } from '../pk/parts';
+import type { Told } from '../pk/h3-parts';
+import { beats, letters, line, plain, spoken, working } from '../pk/h3-parts';
 
 // Language Arts kindergarten A.3 to A.5 (plan section 15, wave H3).
 
@@ -20,14 +20,17 @@ import { beats, letters, line, plain } from '../pk/h3-parts';
 
 const THREE_LETTER: readonly string[] = [...new Set([...CVC_WORDS.map((each) => each.word), ...WORD_FAMILIES.flatMap((family) => family.words)])];
 const FIRST_GROUPS: readonly string[][] = [...new Set(THREE_LETTER.map((word) => word.charAt(0)))].map((first) => THREE_LETTER.filter((word) => word.charAt(0) === first)).filter((group) => group.length >= 3);
-const MATCH_WORDS = line('Match each big word to its small word.');
+// "Big word" would mean a long word: the words are the same, written in big and in small letters.
+const MATCH_WORDS = line('Match each word in big letters to the same word in small letters.');
+const MATCH_HINT = line('Check every letter, not just the first one.');
 
-function wordsExplanation(words: string[]): Explanation {
-  return {
-    speak: ['Big and small letters spell the same word.', ...words.flatMap((word): Say => [{ word }, 'goes with', { word }, '.'])],
-    steps: words.map((word) => `${word.toUpperCase()} goes with ${word}.`),
-    visual: row(plain((words[0] as string).toUpperCase(), 'xl'), plain(words[0] as string, 'xl')),
-  };
+// Heard aloud, capitals vanish ("wet goes with wet"), so each step says which is big and which is small.
+function wordsExplanation(words: string[]): Told {
+  return working(
+    words.map((word) => spoken(`${word.toUpperCase()} goes with ${word}.`, ['Big', { word }, 'goes with small', { word }, '.'])),
+    row(plain((words[0] as string).toUpperCase(), 'xl'), plain(words[0] as string, 'xl')),
+    MATCH_HINT,
+  );
 }
 
 function matchWords(level: Level, rng: Rng): QuestionDraft {
@@ -82,12 +85,20 @@ const ALL_VOWELS = letters(['A', 'E', 'I', 'O', 'U']);
 const vowelPrompt = (vowel: boolean): Line => line(vowel ? 'Which letter is a vowel?' : 'Which letter is not a vowel?');
 type Line = { text: string; speak: Say };
 
-function vowelExplanation(letter: string, vowel: boolean): Explanation {
-  return {
-    speak: ['The vowels are', ...ALL_VOWELS.speak, '.', { letter }, vowel ? 'is a vowel.' : 'is not a vowel.'],
-    steps: [`The vowels are ${ALL_VOWELS.text}.`, `${letter} ${vowel ? 'is' : 'is not'} a vowel.`],
-    visual: row(...['a', 'e', 'i', 'o', 'u'].map((each) => letterSaid(letter === letter.toUpperCase() ? each.toUpperCase() : each))),
-  };
+// A step starts with a capital, as a sentence does: "The letter a is a vowel.", never "a is a vowel."
+// The hint for finding a vowel cannot list the vowels: one of them is the answer.
+const FIND_VOWEL_HINT = line('Say each letter. Is it one of the five vowels?');
+const NOT_VOWEL_HINT = spoken(`The vowels are ${ALL_VOWELS.text}. Which letter is not one of them?`, ['The vowels are', ...ALL_VOWELS.speak, '. Which letter is not one of them?']);
+
+function vowelExplanation(letter: string, vowel: boolean): Told {
+  return working(
+    [
+      spoken(`The vowels are ${ALL_VOWELS.text}.`, ['The vowels are', ...ALL_VOWELS.speak, '.']),
+      spoken(`The letter ${letter} ${vowel ? 'is' : 'is not'} a vowel.`, ['The letter', { letter }, vowel ? 'is a vowel.' : 'is not a vowel.']),
+    ],
+    row(...['a', 'e', 'i', 'o', 'u'].map((each) => letterSaid(letter === letter.toUpperCase() ? each.toUpperCase() : each))),
+    vowel ? FIND_VOWEL_HINT : NOT_VOWEL_HINT,
+  );
 }
 
 function vowels(level: Level, rng: Rng): QuestionDraft {
@@ -139,20 +150,21 @@ const KIND_BINS: SortBin[] = [
 ];
 const SORT_LETTERS = ALPHABET.filter((letter) => !['a', 'i', 'l', 'o'].includes(letter));
 const SENTENCES = COUNT_SENTENCES.filter((sentence) => sentence.split(' ').length >= 3);
-const SORT = line('Is it a letter, a word or a sentence? Put each card in its group.');
+// Level 1 has no sentence group, so it does not ask about sentences.
+const sortPrompt = (bins: number): Line => line(bins === 2 ? 'Is it a letter or a word? Put each card in its group.' : 'Is it a letter, a word or a sentence? Put each card in its group.');
+const sortHint = (bins: number): Line => line(bins === 2 ? 'Count the letters on each card. One letter on its own is a letter.' : 'Count the letters on each card, and look for spaces between words.');
 
-function kindExplanation(items: string[], bins: number): Explanation {
+// Full sentences, each starting with a capital: never "k is one letter." or a label such as "mop is a word: ...".
+function kindExplanation(items: string[], bins: number): Told {
   const first = (kind: string): string => items.find((item) => (item.includes(' ') ? 'sentence' : item.length === 1 ? 'letter' : 'word') === kind) as string;
   const letter = first('letter');
   const word = first('word');
-  const steps = [`${letter} is one letter.`, `${word} is a word: letters together.`];
-  const speak: Say = [{ letter }, 'is one letter.', { word }, 'is a word: letters together.'];
-  if (bins === 3) {
-    const sentence = first('sentence');
-    steps.push(`"${sentence}" is a sentence: words together.`);
-    speak.push(sentence, 'That is a sentence: words together.');
-  }
-  return { speak, steps, visual: row(plain(letter, 'xl'), plain(word, 'l')) };
+  const steps: Line[] = [
+    spoken(`The card with ${letter} has one letter.`, ['The card with', { letter }, 'has one letter.']),
+    spoken(`${cap(word)} is a word. A word is letters put together.`, [{ word }, 'is a word. A word is letters put together.']),
+  ];
+  if (bins === 3) steps.push(line(`${first('sentence')} That is a sentence. A sentence is words put together.`));
+  return working(steps, row(plain(letter, 'xl'), plain(word, 'l')), sortHint(bins));
 }
 
 function printKinds(level: Level, rng: Rng): QuestionDraft {
@@ -164,7 +176,7 @@ function printKinds(level: Level, rng: Rng): QuestionDraft {
     type: 'sort',
     mode: 'look',
     facts: { relation: 'printKind', target: KINDS.slice(0, bins).join('|'), items, bins: [...KINDS.slice(0, bins)] },
-    prompt: SORT,
+    prompt: sortPrompt(bins),
     items: items.map((item): Visual => plain(item, item.includes(' ') ? 'm' : 'l')),
     bins: KIND_BINS.slice(0, bins),
     answerBin: items.map(kindOf),

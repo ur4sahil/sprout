@@ -8,7 +8,8 @@ import { LOOK_ALIKE_LOWER, LOOK_ALIKE_UPPER } from '../../../data/letters';
 import type { SkillGenerator } from '../../../generator';
 import type { Explanation } from './parts';
 import { cap, letterSaid, letterTile, pickApart, picture, row } from './parts';
-import { beats, letters, line, said } from './h3-parts';
+import type { Line } from './h3-parts';
+import { beats, letterSays, letters, line, said, sound as soundPart, soundText, spoken, working } from './h3-parts';
 
 // Language Arts pre-K A.6 and A.7 (plan section 15, wave H3). Oracle: earlyWords.
 
@@ -22,16 +23,20 @@ const lookAlikes = (letter: string): string[] => [...new Set(LOOK_ALIKE_LOWER.fi
 const SOUND_GROUPS = [['c', 'k', 's'], ['g', 'j']];
 const soundsLike = (one: string, two: string): boolean => SOUND_GROUPS.some((group) => group.includes(one) && group.includes(two));
 
+// The prompt names only the letter: knowing which sound it makes is the skill (and level 3's look-alike, d for b,
+// would be no test if the sound were said). The steps and the hint say the sound first, then the letter.
 function startsPrompt(letter: string): { text: string; speak: Say } {
   return { text: `Which one starts with the letter ${letter}?`, speak: ['Which one starts with the letter', { letter }, '?'] };
 }
 
 function startsExplanation(entry: SoundWord, letter: string): Explanation {
-  return {
-    speak: [{ word: entry.word }, 'starts with the letter', { letter }, '.'],
-    steps: [`${cap(entry.word)} starts with the letter ${letter}.`],
-    visual: row(shown(entry), letterSaid(letter)),
-  };
+  const said = soundPart(entry.letter);
+  const heard = soundText(entry.letter);
+  return working(
+    [spoken(`${cap(entry.word)} starts with ${heard}.`, [{ word: entry.word }, 'starts with', said, '.']), letterSays(letter)],
+    row(shown(entry), letterSaid(letter)),
+    spoken(`The letter ${letter} says ${heard}. Which picture starts with ${heard}?`, ['The letter', { letter }, 'says', said, '. Which picture starts with', said, '?']),
+  );
 }
 
 function letterPicture(level: Level, rng: Rng): QuestionDraft {
@@ -85,16 +90,18 @@ export const letterPictureGenerator: SkillGenerator = {
 
 const ALPHABET_UPPER = 'ABCDEFGHJKMNPQRSTUVWXYZ'.split(''); // never I or L, which look like lines
 const upperLookAlikes = (letter: string): string[] => [...new Set(LOOK_ALIKE_UPPER.filter((set) => set.includes(letter)).flat())].filter((other) => other !== letter);
-const IN_NAME = 'Which letter is in this name?';
-const IN_NAME_SAY: Say = ['Which letter is in this name?'];
+// The prompt says the name, so a child who cannot read it yet hears it. The name on screen says itself when tapped.
+const inNamePrompt = (name: string): Line => spoken(`This name is ${name}. Which letter is in ${name}?`, ['This name is', { word: name }, '. Which letter is in', { word: name }, '?']);
+// No "a" or "I" in a hint whose answer is a letter: the giveaway check reads them as the letters A and I.
+const IN_NAME_HINT = line('Look at each letter in the name, one by one. Find one of them below.');
 
 function nameExplanation(name: string, letter: string): Explanation {
   const all = letters(name.toUpperCase().split(''));
-  return {
-    speak: ['The name', { word: name }, 'has the letters', ...all.speak, '.', { letter }, 'is in it.'],
-    steps: [`${name} has the letters ${all.text}.`, `${letter} is in it.`],
-    visual: row(said(name.toUpperCase(), [{ word: name }], 'xl'), letterSaid(letter)),
-  };
+  return working(
+    [spoken(`${name} has the letters ${all.text}.`, [{ word: name }, 'has the letters', ...all.speak, '.']), spoken(`The letter ${letter} is in ${name}.`, ['The letter', { letter }, 'is in', { word: name }, '.'])],
+    row(said(name.toUpperCase(), [{ word: name }], 'xl'), letterSaid(letter)),
+    IN_NAME_HINT,
+  );
 }
 
 function inName(level: Level, rng: Rng): QuestionDraft {
@@ -110,7 +117,7 @@ function inName(level: Level, rng: Rng): QuestionDraft {
     type: 'choice',
     mode: 'look',
     facts: { relation: 'inName', target: upper, answer: letter, options },
-    prompt: { text: IN_NAME, speak: IN_NAME_SAY },
+    prompt: inNamePrompt(name),
     stimulus: said(upper, [{ word: name }], 'xl'),
     options: options.map((each) => letterTile(each)),
     answerIndex: options.indexOf(letter),
@@ -131,8 +138,8 @@ export const inNameGenerator: SkillGenerator = {
     const zoe = nameExplanation('Zoe', 'Z');
     return beats(
       { text: 'A name is made of letters. Sam has the letters S, A, M.', speak: ['A name is made of letters.', { word: 'Sam' }, 'has the letters', { letter: 'S' }, { letter: 'A' }, { letter: 'M' }, '.'], visual: said('SAM', [{ word: 'Sam' }], 'xl') },
-      { text: `${IN_NAME} ${sam.steps.join(' ')}`, speak: [...IN_NAME_SAY, ...sam.speak], visual: row(said('SAM', [{ word: 'Sam' }], 'xl'), letterTile('S'), letterTile('T')) },
-      { text: IN_NAME, speak: IN_NAME_SAY, visual: row(said('ZOE', [{ word: 'Zoe' }], 'xl'), letterTile('B'), letterTile('Z')) },
+      { text: `${inNamePrompt('Sam').text} ${sam.steps.join(' ')}`, speak: [...inNamePrompt('Sam').speak, ...sam.speak], visual: row(said('SAM', [{ word: 'Sam' }], 'xl'), letterTile('S'), letterTile('T')) },
+      { ...inNamePrompt('Zoe'), visual: row(said('ZOE', [{ word: 'Zoe' }], 'xl'), letterTile('B'), letterTile('Z')) },
       { text: zoe.steps.join(' '), speak: zoe.speak, visual: zoe.visual },
       { ...line('Look at each letter in the name, one at a time.'), visual: said('SAM', [{ word: 'Sam' }], 'xl') },
     );

@@ -57,28 +57,30 @@ export const GO_CLASHES: readonly (readonly [string, string])[] = [
 ];
 
 // ---- Helpers and their things (pre-K C.7) ----
-// "Who works with a tractor?" The answer is a person. `clash` names a helper who could be argued for.
+// "Who drives the tractor?" The answer is a person. Each thing is asked about with the verb its sentence uses, not
+// a vague "works with". `clash` names a helper who could be argued for.
 
 export interface Helper {
   thing: Pic;
   helper: Pic;
-  why: string;
+  ask: string; // the question
+  why: string; // the sentence the explanation says
   clash?: string;
 }
 
-const HELPER_ROWS: [[string, string], [string, string], string, string?][] = [
-  [['fire truck', '🚒'], ['firefighter', '🧑‍🚒'], 'A firefighter rides in a fire truck.'],
-  [['stethoscope', '🩺'], ['doctor', '🧑‍⚕️'], 'A doctor listens with a stethoscope.'],
-  [['pan', '🍳'], ['cook', '🧑‍🍳'], 'A cook makes food in a pan.'],
-  [['tractor', '🚜'], ['farmer', '🧑‍🌾'], 'A farmer drives a tractor.'],
-  [['plane', '✈️'], ['pilot', '🧑‍✈️'], 'A pilot flies a plane.', 'astronaut'],
-  [['rocket', '🚀'], ['astronaut', '🧑‍🚀'], 'An astronaut rides in a rocket.', 'pilot'],
-  [['paint', '🎨'], ['artist', '🧑‍🎨'], 'An artist paints a picture.'],
-  [['police car', '🚓'], ['police officer', '👮'], 'A police officer drives a police car.'],
-  [['hammer', '🔨'], ['builder', '👷'], 'A builder bangs nails with a hammer.'],
+const HELPER_ROWS: [[string, string], [string, string], string, string, string?][] = [
+  [['fire truck', '🚒'], ['firefighter', '🧑‍🚒'], 'Who rides in the fire truck?', 'A firefighter rides in a fire truck.'],
+  [['stethoscope', '🩺'], ['doctor', '🧑‍⚕️'], 'Who listens with the stethoscope?', 'A doctor listens with a stethoscope.'],
+  [['pan', '🍳'], ['cook', '🧑‍🍳'], 'Who makes food in the pan?', 'A cook makes food in a pan.'],
+  [['tractor', '🚜'], ['farmer', '🧑‍🌾'], 'Who drives the tractor?', 'A farmer drives a tractor.'],
+  [['plane', '✈️'], ['pilot', '🧑‍✈️'], 'Who flies the plane?', 'A pilot flies a plane.', 'astronaut'],
+  [['rocket', '🚀'], ['astronaut', '🧑‍🚀'], 'Who rides in the rocket?', 'An astronaut rides in a rocket.', 'pilot'],
+  [['paint', '🎨'], ['artist', '🧑‍🎨'], 'Who uses the paint to make a picture?', 'An artist paints a picture.'],
+  [['police car', '🚓'], ['police officer', '👮'], 'Who drives the police car?', 'A police officer drives a police car.'],
+  [['hammer', '🔨'], ['builder', '👷'], 'Who bangs nails with the hammer?', 'A builder bangs nails with a hammer.'],
 ];
 
-export const HELPERS: readonly Helper[] = HELPER_ROWS.map(([thing, helper, why, clash]) => ({ thing: pic(thing), helper: pic(helper), why, ...(clash === undefined ? {} : { clash }) }));
+export const HELPERS: readonly Helper[] = HELPER_ROWS.map(([thing, helper, ask, why, clash]) => ({ thing: pic(thing), helper: pic(helper), ask, why, ...(clash === undefined ? {} : { clash }) }));
 
 // ---- Feelings (pre-K C.4) ----
 
@@ -134,26 +136,35 @@ export const BODY_PARTS: readonly Pic[] = (
   ] as const
 ).map(pic);
 
-// What a body part is for: "Which one do you hear with?" `also` lists parts that could be argued for.
+// A picture that shows a second part too: the arm (💪) shows a fist, and the leg (🦵) shows its foot. So "Tap the
+// hand" never offers the arm, and "Tap the foot" never offers the leg.
+export const BODY_INSIDE: readonly (readonly [string, string])[] = [
+  ['hand', 'arm'],
+  ['foot', 'leg'],
+];
+
+// What a body part is for: "Which one do you hear with?" `also` lists parts that could be argued for. `two` is the
+// word for two of them when the sentence says more than one ("You hear with your ears."), so the picture shows two.
 export interface BodyUse {
   ask: string; // the question, spoken
   part: string;
   why: string;
   also: readonly string[];
+  two?: string;
 }
 
-const USE_ROWS: [string, string, string, string[]][] = [
-  ['Which one do you hear with?', 'ear', 'You hear with your ears.', []],
+const USE_ROWS: [string, string, string, string[], string?][] = [
+  ['Which one do you hear with?', 'ear', 'You hear with your ears.', [], 'ears'],
   ['Which one do you smell with?', 'nose', 'You smell with your nose.', []],
-  ['Which one do you see with?', 'eye', 'You see with your eyes.', []],
+  ['Which one do you see with?', 'eye', 'You see with your eyes.', [], 'eyes'],
   ['Which one do you taste with?', 'tongue', 'You taste with your tongue.', ['tooth']],
-  ['Which one do you clap with?', 'hand', 'You clap with your hands.', ['arm']],
+  ['Which one do you clap with?', 'hand', 'You clap with your hands.', ['arm'], 'hands'],
   ['Which one do you kick with?', 'foot', 'You kick with your foot.', ['leg']],
-  ['Which one do you chew with?', 'tooth', 'You chew with your teeth.', ['tongue']],
+  ['Which one do you chew with?', 'tooth', 'You chew with your teeth.', ['tongue'], 'teeth'],
   ['Which one do you wave with?', 'hand', 'You wave with your hand.', ['arm']],
 ];
 
-export const BODY_USES: readonly BodyUse[] = USE_ROWS.map(([ask, part, why, also]) => ({ ask, part, why, also }));
+export const BODY_USES: readonly BodyUse[] = USE_ROWS.map(([ask, part, why, also, two]) => ({ ask, part, why, also, ...(two === undefined ? {} : { two }) }));
 
 // ---- Action words (pre-K C.6, heard; kindergarten D.7, read) ----
 
@@ -183,6 +194,11 @@ const ACTION_ROWS: [string, string, string][] = [
 ];
 
 export const ACTIONS: readonly Action[] = ACTION_ROWS.map(([verb, doing, emoji]) => ({ verb, doing, emoji }));
+
+// The actions a pre-K child hears (C.6): everyday ones only. Surfing, skiing, juggling, rowing and lifting weights
+// are not everyday words for a 4-year-old; the sitting picture (a person in the lotus position) looks like yoga; and
+// standing could be argued for beside a dancer or a walker, who stand too.
+export const HEARD_VERBS: readonly string[] = ['swim', 'run', 'ride', 'sleep', 'climb', 'dance', 'walk', 'clap', 'hug'];
 
 // The verbs a kindergarten child reads: short and spelled the way they sound.
 // Never ski, surf, row, walk or ride: a kindergartner can not sound those out.

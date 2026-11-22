@@ -1,6 +1,6 @@
 {
  "skillId": "E-PK-B1",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -14,9 +14,9 @@
    ]
   },
   "prompt": {
-   "text": "Which one starts like lion?",
+   "text": "Which one starts with the same sound as lion?",
    "speak": [
-    "Which one starts like",
+    "Which one starts with the same sound as",
     {
      "word": "lion"
     },
@@ -62,16 +62,20 @@
   "explanation": {
    "speak": [
     {
-     "word": "lion"
+     "word": "Lion"
     },
     "and",
     {
      "word": "lemon"
     },
-    "start with the same sound."
+    "both start with",
+    {
+     "sound": "l"
+    },
+    "."
    ],
    "steps": [
-    "Lion and lemon start with the same sound."
+    "Lion and lemon both start with /l/."
    ],
    "visual": {
     "kind": "row",
@@ -99,6 +103,39 @@
       ]
      }
     ]
+   },
+   "stepsSay": [
+    [
+     {
+      "word": "Lion"
+     },
+     "and",
+     {
+      "word": "lemon"
+     },
+     "both start with",
+     {
+      "sound": "l"
+     },
+     "."
+    ]
+   ],
+   "hint": {
+    "text": "Lion starts with /l/. Which picture starts with /l/ too?",
+    "say": [
+     {
+      "word": "Lion"
+     },
+     "starts with",
+     {
+      "sound": "l"
+     },
+     ". Which picture starts with",
+     {
+      "sound": "l"
+     },
+     "too?"
+    ]
    }
   },
   "skillId": "E-PK-B1",
@@ -121,9 +158,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like mouse?",
+     "text": "Which one starts with the same sound as mouse?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "mouse"
       },
@@ -169,16 +206,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "mouse"
+       "word": "Mouse"
       },
       "and",
       {
        "word": "moon"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "m"
+      },
+      "."
      ],
      "steps": [
-      "Mouse and moon start with the same sound."
+      "Mouse and moon both start with /m/."
      ],
      "visual": {
       "kind": "row",
@@ -206,6 +247,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mouse"
+       },
+       "and",
+       {
+        "word": "moon"
+       },
+       "both start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Mouse starts with /m/. Which picture starts with /m/ too?",
+      "say": [
+       {
+        "word": "Mouse"
+       },
+       "starts with",
+       {
+        "sound": "m"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "m"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -226,9 +300,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like pizza?",
+     "text": "Which one starts with the same sound as pizza?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "pizza"
       },
@@ -274,16 +348,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "pizza"
+       "word": "Pizza"
       },
       "and",
       {
        "word": "pig"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Pizza and pig start with the same sound."
+      "Pizza and pig both start with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -311,6 +389,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pizza"
+       },
+       "and",
+       {
+        "word": "pig"
+       },
+       "both start with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Pizza starts with /p/. Which picture starts with /p/ too?",
+      "say": [
+       {
+        "word": "Pizza"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "p"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -331,9 +442,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like pizza?",
+     "text": "Which one starts with the same sound as pizza?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "pizza"
       },
@@ -379,16 +490,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "pizza"
+       "word": "Pizza"
       },
       "and",
       {
        "word": "pig"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Pizza and pig start with the same sound."
+      "Pizza and pig both start with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -416,6 +531,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pizza"
+       },
+       "and",
+       {
+        "word": "pig"
+       },
+       "both start with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Pizza starts with /p/. Which picture starts with /p/ too?",
+      "say": [
+       {
+        "word": "Pizza"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "p"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -436,9 +584,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like sock?",
+     "text": "Which one starts with the same sound as sock?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "sock"
       },
@@ -484,16 +632,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "sock"
+       "word": "Sock"
       },
       "and",
       {
        "word": "sun"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "s"
+      },
+      "."
      ],
      "steps": [
-      "Sock and sun start with the same sound."
+      "Sock and sun both start with /s/."
      ],
      "visual": {
       "kind": "row",
@@ -521,6 +673,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Sock"
+       },
+       "and",
+       {
+        "word": "sun"
+       },
+       "both start with",
+       {
+        "sound": "s"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Sock starts with /s/. Which picture starts with /s/ too?",
+      "say": [
+       {
+        "word": "Sock"
+       },
+       "starts with",
+       {
+        "sound": "s"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "s"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -541,9 +726,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like pig?",
+     "text": "Which one starts with the same sound as pig?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "pig"
       },
@@ -589,16 +774,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "pig"
+       "word": "Pig"
       },
       "and",
       {
        "word": "pear"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Pig and pear start with the same sound."
+      "Pig and pear both start with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -626,6 +815,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pig"
+       },
+       "and",
+       {
+        "word": "pear"
+       },
+       "both start with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Pig starts with /p/. Which picture starts with /p/ too?",
+      "say": [
+       {
+        "word": "Pig"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "p"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -646,9 +868,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like lion?",
+     "text": "Which one starts with the same sound as lion?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "lion"
       },
@@ -694,16 +916,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "lion"
+       "word": "Lion"
       },
       "and",
       {
        "word": "lemon"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "l"
+      },
+      "."
      ],
      "steps": [
-      "Lion and lemon start with the same sound."
+      "Lion and lemon both start with /l/."
      ],
      "visual": {
       "kind": "row",
@@ -731,6 +957,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Lion"
+       },
+       "and",
+       {
+        "word": "lemon"
+       },
+       "both start with",
+       {
+        "sound": "l"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Lion starts with /l/. Which picture starts with /l/ too?",
+      "say": [
+       {
+        "word": "Lion"
+       },
+       "starts with",
+       {
+        "sound": "l"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "l"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -751,9 +1010,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like ball?",
+     "text": "Which one starts with the same sound as ball?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "ball"
       },
@@ -799,16 +1058,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "ball"
+       "word": "Ball"
       },
       "and",
       {
        "word": "bear"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "b"
+      },
+      "."
      ],
      "steps": [
-      "Ball and bear start with the same sound."
+      "Ball and bear both start with /b/."
      ],
      "visual": {
       "kind": "row",
@@ -836,6 +1099,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Ball"
+       },
+       "and",
+       {
+        "word": "bear"
+       },
+       "both start with",
+       {
+        "sound": "b"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Ball starts with /b/. Which picture starts with /b/ too?",
+      "say": [
+       {
+        "word": "Ball"
+       },
+       "starts with",
+       {
+        "sound": "b"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "b"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -856,9 +1152,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like car?",
+     "text": "Which one starts with the same sound as car?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "car"
       },
@@ -904,16 +1200,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "car"
+       "word": "Car"
       },
       "and",
       {
        "word": "cow"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "c"
+      },
+      "."
      ],
      "steps": [
-      "Car and cow start with the same sound."
+      "Car and cow both start with /k/."
      ],
      "visual": {
       "kind": "row",
@@ -941,6 +1241,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Car"
+       },
+       "and",
+       {
+        "word": "cow"
+       },
+       "both start with",
+       {
+        "sound": "c"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Car starts with /k/. Which picture starts with /k/ too?",
+      "say": [
+       {
+        "word": "Car"
+       },
+       "starts with",
+       {
+        "sound": "c"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "c"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -961,9 +1294,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like dog?",
+     "text": "Which one starts with the same sound as dog?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "dog"
       },
@@ -1009,16 +1342,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "dog"
+       "word": "Dog"
       },
       "and",
       {
        "word": "door"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "d"
+      },
+      "."
      ],
      "steps": [
-      "Dog and door start with the same sound."
+      "Dog and door both start with /d/."
      ],
      "visual": {
       "kind": "row",
@@ -1046,6 +1383,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Dog"
+       },
+       "and",
+       {
+        "word": "door"
+       },
+       "both start with",
+       {
+        "sound": "d"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Dog starts with /d/. Which picture starts with /d/ too?",
+      "say": [
+       {
+        "word": "Dog"
+       },
+       "starts with",
+       {
+        "sound": "d"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "d"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1066,9 +1436,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like key?",
+     "text": "Which one starts with the same sound as key?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "key"
       },
@@ -1114,16 +1484,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "key"
+       "word": "Key"
       },
       "and",
       {
        "word": "cow"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "k"
+      },
+      "."
      ],
      "steps": [
-      "Key and cow start with the same sound."
+      "Key and cow both start with /k/."
      ],
      "visual": {
       "kind": "row",
@@ -1151,6 +1525,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Key"
+       },
+       "and",
+       {
+        "word": "cow"
+       },
+       "both start with",
+       {
+        "sound": "k"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Key starts with /k/. Which picture starts with /k/ too?",
+      "say": [
+       {
+        "word": "Key"
+       },
+       "starts with",
+       {
+        "sound": "k"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "k"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1174,9 +1581,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like mouse?",
+     "text": "Which one starts with the same sound as mouse?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "mouse"
       },
@@ -1233,16 +1640,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "mouse"
+       "word": "Mouse"
       },
       "and",
       {
        "word": "moon"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "m"
+      },
+      "."
      ],
      "steps": [
-      "Mouse and moon start with the same sound."
+      "Mouse and moon both start with /m/."
      ],
      "visual": {
       "kind": "row",
@@ -1270,6 +1681,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mouse"
+       },
+       "and",
+       {
+        "word": "moon"
+       },
+       "both start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Mouse starts with /m/. Which picture starts with /m/ too?",
+      "say": [
+       {
+        "word": "Mouse"
+       },
+       "starts with",
+       {
+        "sound": "m"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "m"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1291,9 +1735,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like pizza?",
+     "text": "Which one starts with the same sound as pizza?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "pizza"
       },
@@ -1350,16 +1794,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "pizza"
+       "word": "Pizza"
       },
       "and",
       {
        "word": "pig"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Pizza and pig start with the same sound."
+      "Pizza and pig both start with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -1387,6 +1835,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pizza"
+       },
+       "and",
+       {
+        "word": "pig"
+       },
+       "both start with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Pizza starts with /p/. Which picture starts with /p/ too?",
+      "say": [
+       {
+        "word": "Pizza"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "p"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1408,9 +1889,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like pizza?",
+     "text": "Which one starts with the same sound as pizza?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "pizza"
       },
@@ -1467,16 +1948,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "pizza"
+       "word": "Pizza"
       },
       "and",
       {
        "word": "pig"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Pizza and pig start with the same sound."
+      "Pizza and pig both start with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -1504,6 +1989,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pizza"
+       },
+       "and",
+       {
+        "word": "pig"
+       },
+       "both start with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Pizza starts with /p/. Which picture starts with /p/ too?",
+      "say": [
+       {
+        "word": "Pizza"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "p"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1525,9 +2043,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like sock?",
+     "text": "Which one starts with the same sound as sock?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "sock"
       },
@@ -1584,16 +2102,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "sock"
+       "word": "Sock"
       },
       "and",
       {
        "word": "sun"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "s"
+      },
+      "."
      ],
      "steps": [
-      "Sock and sun start with the same sound."
+      "Sock and sun both start with /s/."
      ],
      "visual": {
       "kind": "row",
@@ -1621,6 +2143,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Sock"
+       },
+       "and",
+       {
+        "word": "sun"
+       },
+       "both start with",
+       {
+        "sound": "s"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Sock starts with /s/. Which picture starts with /s/ too?",
+      "say": [
+       {
+        "word": "Sock"
+       },
+       "starts with",
+       {
+        "sound": "s"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "s"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1642,9 +2197,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like pig?",
+     "text": "Which one starts with the same sound as pig?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "pig"
       },
@@ -1701,16 +2256,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "pig"
+       "word": "Pig"
       },
       "and",
       {
        "word": "pear"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Pig and pear start with the same sound."
+      "Pig and pear both start with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -1738,6 +2297,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pig"
+       },
+       "and",
+       {
+        "word": "pear"
+       },
+       "both start with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Pig starts with /p/. Which picture starts with /p/ too?",
+      "say": [
+       {
+        "word": "Pig"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "p"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1759,9 +2351,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like lion?",
+     "text": "Which one starts with the same sound as lion?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "lion"
       },
@@ -1818,16 +2410,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "lion"
+       "word": "Lion"
       },
       "and",
       {
        "word": "lemon"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "l"
+      },
+      "."
      ],
      "steps": [
-      "Lion and lemon start with the same sound."
+      "Lion and lemon both start with /l/."
      ],
      "visual": {
       "kind": "row",
@@ -1855,6 +2451,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Lion"
+       },
+       "and",
+       {
+        "word": "lemon"
+       },
+       "both start with",
+       {
+        "sound": "l"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Lion starts with /l/. Which picture starts with /l/ too?",
+      "say": [
+       {
+        "word": "Lion"
+       },
+       "starts with",
+       {
+        "sound": "l"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "l"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1876,9 +2505,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like ball?",
+     "text": "Which one starts with the same sound as ball?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "ball"
       },
@@ -1935,16 +2564,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "ball"
+       "word": "Ball"
       },
       "and",
       {
        "word": "bear"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "b"
+      },
+      "."
      ],
      "steps": [
-      "Ball and bear start with the same sound."
+      "Ball and bear both start with /b/."
      ],
      "visual": {
       "kind": "row",
@@ -1972,6 +2605,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Ball"
+       },
+       "and",
+       {
+        "word": "bear"
+       },
+       "both start with",
+       {
+        "sound": "b"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Ball starts with /b/. Which picture starts with /b/ too?",
+      "say": [
+       {
+        "word": "Ball"
+       },
+       "starts with",
+       {
+        "sound": "b"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "b"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -1993,9 +2659,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like car?",
+     "text": "Which one starts with the same sound as car?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "car"
       },
@@ -2052,16 +2718,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "car"
+       "word": "Car"
       },
       "and",
       {
        "word": "cow"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "c"
+      },
+      "."
      ],
      "steps": [
-      "Car and cow start with the same sound."
+      "Car and cow both start with /k/."
      ],
      "visual": {
       "kind": "row",
@@ -2089,6 +2759,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Car"
+       },
+       "and",
+       {
+        "word": "cow"
+       },
+       "both start with",
+       {
+        "sound": "c"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Car starts with /k/. Which picture starts with /k/ too?",
+      "say": [
+       {
+        "word": "Car"
+       },
+       "starts with",
+       {
+        "sound": "c"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "c"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -2110,9 +2813,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like dog?",
+     "text": "Which one starts with the same sound as dog?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "dog"
       },
@@ -2169,16 +2872,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "dog"
+       "word": "Dog"
       },
       "and",
       {
        "word": "door"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "d"
+      },
+      "."
      ],
      "steps": [
-      "Dog and door start with the same sound."
+      "Dog and door both start with /d/."
      ],
      "visual": {
       "kind": "row",
@@ -2206,6 +2913,39 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Dog"
+       },
+       "and",
+       {
+        "word": "door"
+       },
+       "both start with",
+       {
+        "sound": "d"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Dog starts with /d/. Which picture starts with /d/ too?",
+      "say": [
+       {
+        "word": "Dog"
+       },
+       "starts with",
+       {
+        "sound": "d"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "d"
+       },
+       "too?"
+      ]
      }
     },
     "skillId": "E-PK-B1",
@@ -2227,9 +2967,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one starts like key?",
+     "text": "Which one starts with the same sound as key?",
      "speak": [
-      "Which one starts like",
+      "Which one starts with the same sound as",
       {
        "word": "key"
       },
@@ -2286,16 +3026,20 @@
     "explanation": {
      "speak": [
       {
-       "word": "key"
+       "word": "Key"
       },
       "and",
       {
        "word": "cow"
       },
-      "start with the same sound."
+      "both start with",
+      {
+       "sound": "k"
+      },
+      "."
      ],
      "steps": [
-      "Key and cow start with the same sound."
+      "Key and cow both start with /k/."
      ],
      "visual": {
       "kind": "row",
@@ -2322,6 +3066,39 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Key"
+       },
+       "and",
+       {
+        "word": "cow"
+       },
+       "both start with",
+       {
+        "sound": "k"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Key starts with /k/. Which picture starts with /k/ too?",
+      "say": [
+       {
+        "word": "Key"
+       },
+       "starts with",
+       {
+        "sound": "k"
+       },
+       ". Which picture starts with",
+       {
+        "sound": "k"
+       },
+       "too?"
       ]
      }
     },

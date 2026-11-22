@@ -8,12 +8,14 @@ import { WORD_FAMILIES } from '../../../data/families';
 import { FIRST_SOUNDS } from '../../../data/firstSounds';
 import { ALPHABET, LOOK_ALIKE_LOWER } from '../../../data/letters';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from '../pk/parts';
 import { cap, letterSaid, letterTile, pickApart, picture, row } from '../pk/parts';
+import type { Line, Told } from '../pk/h3-parts';
+import { letterSays, line, sound as soundPart, soundText, soundsSay, soundsText, spelledSay, spoken, working } from '../pk/h3-parts';
 
-// Language Arts kindergarten B.1 to B.7. A voice cannot say a lone sound, so every prompt uses
-// whole words (plan section 9). In the listen skills the word is spoken in the question, the
-// screen never shows it, and nothing on screen says it when tapped.
+// Language Arts kindergarten B.1 to B.7. Prompts use whole words. Steps say each sound with the recorded letter
+// sounds (the owner's choice, Nov 21, 2026), the sound first and the letter second: "Cat starts with /k/. The letter
+// c says /k/." In the listen skills the word is spoken in the question, the screen never shows it (it says "Listen."
+// and "it"), and nothing on screen says it when tapped.
 
 const word = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kind: 'text', value, size });
 const wordSaid = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kind: 'text', value, size, speak: [{ word: value }] });
@@ -21,7 +23,7 @@ const wordSaid = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kin
 const silent = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 1, layout: 'row' });
 const shown = (entry: { word: string; emoji: string }): Visual => picture(entry.word, entry.emoji);
 const cvc = (value: string): CvcWord => CVC_WORDS.find((entry) => entry.word === value) as CvcWord;
-const spelled = (value: string): Say => value.split('').map((letter) => ({ letter }));
+const spelled = (value: string): Say => spelledSay(value.split(''));
 
 // Letters that can stand for the same sound, so one is never offered against another.
 const SOUND_GROUPS: readonly (readonly string[])[] = [
@@ -42,6 +44,9 @@ function letterOptions(answer: string, alike: boolean, rng: Rng): string[] {
 // Family: First, last or middle letter. Oracle: wordSet.
 // Levels: picture and spoken word, 3 options / look-alikes. B.2 uses short words only.
 
+// A listen hint never shows the word; it is said. It never names a letter either, since one of them is the answer.
+const slowly = (value: string, then: string): Line => spoken(`Say the word slowly. ${then}`, ['Say', { word: value }, 'slowly.', then]);
+
 function endLetter(which: 'first' | 'last'): (level: Level, rng: Rng) => QuestionDraft {
   const first = which === 'first';
   const pool: readonly { word: string; emoji: string }[] = first ? FIRST_SOUNDS : CVC_WORDS;
@@ -56,11 +61,15 @@ function endLetter(which: 'first' | 'last'): (level: Level, rng: Rng) => Questio
       type: 'choice',
       mode: 'listen',
       facts: { target: entry.word, relation: first ? 'firstLetter' : 'lastLetter', options: values },
-      prompt: { text: `Which letter does this word ${verb} with?`, speak: ['Which letter does', { word: entry.word }, `${verb} with?`] },
+      prompt: { text: `Listen. Which letter does it ${verb} with?`, speak: ['Which letter does', { word: entry.word }, `${verb} with?`] },
       stimulus: silent(entry.emoji),
       options: values.map((each) => letterTile(each)),
       answerIndex: values.indexOf(letter),
-      explanation: { speak: [{ word: entry.word }, `${verb}s with the letter`, { letter }, '.'], steps: [`${cap(entry.word)} ${verb}s with the letter ${letter}.`], visual: row(shown(entry), wordSaid(entry.word)) },
+      explanation: working(
+        [spoken(`${cap(entry.word)} ${verb}s with ${soundText(letter)}.`, [{ word: entry.word }, `${verb}s with`, soundPart(letter), '.']), letterSays(letter)],
+        row(shown(entry), wordSaid(entry.word)),
+        slowly(entry.word, `Listen to the very ${first ? 'first' : 'last'} sound.`),
+      ),
     };
   };
 }
@@ -109,11 +118,16 @@ export const lastLetterGenerator: SkillGenerator = {
 // Levels: words with a, i or o, 3 options / all short vowels, 3 options that include the closest sound.
 
 const gap = (value: string): string => `${value.charAt(0)}_${value.charAt(2)}`;
-const MISSING = 'Which letter is missing?';
+const MISSING = 'Listen. Which letter is missing?';
 const missingSpeak = (value: string): Say => ['Which letter is missing in', { word: value }, '?'];
 
-function vowelExplanation(entry: CvcWord): Explanation {
-  return { speak: [{ word: entry.word }, 'has the letter', { letter: entry.vowel }, 'in the middle.'], steps: [`${cap(entry.word)} has the letter ${entry.vowel} in the middle.`], visual: row(shown(entry), wordSaid(entry.word)) };
+// "Pin has /i/ in the middle. The letter i says /i/." The vowel's name is not its sound in the word.
+function vowelExplanation(entry: CvcWord): Told {
+  return working(
+    [spoken(`${cap(entry.word)} has ${soundText(entry.vowel)} in the middle.`, [{ word: entry.word }, 'has', soundPart(entry.vowel), 'in the middle.']), letterSays(entry.vowel)],
+    row(shown(entry), wordSaid(entry.word)),
+    slowly(entry.word, 'Listen to the sound in the middle.'),
+  );
 }
 
 const EASY_VOWELS: ShortVowel[] = ['a', 'i', 'o'];
@@ -160,9 +174,17 @@ export const middleVowelGenerator: SkillGenerator = {
 const lettersApart = (one: string, two: string): number => one.split('').filter((letter, i) => letter !== two.charAt(i)).length;
 const neighbours = (value: string): CvcWord[] => CVC_WORDS.filter((each) => lettersApart(each.word, value) === 1);
 const READ = 'Read the word. Which picture matches?';
+// A read hint never says the word.
+const READ_HINT = line('Say the sound of each letter. Then put the sounds together.');
 
-function readExplanation(entry: CvcWord): Explanation {
-  return { speak: ['This word is', { word: entry.word }, '.'], steps: [`This word is ${entry.word}.`], visual: row(wordSaid(entry.word, 'xl'), shown(entry)) };
+// Sounding out, which is the skill itself: each sound, then the sounds blended into the word.
+function readExplanation(entry: CvcWord): Told {
+  const letters = entry.word.split('');
+  return working(
+    [spoken(`Say each sound: ${soundsText(letters)}.`, ['Say each sound:', ...soundsSay(letters), '.']), spoken(`Put the sounds together: ${entry.word}.`, ['Put the sounds together:', { word: entry.word }, '.'])],
+    row(wordSaid(entry.word, 'xl'), shown(entry)),
+    READ_HINT,
+  );
 }
 
 function readWord(level: Level, rng: Rng): QuestionDraft {
@@ -207,11 +229,22 @@ export const readWordGenerator: SkillGenerator = {
 // Family: Spell a word. Oracle: spell.
 // Levels: picture and spoken word, 3 tiles in order plus 2 extra / plus 4 extra.
 
-const SPELL = 'Spell the word.';
-const spellSpeak = (value: string): Say => ['Spell the word', { word: value }, '.'];
+// The tiles question says what to do with the tiles. The word is heard, never shown.
+const SPELL = 'Listen. Tap the letters to spell the word.';
+const spellSpeak = (value: string): Say => ['Tap the letters to spell', { word: value }, '.'];
+const SPELL_HINT = line('Say the word slowly. Find a letter for each sound you hear.');
 
-function spellExplanation(entry: CvcWord): Explanation {
-  return { speak: [{ word: entry.word }, 'is spelled', ...spelled(entry.word), '.'], steps: [`${cap(entry.word)} is spelled ${entry.word.split('').join(', ')}.`], visual: row(shown(entry), wordSaid(entry.word, 'xl')) };
+// The sounds first, as a child spells from them, then the letters.
+function spellExplanation(entry: CvcWord): Told {
+  const letters = entry.word.split('');
+  return working(
+    [
+      spoken(`Say ${entry.word} slowly: ${soundsText(letters)}.`, ['Say', { word: entry.word }, 'slowly:', ...soundsSay(letters), '.']),
+      spoken(`${cap(entry.word)} is spelled ${letters.join(', ')}.`, [{ word: entry.word }, 'is spelled', ...spelled(entry.word), '.']),
+    ],
+    row(shown(entry), wordSaid(entry.word, 'xl')),
+    SPELL_HINT,
+  );
 }
 
 function spellWord(level: Level, rng: Rng): QuestionDraft {
@@ -258,15 +291,19 @@ export const spellWordGenerator: SkillGenerator = {
 // Levels: written words: which rhymes with cat / pick the one that does not rhyme.
 
 const RHYMES_WITH = 'Which word rhymes with this word?';
-const ODD = 'Two words rhyme. Which word is different?';
-const ending = (family: WordFamily): Say => family.ending.split('').map((letter) => ({ letter }));
+// "Which word is different?" could mean different in its first letter too.
+const ODD = 'Which word does not rhyme?';
+// A family's ending, said as its sounds: -et is /e/ /t/. Shown with its letters, as the sort's groups are.
+const endSounds = (family: WordFamily): Say => soundsSay(family.ending.split(''));
+// Read hints never say a word the child must read.
+const RHYME_HINT = line('Say each word. Listen to how it ends.');
+const ODD_HINT = line('Say each word. Find the two that end the same way.');
 
-function rhymeExplanation(family: WordFamily, one: string, two: string): Explanation {
-  return {
-    speak: [{ word: one }, 'and', { word: two }, 'both end in', ...ending(family), '. They rhyme.'],
-    steps: [`${cap(one)} and ${two} both end in ${family.ending}.`, 'They rhyme.'],
-    visual: row(wordSaid(one), wordSaid(two)),
-  };
+const bothEnd = (family: WordFamily, one: string, two: string): Line =>
+  spoken(`${cap(one)} and ${two} both end with -${family.ending}.`, [{ word: one }, 'and', { word: two }, 'both end with', ...endSounds(family), '.']);
+
+function rhymeExplanation(family: WordFamily, one: string, two: string): Told {
+  return working([bothEnd(family, one, two), line('They rhyme.')], row(wordSaid(one), wordSaid(two)), RHYME_HINT);
 }
 
 function rhymingWords(level: Level, rng: Rng): QuestionDraft {
@@ -287,8 +324,12 @@ function rhymingWords(level: Level, rng: Rng): QuestionDraft {
     };
   }
   // Two from one family and one from another. Kindergarten questions never have more than three options.
-  const [one, two] = rng.sample(family.words, 2) as [string, string];
-  const odd = rng.pick((others[0] as WordFamily).words);
+  // Never the word "not": the question says it ("Which word does not rhyme?"), and a read question never says a
+  // word the child must read.
+  const offered = (each: WordFamily): string[] => each.words.filter((value) => value !== 'not');
+  const [one, two] = rng.sample(offered(family), 2) as [string, string];
+  const oddFamily = others[0] as WordFamily;
+  const odd = rng.pick(offered(oddFamily));
   const options = rng.shuffle([one, two, odd]);
   return {
     type: 'choice',
@@ -297,11 +338,12 @@ function rhymingWords(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: ODD, speak: [ODD] },
     options: options.map((each) => word(each)),
     answerIndex: options.indexOf(odd),
-    explanation: {
-      speak: [{ word: one }, 'and', { word: two }, 'both end in', ...ending(family), '.', { word: odd }, 'does not.'],
-      steps: [`${cap(one)} and ${two} both end in ${family.ending}.`, `${cap(odd)} does not.`],
-      visual: row(wordSaid(one), wordSaid(two)),
-    },
+    // "The word not ends with ..." never "Not does not."
+    explanation: working(
+      [bothEnd(family, one, two), spoken(`The word ${odd} ends with -${oddFamily.ending}. It does not rhyme.`, ['The word', { word: odd }, 'ends with', ...endSounds(oddFamily), '. It does not rhyme.'])],
+      row(wordSaid(one), wordSaid(two)),
+      ODD_HINT,
+    ),
   };
 }
 
@@ -329,14 +371,15 @@ export const rhymingWordsGenerator: SkillGenerator = {
 // Levels: sort 4 words into two families / 6 words.
 
 const FAMILY = 'Put each word in its family.';
+const FAMILY_HINT = line('Look at the last two letters of each word.');
 const vowelOf = (family: WordFamily): string => family.ending.charAt(0);
 
-function familiesExplanation(families: WordFamily[], words: string[]): Explanation {
+function familiesExplanation(families: WordFamily[], words: string[]): Told {
   const lines = families.map((family) => {
     const [one, two] = words.filter((each) => family.words.includes(each)) as [string, string];
-    return { speak: [{ word: one }, 'and', { word: two }, 'both end in', ...ending(family), '.'] as Say, text: `${cap(one)} and ${two} both end in ${family.ending}.` };
+    return bothEnd(family, one, two);
   });
-  return { speak: lines.flatMap((each) => each.speak), steps: lines.map((each) => each.text), visual: row(...words.filter((each) => (families[0] as WordFamily).words.includes(each)).map((each) => wordSaid(each))) };
+  return working(lines, row(...words.filter((each) => (families[0] as WordFamily).words.includes(each)).map((each) => wordSaid(each))), FAMILY_HINT);
 }
 
 function wordFamilies(level: Level, rng: Rng): QuestionDraft {
@@ -345,7 +388,9 @@ function wordFamilies(level: Level, rng: Rng): QuestionDraft {
   const words = rng.shuffle(families.flatMap((family) => rng.sample(family.words, level === 1 ? 2 : 3)));
   const endings = families.map((family) => family.ending);
   const itemAttrs = words.map((each) => (families.find((family) => family.words.includes(each)) as WordFamily).ending);
-  const bins: SortBin[] = families.map((family) => ({ label: `-${family.ending}`, speak: ['Words like', { word: family.words[0] as string }] }));
+  // A tapped group reads its label, never a word: the family's first word may be one of the cards to read. It says
+  // the ending's letters in the words of the kindergarten lesson ("They all end in a, n."), as the label spells them.
+  const bins: SortBin[] = families.map((family) => ({ label: `-${family.ending}`, speak: ['They all end in', ...family.ending.split('').map((letter) => ({ letter }))] }));
   return {
     type: 'sort',
     mode: 'read',
@@ -368,7 +413,7 @@ export const wordFamiliesGenerator: SkillGenerator = {
   example: () => wordFamilies(1, makeRng(317)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'A word family is a group of words that end the same way.', speak: ['A word family is a group of words that end the same way.'], visual: row(wordSaid('cat'), wordSaid('hat'), wordSaid('bat')) },
-    { beat: 'watch', text: rhymeExplanation(AT, 'cat', 'hat').steps[0] as string, speak: [{ word: 'cat' }, 'and', { word: 'hat' }, 'both end in', ...ending(AT), '.'], visual: row(wordSaid('cat'), wordSaid('hat')) },
+    { beat: 'watch', ...bothEnd(AT, 'cat', 'hat'), visual: row(wordSaid('cat'), wordSaid('hat')) },
     { beat: 'try', text: 'Which word is in the same family as pig?', speak: ['Which word is in the same family as', { word: 'pig' }, '?'], visual: row(wordSaid('pig'), wordSaid('wig'), wordSaid('pan')), reveal: { text: 'Pig and wig both end in ig.', speak: [{ word: 'pig' }, 'and', { word: 'wig' }, 'both end in', { letter: 'i' }, { letter: 'g' }, '.'], visual: row(wordSaid('pig'), wordSaid('wig')) } },
     { beat: 'remember', text: 'Words in a family end the same way.', speak: ['Words in a family end the same way.'], visual: row(wordSaid('cat'), wordSaid('hat'), wordSaid('bat')) },
   ],

@@ -6,36 +6,46 @@ import { FIRST_SOUNDS } from '../../../data/firstSounds';
 import type { PictureWord } from '../../../data/rhymes';
 import { RHYME_FAMILIES } from '../../../data/rhymes';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from './parts';
 import { cap, letterSaid, pickApart, picture, row } from './parts';
-import type { Line } from './h3-parts';
-import { beats, line } from './h3-parts';
+import type { Line, Told } from './h3-parts';
+import { beats, line, sound as soundPart, soundText, spoken, working } from './h3-parts';
 
 // Language Arts pre-K B.4 to B.6 (plan section 15, wave H3). Oracle: earlyWords.
-// A voice cannot say a lone sound, so every prompt uses whole words (plan section 9).
+// Prompts use whole words. The steps say the sound itself with the recorded letter sounds (the owner's choice,
+// Nov 21, 2026): "Key, cow and car all start with /k/."
 
 const shown = (entry: { word: string; emoji: string }): Visual => picture(entry.word, entry.emoji);
 const and = (words: readonly string[]): string => (words.length === 1 ? words[0] ?? '' : `${words.slice(0, -1).join(', ')} and ${words[words.length - 1] ?? ''}`);
 const andSay = (words: readonly string[]): Say => words.flatMap((word, i): Say => [...(i === 0 ? [] : [i === words.length - 1 ? 'and' : ',']), { word }]);
+// "Moon starts with /m/." The sound of a word's first letter: c in cat is /k/.
+const startsWith = (entry: SoundWord): Line => spoken(`${cap(entry.word)} starts with ${soundText(entry.letter)}.`, [{ word: entry.word }, 'starts with', soundPart(entry.letter), '.']);
 
 // ---- B.4 Which one starts differently ----
-// Levels: "Which one does not start like ball?" with ball shown, 3 pictures / no word shown:
-// "Which one starts with a different sound?", 3 pictures.
+// Levels: "Which one starts with a different sound from ball?" with ball shown, 3 pictures / no word shown:
+// "Which one starts with a different sound?", 3 pictures. The plan's "does not start like ball" is hard for a
+// 4-year-old, who hears "start like ball" and taps a match.
 
 const groupOf = (entry: SoundWord): SoundWord[] => FIRST_SOUNDS.filter((other) => other.sound === entry.sound);
 const BIG_GROUPS = FIRST_SOUNDS.filter((entry) => groupOf(entry).length >= 3);
 
-function oddExplanation(same: SoundWord[], odd: SoundWord): Explanation {
+function oddExplanation(same: SoundWord[], odd: SoundWord, hint: Line): Told {
   const words = same.map((each) => each.word);
-  return {
-    speak: [...andSay(words), 'start with the same sound.', { word: odd.word }, 'does not.'],
-    steps: [`${cap(and(words))} start with the same sound.`, `${cap(odd.word)} does not.`],
-    visual: row(...same.map(shown), shown(odd)),
-  };
+  const first = same[0] as SoundWord;
+  const all = words.length === 2 ? 'both' : 'all';
+  return working(
+    [spoken(`${cap(and(words))} ${all} start with ${soundText(first.letter)}.`, [...andSay(words), `${all} start with`, soundPart(first.letter), '.']), startsWith(odd)],
+    row(...same.map(shown), shown(odd)),
+    hint,
+  );
 }
 
-const notLikePrompt = (word: string): Line => ({ text: `Which one does not start like ${word}?`, speak: ['Which one does not start like', { word }, '?'] });
+const notLikePrompt = (word: string): Line => ({ text: `Which one starts with a different sound from ${word}?`, speak: ['Which one starts with a different sound from', { word }, '?'] });
 const ODD = line('Which one starts with a different sound?');
+const notLikeHint = (target: SoundWord): Line => {
+  const own = startsWith(target);
+  return spoken(`${own.text} Say each picture's name and listen to the very start.`, [...own.speak, "Say each picture's name and listen to the very start."]);
+};
+const ODD_HINT = line("Say each picture's name. Listen to the very first sound. Two of them start the same way.");
 
 function startsDifferent(level: Level, rng: Rng): QuestionDraft {
   const target = rng.pick(BIG_GROUPS);
@@ -55,14 +65,14 @@ function startsDifferent(level: Level, rng: Rng): QuestionDraft {
       facts: { relation: 'notLike', target: target.word, answer: odd.word, options: options.map((each) => each.word) },
       prompt: notLikePrompt(target.word),
       stimulus: shown(target),
-      explanation: oddExplanation([target, ...same], odd),
+      explanation: oddExplanation([target, ...same], odd, notLikeHint(target)),
     };
   }
   return {
     ...base,
     facts: { relation: 'oddSound', target: odd.word, same: same.map((each) => each.word).sort(), options: options.map((each) => each.word) },
     prompt: ODD,
-    explanation: oddExplanation(same, odd),
+    explanation: oddExplanation(same, odd, ODD_HINT),
   };
 }
 
@@ -77,8 +87,8 @@ export const startsDifferentGenerator: SkillGenerator = {
   exampleSeed: 3141,
   example: () => startsDifferent(1, makeRng(3141)),
   lesson: () => {
-    const shownOne = oddExplanation([sound('ball'), sound('bear'), sound('bus')], sound('moon'));
-    const tried = oddExplanation([sound('pig'), sound('pizza'), sound('pear')], sound('sun'));
+    const shownOne = oddExplanation([sound('ball'), sound('bear'), sound('bus')], sound('moon'), notLikeHint(sound('ball')));
+    const tried = oddExplanation([sound('pig'), sound('pizza'), sound('pear')], sound('sun'), notLikeHint(sound('pig')));
     return beats(
       { text: 'Ball, bear and bus all start the same way.', speak: [...andSay(['ball', 'bear', 'bus']), 'all start the same way.'], visual: row(shown(sound('ball')), shown(sound('bear')), shown(sound('bus'))) },
       { text: `${notLikePrompt('ball').text} ${shownOne.steps.join(' ')}`, speak: [...notLikePrompt('ball').speak, ...shownOne.speak], visual: shownOne.visual },
@@ -99,18 +109,23 @@ const YES_NO: Visual[] = [
 ];
 const rhymePrompt = (one: string, two: string): Line => ({ text: `Do ${one} and ${two} rhyme?`, speak: ['Do', { word: one }, 'and', { word: two }, 'rhyme?'] });
 
-function pairExplanation(one: PictureWord, two: PictureWord, rhyme: boolean): Explanation {
+// Never "Yes" or "No" in the hint: one of them is the answer.
+const PAIR_HINT = { text: 'Say both words. Listen to the end of each one. Do they end the same way?' };
+const ODD_RHYME_HINT = { text: 'Say each word. Find the two that end the same way.' };
+
+function pairExplanation(one: PictureWord, two: PictureWord, rhyme: boolean): Told {
   return rhyme
-    ? { speak: [{ word: one.word }, 'and', { word: two.word }, 'end the same way. They rhyme.'], steps: [`${cap(one.word)} and ${two.word} end the same way.`, 'They rhyme.'], visual: row(shown(one), shown(two)) }
-    : { speak: [{ word: one.word }, 'and', { word: two.word }, 'end in different ways. They do not rhyme.'], steps: [`${cap(one.word)} and ${two.word} end in different ways.`, 'They do not rhyme.'], visual: row(shown(one), shown(two)) };
+    ? { speak: [{ word: one.word }, 'and', { word: two.word }, 'end the same way. They rhyme.'], steps: [`${cap(one.word)} and ${two.word} end the same way.`, 'They rhyme.'], visual: row(shown(one), shown(two)), hint: PAIR_HINT }
+    : { speak: [{ word: one.word }, 'and', { word: two.word }, 'end in different ways. They do not rhyme.'], steps: [`${cap(one.word)} and ${two.word} end in different ways.`, 'They do not rhyme.'], visual: row(shown(one), shown(two)), hint: PAIR_HINT };
 }
 
-function oddRhymeExplanation(pair: PictureWord[], odd: PictureWord): Explanation {
+function oddRhymeExplanation(pair: PictureWord[], odd: PictureWord): Told {
   const [one, two] = pair as [PictureWord, PictureWord];
   return {
     speak: [{ word: one.word }, 'and', { word: two.word }, 'rhyme.', { word: odd.word }, 'does not.'],
     steps: [`${cap(one.word)} and ${two.word} rhyme.`, `${cap(odd.word)} does not.`],
     visual: row(shown(one), shown(two), shown(odd)),
+    hint: ODD_RHYME_HINT,
   };
 }
 
@@ -179,13 +194,18 @@ const LETTERS = [...new Set(FIRST_SOUNDS.map((entry) => entry.letter))].filter((
 const SORT = line('Put each picture with the letter it starts with.');
 const bin = (letter: string): SortBin => ({ label: letter.toUpperCase(), speak: [{ letter: letter.toUpperCase() }], icon: letterSaid(letter.toUpperCase()) });
 
-function binsExplanation(chosen: string[], items: SoundWord[]): Explanation {
+// A sort has no step to nudge with (its steps list the groups), so its hint is a way to work.
+const BINS_HINT = line("Say each picture's name. Listen to its first sound. Which letter makes that sound?");
+
+// "Sock and sun start with /s/, the letter S.": the sound first, then the letter of its group.
+function binsExplanation(chosen: string[], items: SoundWord[]): Told {
   const groups = chosen.map((letter) => items.filter((entry) => entry.letter === letter));
-  return {
-    speak: groups.flatMap((group, i): Say => [...andSay(group.map((entry) => entry.word)), 'start with', { letter: (chosen[i] as string).toUpperCase() }, '.']),
-    steps: groups.map((group, i) => `${cap(and(group.map((entry) => entry.word)))} start with ${(chosen[i] as string).toUpperCase()}.`),
-    visual: row(...groups.map((group) => shown(group[0] as SoundWord))),
-  };
+  const lines = groups.map((group, i): Line => {
+    const letter = chosen[i] as string;
+    const words = group.map((entry) => entry.word);
+    return spoken(`${cap(and(words))} start with ${soundText(letter)}, the letter ${letter.toUpperCase()}.`, [...andSay(words), 'start with', soundPart(letter), ', the letter', { letter: letter.toUpperCase() }, '.']);
+  });
+  return working(lines, row(...groups.map((group) => shown(group[0] as SoundWord))), BINS_HINT);
 }
 
 function sortByLetter(level: Level, rng: Rng): QuestionDraft {

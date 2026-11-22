@@ -8,38 +8,52 @@ import { COLOR_NAMES } from '../../../data/colors';
 import { OPPOSITE_PAIRS, SIZE_PAIR } from '../../../data/opposites';
 import type { SkillGenerator } from '../../../generator';
 import type { Explanation } from './parts';
-import { cap, pickApart, picture, row } from './parts';
+import { a, cap, pickApart, picture, row } from './parts';
+import type { Line } from './h3-parts';
+import { line, working } from './h3-parts';
 
 // Language Arts pre-K C.1 and C.2. Oracle: wordSet.
 
 // ---- C.1 Word groups ----
 // Levels: "Which one is an animal?" 2 pictures / 3 pictures / mixed groups.
+// "Vehicle" and "piece of clothing" are not everyday words for a 4-year-old, so those two groups are asked the
+// way a child knows them ("Which one do you ride in?", "Which one do you wear?"), and the step then names the
+// group: "You ride in a car. A car is a vehicle."
 
-// How each group is asked for. "Things" is never asked for: everything is a thing.
-const ONE_OF: Partial<Record<WordGroup, string>> = {
-  animals: 'an animal',
-  food: 'a food',
-  vehicles: 'a vehicle',
-  clothes: 'a piece of clothing',
-  plants: 'a plant',
-  people: 'a person',
+// How each group is asked for, and how its name is said in a step. "Things" is never asked for: everything is a thing.
+const ASKED: Partial<Record<WordGroup, { ask: string; check: string; name: string }>> = {
+  animals: { ask: 'Which one is an animal?', check: 'is it an animal?', name: 'an animal' },
+  food: { ask: 'Which one is a food?', check: 'is it a food?', name: 'a food' },
+  vehicles: { ask: 'Which one do you ride in?', check: 'do you ride in it?', name: 'a vehicle' },
+  clothes: { ask: 'Which one do you wear?', check: 'do you wear it?', name: 'clothing' },
+  plants: { ask: 'Which one is a plant?', check: 'is it a plant?', name: 'a plant' },
+  people: { ask: 'Which one is a person?', check: 'is it a person?', name: 'a person' },
 };
 const FIRST_GROUPS: WordGroup[] = ['animals', 'food', 'vehicles', 'clothes'];
-const ALL_ASKED = Object.keys(ONE_OF) as WordGroup[];
+const ALL_ASKED = Object.keys(ASKED) as WordGroup[];
+const askedFor = (group: WordGroup): { ask: string; check: string; name: string } => ASKED[group] as { ask: string; check: string; name: string };
+
+// Words said with no "a": "Cheese is a food." "Grapes are a food." "You wear pants."
+const NO_ARTICLE = new Set(['cheese', 'bread', 'pizza', 'grapes', 'pants']);
+const MANY = new Set(['grapes', 'pants']);
+// You ride on a bike; every other vehicle in the list you ride in.
+const RIDE_ON = new Set(['bike']);
 
 const groupPicture = (entry: GroupWord): Visual => picture(entry.word, entry.emoji);
 
 function groupPrompt(group: WordGroup): { text: string; speak: Say } {
-  const text = `Which one is ${ONE_OF[group]}?`;
+  const text = askedFor(group).ask;
   return { text, speak: [text] };
 }
 
 function groupExplanation(answer: GroupWord): Explanation {
-  return {
-    speak: [`This one is ${ONE_OF[answer.group]}.`, { word: answer.word }, '.'],
-    steps: [`This one is ${ONE_OF[answer.group]}: ${answer.word}.`],
-    visual: groupPicture(answer),
-  };
+  const named = NO_ARTICLE.has(answer.word) ? answer.word : a(answer.word);
+  const isIn = `${cap(named)} ${MANY.has(answer.word) ? 'are' : 'is'} ${askedFor(answer.group).name}.`;
+  const lines: Line[] = [];
+  if (answer.group === 'vehicles') lines.push(line(`You ride ${RIDE_ON.has(answer.word) ? 'on' : 'in'} ${named}.`));
+  if (answer.group === 'clothes') lines.push(line(`You wear ${named}.`));
+  lines.push(line(isIn));
+  return working(lines, groupPicture(answer), line(`Say what each picture is. Ask yourself: ${askedFor(answer.group).check}`));
 }
 
 // May this word stand beside that group in one question?
@@ -149,6 +163,10 @@ function fromOtherPairs(pair: readonly [Quality, Quality], count: number, rng: R
   return rng.sample(EMOJI_QUALITIES.filter((candidate) => candidate[0].word !== pair[0].word), count).map((candidate) => rng.pick(candidate));
 }
 
+// The hint never names a quality: for big and small, "big" would be the answer itself.
+const SIZE_HINT = { text: 'Look at the size of each shape. Opposites are as different as can be.' };
+const PICTURE_HINT = { text: 'Say what each picture shows. Opposites are as different as can be.' };
+
 function oppositeQuestion(target: Quality, answer: Quality, wrong: Quality[], extra: Record<string, string>, rng: Rng): QuestionDraft {
   const options = rng.shuffle([answer, ...wrong]);
   return {
@@ -159,7 +177,7 @@ function oppositeQuestion(target: Quality, answer: Quality, wrong: Quality[], ex
     stimulus: target.visual,
     options: options.map((option) => option.visual),
     answerIndex: options.indexOf(answer),
-    explanation: oppositeExplanation(target, answer),
+    explanation: { ...oppositeExplanation(target, answer), hint: target.visual.kind === 'shape' ? SIZE_HINT : PICTURE_HINT },
   };
 }
 

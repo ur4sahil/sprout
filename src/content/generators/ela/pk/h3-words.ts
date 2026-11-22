@@ -2,12 +2,11 @@ import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { Level, QuestionDraft, Visual } from '../../../../engine/types';
 import type { Action, BodyUse, FeelingStory, GoPair, Helper, Pic } from '../../../data/h3-words';
-import { ACTIONS, BODY_PARTS, BODY_USES, FEELING_STORIES, FEELINGS, GO_CLASHES, GO_CLOSE, GO_PAIRS, HELPERS } from '../../../data/h3-words';
+import { ACTIONS, BODY_INSIDE, BODY_PARTS, BODY_USES, FEELING_STORIES, FEELINGS, GO_CLASHES, GO_CLOSE, GO_PAIRS, HEARD_VERBS, HELPERS } from '../../../data/h3-words';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from './parts';
 import { picture, row } from './parts';
-import type { Line } from './h3-parts';
-import { beats, line, silent } from './h3-parts';
+import type { Line, Told } from './h3-parts';
+import { beats, line, silent, working } from './h3-parts';
 
 // Language Arts pre-K C.3 to C.7 (plan section 15, wave H3). Oracle: earlyWords.
 // In the listen skills (C.4 to C.6) the word is only spoken, and no picture says its name.
@@ -21,8 +20,8 @@ const optionWords = (options: readonly Pic[]): string[] => options.map((each) =>
 const close = (one: GoPair, two: GoPair): boolean => one.group === two.group || GO_CLOSE.some(([a, b]) => (a === one.group && b === two.group) || (a === two.group && b === one.group));
 const goPrompt = (word: string): Line => ({ text: `What goes with the ${word}?`, speak: ['What goes with the', { word }, '?'] });
 
-function goExplanation(pair: GoPair): Explanation {
-  return { speak: [pair.why, 'They go together.'], steps: [pair.why, 'They go together.'], visual: row(shown(pair.first), shown(pair.second)) };
+function goExplanation(pair: GoPair): Told {
+  return working([line(pair.why), line('They go together.')], row(shown(pair.first), shown(pair.second)), line(`Think about the ${pair.first.word}. Which one do you often see with it?`));
 }
 
 function goesWith(level: Level, rng: Rng): QuestionDraft {
@@ -72,7 +71,9 @@ export const goesWithGenerator: SkillGenerator = {
 
 const feelingFace = (word: string): Pic => FEELINGS.find((each) => each.word === word) as Pic;
 const FACE = 'Listen. Tap the face.';
-const faceExplanation = (word: string): Explanation => ({ speak: [`This face looks ${word}.`], steps: [`This face looks ${word}.`], visual: shown(feelingFace(word)) });
+const FACE_HINT = { text: 'Tap the speaker to hear it again. Look at the eyes and the mouth of each face.' };
+const STORY_HINT = { text: 'Tap the speaker to hear it again. Think about what happened. How would you feel?' };
+const faceExplanation = (word: string): Told => ({ speak: [`This face looks ${word}.`], steps: [`This face looks ${word}.`], visual: shown(feelingFace(word)), hint: FACE_HINT });
 
 function feelings(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
@@ -88,7 +89,7 @@ function feelings(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: `Listen. ${ask}`, speak: ['Listen.', ...story.story.split(/(?<=\.)\s+/), ask] },
       options: options.map((each) => silent(each.emoji)),
       answerIndex: options.indexOf(answer),
-      explanation: { speak: [story.story, `${story.name} feels ${story.feeling}.`], steps: [story.story, `${story.name} feels ${story.feeling}.`], visual: shown(answer) },
+      explanation: { speak: [story.story, `${story.name} feels ${story.feeling}.`], steps: [story.story, `${story.name} feels ${story.feeling}.`], visual: shown(answer), hint: STORY_HINT },
     };
   }
   const answer = rng.pick(FEELINGS);
@@ -129,7 +130,13 @@ export const feelingsGenerator: SkillGenerator = {
 
 const part = (word: string): Pic => BODY_PARTS.find((each) => each.word === word) as Pic;
 const BODY = 'Listen. Tap the part of the body.';
-const bodyExplanation = (word: string): Explanation => ({ speak: [`This is ${word === 'arm' || word === 'ear' || word === 'eye' ? 'an' : 'a'} ${word}.`], steps: [`This is ${word === 'arm' || word === 'ear' || word === 'eye' ? 'an' : 'a'} ${word}.`], visual: shown(part(word)) });
+const BODY_HINT = { text: 'Tap the speaker to hear it again. Touch that part of your own body. Then find its picture.' };
+const USE_HINT = { text: 'Tap the speaker to hear it again. Try it with your own body. Which part do you use?' };
+const bodyExplanation = (word: string): Told => ({ speak: [`This is ${word === 'arm' || word === 'ear' || word === 'eye' ? 'an' : 'a'} ${word}.`], steps: [`This is ${word === 'arm' || word === 'ear' || word === 'eye' ? 'an' : 'a'} ${word}.`], visual: shown(part(word)), hint: BODY_HINT });
+// A part whose picture is drawn inside another one's: never offered against it ("Tap the hand" never shows the arm).
+const shownInside = (answer: string, other: string): boolean => BODY_INSIDE.some(([inner, outer]) => inner === answer && outer === other);
+// "You hear with your ears." shows two ears.
+const partsUsed = (use: BodyUse, answer: Pic): Visual => (use.two === undefined ? shown(answer) : { kind: 'emojiGroup', emoji: answer.emoji, count: 2, layout: 'row', speak: [{ word: use.two }] });
 
 function bodyWords(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
@@ -140,14 +147,15 @@ function bodyWords(level: Level, rng: Rng): QuestionDraft {
       type: 'choice',
       mode: 'listen',
       facts: { relation: 'bodyUse', target: use.part, ask: use.ask, options: optionWords(options) },
-      prompt: line(use.ask),
+      // Every listen question starts with "Listen." on screen.
+      prompt: { text: `Listen. ${use.ask}`, speak: [use.ask] },
       options: options.map((each) => silent(each.emoji)),
       answerIndex: options.indexOf(answer),
-      explanation: { speak: [use.why], steps: [use.why], visual: shown(answer) },
+      explanation: { speak: [use.why], steps: [use.why], visual: partsUsed(use, answer), hint: USE_HINT },
     };
   }
   const answer = rng.pick(BODY_PARTS);
-  const options = rng.shuffle([answer, ...rng.sample(BODY_PARTS.filter((each) => each !== answer), level)]);
+  const options = rng.shuffle([answer, ...rng.sample(BODY_PARTS.filter((each) => each !== answer && !shownInside(answer.word, each.word)), level)]);
   return {
     type: 'choice',
     mode: 'listen',
@@ -184,10 +192,13 @@ export const bodyWordsGenerator: SkillGenerator = {
 const action = (verb: string): Action => ACTIONS.find((each) => each.verb === verb) as Action;
 const actionPicture = (each: Action): Visual => picture(each.doing, each.emoji);
 const DOING = 'Listen. Who is doing it?';
+const DOING_HINT = { text: 'Tap the speaker to hear it again. Try doing it yourself. Then find the one doing the same.' };
+// Everyday actions only (HEARD_VERBS): a pre-K child knows running and sleeping, not juggling or rowing.
+const HEARD = ACTIONS.filter((each) => HEARD_VERBS.includes(each.verb));
 
 function actionWords(level: Level, rng: Rng): QuestionDraft {
-  const answer = rng.pick(ACTIONS);
-  const options = rng.shuffle([answer, ...rng.sample(ACTIONS.filter((each) => each !== answer), level)]);
+  const answer = rng.pick(HEARD);
+  const options = rng.shuffle([answer, ...rng.sample(HEARD.filter((each) => each !== answer), level)]);
   return {
     type: 'choice',
     mode: 'listen',
@@ -195,7 +206,7 @@ function actionWords(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: DOING, speak: [`Who is ${answer.doing}?`] },
     options: options.map((each) => silent(each.emoji)),
     answerIndex: options.indexOf(answer),
-    explanation: { speak: [`This one is ${answer.doing}.`], steps: [`This one is ${answer.doing}.`], visual: actionPicture(answer) },
+    explanation: { speak: [`This one is ${answer.doing}.`], steps: [`This one is ${answer.doing}.`], visual: actionPicture(answer), hint: DOING_HINT },
   };
 }
 
@@ -221,8 +232,10 @@ export const actionWordsGenerator: SkillGenerator = {
 // ---- C.7 Helpers and their things ----
 // Levels: 2 spoken pictures of helpers / 3. A helper who could be argued for is never offered.
 
-const helperPrompt = (word: string): Line => ({ text: `Who works with the ${word}?`, speak: ['Who works with the', { word }, '?'] });
-const helperExplanation = (helper: Helper): Explanation => ({ speak: [helper.why], steps: [helper.why], visual: row(shown(helper.thing), shown(helper.helper)) });
+// Asked with the verb its sentence uses: "Who drives the tractor?", never a vague "works with".
+const helperPrompt = (helper: Helper): Line => line(helper.ask);
+const HELPER_HINT = { text: 'Think about the job each helper does.' };
+const helperExplanation = (helper: Helper): Told => ({ speak: [helper.why], steps: [helper.why], visual: row(shown(helper.thing), shown(helper.helper)), hint: HELPER_HINT });
 
 function helpers(level: Level, rng: Rng): QuestionDraft {
   const helper = rng.pick(HELPERS);
@@ -232,7 +245,7 @@ function helpers(level: Level, rng: Rng): QuestionDraft {
     type: 'choice',
     mode: 'look',
     facts: { relation: 'helper', target: helper.thing.word, options: optionWords(options) },
-    prompt: helperPrompt(helper.thing.word),
+    prompt: helperPrompt(helper),
     stimulus: shown(helper.thing),
     options: options.map(shown),
     answerIndex: options.indexOf(helper.helper),
@@ -255,8 +268,8 @@ export const helpersGenerator: SkillGenerator = {
     const doctor = helperExplanation(helperFor('stethoscope'));
     return beats(
       { ...line('Helpers use things to do their jobs.'), visual: row(shown(helperFor('fire truck').helper), shown(helperFor('fire truck').thing)) },
-      { text: `${helperPrompt('tractor').text} ${farmer.steps.join(' ')}`, speak: [...helperPrompt('tractor').speak, ...farmer.speak], visual: farmer.visual },
-      { ...helperPrompt('stethoscope'), visual: row(shown(helperFor('stethoscope').thing), shown(helperFor('pan').helper), shown(helperFor('stethoscope').helper)) },
+      { text: `${helperPrompt(helperFor('tractor')).text} ${farmer.steps.join(' ')}`, speak: [...helperPrompt(helperFor('tractor')).speak, ...farmer.speak], visual: farmer.visual },
+      { ...helperPrompt(helperFor('stethoscope')), visual: row(shown(helperFor('stethoscope').thing), shown(helperFor('pan').helper), shown(helperFor('stethoscope').helper)) },
       { text: doctor.steps.join(' '), speak: doctor.speak, visual: doctor.visual },
       { ...line('Think about the job each helper does.'), visual: farmer.visual },
     );

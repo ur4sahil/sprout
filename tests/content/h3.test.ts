@@ -138,7 +138,8 @@ describe('pre-K', () => {
   });
   it('D.1 offers 2, then 3 pictures; D.2 asks about one character, then two', () => {
     expect([counts('E-PK-D1', 1), counts('E-PK-D1', 2)]).toEqual([[2], [3]]);
-    for (const q of all('E-PK-D2', 2)) expect(WHO_SENTENCES.find((s) => s.sentence === q.facts.story)?.others.length).toBe(1);
+    // A pre-K child hears the active wording where the written one is passive (`heard`).
+    for (const q of all('E-PK-D2', 2)) expect(WHO_SENTENCES.find((s) => s.sentence === q.facts.story || s.heard?.sentence === q.facts.story)?.others.length).toBe(1);
   });
 });
 

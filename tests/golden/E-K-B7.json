@@ -1,6 +1,6 @@
 {
  "skillId": "E-K-B7",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "sort",
   "mode": "read",
@@ -54,18 +54,24 @@
    {
     "label": "-an",
     "speak": [
-     "Words like",
+     "They all end in",
      {
-      "word": "can"
+      "letter": "a"
+     },
+     {
+      "letter": "n"
      }
     ]
    },
    {
     "label": "-in",
     "speak": [
-     "Words like",
+     "They all end in",
      {
-      "word": "bin"
+      "letter": "i"
+     },
+     {
+      "letter": "n"
      }
     ]
    }
@@ -79,39 +85,41 @@
   "explanation": {
    "speak": [
     {
-     "word": "pan"
+     "word": "Pan"
     },
     "and",
     {
      "word": "ran"
     },
-    "both end in",
+    "both end with",
     {
-     "letter": "a"
+     "sound": "a"
     },
+    ",",
     {
-     "letter": "n"
+     "sound": "n"
     },
     ".",
     {
-     "word": "fin"
+     "word": "Fin"
     },
     "and",
     {
      "word": "pin"
     },
-    "both end in",
+    "both end with",
     {
-     "letter": "i"
+     "sound": "i"
     },
+    ",",
     {
-     "letter": "n"
+     "sound": "n"
     },
     "."
    ],
    "steps": [
-    "Pan and ran both end in an.",
-    "Fin and pin both end in in."
+    "Pan and ran both end with -an.",
+    "Fin and pin both end with -in."
    ],
    "visual": {
     "kind": "row",
@@ -137,6 +145,47 @@
       ]
      }
     ]
+   },
+   "stepsSay": [
+    [
+     {
+      "word": "Pan"
+     },
+     "and",
+     {
+      "word": "ran"
+     },
+     "both end with",
+     {
+      "sound": "a"
+     },
+     ",",
+     {
+      "sound": "n"
+     },
+     "."
+    ],
+    [
+     {
+      "word": "Fin"
+     },
+     "and",
+     {
+      "word": "pin"
+     },
+     "both end with",
+     {
+      "sound": "i"
+     },
+     ",",
+     {
+      "sound": "n"
+     },
+     "."
+    ]
+   ],
+   "hint": {
+    "text": "Look at the last two letters of each word."
    }
   },
   "skillId": "E-K-B7",
@@ -199,18 +248,24 @@
      {
       "label": "-ig",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "big"
+        "letter": "i"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-an",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "can"
+        "letter": "a"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -224,39 +279,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "wig"
+       "word": "Wig"
       },
       "and",
       {
        "word": "big"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "van"
+       "word": "Van"
       },
       "and",
       {
        "word": "pan"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Wig and big both end in ig.",
-      "Van and pan both end in an."
+      "Wig and big both end with -ig.",
+      "Van and pan both end with -an."
      ],
      "visual": {
       "kind": "row",
@@ -282,6 +339,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Wig"
+       },
+       "and",
+       {
+        "word": "big"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Van"
+       },
+       "and",
+       {
+        "word": "pan"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -342,18 +440,24 @@
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-at",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "cat"
+        "letter": "a"
+       },
+       {
+        "letter": "t"
        }
       ]
      }
@@ -367,39 +471,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "bug"
+       "word": "Bug"
       },
       "and",
       {
        "word": "rug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "mat"
+       "word": "Mat"
       },
       "and",
       {
        "word": "cat"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       "."
      ],
      "steps": [
-      "Bug and rug both end in ug.",
-      "Mat and cat both end in at."
+      "Bug and rug both end with -ug.",
+      "Mat and cat both end with -at."
      ],
      "visual": {
       "kind": "row",
@@ -425,6 +531,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Bug"
+       },
+       "and",
+       {
+        "word": "rug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Mat"
+       },
+       "and",
+       {
+        "word": "cat"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -485,18 +632,24 @@
      {
       "label": "-ot",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "dot"
+        "letter": "o"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      }
@@ -510,39 +663,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "pot"
+       "word": "Pot"
       },
       "and",
       {
        "word": "hot"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "hug"
+       "word": "Hug"
       },
       "and",
       {
        "word": "mug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       "."
      ],
      "steps": [
-      "Pot and hot both end in ot.",
-      "Hug and mug both end in ug."
+      "Pot and hot both end with -ot.",
+      "Hug and mug both end with -ug."
      ],
      "visual": {
       "kind": "row",
@@ -568,6 +723,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pot"
+       },
+       "and",
+       {
+        "word": "hot"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Hug"
+       },
+       "and",
+       {
+        "word": "mug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -628,18 +824,24 @@
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      },
      {
       "label": "-op",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "hop"
+        "letter": "o"
+       },
+       {
+        "letter": "p"
        }
       ]
      }
@@ -653,39 +855,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "bin"
+       "word": "Bin"
       },
       "and",
       {
        "word": "pin"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       ".",
       {
-       "word": "hop"
+       "word": "Hop"
       },
       "and",
       {
        "word": "pop"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "p"
+       "sound": "p"
       },
       "."
      ],
      "steps": [
-      "Bin and pin both end in in.",
-      "Hop and pop both end in op."
+      "Bin and pin both end with -in.",
+      "Hop and pop both end with -op."
      ],
      "visual": {
       "kind": "row",
@@ -711,6 +915,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Bin"
+       },
+       "and",
+       {
+        "word": "pin"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Hop"
+       },
+       "and",
+       {
+        "word": "pop"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -771,18 +1016,24 @@
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-ig",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "big"
+        "letter": "i"
+       },
+       {
+        "letter": "g"
        }
       ]
      }
@@ -796,39 +1047,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "rug"
+       "word": "Rug"
       },
       "and",
       {
        "word": "bug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "wig"
+       "word": "Wig"
       },
       "and",
       {
        "word": "big"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       "."
      ],
      "steps": [
-      "Rug and bug both end in ug.",
-      "Wig and big both end in ig."
+      "Rug and bug both end with -ug.",
+      "Wig and big both end with -ig."
      ],
      "visual": {
       "kind": "row",
@@ -854,6 +1107,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Rug"
+       },
+       "and",
+       {
+        "word": "bug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Wig"
+       },
+       "and",
+       {
+        "word": "big"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -914,18 +1208,24 @@
      {
       "label": "-ot",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "dot"
+        "letter": "o"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-et",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "jet"
+        "letter": "e"
+       },
+       {
+        "letter": "t"
        }
       ]
      }
@@ -939,39 +1239,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "dot"
+       "word": "Dot"
       },
       "and",
       {
        "word": "hot"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "jet"
+       "word": "Jet"
       },
       "and",
       {
        "word": "pet"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "e"
+       "sound": "e"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       "."
      ],
      "steps": [
-      "Dot and hot both end in ot.",
-      "Jet and pet both end in et."
+      "Dot and hot both end with -ot.",
+      "Jet and pet both end with -et."
      ],
      "visual": {
       "kind": "row",
@@ -997,6 +1299,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Dot"
+       },
+       "and",
+       {
+        "word": "hot"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Jet"
+       },
+       "and",
+       {
+        "word": "pet"
+       },
+       "both end with",
+       {
+        "sound": "e"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -1057,18 +1400,24 @@
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -1082,39 +1431,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "mug"
+       "word": "Mug"
       },
       "and",
       {
        "word": "rug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "win"
+       "word": "Win"
       },
       "and",
       {
        "word": "pin"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Mug and rug both end in ug.",
-      "Win and pin both end in in."
+      "Mug and rug both end with -ug.",
+      "Win and pin both end with -in."
      ],
      "visual": {
       "kind": "row",
@@ -1140,6 +1491,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mug"
+       },
+       "and",
+       {
+        "word": "rug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Win"
+       },
+       "and",
+       {
+        "word": "pin"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -1200,18 +1592,24 @@
      {
       "label": "-at",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "cat"
+        "letter": "a"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -1225,39 +1623,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "mat"
+       "word": "Mat"
       },
       "and",
       {
        "word": "sat"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "fin"
+       "word": "Fin"
       },
       "and",
       {
        "word": "win"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Mat and sat both end in at.",
-      "Fin and win both end in in."
+      "Mat and sat both end with -at.",
+      "Fin and win both end with -in."
      ],
      "visual": {
       "kind": "row",
@@ -1283,6 +1683,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mat"
+       },
+       "and",
+       {
+        "word": "sat"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Fin"
+       },
+       "and",
+       {
+        "word": "win"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -1343,18 +1784,24 @@
      {
       "label": "-ot",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "dot"
+        "letter": "o"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -1368,39 +1815,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "hot"
+       "word": "Hot"
       },
       "and",
       {
        "word": "pot"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "win"
+       "word": "Win"
       },
       "and",
       {
        "word": "bin"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Hot and pot both end in ot.",
-      "Win and bin both end in in."
+      "Hot and pot both end with -ot.",
+      "Win and bin both end with -in."
      ],
      "visual": {
       "kind": "row",
@@ -1426,6 +1875,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Hot"
+       },
+       "and",
+       {
+        "word": "pot"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Win"
+       },
+       "and",
+       {
+        "word": "bin"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -1486,18 +1976,24 @@
      {
       "label": "-ig",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "big"
+        "letter": "i"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-at",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "cat"
+        "letter": "a"
+       },
+       {
+        "letter": "t"
        }
       ]
      }
@@ -1511,39 +2007,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "pig"
+       "word": "Pig"
       },
       "and",
       {
        "word": "dig"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "bat"
+       "word": "Bat"
       },
       "and",
       {
        "word": "rat"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       "."
      ],
      "steps": [
-      "Pig and dig both end in ig.",
-      "Bat and rat both end in at."
+      "Pig and dig both end with -ig.",
+      "Bat and rat both end with -at."
      ],
      "visual": {
       "kind": "row",
@@ -1569,6 +2067,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pig"
+       },
+       "and",
+       {
+        "word": "dig"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Bat"
+       },
+       "and",
+       {
+        "word": "rat"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -1645,18 +2184,24 @@
      {
       "label": "-ig",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "big"
+        "letter": "i"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-an",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "can"
+        "letter": "a"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -1672,39 +2217,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "big"
+       "word": "Big"
       },
       "and",
       {
        "word": "wig"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "pan"
+       "word": "Pan"
       },
       "and",
       {
        "word": "van"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Big and wig both end in ig.",
-      "Pan and van both end in an."
+      "Big and wig both end with -ig.",
+      "Pan and van both end with -an."
      ],
      "visual": {
       "kind": "row",
@@ -1740,6 +2287,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Big"
+       },
+       "and",
+       {
+        "word": "wig"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Pan"
+       },
+       "and",
+       {
+        "word": "van"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -1814,18 +2402,24 @@
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-at",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "cat"
+        "letter": "a"
+       },
+       {
+        "letter": "t"
        }
       ]
      }
@@ -1841,39 +2435,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "mug"
+       "word": "Mug"
       },
       "and",
       {
        "word": "bug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "mat"
+       "word": "Mat"
       },
       "and",
       {
        "word": "bat"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       "."
      ],
      "steps": [
-      "Mug and bug both end in ug.",
-      "Mat and bat both end in at."
+      "Mug and bug both end with -ug.",
+      "Mat and bat both end with -at."
      ],
      "visual": {
       "kind": "row",
@@ -1909,6 +2505,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mug"
+       },
+       "and",
+       {
+        "word": "bug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Mat"
+       },
+       "and",
+       {
+        "word": "bat"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -1983,18 +2620,24 @@
      {
       "label": "-ot",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "dot"
+        "letter": "o"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      }
@@ -2010,39 +2653,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "hot"
+       "word": "Hot"
       },
       "and",
       {
        "word": "pot"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "rug"
+       "word": "Rug"
       },
       "and",
       {
        "word": "hug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       "."
      ],
      "steps": [
-      "Hot and pot both end in ot.",
-      "Rug and hug both end in ug."
+      "Hot and pot both end with -ot.",
+      "Rug and hug both end with -ug."
      ],
      "visual": {
       "kind": "row",
@@ -2078,6 +2723,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Hot"
+       },
+       "and",
+       {
+        "word": "pot"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Rug"
+       },
+       "and",
+       {
+        "word": "hug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -2152,18 +2838,24 @@
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      },
      {
       "label": "-op",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "hop"
+        "letter": "o"
+       },
+       {
+        "letter": "p"
        }
       ]
      }
@@ -2179,39 +2871,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "bin"
+       "word": "Bin"
       },
       "and",
       {
        "word": "pin"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       ".",
       {
-       "word": "hop"
+       "word": "Hop"
       },
       "and",
       {
        "word": "pop"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "p"
+       "sound": "p"
       },
       "."
      ],
      "steps": [
-      "Bin and pin both end in in.",
-      "Hop and pop both end in op."
+      "Bin and pin both end with -in.",
+      "Hop and pop both end with -op."
      ],
      "visual": {
       "kind": "row",
@@ -2247,6 +2941,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Bin"
+       },
+       "and",
+       {
+        "word": "pin"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Hop"
+       },
+       "and",
+       {
+        "word": "pop"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -2321,18 +3056,24 @@
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-ig",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "big"
+        "letter": "i"
+       },
+       {
+        "letter": "g"
        }
       ]
      }
@@ -2348,39 +3089,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "rug"
+       "word": "Rug"
       },
       "and",
       {
        "word": "bug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "dig"
+       "word": "Dig"
       },
       "and",
       {
        "word": "big"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       "."
      ],
      "steps": [
-      "Rug and bug both end in ug.",
-      "Dig and big both end in ig."
+      "Rug and bug both end with -ug.",
+      "Dig and big both end with -ig."
      ],
      "visual": {
       "kind": "row",
@@ -2416,6 +3159,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Rug"
+       },
+       "and",
+       {
+        "word": "bug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Dig"
+       },
+       "and",
+       {
+        "word": "big"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -2490,18 +3274,24 @@
      {
       "label": "-ot",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "dot"
+        "letter": "o"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-et",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "jet"
+        "letter": "e"
+       },
+       {
+        "letter": "t"
        }
       ]
      }
@@ -2517,39 +3307,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "dot"
+       "word": "Dot"
       },
       "and",
       {
        "word": "pot"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "jet"
+       "word": "Jet"
       },
       "and",
       {
        "word": "net"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "e"
+       "sound": "e"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       "."
      ],
      "steps": [
-      "Dot and pot both end in ot.",
-      "Jet and net both end in et."
+      "Dot and pot both end with -ot.",
+      "Jet and net both end with -et."
      ],
      "visual": {
       "kind": "row",
@@ -2585,6 +3377,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Dot"
+       },
+       "and",
+       {
+        "word": "pot"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Jet"
+       },
+       "and",
+       {
+        "word": "net"
+       },
+       "both end with",
+       {
+        "sound": "e"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -2659,18 +3492,24 @@
      {
       "label": "-ug",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bug"
+        "letter": "u"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -2686,39 +3525,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "hug"
+       "word": "Hug"
       },
       "and",
       {
        "word": "mug"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "u"
+       "sound": "u"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "bin"
+       "word": "Bin"
       },
       "and",
       {
        "word": "win"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Hug and mug both end in ug.",
-      "Bin and win both end in in."
+      "Hug and mug both end with -ug.",
+      "Bin and win both end with -in."
      ],
      "visual": {
       "kind": "row",
@@ -2754,6 +3595,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Hug"
+       },
+       "and",
+       {
+        "word": "mug"
+       },
+       "both end with",
+       {
+        "sound": "u"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Bin"
+       },
+       "and",
+       {
+        "word": "win"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -2828,18 +3710,24 @@
      {
       "label": "-at",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "cat"
+        "letter": "a"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -2855,39 +3743,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "mat"
+       "word": "Mat"
       },
       "and",
       {
        "word": "rat"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "win"
+       "word": "Win"
       },
       "and",
       {
        "word": "fin"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Mat and rat both end in at.",
-      "Win and fin both end in in."
+      "Mat and rat both end with -at.",
+      "Win and fin both end with -in."
      ],
      "visual": {
       "kind": "row",
@@ -2923,6 +3813,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mat"
+       },
+       "and",
+       {
+        "word": "rat"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Win"
+       },
+       "and",
+       {
+        "word": "fin"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -2997,18 +3928,24 @@
      {
       "label": "-ot",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "dot"
+        "letter": "o"
+       },
+       {
+        "letter": "t"
        }
       ]
      },
      {
       "label": "-in",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "bin"
+        "letter": "i"
+       },
+       {
+        "letter": "n"
        }
       ]
      }
@@ -3024,39 +3961,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "pot"
+       "word": "Pot"
       },
       "and",
       {
        "word": "dot"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "o"
+       "sound": "o"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       ".",
       {
-       "word": "win"
+       "word": "Win"
       },
       "and",
       {
        "word": "bin"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "n"
+       "sound": "n"
       },
       "."
      ],
      "steps": [
-      "Pot and dot both end in ot.",
-      "Win and bin both end in in."
+      "Pot and dot both end with -ot.",
+      "Win and bin both end with -in."
      ],
      "visual": {
       "kind": "row",
@@ -3092,6 +4031,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Pot"
+       },
+       "and",
+       {
+        "word": "dot"
+       },
+       "both end with",
+       {
+        "sound": "o"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Win"
+       },
+       "and",
+       {
+        "word": "bin"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "n"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",
@@ -3166,18 +4146,24 @@
      {
       "label": "-ig",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "big"
+        "letter": "i"
+       },
+       {
+        "letter": "g"
        }
       ]
      },
      {
       "label": "-at",
       "speak": [
-       "Words like",
+       "They all end in",
        {
-        "word": "cat"
+        "letter": "a"
+       },
+       {
+        "letter": "t"
        }
       ]
      }
@@ -3193,39 +4179,41 @@
     "explanation": {
      "speak": [
       {
-       "word": "fig"
+       "word": "Fig"
       },
       "and",
       {
        "word": "pig"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "i"
+       "sound": "i"
       },
+      ",",
       {
-       "letter": "g"
+       "sound": "g"
       },
       ".",
       {
-       "word": "mat"
+       "word": "Mat"
       },
       "and",
       {
        "word": "rat"
       },
-      "both end in",
+      "both end with",
       {
-       "letter": "a"
+       "sound": "a"
       },
+      ",",
       {
-       "letter": "t"
+       "sound": "t"
       },
       "."
      ],
      "steps": [
-      "Fig and pig both end in ig.",
-      "Mat and rat both end in at."
+      "Fig and pig both end with -ig.",
+      "Mat and rat both end with -at."
      ],
      "visual": {
       "kind": "row",
@@ -3261,6 +4249,47 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Fig"
+       },
+       "and",
+       {
+        "word": "pig"
+       },
+       "both end with",
+       {
+        "sound": "i"
+       },
+       ",",
+       {
+        "sound": "g"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Mat"
+       },
+       "and",
+       {
+        "word": "rat"
+       },
+       "both end with",
+       {
+        "sound": "a"
+       },
+       ",",
+       {
+        "sound": "t"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the last two letters of each word."
      }
     },
     "skillId": "E-K-B7",

@@ -1,12 +1,13 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { ALPHABET } from '../../../data/letters';
 import type { SightSet } from '../../../data/sightWords';
 import { ALL_SIGHT_WORDS, SIGHT_WORDS, SOUND_ALIKE, soundAlike } from '../../../data/sightWords';
 import type { SkillGenerator } from '../../../generator';
 import type { Explanation } from '../pk/parts';
 import { row } from '../pk/parts';
+import { line, spelledSay, spoken, working } from '../pk/h3-parts';
 
 // Language Arts kindergarten C.1 to C.3, and the shared pieces of grade 1 B.1.
 // Family: Sight words. Oracles: wordSet, and spell for the tiles level.
@@ -84,7 +85,29 @@ function lesson(one: string, two: string, other: string): () => LessonStep[] {
   ];
 }
 
-const setOne = (level: Level, rng: Rng): QuestionDraft => hearAndTap(1, level, rng);
+// ---- Kindergarten C.1 to C.3 ----
+// Kindergarten's hints and tile wording, laid over the pieces grade 1 B.1 shares, so its questions stay as they are.
+
+// A listen hint never shows the word asked for, so it uses no word of sets 1 to 3 at all (not even "the" or "you").
+const TAP_HINT: Hint = { text: 'Listen again. Then read each word slowly. Which word matches?' };
+const SPELL_HINT = line('Think of how the word looks. Tap its letters in order.');
+
+const withHint = (draft: QuestionDraft, hint: Hint): QuestionDraft => ({ ...draft, explanation: { ...draft.explanation, hint } });
+
+// The tiles question says what to do with the tiles, and the step starts with a capital: "The word say is spelled
+// s, a, y.", never "say is spelled ...".
+function tapToSpell(draft: QuestionDraft): QuestionDraft {
+  if (draft.type !== 'tiles') return draft;
+  const target = draft.answer;
+  const letters = target.split('');
+  return {
+    ...draft,
+    prompt: { text: 'Listen. Tap the letters to spell the word.', speak: ['Tap the letters to spell', { word: target }, '.'] },
+    explanation: working([spoken(`The word ${target} is spelled ${letters.join(', ')}.`, ['The word', { word: target }, 'is spelled', ...spelledSay(letters), '.'])], wordSaid(target), SPELL_HINT),
+  };
+}
+
+const setOne = (level: Level, rng: Rng): QuestionDraft => withHint(hearAndTap(1, level, rng), TAP_HINT);
 export const sightWordsOneGenerator: SkillGenerator = {
   skillId: 'E-K-C1',
   maxLevel: 3,
@@ -97,7 +120,7 @@ export const sightWordsOneGenerator: SkillGenerator = {
   oracle: 'wordSet',
 };
 
-const setTwo = (level: Level, rng: Rng): QuestionDraft => hearAndTap(2, level, rng);
+const setTwo = (level: Level, rng: Rng): QuestionDraft => withHint(hearAndTap(2, level, rng), TAP_HINT);
 export const sightWordsTwoGenerator: SkillGenerator = {
   skillId: 'E-K-C2',
   maxLevel: 3,
@@ -110,7 +133,7 @@ export const sightWordsTwoGenerator: SkillGenerator = {
   oracle: 'wordSet',
 };
 
-const setThree = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? spellSightWord(3, rng) : hearAndTap(3, level, rng));
+const setThree = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? tapToSpell(spellSightWord(3, rng)) : withHint(hearAndTap(3, level, rng), TAP_HINT));
 export const sightWordsThreeGenerator: SkillGenerator = {
   skillId: 'E-K-C3',
   maxLevel: 4,

@@ -87,6 +87,14 @@ function question(skillId: string, level: number, seed: number): Question {
   return generateQuestion(skillId, level, seed);
 }
 
+// The question without a hint of its own: its step nudge, the fallback when a generator gives no hint, is what the
+// rules below check. A question with its own hint offers that hint first.
+function withoutHint(q: Question): Question {
+  const explanation = { ...q.explanation };
+  delete explanation.hint;
+  return { ...q, explanation };
+}
+
 describe('the nudge', () => {
   it('is the first step, only when there are at least 3, never from a sort, order or match, and never one that names the answer', () => {
     let nudged = 0;
@@ -100,7 +108,9 @@ describe('the nudge', () => {
         } catch {
           continue;
         }
-        const nudge = nudgeFor(q);
+        const own = q.explanation.hint;
+        if (own) expect(nudgeFor(q)?.text, skill.id).toBe(own.text);
+        const nudge = nudgeFor(withoutHint(q));
         const steps = q.explanation.steps;
         const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
         if (steps.length < 3 || listsAnswer) {
@@ -116,7 +126,7 @@ describe('the nudge', () => {
           nudged += 1;
         }
         // Whatever is offered, it never names the answer.
-        if (nudge) expect(givesAway(q, nudge.text, null), `${skill.id}: ${nudge.text}`).toBe(false);
+        for (const offered of [nudge, nudgeFor(q)]) if (offered) expect(givesAway(q, offered.text, null), `${skill.id}: ${offered.text}`).toBe(false);
       }
     }
     expect(nudged).toBeGreaterThan(100);
@@ -128,7 +138,7 @@ describe('the nudge', () => {
     const counting = question('M-1-B1', 2, 7); // "Start at 9." "Count on 2 more: 10, 11." "2 + 9 = 11"
     expect(nudgeFor(counting)).toEqual({ text: 'Start at 9.', say: expect.any(Array) });
     const rhyme = question('E-K-B6', 2, 7); // two steps: the first gives the odd one out away
-    expect(nudgeFor(rhyme)).toBeNull();
+    expect(nudgeFor(withoutHint(rhyme))).toBeNull();
   });
 
   it("is the generator's own hint when it gives one, said through stepSay unless it has its own speech", () => {
@@ -175,7 +185,7 @@ describe('the nudge', () => {
       const q = question(skillId, level, seed);
       expect(q.explanation.steps[0], skillId).toBe(first);
       expect(q.explanation.steps.length, skillId).toBeGreaterThanOrEqual(3);
-      expect(nudgeFor(q), `${skillId}: ${first}`).toBeNull();
+      expect(nudgeFor(withoutHint(q)), `${skillId}: ${first}`).toBeNull();
     }
   });
 });

@@ -201,7 +201,7 @@ describe('B.4 to B.7: reading, spelling and rhyming', () => {
         expect(extra.includes(CLOSEST_VOWEL[entry.vowel])).toBe(level === 2);
         if (level === 1) expect(extra.some((tile) => 'aeiou'.includes(tile) || entry.word.split('').some((own) => looksLike(own, tile)))).toBe(false);
         expect(spoken(question.stimulus)).toBe(false);
-        expect(question.prompt.text).toBe('Spell the word.');
+        expect(question.prompt.text).toBe('Listen. Tap the letters to spell the word.');
       }
     }
   });
@@ -296,7 +296,7 @@ describe('C.1 to C.3 Sight words', () => {
       expect(question.facts.oracle).toBe('spell');
       expect(question.slots).toBe(question.answer.length);
       expect(question.bank).toHaveLength(question.answer.length + 2);
-      expect(question.prompt.text).toBe('Listen. Spell the word.');
+      expect(question.prompt.text).toBe('Listen. Tap the letters to spell the word.');
       expect(validateQuestion(question, { soundAlikes: SOUND_ALIKE })).toEqual([]);
     }
     expect(targets.size).toBeGreaterThan(40);
@@ -372,7 +372,7 @@ describe('D.1 to D.3 and E.1', () => {
         expect(opts(question)).toHaveLength(count);
         expect(opts(question)[question.answerIndex]).toBe(entry.word);
         for (const each of opts(question)) expect(SENTENCE_PICTURES.some((other) => other.word === each)).toBe(true);
-        expect(question.explanation.steps).toEqual([`The sentence says ${entry.word}.`]);
+        expect(question.explanation.steps).toEqual([`The sentence has the word ${entry.word}.`, `The picture shows ${entry.word === 'sun' ? 'the sun' : `a ${entry.word}`}.`]);
       }
     }
     expect(new Set(all('E-K-E1', 2).map((question) => s(question, 'target'))).size).toBe(16);
