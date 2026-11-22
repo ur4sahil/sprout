@@ -53,7 +53,7 @@ switch back.
    Kokoro file is ever served for a Piper sentence.
 3. **App: who speaks.** Every speech call inside a subject names the subject's friend (`castFor(skill.subject)`):
    practice, review, Mixed bag, hints, the step walk, the check-in's questions, lessons and examples. Sprout for the rest.
-4. **Letter sounds.** On Sheeba's Mac: 53 sounds (the keys in `src/engine/letterSounds.ts`) in two forms, about 106
+4. **Letter sounds.** On the home Mac: 53 sounds (the keys in `src/engine/letterSounds.ts`) in two forms, about 106
    clips with Chatterbox. A listening page for the owner; any sound he does not like is made again. Uploaded to R2 as
    `sound/<key>/once` and `sound/<key>/three`, and wired into `src/audio/soundClips.ts` (round 1 of the wording audit
    built the plumbing and the fallback).
@@ -116,8 +116,14 @@ words across a topic, a small lesson for every question asked). Each lesson is p
 
 ## Phase 5: recording
 
-Piper on the Oracle box, at the slow pace, after the wording fixes (rounds 2 and 3 of the audit) are in, so nothing
-is recorded twice. Browser tests never run on the box while the children may be using Sprout.
+Started Nov 22, 2026, on the owner's word, on the home Mac rather than the Oracle box, so the live voice machine
+stays free for the children. `npx tsx scripts/voice-ahead.ts <out.tsv>` lists every sentence as
+`key<TAB>voice<TAB>sentence`, with the Worker's own key and the app's own choice of speaker: about 147,000 lines, far
+more than the estimate below, because every hint brings a worked example and Pop asks its questions again in Sprout's
+voice. A recorder outside the repo runs the live voice machine's own `make()` over the list and keeps each sentence in
+`sprout-voice` under its key, the timing first. Sentences already kept are skipped, so a list made again after a
+wording change records only what changed. Browser tests never run on the Oracle box while the children may be using
+Sprout.
 
 | Order | What | Voices | About |
 |---|---|---|---|
@@ -127,7 +133,7 @@ is recorded twice. Browser tests never run on the box while the children may be 
 | 4 | Lessons, wave by wave as each is approved | the subject's friend | about 15,000 lines over the waves |
 | 5 | Stories, pages and tapped words | Olive | 650 lines |
 | 6 | The most common questions, about 50 of each skill and level | the subject's friend | 20,000 lines, overnight |
-| - | Letter sounds | Chatterbox, on Sheeba's Mac | 106 clips |
+| - | Letter sounds | Chatterbox, on the home Mac | 106 clips |
 
 Everything else is made the first time it is heard, in well under a second.
 
@@ -135,8 +141,8 @@ Everything else is made the first time it is heard, in well under a second.
 
 The owner listens on the test copy, then says push. The voice id change means old Kokoro files are never served;
 switching back is one setting. After two quiet weeks: stop Kokoro on the Oracle box, delete the old Kokoro recordings
-(with the owner's yes), remove the Kokoro test set-up from Sheeba's Mac. The 7-day R2 key made on Nov 22 expires on
-Nov 29 unused.
+(with the owner's yes), remove the Kokoro test set-up from the home Mac. The 7-day R2 key made on Nov 22 is the recorder's
+and expires on Nov 29.
 
 ## The wording audit alongside
 
