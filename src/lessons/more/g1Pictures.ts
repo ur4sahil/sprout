@@ -65,7 +65,8 @@ function clockScene(time: Time): Scene {
   ]);
 }
 
-// Read a clock: the long hand first (o'clock or half past), then the short hand (the hour), then say the time.
+// Read a clock: the long hand first (o'clock, or thirty), then the short hand (the hour), then say the time. A time is
+// said as a digital clock is read (the owner's choice, Nov 22, 2026): "seven thirty", never "half past seven".
 function readMoments(time: Time): Moment[] {
   const base = clockScene(time);
   const longAt = onFace(time.minute === 0 ? 12 : 6);
@@ -82,7 +83,7 @@ function readMoments(time: Time): Moment[] {
     ];
   }
   return [
-    moment(['Find the long hand. It points straight down, to', { number: 6 }, '. That means half past.'], 'Long hand: on 6', long),
+    moment(['Find the long hand. It points straight down, to', { number: 6 }, '. That means the time ends in thirty.'], 'Long hand: on 6', long),
     moment(['The short hand is halfway between', { number: time.hour }, 'and', { number: nextHour(time.hour) }, '. It has gone past', { number: time.hour }, '.'], `Short hand: between ${time.hour} and ${nextHour(time.hour)}`, short),
     said,
   ];
@@ -107,9 +108,9 @@ function tellTimeLesson(): Lesson {
       turn(one, readMoments({ hour: num(one.facts, 'hour'), minute: num(one.facts, 'minute') })),
       show(moment(['Now the long hand has gone halfway around the clock.'], 'Halfway around', clockScene({ hour: 7, minute: 30 }))),
       ...half.map(show),
-      show(moment(['We write half past seven like this:', { number: 7 }, ', then', { number: 30 }, '.'], '7:30 is half past 7.', set(calm(last(half, start)), ['t'], { lit: true }))),
+      show(moment(['We write', { time: { hour: 7, minute: 30 } }, 'like this:', { number: 7 }, ', then', { number: 30 }, '.'], '7:30 is seven thirty.', set(calm(last(half, start)), ['t'], { lit: true }))),
       turn(two, readMoments({ hour: num(two.facts, 'hour'), minute: num(two.facts, 'minute') })),
-      show(moment(['The short hand tells the hour. Long hand up is o\'clock. Long hand down is half past.'], "Up: o'clock. Down: half past.", calm(last(half, start)))),
+      show(moment(['The short hand tells the hour. Long hand up is o\'clock. Long hand down is thirty.'], "Up: o'clock. Down: thirty.", calm(last(half, start)))),
     ],
   };
 }
@@ -184,7 +185,7 @@ function matchClocksLesson(): Lesson {
       show(moment(['This long hand points down, to', { number: 6 }, '. That is', { time: halves[1] as Time }, '.'], written(halves[1] as Time), down)),
       show(moment(['So check both hands, every time.'], 'Check both hands.', calm(down))),
       turn(two, matchWhy(two)),
-      show(moment(['Short hand for the hour. Long hand up for o\'clock, and down for half past.'], "Up: o'clock. Down: half past.", calm(down))),
+      show(moment(['Short hand for the hour. Long hand up for o\'clock, and down for thirty.'], "Up: o'clock. Down: thirty.", calm(down))),
     ],
   };
 }

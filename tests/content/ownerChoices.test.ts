@@ -37,8 +37,22 @@ function everyLine(q: Question): string[] {
 }
 
 describe('a clock time is said as a digital clock is read', () => {
-  it('never "half past", "quarter past" or "quarter to", in any question, step or hint', () => {
-    for (const q of EVERY) for (const line of everyLine(q)) expect(line, `${q.skillId} level ${q.level}`).not.toMatch(/half past|quarter past|quarter to|half-past/i);
+  it('never "half past", "quarter past" or "quarter to", in any question, step or hint, but grade 3 F.1 level 3', () => {
+    // That level is the one place that teaches those words (the owner's choice, Nov 22, 2026).
+    for (const q of EVERY) {
+      if (q.skillId === 'M-3-F1' && q.level === 3) continue;
+      for (const line of everyLine(q)) expect(line, `${q.skillId} level ${q.level}`).not.toMatch(/half past|quarter past|quarter to|half-past/i);
+    }
+  });
+
+  it('grade 3 F.1 level 3 teaches the quarter-hour words, and still reads the time as a digital clock does', () => {
+    const level3 = EVERY.filter((q) => q.skillId === 'M-3-F1' && q.level === 3);
+    expect(level3.length).toBe(SEEDS);
+    for (const q of level3) {
+      expect(q.prompt.text).toMatch(/^What time is (quarter past|half past|quarter to) \d{1,2}\?$/);
+      const last = spokenSteps(q).at(-1);
+      expect(last ? sayWords(last) : '', q.prompt.text).toMatch(/^It is [a-z]+ (fifteen|thirty|forty-five)\.?$/);
+    }
   });
 
   it('"o\'clock" only ever follows the hour it names ("8 o\'clock", "eight o\'clock")', () => {
@@ -62,7 +76,8 @@ describe('a clock time is said as a digital clock is read', () => {
       expect(words).toMatch(/^It is [a-z]+ thirty\.$/);
       expect(q.explanation.steps[2]).toBe(`It is ${hour}:30.`);
     }
-    expect(nudgeFor(generateQuestion('M-3-F1', 3, 1))?.text).toBe('Start at the hour the question names. Then move the long hand on, or back, by the minutes.');
+    // F.1 level 3 says the quarter-hour words (the owner's exception), and its own hint comes first.
+    expect(nudgeFor(generateQuestion('M-3-F1', 3, 1))?.text).toBe('A quarter of an hour is 15 minutes. Start at the hour the words name.');
   });
 });
 

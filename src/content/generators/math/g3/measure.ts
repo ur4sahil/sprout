@@ -47,15 +47,14 @@ function minuteExplanation(time: Time): Explanation {
   };
 }
 
-// Level 3 asks for a quarter hour from the hour it is next to. Times are said as a digital clock is read (the owner's
-// choice, Nov 22, 2026), never "quarter past" or "quarter to", so the question says the minutes: 15 or 30 minutes
-// after an hour, or 15 minutes before the next one. The steps start at that hour and move the long hand.
-function quarterAsk(time: Time): { text: string; speak: Say; from: number; after: boolean } {
-  if (time.minute === 45) {
-    const next = later(time, 15).hour;
-    return { text: `15 minutes before ${next} o'clock`, speak: [{ number: 15 }, 'minutes before', { number: next }, "o'clock"], from: next, after: false };
-  }
-  return { text: `${time.minute} minutes after ${time.hour} o'clock`, speak: [{ number: time.minute }, 'minutes after', { number: time.hour }, "o'clock"], from: time.hour, after: true };
+// Level 3 teaches the words for the quarter hours: "quarter past 3", "half past 3", "quarter to 4". Everywhere else a
+// time is said as a digital clock is read (the owner's choice, Nov 22, 2026); this one level keeps the words, by the
+// owner's choice the same day, because children hear them from grown-ups. Its last step reads the time the digital way.
+function quarterWords(time: Time): { text: string; speak: Say } {
+  if (time.minute === 15) return { text: `quarter past ${time.hour}`, speak: ['quarter past', { number: time.hour }] };
+  if (time.minute === 30) return { text: `half past ${time.hour}`, speak: ['half past', { number: time.hour }] };
+  const next = later(time, 15).hour;
+  return { text: `quarter to ${next}`, speak: ['quarter to', { number: next }] };
 }
 
 function timeToMinute(level: Level, rng: Rng): QuestionDraft {
@@ -63,24 +62,21 @@ function timeToMinute(level: Level, rng: Rng): QuestionDraft {
     const hour = rng.int(1, 12);
     const minute = rng.pick([15, 30, 45]);
     const time = { hour, minute };
-    const ask = quarterAsk(time);
-    const points = minute / 5;
-    const move = ask.after ? `${minute} minutes after it, the long hand points to ${points}.` : `15 minutes before it, the long hand points to ${points}. That is ${minute} minutes after ${hour} o'clock.`;
-    const moveSay: Say = ask.after ? [{ number: minute }, 'minutes after it, the long hand points to', { number: points }, '.'] : [{ number: 15 }, 'minutes before it, the long hand points to', { number: points }, '. That is', { number: minute }, 'minutes after', { number: hour }, "o'clock."];
-    // The slips: the minutes on the wrong side of the hour, or the hour the question names with the wrong minutes.
+    const words = quarterWords(time);
+    // The slips: the quarter on the wrong side of the hour, or the hour of the words with the wrong minutes.
     const choices = threeTimes(time, [later(time, 30), later(time, -30), { hour: later(time, 15).hour, minute: 45 }, { hour, minute: 15 === minute ? 45 : 15 }], rng);
     return {
       type: 'choice',
       mode: 'look',
       facts: { hour, minute, options: choices.map(written) },
-      prompt: { text: `What time is ${ask.text}?`, speak: ['What time is', ...ask.speak, '?'] },
+      prompt: { text: `What time is ${words.text}?`, speak: ['What time is', ...words.speak, '?'] },
       options: choices.map(timeText),
       answerIndex: choices.findIndex((each) => same(each, time)),
       explanation: {
-        speak: ['Start at', { number: ask.from }, "o'clock.", ...moveSay, 'It is', { time }, '.'],
-        steps: [`Start at ${ask.from} o'clock.`, move, `It is ${written(time)}.`],
+        speak: [...words.speak, 'is', { number: minute }, 'minutes past', { number: hour }, '. It is', { time }, '.'],
+        steps: [`A quarter of an hour is 15 minutes. Half an hour is 30.`, `${words.text[0]?.toUpperCase()}${words.text.slice(1)} is ${minute} minutes past ${hour}.`, `It is ${written(time)}.`],
         visual: clock(time),
-        hint: { text: 'Start at the hour the question names. Then move the long hand on, or back, by the minutes.' },
+        hint: { text: 'A quarter of an hour is 15 minutes. Start at the hour the words name.' },
       },
     };
   }

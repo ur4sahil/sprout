@@ -2135,7 +2135,7 @@ const BASE: readonly Skill[] = [
     ladder: 'time',
     icon: { kind: 'clock', hour: 3, minute: 47 },
     speakName: ['Time to the minute'],
-    version: 3,
+    version: 4, // level 3 keeps "quarter past", "half past" and "quarter to" (the owner's choice, Nov 22, 2026)
     itemTypes: ['choice'],
     maxLevel: 3,
     prereqs: [],

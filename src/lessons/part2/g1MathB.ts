@@ -106,7 +106,7 @@ function countUpMoments(p: string, whole: number, part: number): Told {
   const lined = showing(calm(think), line.map((piece) => piece.id));
   const at = (value: number): string => `${p}n${value}`;
   const moments: Moment[] = [
-    moment([{ number: whole }, 'minus', { number: part }, 'equals what?'], `${whole} − ${part} = ?`, set(start, ids(`${p}m`, 5), { lit: true })),
+    moment(['What is', { number: whole }, 'minus', { number: part }, '?'], `${whole} − ${part} = ?`, set(start, ids(`${p}m`, 5), { lit: true })),
     moment(['Think:', { number: part }, ', plus what, makes', { number: whole }, '?'], `${part} + ? = ${whole}`, set(think, ids(`${p}q`, 5), { lit: true })),
     moment(['Start at', { number: part }, ', and count up to', { number: whole }, '.'], `Count up from ${part} to ${whole}.`, point(set(lined, [at(part)], { lit: true, badge: 'start' }), at(part))),
   ];
@@ -170,7 +170,7 @@ function headMoments(p: string, start: number, steps: number, dir: 1 | -1): Told
   const base = scene([...eq, held, ...said]);
   let now = set(showing(base, [`${p}s`]), [`${p}s`, `${p}e0`], { lit: true });
   const moments: Moment[] = [
-    moment([{ number: start }, word, { number: steps }, 'equals what?'], `${start} ${sign} ${steps} = ?`, set(base, ids(`${p}e`, 5), { lit: true })),
+    moment(['What is', { number: start }, word, { number: steps }, '?'], `${start} ${sign} ${steps} = ?`, set(base, ids(`${p}e`, 5), { lit: true })),
     moment(['Keep', { number: start }, 'in your head. We do not count it.'], `Keep ${start} in your head.`, set(now, [`${p}s`], { badge: 'start' })),
     moment([dir > 0 ? 'Now count on' : 'Now count back', { number: steps }, '. Put up one finger for each number you say.'], `${dir > 0 ? 'Count on' : 'Count back'} ${steps}. One finger for each.`, set(set(now, [`${p}e0`], { lit: undefined }), [`${p}e2`], { lit: true })),
   ];
@@ -249,7 +249,7 @@ function familyTypedMoments(p: string, numbers: readonly number[], ask: number):
     moments: [
       moment([{ number: x }, 'plus', { number: y }, 'equals', { number: c }, '.'], `${x} + ${y} = ${c}`, set(base, ids(`${p}g`, 5), { lit: true })),
       moment(['The two parts are', { number: x }, ', and', { number: y }, '. The whole is', { number: c }, '.'], `Parts: ${x} and ${y}. Whole: ${c}.`, named),
-      moment(['So', { number: c }, 'minus', { number: ask }, 'equals what?'], `${c} − ${ask} = ?`, set(asked, ids(`${p}q`, 5), { lit: true })),
+      moment(['So, what is', { number: c }, 'minus', { number: ask }, '?'], `${c} − ${ask} = ?`, set(asked, ids(`${p}q`, 5), { lit: true })),
       moment(['We start with the whole, and take away the part', { number: ask }, '.'], `Take the part ${ask} from the whole.`, taken),
       moment(['The other part is left. It is', { number: other }, '.'], `The other part, ${other}, is left.`, left),
       moment(['So', { number: c }, ', minus', { number: ask }, ', is', { number: other }, '.'], `${c} − ${ask} = ${other}`, end),
@@ -534,7 +534,7 @@ function splitMoments(p: string, a: number, b: number): Told {
   const end = fillBox(calm(s4), `${p}e4`, a - b);
   return {
     moments: [
-      moment([{ number: a }, 'minus', { number: b }, 'equals what?'], `${a} − ${b} = ?`, set(base, ids(`${p}e`, 5), { lit: true })),
+      moment(['What is', { number: a }, 'minus', { number: b }, '?'], `${a} − ${b} = ?`, set(base, ids(`${p}e`, 5), { lit: true })),
       moment([{ number: a }, 'is ten, and', { number: ones }, '. So taking away', { number: ones }, 'gets us down to ten.'], `${a} is 10 and ${ones}.`, s1),
       moment(['Split', { number: b }, 'into', { number: ones }, ', and', { number: rest }, '.'], `${b} is ${ones} and ${rest}.`, s2),
       moment(['First,', { number: a }, 'minus', { number: ones }, 'is ten.'], `${a} − ${ones} = 10`, s3),

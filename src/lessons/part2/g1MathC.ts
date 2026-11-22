@@ -79,7 +79,7 @@ function pickMoments(time: Time, clocks: readonly Visual[], shown: readonly Time
   const up = time.minute === 0;
   return {
     long: moment(
-      up ? ['We want', { time }, '. O\'clock means the long hand points straight up, to', { number: 12 }, '.'] : ['We want', { time }, '. Half past means the long hand points straight down, to', { number: 6 }, '.'],
+      up ? ['We want', { time }, '. O\'clock means the long hand points straight up, to', { number: 12 }, '.'] : ['We want', { time }, '. Thirty means the long hand points straight down, to', { number: 6 }, '.'],
       `${written(time)}: long hand on ${up ? 12 : 6}`,
       sorted,
     ),
@@ -131,11 +131,11 @@ function setMoments(time: Time): { start: Moment; hour: Moment; minutes: Moment;
       hourSet,
     ),
     minutes: moment(
-      time.minute === 0 ? ['Now the minutes. O\'clock means the long hand stays up, on', { number: 12 }, '.'] : ['Now the minutes. Half past means the long hand goes down, to', { number: 6 }, '.'],
+      time.minute === 0 ? ['Now the minutes. O\'clock means the long hand stays up, on', { number: 12 }, '.'] : ['Now the minutes. Thirty means the long hand goes down, to', { number: 6 }, '.'],
       time.minute === 0 ? 'Long hand stays on 12' : 'Long hand down to 6',
       minuteSet,
     ),
-    slid: moment(['See, the short hand slid on, halfway to', { number: nextHour(time.hour) }, '. That is right for half past.'], `Short hand: halfway to ${nextHour(time.hour)}`, slid),
+    slid: moment(['See, the short hand slid on, halfway to', { number: nextHour(time.hour) }, '. That is right for', { time }, '.'], `Short hand: halfway to ${nextHour(time.hour)}`, slid),
     done: moment(['Now the clock shows', { time }, '.'], written(time), done),
   };
 }
@@ -170,12 +170,12 @@ function tellTimePart2(): Lesson {
       show(making.slid),
       show(making.done),
       turn(two, setWhy(two)),
-      show(moment(['The first number tells the short hand where to go. Then the long hand goes up for o\'clock, or down for half past.'], "Hour first. Then up for o'clock, down for half past.", calm(making.done.scene))),
+      show(moment(['The first number tells the short hand where to go. Then the long hand goes up for o\'clock, or down for thirty.'], "Hour first. Then up for o'clock, down for thirty.", calm(making.done.scene))),
     ],
   };
 }
 
-// ---- M-1-C6 part 2: o'clock and half past mixed, two clocks at the same hour (level 3) ----
+// ---- M-1-C6 part 2: o'clock and thirty mixed, two clocks at the same hour (level 3) ----
 
 // Three clocks along the top, and the written times on cards in a row at the bottom (in the cards' own order).
 function matchScene(clocks: readonly Visual[], cards: readonly Time[]): Scene {
@@ -200,8 +200,8 @@ function mixedWhy(question: Question): Moment[] {
   const times = strings(question.facts, 'leftValues').map(readTime);
   const cards = strings(question.facts, 'rightValues').map(readTime);
   let now = matchScene(question.left, cards);
-  const out: Moment[] = [moment(['Look at the long hands first. Up means o\'clock. Down means half past.'], 'Long hand: up or down?', now)];
-  // The o'clock clocks first, then the half past ones.
+  const out: Moment[] = [moment(['Look at the long hands first. Up means o\'clock. Down means thirty.'], 'Long hand: up or down?', now)];
+  // The o'clock clocks first, then the thirty ones.
   const pairs = [...question.answerPairs].sort(([one], [two]) => (times[one]?.minute ?? 0) - (times[two]?.minute ?? 0));
   pairs.forEach(([clock, card]) => {
     const time = times[clock] as Time;
@@ -225,16 +225,16 @@ function matchClocksPart2(): Lesson {
   const two = turnQuestion('M-1-C6', 3, (f) => noSevens(f) && !strings(f, 'leftValues').some((value) => strings(one.facts, 'leftValues').includes(value)));
   return {
     parts: [
-      show(moment(['You know how to match a clock to its time. Now o\'clock and half past are mixed together.'], "O'clock and half past, mixed", start)),
+      show(moment(['You know how to match a clock to its time. Now o\'clock and thirty are mixed together.'], "O'clock and thirty, mixed", start)),
       show(moment(['Look at the cards. A time that ends with two zeros is an o\'clock time.'], "7:00 is an o'clock time.", set(start, ['d0'], { lit: true }))),
-      show(moment(['A time that ends with', { number: 30 }, 'is a half past time.'], '7:30 and 10:30 are half past.', set(start, ['d1', 'd2'], { lit: true }))),
+      show(moment(['A time that ends with', { number: 30 }, 'has its long hand down.'], '7:30 and 10:30: long hand down.', set(start, ['d1', 'd2'], { lit: true }))),
       show(moment(['Only one clock has its long hand pointing up. So it gets the o\'clock card.'], written(times[2] as Time), up)),
-      show(moment(['Two clocks are left. Both are half past, so now the short hands decide.'], 'Now look at the short hands.', left)),
+      show(moment(['Two clocks are left. Both end in thirty, so now the short hands decide.'], 'Now look at the short hands.', left)),
       show(moment(['This short hand is between', { number: 7 }, 'and', { number: 8 }, '. It has passed', { number: 7 }, ', so it is', { time: times[0] as Time }, '.'], written(times[0] as Time), seven)),
       show(moment(['This short hand is between', { number: 10 }, 'and', { number: 11 }, '. That is', { time: times[1] as Time }, '.'], written(times[1] as Time), ten)),
       show(moment(['Two of these times have the same hour. Only the long hand tells them apart.'], 'Same hour: check the long hand.', set(calm(ten), ['k0', 'k2'], { lit: true }))),
       turn(one, mixedWhy(one)),
-      show(moment(['At half past, the hour is the number the short hand has just passed, not the one it is going to.'], 'Half past: the hour it has passed', handAt(set(calm(ten), ['k0', 'd2'], { lit: true }), tip.x, tip.y + 0.2))),
+      show(moment(['When the time ends in thirty, the hour is the number the short hand has just passed, not the one it is going to.'], 'Thirty: the hour it has passed', handAt(set(calm(ten), ['k0', 'd2'], { lit: true }), tip.x, tip.y + 0.2))),
       turn(two, mixedWhy(two)),
       show(moment(['Long hand first: up or down. Then the short hand tells the hour.'], 'Long hand first. Then the short hand.', calm(ten))),
     ],

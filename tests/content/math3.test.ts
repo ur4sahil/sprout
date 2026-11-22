@@ -272,18 +272,19 @@ describe('E. Fractions', () => {
 });
 
 describe('F. Measurement and data', () => {
-  it('F.1 reads minutes that are not fives, then matches clocks, then 15 or 30 minutes after an hour or 15 before the next', () => {
+  it('F.1 reads minutes that are not fives, then matches clocks, then quarter past, half past and quarter to', () => {
     for (const q of all('M-3-F1', 1)) expect(n(q, 'minute') % 5).not.toBe(0);
     for (const q of all('M-3-F1', 2)) if (q.type === 'choice') expect(q.options[0]?.kind).toBe('clock');
     expect(set(all('M-3-F1', 3), (q) => n(q, 'minute'))).toEqual([15, 30, 45]);
-    // The quarter hours are asked in minutes (the owner's choice, Nov 22, 2026: never "quarter past" or "quarter to"),
-    // from the hour named: "What time is 15 minutes before 4 o'clock?" is 3:45.
+    // Level 3 teaches the words for the quarter hours, the one place Sprout says them (the owner's choice, Nov 22,
+    // 2026): "What time is quarter to 4?" is 3:45, and the last step reads the time as a digital clock does.
     for (const q of all('M-3-F1', 3)) {
       const [hour, minute] = [n(q, 'hour'), n(q, 'minute')];
-      const asked = minute === 45 ? `What time is 15 minutes before ${(hour % 12) + 1} o'clock?` : `What time is ${minute} minutes after ${hour} o'clock?`;
-      expect(q.prompt.text).toBe(asked);
-      expect(q.explanation.steps[0]).toBe(`Start at ${minute === 45 ? (hour % 12) + 1 : hour} o'clock.`);
+      const words = minute === 15 ? `quarter past ${hour}` : minute === 30 ? `half past ${hour}` : `quarter to ${(hour % 12) + 1}`;
+      expect(q.prompt.text).toBe(`What time is ${words}?`);
+      expect(q.explanation.steps[1]).toBe(`${words[0]?.toUpperCase()}${words.slice(1)} is ${minute} minutes past ${hour}.`);
       expect(q.explanation.steps[2]).toBe(`It is ${hour}:${minute}.`);
+      expect(q.explanation.hint?.text).toBe('A quarter of an hour is 15 minutes. Start at the hour the words name.');
     }
   });
 
