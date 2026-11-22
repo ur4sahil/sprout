@@ -1,18 +1,45 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
 
 // Math grade 3 A.1 to A.4: place value to 9,999, number names, comparing four-digit numbers, rounding.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint };
 const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
 
 // 4306 is written 4,306 from a thousand up.
 export const written = (n: number): string => (n >= 1000 ? `${Math.floor(n / 1000)},${String(n % 1000).padStart(3, '0')}` : String(n));
 // A numeral a child can tap, written with its comma. It says its own number.
 export const bigNumeral = (n: number, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kind: 'text', value: written(n), size, speak: [{ number: n }] });
+
+// One sentence, written and said together. A number is written with its comma and said as a number; a piece that
+// starts with a stop (. , : ; ?) joins the word before it. Plain pieces must hold no digits or signs.
+export interface Told {
+  text: string;
+  speak: Say;
+}
+export function told(...pieces: (string | number)[]): Told {
+  let text = '';
+  const speak: Say = [];
+  for (const piece of pieces) {
+    const word = typeof piece === 'number' ? written(piece) : piece;
+    text += text.length === 0 || /^[.,:;?!]/.test(word) ? word : ` ${word}`;
+    speak.push(typeof piece === 'number' ? { number: piece } : piece);
+  }
+  return { text, speak };
+}
+// Several sentences, each one a step.
+export const toldSteps = (lines: Told[]): { steps: string[]; speak: Say } => ({ steps: lines.map((each) => each.text), speak: lines.flatMap((each) => each.speak) });
+
+// How counting by a number is written and said: "Count by threes." The same word on screen and in speech.
+const BY_WORDS: Record<number, string> = { 2: 'twos', 3: 'threes', 4: 'fours', 5: 'fives', 6: 'sixes', 7: 'sevens', 8: 'eights', 9: 'nines', 10: 'tens' };
+export function byWord(n: number): string {
+  const word = BY_WORDS[n];
+  if (!word) throw new Error(`no counting word for ${n}`);
+  return word;
+}
 
 const digitsOf = (n: number): { thousands: number; hundreds: number; tens: number; ones: number } => ({
   thousands: Math.floor(n / 1000),
@@ -21,39 +48,50 @@ const digitsOf = (n: number): { thousands: number; hundreds: number; tens: numbe
   ones: n % 10,
 });
 const blocks = (n: number): Visual => ({ kind: 'baseTen', ...digitsOf(n) });
-const many = (count: number, one: string): string => `${count} ${count === 1 ? one : `${one}s`}`;
 const PLACES = ['thousands', 'hundreds', 'tens', 'ones'] as const;
+type Place = (typeof PLACES)[number];
 const WORTH = { thousands: 1000, hundreds: 100, tens: 10, ones: 1 } as const;
+// "1 ten", "0 tens", "4 tens".
+const placeName = (count: number, place: Place): string => (count === 1 ? place.slice(0, -1) : place);
 
-// "4 thousands, 3 hundreds, 0 tens, 6 ones", written out, for a number too big to draw in blocks.
-function placeWords(n: number): { text: string; speak: Say } {
+// "7 thousands, 0 hundreds, 1 ten and 6 ones", written out, for a number too big to draw in blocks.
+function placeWords(n: number): Told {
   const d = digitsOf(n);
-  const parts = PLACES.map((place) => ({ count: d[place], name: place }));
-  return {
-    text: parts.map((part) => `${part.count} ${part.count === 1 ? part.name.slice(0, -1) : part.name}`).join(', '),
-    speak: parts.flatMap((part, i) => [{ number: part.count }, `${part.count === 1 ? part.name.slice(0, -1) : part.name}${i < 3 ? ',' : ''}`]),
-  };
+  return told(...PLACES.flatMap((place, i): (string | number)[] => [d[place], `${placeName(d[place], place)}${i < 2 ? ',' : ''}`, ...(i === 2 ? ['and'] : [])]));
 }
 
-function placeExplanation(n: number, visual: Visual): Explanation {
+// The places that hold nothing (a thousands place is never empty here): "There are 0 tens, so a zero holds the tens
+// place."
+function zeroLine(n: number): Told | null {
   const d = digitsOf(n);
-  const speak: Say = [];
-  const lines: string[] = [];
-  for (const place of PLACES) {
-    if (d[place] === 0) continue;
-    const name = d[place] === 1 ? place.slice(0, -1) : place;
-    speak.push({ number: d[place] }, `${name} is`, { number: d[place] * WORTH[place] }, '.');
-    lines.push(`${many(d[place], place.slice(0, -1))} is ${written(d[place] * WORTH[place])}.`);
-  }
-  // At most four steps: the places on one line, then the number.
-  speak.push('That makes', { number: n }, '.');
-  return { speak, steps: [lines.join(' '), `That makes ${written(n)}.`], visual };
+  const zeros = (['hundreds', 'tens', 'ones'] as const).filter((place) => d[place] === 0);
+  const [first] = zeros;
+  if (first === undefined) return null;
+  if (zeros.length === 1) return told('There are', 0, `${first}, so a zero holds the ${first} place.`);
+  const listed = zeros.flatMap((place, i): (string | number)[] => [...(i === 0 ? [] : [i === zeros.length - 1 ? 'and' : ',']), 0, place]);
+  return told('There are', ...listed, ', so zeros hold those places.');
+}
+
+// Writing the number from its places: count the blocks (when there is a picture), write each count as a digit,
+// thousands first, and let a zero hold an empty place.
+function placeExplanation(n: number, visual: Visual, fromBlocks: boolean): Explanation {
+  const d = digitsOf(n);
+  const counts = told('Count each kind of block:', ...PLACES.flatMap((place, i): (string | number)[] => [d[place], `${placeName(d[place], place)}${i < 3 ? ',' : '.'}`]));
+  const digits = told(fromBlocks ? 'Write the counts as digits, thousands first:' : 'Write each count as a digit, thousands first:', ...PLACES.flatMap((place, i): (string | number)[] => [d[place], i < 3 ? ',' : '.']));
+  const zero = zeroLine(n);
+  const lines = [...(fromBlocks ? [counts] : []), digits, ...(zero ? [zero] : []), told('That makes', n, '.')];
+  return { ...toldSteps(lines), visual };
 }
 
 // ---- A.1 Thousands, hundreds, tens, ones ----
 // Levels: blocks to numeral to 1,999 / place words to numeral to 9,999 / typed / choice: value of a digit. Oracle: place.
 
-const WHAT_NUMBER = 'What number is this?';
+const WHAT_NUMBER = 'What number do the blocks show?';
+const PLACE_HINTS: Record<'blocks' | 'words' | 'worth', Hint> = {
+  blocks: { text: 'Count each kind of block. Then write the counts as digits, thousands first.' },
+  words: { text: 'Write each count as a digit, thousands first. A zero holds an empty place.' },
+  worth: { text: 'Find the place the digit is in: thousands, hundreds, tens or ones.' },
+};
 
 function placeValue(level: Level, rng: Rng): QuestionDraft {
   // Level 1 draws one thousand cube and up to five hundreds, so the picture stays readable.
@@ -79,13 +117,17 @@ function placeValue(level: Level, rng: Rng): QuestionDraft {
         speak: ['The', { number: digit }, `is in the ${place} place. It is worth`, { number: worth }, '.'],
         steps: [`The ${digit} is in the ${place} place.`, `It is worth ${written(worth)}.`],
         visual: bigNumeral(n, 'xl'),
+        hint: PLACE_HINTS.worth,
       },
     };
   }
   const words = placeWords(n);
   // Above level 1 the places are written out in the question itself, which wraps on a narrow phone.
-  const prompt = level === 1 ? { text: WHAT_NUMBER, speak: [WHAT_NUMBER] as Say } : { text: `${words.text}. What number is this?`, speak: [...words.speak, '. What number is this?'] as Say };
-  const base = level === 1 ? { mode: 'look' as const, prompt, stimulus: blocks(n), explanation: placeExplanation(n, blocks(n)) } : { mode: 'look' as const, prompt, explanation: placeExplanation(n, bigNumeral(n, 'xl')) };
+  const prompt = level === 1 ? { text: WHAT_NUMBER, speak: [WHAT_NUMBER] as Say } : { text: `What number has ${words.text}?`, speak: ['What number has', ...words.speak, '?'] as Say };
+  const base =
+    level === 1
+      ? { mode: 'look' as const, prompt, stimulus: blocks(n), explanation: { ...placeExplanation(n, blocks(n), true), hint: PLACE_HINTS.blocks } }
+      : { mode: 'look' as const, prompt, explanation: { ...placeExplanation(n, bigNumeral(n, 'xl'), false), hint: PLACE_HINTS.words } };
   if (level === 3) return { ...base, type: 'numberPad', facts: { ...d, ask: 'number' }, answer: n, maxDigits: 4 };
   // The slips: two digits the wrong way round, or one ten, hundred or thousand out.
   const swapped = d.thousands * 1000 + d.tens * 100 + d.hundreds * 10 + d.ones;
@@ -103,8 +145,8 @@ export const placeValue4Generator: SkillGenerator = {
   example: () => placeValue(1, makeRng(301)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'A big cube is one thousand. It is ten hundreds stacked up.', speak: ['A big cube is one thousand. It is ten hundreds stacked up.'], visual: blocks(1000) },
-    { beat: 'watch', text: placeExplanation(1324, blocks(1324)).steps.join(' '), speak: placeExplanation(1324, blocks(1324)).speak, visual: blocks(1324) },
-    { beat: 'try', text: WHAT_NUMBER, speak: [WHAT_NUMBER], visual: blocks(1213), reveal: { text: placeExplanation(1213, blocks(1213)).steps.join(' '), speak: placeExplanation(1213, blocks(1213)).speak, visual: blocks(1213) } },
+    { beat: 'watch', text: placeExplanation(1324, blocks(1324), true).steps.join(' '), speak: placeExplanation(1324, blocks(1324), true).speak, visual: blocks(1324) },
+    { beat: 'try', text: WHAT_NUMBER, speak: [WHAT_NUMBER], visual: blocks(1213), reveal: { text: placeExplanation(1213, blocks(1213), true).steps.join(' '), speak: placeExplanation(1213, blocks(1213), true).speak, visual: blocks(1213) } },
     { beat: 'remember', text: 'Thousands, then hundreds, then tens, then ones.', speak: ['Thousands, then hundreds, then tens, then ones.'], visual: bigNumeral(4306, 'xl') },
   ],
   oracle: 'place',
@@ -184,10 +226,10 @@ function numberNames(level: Level, rng: Rng): QuestionDraft {
       stimulus: bigNumeral(n, 'xl'),
       options: names.map((name): Visual => ({ kind: 'text', value: name, size: 'm' })),
       answerIndex: values.indexOf(n),
-      explanation: nameExplanation(n),
+      explanation: { ...nameExplanation(n), hint: { text: 'Read the number to yourself, thousands first. Then find the words that match.' } },
     };
   }
-  const prompt = 'Which number is this?';
+  const prompt = 'What number do the words name?';
   return {
     type: 'choice',
     mode: 'read',
@@ -197,7 +239,8 @@ function numberNames(level: Level, rng: Rng): QuestionDraft {
     // The numerals stay silent: hearing one said would read the words for the child.
     options: values.map((value): Visual => ({ kind: 'text', value: written(value), size: 'l' })),
     answerIndex: values.indexOf(n),
-    explanation: nameExplanation(n),
+    // The hint never says the words: reading them is the skill.
+    explanation: { ...nameExplanation(n), hint: { text: 'Read the words one part at a time: thousands first, then hundreds, then tens and ones.' } },
   };
 }
 
@@ -221,21 +264,29 @@ export const numberNamesGenerator: SkillGenerator = {
 // ---- A.3 Compare four-digit numbers ----
 // Levels: different thousands / same thousands / pick the sign / order 3 numbers. Oracles: compare, and order at level 4.
 
-type Ask = 'most' | 'least';
+type Ask = 'most' | 'least' | 'sign';
 const SIGNS = ['>', '<', '='] as const;
 const SIGN_WORDS: Record<string, string> = { '>': 'greater than', '<': 'less than', '=': 'equal to' };
 
+// The last step answers what was asked: the greater number, the smaller one, or the sign. A sign is read in the
+// question's order, a then b, and named: "1,024 is less than 5,747, so the sign is <."
 function compareExplanation(a: number, b: number, ask: Ask = 'most'): Explanation {
   const visual = equation(written(a), a > b ? '>' : a < b ? '<' : '=', written(b));
-  if (a === b) return { speak: [{ number: a }, 'and', { number: b }, 'are the same number. They are equal.'], steps: [`${written(a)} and ${written(b)} are the same number.`, 'They are equal.'], visual };
+  if (a === b) return { speak: [{ number: a }, 'and', { number: b }, 'are the same number. They are equal, so the sign is equals.'], steps: [`${written(a)} and ${written(b)} are the same number.`, 'They are equal, so the sign is =.'], visual };
   const [big, small] = a > b ? [a, b] : [b, a];
   const [x, y] = [digitsOf(big), digitsOf(small)];
   const place = PLACES.find((each) => x[each] !== y[each]) ?? 'ones';
   const same = PLACES.slice(0, PLACES.indexOf(place));
   const look = same.length === 0 ? 'Look at the thousands first.' : `The ${same.join(' and ')} are the same. Look at the ${place}.`;
-  const last: Say = ask === 'most' ? [{ number: big }, 'is greater than', { number: small }, '.'] : [{ number: small }, 'is less than', { number: big }, '.'];
-  const lastText = ask === 'most' ? `${written(big)} is greater than ${written(small)}.` : `${written(small)} is less than ${written(big)}.`;
-  return { speak: [look, { number: big }, `has more ${place}.`, ...last], steps: [look, `${written(big)} has more ${place}.`, lastText], visual };
+  const relation = a > b ? 'greater' : 'less';
+  const last =
+    ask === 'sign'
+      ? told(a, `is ${relation} than`, b, `, so the sign is ${a > b ? '>' : '<'}.`)
+      : ask === 'most'
+        ? told(big, 'is greater than', small, '.')
+        : told(small, 'is less than', big, '.');
+  const lastSay: Say = ask === 'sign' ? [{ number: a }, `is ${relation} than`, { number: b }, `, so the sign is ${relation} than.`] : last.speak;
+  return { speak: [look, { number: big }, `has more ${place}.`, ...lastSay], steps: [look, `${written(big)} has more ${place}.`, last.text], visual };
 }
 
 function fourDigit(sameThousands: boolean, rng: Rng): [number, number] {
@@ -251,7 +302,7 @@ function compareFourDigit(level: Level, rng: Rng): QuestionDraft {
     // Three numbers with the same thousands, so the order turns on the hundreds and below.
     const thousands = rng.int(1, 9) * 1000;
     const values = rng.sample([...Array(99).keys()].map((i) => thousands + (i + 1) * 10 + rng.int(0, 9)), 3);
-    const prompt = 'Put the numbers in order, smallest first.';
+    const prompt = 'Put the numbers in order. Tap the smallest first.';
     const order = values.map((_, i) => i).sort((x, y) => (values[x] as number) - (values[y] as number));
     const sorted = order.map((i) => values[i] as number);
     return {
@@ -265,6 +316,8 @@ function compareFourDigit(level: Level, rng: Rng): QuestionDraft {
         speak: ['The thousands are the same, so look at the hundreds, then the tens. Smallest first:', ...sorted.flatMap((value, i): Say => (i === 0 ? [{ number: value }] : [',', { number: value }])), '.'],
         steps: ['The thousands are the same.', 'Look at the hundreds, then the tens.', `Smallest first: ${sorted.map(written).join(', ')}.`],
         visual: { kind: 'row', children: sorted.map((value) => bigNumeral(value)) },
+        // An order's steps list the answer, so they are never a nudge: this is the hint.
+        hint: { text: 'The thousands are all the same. Compare the hundreds first, then the tens.' },
       },
     };
   }
@@ -282,7 +335,7 @@ function compareFourDigit(level: Level, rng: Rng): QuestionDraft {
       stimulus: equation(written(a), 'blank', written(b)),
       options: SIGNS.map((sign): Visual => ({ kind: 'text', value: sign, size: 'xl', speak: [SIGN_WORDS[sign] as string] })),
       answerIndex: SIGNS.indexOf(answer),
-      explanation: compareExplanation(a, b),
+      explanation: compareExplanation(a, b, 'sign'),
     };
   }
   const values = fourDigit(level === 2, rng);

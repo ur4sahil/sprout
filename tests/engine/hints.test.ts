@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { HINTS_PER_PART, HINT_REFILL_EVERY, canHint, exampleFor, hintId, hintWindow, hintsLeft, nudgeFor, takeHint } from '../../src/app/hints';
+import { sayText } from '../../src/engine/describe';
 import { givesAway, names } from '../../src/engine/giveaway';
 import type { HintBook } from '../../src/app/hints';
 import { generateQuestion } from '../../src/content/registry';
@@ -100,7 +101,9 @@ describe('the nudge', () => {
         } catch {
           continue;
         }
-        const nudge = nudgeFor(q);
+        // The rule for steps, with the generator's own hint (checked at the end) left out.
+        const own = q.explanation.hint;
+        const nudge = nudgeFor(own ? { ...q, explanation: { ...q.explanation, hint: undefined } } : q);
         const steps = q.explanation.steps;
         const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
         if (steps.length < 3 || listsAnswer) {
@@ -117,6 +120,11 @@ describe('the nudge', () => {
         }
         // Whatever is offered, it never names the answer.
         if (nudge) expect(givesAway(q, nudge.text, null), `${skill.id}: ${nudge.text}`).toBe(false);
+        // A generator's own hint is offered first, and never names the answer either.
+        if (own) {
+          expect(nudgeFor(q)?.text, skill.id).toBe(own.text);
+          expect(givesAway(q, own.text, own.say ? sayText(own.say) : null), `${skill.id}: ${own.text}`).toBe(false);
+        }
       }
     }
     expect(nudged).toBeGreaterThan(100);
@@ -166,7 +174,7 @@ describe('the nudge', () => {
       ['M-2-C12', 1, 1, 'A bed is big: meters.'],
       ['E-K-E4', 1, 1, 'Wheat grows in a field.'],
       ['M-3-C11', 1, 1, 'An even number times any number is even.'],
-      ['M-3-C6', 1, 3, 'Count by 2s to 8: 2, 4, 6, 8.'],
+      ['M-3-C6', 1, 3, 'Count by twos to 8: 2, 4, 6, 8.'],
       // Read questions: the words to read are never said before the child answers.
       ['M-2-A7', 2, 1, 'Six hundred nine is 6 hundreds, 0 tens and 9 ones.'],
       ['M-3-A2', 3, 1, 'six thousand thirty-nine'],
@@ -175,7 +183,8 @@ describe('the nudge', () => {
       const q = question(skillId, level, seed);
       expect(q.explanation.steps[0], skillId).toBe(first);
       expect(q.explanation.steps.length, skillId).toBeGreaterThanOrEqual(3);
-      expect(nudgeFor(q), `${skillId}: ${first}`).toBeNull();
+      // The guard on the steps: a generator's own hint, when it has one, is left out.
+      expect(nudgeFor({ ...q, explanation: { ...q.explanation, hint: undefined } }), `${skillId}: ${first}`).toBeNull();
     }
   });
 });

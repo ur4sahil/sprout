@@ -1,5 +1,5 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Say, SayPart, Visual } from '../../../../engine/types';
+import type { Hint, Level, QuestionDraft, Say, SayPart, Visual } from '../../../../engine/types';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
 import { fractionSay } from './fractions';
@@ -7,7 +7,7 @@ import { written } from './numbers';
 
 // What the wave H5 generators share (Math grade 3).
 
-export type Explanation = { speak: Say; steps: string[]; visual: Visual };
+export type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint };
 export type Prompt = { text: string; speak: Say };
 export const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
 

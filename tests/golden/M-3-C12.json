@@ -1,6 +1,6 @@
 {
  "skillId": "M-3-C12",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
@@ -70,6 +70,9 @@
      "=",
      500
     ]
+   },
+   "hint": {
+    "text": "Round 97 first: which ten is it nearer to?"
    }
   },
   "type": "choice",
@@ -193,6 +196,9 @@
        "=",
        70
       ]
+     },
+     "hint": {
+      "text": "Round 11 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -202,7 +208,7 @@
      "to": 10,
      "ask": "roundTimes",
      "options": [
-      69,
+      17,
       70,
       140
      ]
@@ -210,11 +216,11 @@
     "options": [
      {
       "kind": "text",
-      "value": "69",
+      "value": "17",
       "size": "l",
       "speak": [
        {
-        "number": 69
+        "number": 17
        }
       ]
      },
@@ -314,6 +320,9 @@
        "=",
        280
       ]
+     },
+     "hint": {
+      "text": "Round 39 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -324,8 +333,8 @@
      "ask": "roundTimes",
      "options": [
       280,
-      281,
-      320
+      320,
+      350
      ]
     },
     "options": [
@@ -341,21 +350,21 @@
      },
      {
       "kind": "text",
-      "value": "281",
-      "size": "l",
-      "speak": [
-       {
-        "number": 281
-       }
-      ]
-     },
-     {
-      "kind": "text",
       "value": "320",
       "size": "l",
       "speak": [
        {
         "number": 320
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "350",
+      "size": "l",
+      "speak": [
+       {
+        "number": 350
        }
       ]
      }
@@ -435,6 +444,9 @@
        "=",
        70
       ]
+     },
+     "hint": {
+      "text": "Round 14 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -556,6 +568,9 @@
        "=",
        180
       ]
+     },
+     "hint": {
+      "text": "Round 18 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -566,7 +581,7 @@
      "ask": "roundTimes",
      "options": [
       180,
-      181,
+      200,
       270
      ]
     },
@@ -583,11 +598,11 @@
      },
      {
       "kind": "text",
-      "value": "181",
+      "value": "200",
       "size": "l",
       "speak": [
        {
-        "number": 181
+        "number": 200
        }
       ]
      },
@@ -677,6 +692,9 @@
        "=",
        560
       ]
+     },
+     "hint": {
+      "text": "Round 79 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -687,7 +705,7 @@
      "ask": "roundTimes",
      "options": [
       560,
-      561,
+      630,
       640
      ]
     },
@@ -704,11 +722,11 @@
      },
      {
       "kind": "text",
-      "value": "561",
+      "value": "630",
       "size": "l",
       "speak": [
        {
-        "number": 561
+        "number": 630
        }
       ]
      },
@@ -798,6 +816,9 @@
        "=",
        60
       ]
+     },
+     "hint": {
+      "text": "Round 11 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -809,7 +830,7 @@
      "options": [
       16,
       60,
-      70
+      120
      ]
     },
     "options": [
@@ -835,11 +856,11 @@
      },
      {
       "kind": "text",
-      "value": "70",
+      "value": "120",
       "size": "l",
       "speak": [
        {
-        "number": 70
+        "number": 120
        }
       ]
      }
@@ -919,6 +940,9 @@
        "=",
        40
       ]
+     },
+     "hint": {
+      "text": "Round 16 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -929,7 +953,7 @@
      "ask": "roundTimes",
      "options": [
       20,
-      39,
+      22,
       40
      ]
     },
@@ -946,11 +970,11 @@
      },
      {
       "kind": "text",
-      "value": "39",
+      "value": "22",
       "size": "l",
       "speak": [
        {
-        "number": 39
+        "number": 22
        }
       ]
      },
@@ -1040,6 +1064,9 @@
        "=",
        210
       ]
+     },
+     "hint": {
+      "text": "Round 66 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1050,7 +1077,7 @@
      "ask": "roundTimes",
      "options": [
       210,
-      211,
+      240,
       280
      ]
     },
@@ -1067,11 +1094,11 @@
      },
      {
       "kind": "text",
-      "value": "211",
+      "value": "240",
       "size": "l",
       "speak": [
        {
-        "number": 211
+        "number": 240
        }
       ]
      },
@@ -1161,6 +1188,9 @@
        "=",
        60
       ]
+     },
+     "hint": {
+      "text": "Round 23 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1170,12 +1200,22 @@
      "to": 10,
      "ask": "roundTimes",
      "options": [
+      23,
       30,
-      59,
       60
      ]
     },
     "options": [
+     {
+      "kind": "text",
+      "value": "23",
+      "size": "l",
+      "speak": [
+       {
+        "number": 23
+       }
+      ]
+     },
      {
       "kind": "text",
       "value": "30",
@@ -1183,16 +1223,6 @@
       "speak": [
        {
         "number": 30
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "59",
-      "size": "l",
-      "speak": [
-       {
-        "number": 59
        }
       ]
      },
@@ -1282,6 +1312,9 @@
        "=",
        540
       ]
+     },
+     "hint": {
+      "text": "Round 91 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1291,12 +1324,22 @@
      "to": 10,
      "ask": "roundTimes",
      "options": [
+      96,
       480,
-      539,
       540
      ]
     },
     "options": [
+     {
+      "kind": "text",
+      "value": "96",
+      "size": "l",
+      "speak": [
+       {
+        "number": 96
+       }
+      ]
+     },
      {
       "kind": "text",
       "value": "480",
@@ -1304,16 +1347,6 @@
       "speak": [
        {
         "number": 480
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "539",
-      "size": "l",
-      "speak": [
-       {
-        "number": 539
        }
       ]
      },
@@ -1339,13 +1372,17 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Zoe reads 11 pages each day. About how many pages does Zoe read in 7 days?",
+     "text": "Zoe reads 11 pages each day. Round 11 to the nearest ten, then multiply. About how many pages is that in 7 days?",
      "speak": [
       "Zoe reads",
       {
        "number": 11
       },
-      "pages each day. About how many pages does Zoe read in",
+      "pages each day. Round",
+      {
+       "number": 11
+      },
+      "to the nearest ten, then multiply. About how many pages is that in",
       {
        "number": 7
       },
@@ -1393,6 +1430,9 @@
        "=",
        70
       ]
+     },
+     "hint": {
+      "text": "Round 11 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1402,11 +1442,11 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 1,
-     "story": "Zoe reads 11 pages each day. About how many pages does Zoe read in 7 days?",
+     "story": "Zoe reads 11 pages each day. Round 11 to the nearest ten, then multiply. About how many pages is that in 7 days?",
      "options": [
       17,
-      69,
-      70
+      70,
+      140
      ]
     },
     "options": [
@@ -1422,16 +1462,6 @@
      },
      {
       "kind": "text",
-      "value": "69",
-      "size": "l",
-      "speak": [
-       {
-        "number": 69
-       }
-      ]
-     },
-     {
-      "kind": "text",
       "value": "70",
       "size": "l",
       "speak": [
@@ -1439,24 +1469,38 @@
         "number": 70
        }
       ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 1,
-    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":11,\"story\":\"Zoe reads 11 pages each day. About how many pages does Zoe read in 7 days?\",\"template\":1,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":11,\"story\":\"Zoe reads 11 pages each day. Round 11 to the nearest ten, then multiply. About how many pages is that in 7 days?\",\"template\":1,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "A box holds 39 crayons. About how many crayons are in 7 boxes?",
+     "text": "A box holds 39 crayons. Round 39 to the nearest ten, then multiply. About how many crayons are in 7 boxes?",
      "speak": [
       "A box holds",
       {
        "number": 39
       },
-      "crayons. About how many crayons are in",
+      "crayons. Round",
+      {
+       "number": 39
+      },
+      "to the nearest ten, then multiply. About how many crayons are in",
       {
        "number": 7
       },
@@ -1504,6 +1548,9 @@
        "=",
        280
       ]
+     },
+     "hint": {
+      "text": "Round 39 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1513,10 +1560,10 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 0,
-     "story": "A box holds 39 crayons. About how many crayons are in 7 boxes?",
+     "story": "A box holds 39 crayons. Round 39 to the nearest ten, then multiply. About how many crayons are in 7 boxes?",
      "options": [
       47,
-      279,
+      210,
       280
      ]
     },
@@ -1533,11 +1580,11 @@
      },
      {
       "kind": "text",
-      "value": "279",
+      "value": "210",
       "size": "l",
       "speak": [
        {
-        "number": 279
+        "number": 210
        }
       ]
      },
@@ -1556,18 +1603,22 @@
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 2,
-    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":39,\"story\":\"A box holds 39 crayons. About how many crayons are in 7 boxes?\",\"template\":0,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":39,\"story\":\"A box holds 39 crayons. Round 39 to the nearest ten, then multiply. About how many crayons are in 7 boxes?\",\"template\":0,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "Sam reads 14 pages each day. About how many pages does Sam read in 7 days?",
+     "text": "Sam reads 14 pages each day. Round 14 to the nearest ten, then multiply. About how many pages is that in 7 days?",
      "speak": [
       "Sam reads",
       {
        "number": 14
       },
-      "pages each day. About how many pages does Sam read in",
+      "pages each day. Round",
+      {
+       "number": 14
+      },
+      "to the nearest ten, then multiply. About how many pages is that in",
       {
        "number": 7
       },
@@ -1615,6 +1666,9 @@
        "=",
        70
       ]
+     },
+     "hint": {
+      "text": "Round 14 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1624,11 +1678,11 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 1,
-     "story": "Sam reads 14 pages each day. About how many pages does Sam read in 7 days?",
+     "story": "Sam reads 14 pages each day. Round 14 to the nearest ten, then multiply. About how many pages is that in 7 days?",
      "options": [
       17,
-      69,
-      70
+      70,
+      140
      ]
     },
     "options": [
@@ -1644,16 +1698,6 @@
      },
      {
       "kind": "text",
-      "value": "69",
-      "size": "l",
-      "speak": [
-       {
-        "number": 69
-       }
-      ]
-     },
-     {
-      "kind": "text",
       "value": "70",
       "size": "l",
       "speak": [
@@ -1661,24 +1705,38 @@
         "number": 70
        }
       ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 3,
-    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":14,\"story\":\"Sam reads 14 pages each day. About how many pages does Sam read in 7 days?\",\"template\":1,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":14,\"story\":\"Sam reads 14 pages each day. Round 14 to the nearest ten, then multiply. About how many pages is that in 7 days?\",\"template\":1,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "A box holds 18 crayons. About how many crayons are in 9 boxes?",
+     "text": "A box holds 18 crayons. Round 18 to the nearest ten, then multiply. About how many crayons are in 9 boxes?",
      "speak": [
       "A box holds",
       {
        "number": 18
       },
-      "crayons. About how many crayons are in",
+      "crayons. Round",
+      {
+       "number": 18
+      },
+      "to the nearest ten, then multiply. About how many crayons are in",
       {
        "number": 9
       },
@@ -1726,6 +1784,9 @@
        "=",
        180
       ]
+     },
+     "hint": {
+      "text": "Round 18 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1735,10 +1796,10 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 0,
-     "story": "A box holds 18 crayons. About how many crayons are in 9 boxes?",
+     "story": "A box holds 18 crayons. Round 18 to the nearest ten, then multiply. About how many crayons are in 9 boxes?",
      "options": [
       180,
-      181,
+      200,
       270
      ]
     },
@@ -1755,11 +1816,11 @@
      },
      {
       "kind": "text",
-      "value": "181",
+      "value": "200",
       "size": "l",
       "speak": [
        {
-        "number": 181
+        "number": 200
        }
       ]
      },
@@ -1778,18 +1839,22 @@
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 4,
-    "key": "M-3-C12|2|{\"a\":9,\"ask\":\"roundTimes\",\"b\":18,\"story\":\"A box holds 18 crayons. About how many crayons are in 9 boxes?\",\"template\":0,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":9,\"ask\":\"roundTimes\",\"b\":18,\"story\":\"A box holds 18 crayons. Round 18 to the nearest ten, then multiply. About how many crayons are in 9 boxes?\",\"template\":0,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "A box holds 79 crayons. About how many crayons are in 7 boxes?",
+     "text": "A box holds 79 crayons. Round 79 to the nearest ten, then multiply. About how many crayons are in 7 boxes?",
      "speak": [
       "A box holds",
       {
        "number": 79
       },
-      "crayons. About how many crayons are in",
+      "crayons. Round",
+      {
+       "number": 79
+      },
+      "to the nearest ten, then multiply. About how many crayons are in",
       {
        "number": 7
       },
@@ -1837,6 +1902,9 @@
        "=",
        560
       ]
+     },
+     "hint": {
+      "text": "Round 79 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1846,10 +1914,10 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 0,
-     "story": "A box holds 79 crayons. About how many crayons are in 7 boxes?",
+     "story": "A box holds 79 crayons. Round 79 to the nearest ten, then multiply. About how many crayons are in 7 boxes?",
      "options": [
       560,
-      561,
+      630,
       640
      ]
     },
@@ -1866,11 +1934,11 @@
      },
      {
       "kind": "text",
-      "value": "561",
+      "value": "630",
       "size": "l",
       "speak": [
        {
-        "number": 561
+        "number": 630
        }
       ]
      },
@@ -1889,18 +1957,22 @@
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 5,
-    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":79,\"story\":\"A box holds 79 crayons. About how many crayons are in 7 boxes?\",\"template\":0,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":7,\"ask\":\"roundTimes\",\"b\":79,\"story\":\"A box holds 79 crayons. Round 79 to the nearest ten, then multiply. About how many crayons are in 7 boxes?\",\"template\":0,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "Mia reads 11 pages each day. About how many pages does Mia read in 6 days?",
+     "text": "Mia reads 11 pages each day. Round 11 to the nearest ten, then multiply. About how many pages is that in 6 days?",
      "speak": [
       "Mia reads",
       {
        "number": 11
       },
-      "pages each day. About how many pages does Mia read in",
+      "pages each day. Round",
+      {
+       "number": 11
+      },
+      "to the nearest ten, then multiply. About how many pages is that in",
       {
        "number": 6
       },
@@ -1948,6 +2020,9 @@
        "=",
        60
       ]
+     },
+     "hint": {
+      "text": "Round 11 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -1957,11 +2032,11 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 1,
-     "story": "Mia reads 11 pages each day. About how many pages does Mia read in 6 days?",
+     "story": "Mia reads 11 pages each day. Round 11 to the nearest ten, then multiply. About how many pages is that in 6 days?",
      "options": [
       16,
       60,
-      70
+      120
      ]
     },
     "options": [
@@ -1987,11 +2062,11 @@
      },
      {
       "kind": "text",
-      "value": "70",
+      "value": "120",
       "size": "l",
       "speak": [
        {
-        "number": 70
+        "number": 120
        }
       ]
      }
@@ -2000,18 +2075,22 @@
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 6,
-    "key": "M-3-C12|2|{\"a\":6,\"ask\":\"roundTimes\",\"b\":11,\"story\":\"Mia reads 11 pages each day. About how many pages does Mia read in 6 days?\",\"template\":1,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":6,\"ask\":\"roundTimes\",\"b\":11,\"story\":\"Mia reads 11 pages each day. Round 11 to the nearest ten, then multiply. About how many pages is that in 6 days?\",\"template\":1,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "A bus has 16 seats. About how many seats are there on 2 buses?",
+     "text": "A bus has 16 seats. Round 16 to the nearest ten, then multiply. About how many seats are there on 2 buses?",
      "speak": [
       "A bus has",
       {
        "number": 16
       },
-      "seats. About how many seats are there on",
+      "seats. Round",
+      {
+       "number": 16
+      },
+      "to the nearest ten, then multiply. About how many seats are there on",
       {
        "number": 2
       },
@@ -2059,6 +2138,9 @@
        "=",
        40
       ]
+     },
+     "hint": {
+      "text": "Round 16 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -2068,14 +2150,24 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 2,
-     "story": "A bus has 16 seats. About how many seats are there on 2 buses?",
+     "story": "A bus has 16 seats. Round 16 to the nearest ten, then multiply. About how many seats are there on 2 buses?",
      "options": [
+      20,
       22,
-      40,
-      60
+      40
      ]
     },
     "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
      {
       "kind": "text",
       "value": "22",
@@ -2095,34 +2187,28 @@
         "number": 40
        }
       ]
-     },
-     {
-      "kind": "text",
-      "value": "60",
-      "size": "l",
-      "speak": [
-       {
-        "number": 60
-       }
-      ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 7,
-    "key": "M-3-C12|2|{\"a\":2,\"ask\":\"roundTimes\",\"b\":16,\"story\":\"A bus has 16 seats. About how many seats are there on 2 buses?\",\"template\":2,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":2,\"ask\":\"roundTimes\",\"b\":16,\"story\":\"A bus has 16 seats. Round 16 to the nearest ten, then multiply. About how many seats are there on 2 buses?\",\"template\":2,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "A box holds 66 crayons. About how many crayons are in 3 boxes?",
+     "text": "A box holds 66 crayons. Round 66 to the nearest ten, then multiply. About how many crayons are in 3 boxes?",
      "speak": [
       "A box holds",
       {
        "number": 66
       },
-      "crayons. About how many crayons are in",
+      "crayons. Round",
+      {
+       "number": 66
+      },
+      "to the nearest ten, then multiply. About how many crayons are in",
       {
        "number": 3
       },
@@ -2170,6 +2256,9 @@
        "=",
        210
       ]
+     },
+     "hint": {
+      "text": "Round 66 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -2179,21 +2268,21 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 0,
-     "story": "A box holds 66 crayons. About how many crayons are in 3 boxes?",
+     "story": "A box holds 66 crayons. Round 66 to the nearest ten, then multiply. About how many crayons are in 3 boxes?",
      "options": [
-      209,
+      73,
       210,
-      280
+      240
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "209",
+      "value": "73",
       "size": "l",
       "speak": [
        {
-        "number": 209
+        "number": 73
        }
       ]
      },
@@ -2209,11 +2298,11 @@
      },
      {
       "kind": "text",
-      "value": "280",
+      "value": "240",
       "size": "l",
       "speak": [
        {
-        "number": 280
+        "number": 240
        }
       ]
      }
@@ -2222,18 +2311,22 @@
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 8,
-    "key": "M-3-C12|2|{\"a\":3,\"ask\":\"roundTimes\",\"b\":66,\"story\":\"A box holds 66 crayons. About how many crayons are in 3 boxes?\",\"template\":0,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":3,\"ask\":\"roundTimes\",\"b\":66,\"story\":\"A box holds 66 crayons. Round 66 to the nearest ten, then multiply. About how many crayons are in 3 boxes?\",\"template\":0,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "A bus has 23 seats. About how many seats are there on 3 buses?",
+     "text": "A bus has 23 seats. Round 23 to the nearest ten, then multiply. About how many seats are there on 3 buses?",
      "speak": [
       "A bus has",
       {
        "number": 23
       },
-      "seats. About how many seats are there on",
+      "seats. Round",
+      {
+       "number": 23
+      },
+      "to the nearest ten, then multiply. About how many seats are there on",
       {
        "number": 3
       },
@@ -2281,6 +2374,9 @@
        "=",
        60
       ]
+     },
+     "hint": {
+      "text": "Round 23 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -2290,7 +2386,7 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 2,
-     "story": "A bus has 23 seats. About how many seats are there on 3 buses?",
+     "story": "A bus has 23 seats. Round 23 to the nearest ten, then multiply. About how many seats are there on 3 buses?",
      "options": [
       23,
       30,
@@ -2333,18 +2429,22 @@
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 9,
-    "key": "M-3-C12|2|{\"a\":3,\"ask\":\"roundTimes\",\"b\":23,\"story\":\"A bus has 23 seats. About how many seats are there on 3 buses?\",\"template\":2,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":3,\"ask\":\"roundTimes\",\"b\":23,\"story\":\"A bus has 23 seats. Round 23 to the nearest ten, then multiply. About how many seats are there on 3 buses?\",\"template\":2,\"to\":10}"
    },
    {
     "mode": "look",
     "prompt": {
-     "text": "A bus has 91 seats. About how many seats are there on 6 buses?",
+     "text": "A bus has 91 seats. Round 91 to the nearest ten, then multiply. About how many seats are there on 6 buses?",
      "speak": [
       "A bus has",
       {
        "number": 91
       },
-      "seats. About how many seats are there on",
+      "seats. Round",
+      {
+       "number": 91
+      },
+      "to the nearest ten, then multiply. About how many seats are there on",
       {
        "number": 6
       },
@@ -2392,6 +2492,9 @@
        "=",
        540
       ]
+     },
+     "hint": {
+      "text": "Round 91 first: which ten is it nearer to?"
      }
     },
     "type": "choice",
@@ -2401,11 +2504,11 @@
      "to": 10,
      "ask": "roundTimes",
      "template": 2,
-     "story": "A bus has 91 seats. About how many seats are there on 6 buses?",
+     "story": "A bus has 91 seats. Round 91 to the nearest ten, then multiply. About how many seats are there on 6 buses?",
      "options": [
       96,
       540,
-      600
+      630
      ]
     },
     "options": [
@@ -2431,11 +2534,11 @@
      },
      {
       "kind": "text",
-      "value": "600",
+      "value": "630",
       "size": "l",
       "speak": [
        {
-        "number": 600
+        "number": 630
        }
       ]
      }
@@ -2444,7 +2547,7 @@
     "skillId": "M-3-C12",
     "level": 2,
     "seed": 10,
-    "key": "M-3-C12|2|{\"a\":6,\"ask\":\"roundTimes\",\"b\":91,\"story\":\"A bus has 91 seats. About how many seats are there on 6 buses?\",\"template\":2,\"to\":10}"
+    "key": "M-3-C12|2|{\"a\":6,\"ask\":\"roundTimes\",\"b\":91,\"story\":\"A bus has 91 seats. Round 91 to the nearest ten, then multiply. About how many seats are there on 6 buses?\",\"template\":2,\"to\":10}"
    }
   ],
   "3": [
@@ -2517,6 +2620,9 @@
        "=",
        70
       ]
+     },
+     "hint": {
+      "text": "Round 11 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -2602,6 +2708,9 @@
        "=",
        280
       ]
+     },
+     "hint": {
+      "text": "Round 39 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -2687,6 +2796,9 @@
        "=",
        70
       ]
+     },
+     "hint": {
+      "text": "Round 14 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -2772,6 +2884,9 @@
        "=",
        180
       ]
+     },
+     "hint": {
+      "text": "Round 18 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -2857,6 +2972,9 @@
        "=",
        560
       ]
+     },
+     "hint": {
+      "text": "Round 79 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -2942,6 +3060,9 @@
        "=",
        60
       ]
+     },
+     "hint": {
+      "text": "Round 11 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -3027,6 +3148,9 @@
        "=",
        40
       ]
+     },
+     "hint": {
+      "text": "Round 16 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -3112,6 +3236,9 @@
        "=",
        210
       ]
+     },
+     "hint": {
+      "text": "Round 66 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -3197,6 +3324,9 @@
        "=",
        60
       ]
+     },
+     "hint": {
+      "text": "Round 23 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",
@@ -3282,6 +3412,9 @@
        "=",
        540
       ]
+     },
+     "hint": {
+      "text": "Round 91 first: which ten is it nearer to?"
      }
     },
     "type": "numberPad",

@@ -3,9 +3,10 @@ import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { STORY_COUNTABLES } from '../../../data/countables';
 import { FRACTION_STORIES, SET_STORIES } from '../../../data/h5-stories';
+import type { FractionStory } from '../../../data/h5-stories';
 import { STORY_NAMES } from '../../../data/storyProblems';
 import type { SkillGenerator } from '../../../generator';
-import { fractionSay } from './fractions';
+import { fractionSay, partName } from './fractions';
 import type { Explanation } from './h5-parts';
 import { fill, find, fractionPiece, numberAnswer } from './h5-parts';
 
@@ -28,13 +29,18 @@ function oneWholeExplanation(d: number, shape: 'circle' | 'rectangle'): Explanat
   };
 }
 
+// 7/1 is said "seven over one" (fractionSay), so saying it never gives the whole number away. Parts are named by
+// their size: "2 halves make 1 whole. 6 halves make 3 wholes."
 function wholeExplanation(n: number, d: number): Explanation {
   const w = n / d;
-  if (d === 1) return { speak: [...fractionSay(n, 1), 'means', { number: n }, 'wholes, each cut into one part. That is', { number: n }, '.'], steps: [`${n}/1 means ${n} wholes, each in 1 part.`, `${n}/1 = ${n}.`], visual: { kind: 'numberLine', min: 0, max: n, step: 1, marked: [n] } };
+  if (d === 1) return { speak: [...fractionSay(n, 1), 'means', { number: n }, 'wholes, each in one part. So it is', { number: n }, '.'], steps: [`${n}/1 means ${n} wholes, each in 1 part.`, `So ${n}/1 = ${n}.`], visual: { kind: 'numberLine', min: 0, max: n, step: 1, marked: [n] } };
+  const parts = partName(2, d);
+  const visual: Visual = { kind: 'numberLine', min: 0, max: n, step: 1, denominator: d, marked: [n] };
+  if (w === 1) return { speak: [{ number: d }, `${parts} make one whole. So`, ...fractionSay(n, d), 'is', { number: 1 }, '.'], steps: [`${d} ${parts} make 1 whole.`, `So ${n}/${d} = 1.`], visual };
   return {
-    speak: ['Count the', { number: d }, 'parts of each whole.', { number: n }, 'parts make', { number: w }, w === 1 ? 'whole.' : 'wholes.'],
-    steps: [`It takes ${d} parts of ${d} to make 1 whole.`, `${n} parts make ${n} ÷ ${d} = ${w} ${w === 1 ? 'whole' : 'wholes'}.`, `${n}/${d} = ${w}.`],
-    visual: { kind: 'numberLine', min: 0, max: n, step: 1, denominator: d, marked: [n] },
+    speak: [{ number: d }, `${parts} make one whole.`, { number: n }, `${parts} make`, { number: w }, 'wholes. So', ...fractionSay(n, d), 'is', { number: w }, '.'],
+    steps: [`${d} ${parts} make 1 whole.`, `${n} ${parts} make ${w} wholes: ${n} ÷ ${d} = ${w}.`, `So ${n}/${d} = ${w}.`],
+    visual,
   };
 }
 
@@ -65,7 +71,7 @@ function wholes(level: Level, rng: Rng): QuestionDraft {
       return [dd, dd];
     })();
     const answer = n / d;
-    const ask = { text: `${n}/${d} is the same as which whole number?`, speak: [...fractionSay(n, d), 'is the same as which whole number?'] as Say };
+    const ask = { text: `Which whole number is the same as ${n}/${d}?`, speak: ['Which whole number is the same as', ...fractionSay(n, d), '?'] as Say };
     // The slips: the bottom number, the top number, or a whole taken for nothing.
     const slips = overOne ? [1, n + 1, n - 1] : [n, 0, 2];
     return numberAnswer({ prompt: ask, stimulus: fractionOption(n, d), explanation: wholeExplanation(n, d) }, { expr: fractionText(n, d), ask: 'value' }, answer, slips, false, rng, [0, 12]);
@@ -101,7 +107,7 @@ export const wholeFractionsGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'When every part of a whole is shaded, the fraction is 1 whole: 4/4 = 1.', speak: ['When every part of a whole is shaded, the fraction is one whole.', ...fractionSay(4, 4), 'is one.'], visual: picture(4, 4) },
     { beat: 'watch', text: wholeExplanation(6, 3).steps.join(' '), speak: wholeExplanation(6, 3).speak, visual: wholeExplanation(6, 3).visual },
-    { beat: 'try', text: '5/1 is the same as which whole number?', speak: [...fractionSay(5, 1), 'is the same as which whole number?'], visual: fractionOption(5, 1), reveal: { text: wholeExplanation(5, 1).steps.join(' '), speak: wholeExplanation(5, 1).speak, visual: wholeExplanation(5, 1).visual } },
+    { beat: 'try', text: 'Which whole number is the same as 5/1?', speak: ['Which whole number is the same as', ...fractionSay(5, 1), '?'], visual: fractionOption(5, 1), reveal: { text: wholeExplanation(5, 1).steps.join(' '), speak: wholeExplanation(5, 1).speak, visual: wholeExplanation(5, 1).visual } },
     { beat: 'remember', text: 'Same top and bottom: 1 whole. A bottom number of 1: the top number of wholes.', speak: ['Same top and bottom: one whole. A bottom number of one: the top number of wholes.'], visual: fractionOption(8, 8) },
   ],
   oracle: 'expression3',
@@ -156,16 +162,24 @@ export const fractionOfSetGenerator: SkillGenerator = {
 // Levels: two people, same bottom number / two people, same top number, more or less / three people, more or less.
 // Oracle: expression3 (most, least).
 
-function compareExplanation(fractions: [number, number][], names: string[], ask: 'most' | 'least'): Explanation {
+// The rule in two short steps, everyone's part, then the answer in the story's own words: with two people "2/4 is
+// more than 2/8, so Sam drank more water.", with three "1/3 is the most, so Mia drank the most water."
+function compareExplanation(fractions: [number, number][], names: string[], ask: 'most' | 'least', story: FractionStory): Explanation {
   const sameBottom = fractions.every(([, d]) => d === fractions[0]?.[1]);
   const worth = fractions.map(([n, d]) => n / d);
   const best = worth.indexOf(ask === 'most' ? Math.max(...worth) : Math.min(...worth));
   const [bn, bd] = fractions[best] as [number, number];
   const who = names[best] as string;
-  const rule = sameBottom ? 'The parts are the same size, so more parts is more.' : 'The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.';
+  const rule = sameBottom ? ['The bottom numbers are the same, so the parts are the same size.', 'More parts is more.'] : ['The top numbers are the same.', 'Fewer parts in the whole means bigger parts.'];
+  const two = fractions.length === 2;
+  // "Who drank more water?" is answered "drank more water".
+  const did = (two ? (ask === 'most' ? story.more : story.less) : ask === 'most' ? story.most : story.least).replace(/^Who /, '').replace(/\?$/, '');
+  const [on, od] = fractions[1 - best] ?? [bn, bd];
+  const compared = two ? `${bn}/${bd} is ${ask === 'most' ? 'more' : 'less'} than ${on}/${od}` : `${bn}/${bd} is the ${ask === 'most' ? 'most' : 'least'}`;
+  const comparedSay: Say = two ? [...fractionSay(bn, bd), `is ${ask === 'most' ? 'more' : 'less'} than`, ...fractionSay(on, od)] : [...fractionSay(bn, bd), `is the ${ask === 'most' ? 'most' : 'least'}`];
   return {
-    speak: [rule, who, 'has', ...fractionSay(bn, bd), ', the', ask === 'most' ? 'most.' : 'least.'],
-    steps: [rule, `${fractions.map(([n, d], i) => `${names[i]}: ${n}/${d}`).join('. ')}.`, `${who} has ${bn}/${bd}, the ${ask === 'most' ? 'most' : 'least'}.`],
+    speak: [...rule, ...comparedSay, `, so ${who} ${did}.`],
+    steps: [...rule, `${fractions.map(([n, d], i) => `${names[i]}: ${n}/${d}`).join('. ')}.`, `${compared}, so ${who} ${did}.`],
     visual: { kind: 'row', children: fractions.map(([n, d]) => picture(n, d)) },
   };
 }
@@ -189,7 +203,8 @@ function compareStories(level: Level, rng: Rng): QuestionDraft {
   const story = rng.pick(FRACTION_STORIES);
   const storyIndex = FRACTION_STORIES.indexOf(story);
   const parts = names.map((name, i) => fill(story.did, { name, f: fractionPiece(...(fractions[i] as [number, number])) }));
-  const question = ask === 'most' ? story.more : story.less;
+  // Two people: who has more or less. Three people: who has the most or the least.
+  const question = people === 2 ? (ask === 'most' ? story.more : story.less) : ask === 'most' ? story.most : story.least;
   const exprs = fractions.map(([n, d]) => fractionText(n, d));
   return {
     type: 'choice',
@@ -201,7 +216,7 @@ function compareStories(level: Level, rng: Rng): QuestionDraft {
       const worth = fractions.map(([n, d]) => n / d);
       return worth[i] === (ask === 'most' ? Math.max(...worth) : Math.min(...worth));
     }),
-    explanation: compareExplanation(fractions, names, ask),
+    explanation: compareExplanation(fractions, names, ask, story),
   };
 }
 
@@ -214,8 +229,9 @@ export const compareStoriesGenerator: SkillGenerator = {
   exampleSeed: 3127,
   example: () => compareStories(1, makeRng(3127)),
   lesson: (): LessonStep[] => {
-    const watch = compareExplanation([[3, 8], [5, 8]], ['Mia', 'Leo'], 'most');
-    const attempt = compareExplanation([[2, 3], [2, 6]], ['Sam', 'Zoe'], 'most');
+    const [pizza, , bottle] = FRACTION_STORIES as [FractionStory, FractionStory, FractionStory];
+    const watch = compareExplanation([[3, 8], [5, 8]], ['Mia', 'Leo'], 'most', pizza);
+    const attempt = compareExplanation([[2, 3], [2, 6]], ['Sam', 'Zoe'], 'most', bottle);
     return [
       { beat: 'see', text: 'To compare parts of wholes the same size, look at the top and bottom numbers.', speak: ['To compare parts of wholes the same size, look at the top and bottom numbers.'], visual: { kind: 'row', children: [picture(3, 8), picture(5, 8)] } },
       { beat: 'watch', text: `Mia ate 3/8 of a pizza. Leo ate 5/8 of a pizza. ${watch.steps.join(' ')}`, speak: ['Mia ate', ...fractionSay(3, 8), 'of a pizza. Leo ate', ...fractionSay(5, 8), 'of a pizza.', ...watch.speak], visual: watch.visual },

@@ -1,6 +1,6 @@
 {
  "skillId": "M-3-E5",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -37,7 +37,10 @@
      {
       "number": 6
      },
-     "wholes"
+     "over",
+     {
+      "number": 1
+     }
     ]
    },
    {
@@ -159,7 +162,10 @@
        {
         "number": 6
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      }
     ],
@@ -246,7 +252,10 @@
        {
         "number": 6
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      },
      {
@@ -333,7 +342,10 @@
        {
         "number": 6
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      },
      {
@@ -431,7 +443,10 @@
        {
         "number": 8
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      },
      {
@@ -540,7 +555,10 @@
        {
         "number": 6
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      },
      {
@@ -649,7 +667,10 @@
        {
         "number": 4
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      }
     ],
@@ -747,7 +768,10 @@
        {
         "number": 2
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      }
     ],
@@ -834,7 +858,10 @@
        {
         "number": 2
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      },
      {
@@ -932,7 +959,10 @@
        {
         "number": 2
        },
-       "wholes"
+       "over",
+       {
+        "number": 1
+       }
       ]
      },
      {
@@ -1086,13 +1116,14 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "2/2 is the same as which whole number?",
+     "text": "Which whole number is the same as 2/2?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 2
       },
       "halves",
-      "is the same as which whole number?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1108,24 +1139,23 @@
     },
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole. So",
       {
        "number": 2
       },
-      "parts make",
+      "halves",
+      "is",
       {
        "number": 1
       },
-      "whole."
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "2 parts make 2 ÷ 2 = 1 whole.",
-      "2/2 = 1."
+      "2 halves make 1 whole.",
+      "So 2/2 = 1."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1189,13 +1219,14 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "4/4 is the same as which whole number?",
+     "text": "Which whole number is the same as 4/4?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 4
       },
       "fourths",
-      "is the same as which whole number?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1211,24 +1242,23 @@
     },
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 4
       },
-      "parts of each whole.",
+      "fourths make one whole. So",
       {
        "number": 4
       },
-      "parts make",
+      "fourths",
+      "is",
       {
        "number": 1
       },
-      "whole."
+      "."
      ],
      "steps": [
-      "It takes 4 parts of 4 to make 1 whole.",
-      "4 parts make 4 ÷ 4 = 1 whole.",
-      "4/4 = 1."
+      "4 fourths make 1 whole.",
+      "So 4/4 = 1."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1292,13 +1322,14 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "2/2 is the same as which whole number?",
+     "text": "Which whole number is the same as 2/2?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 2
       },
       "halves",
-      "is the same as which whole number?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1314,24 +1345,23 @@
     },
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole. So",
       {
        "number": 2
       },
-      "parts make",
+      "halves",
+      "is",
       {
        "number": 1
       },
-      "whole."
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "2 parts make 2 ÷ 2 = 1 whole.",
-      "2/2 = 1."
+      "2 halves make 1 whole.",
+      "So 2/2 = 1."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1395,13 +1425,14 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "4/4 is the same as which whole number?",
+     "text": "Which whole number is the same as 4/4?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 4
       },
       "fourths",
-      "is the same as which whole number?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1417,24 +1448,23 @@
     },
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 4
       },
-      "parts of each whole.",
+      "fourths make one whole. So",
       {
        "number": 4
       },
-      "parts make",
+      "fourths",
+      "is",
       {
        "number": 1
       },
-      "whole."
+      "."
      ],
      "steps": [
-      "It takes 4 parts of 4 to make 1 whole.",
-      "4 parts make 4 ÷ 4 = 1 whole.",
-      "4/4 = 1."
+      "4 fourths make 1 whole.",
+      "So 4/4 = 1."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1498,13 +1528,14 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7/7 is the same as which whole number?",
+     "text": "Which whole number is the same as 7/7?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 7
       },
       "sevenths",
-      "is the same as which whole number?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1520,24 +1551,23 @@
     },
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 7
       },
-      "parts of each whole.",
+      "sevenths make one whole. So",
       {
        "number": 7
       },
-      "parts make",
+      "sevenths",
+      "is",
       {
        "number": 1
       },
-      "whole."
+      "."
      ],
      "steps": [
-      "It takes 7 parts of 7 to make 1 whole.",
-      "7 parts make 7 ÷ 7 = 1 whole.",
-      "7/7 = 1."
+      "7 sevenths make 1 whole.",
+      "So 7/7 = 1."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1601,13 +1631,14 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "2/2 is the same as which whole number?",
+     "text": "Which whole number is the same as 2/2?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 2
       },
       "halves",
-      "is the same as which whole number?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1623,24 +1654,23 @@
     },
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole. So",
       {
        "number": 2
       },
-      "parts make",
+      "halves",
+      "is",
       {
        "number": 1
       },
-      "whole."
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "2 parts make 2 ÷ 2 = 1 whole.",
-      "2/2 = 1."
+      "2 halves make 1 whole.",
+      "So 2/2 = 1."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1704,13 +1734,17 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "2/1 is the same as which whole number?",
+     "text": "Which whole number is the same as 2/1?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 2
       },
-      "wholes",
-      "is the same as which whole number?"
+      "over",
+      {
+       "number": 1
+      },
+      "?"
      ]
     },
     "stimulus": {
@@ -1721,7 +1755,10 @@
       {
        "number": 2
       },
-      "wholes"
+      "over",
+      {
+       "number": 1
+      }
      ]
     },
     "explanation": {
@@ -1729,12 +1766,15 @@
       {
        "number": 2
       },
-      "wholes",
+      "over",
+      {
+       "number": 1
+      },
       "means",
       {
        "number": 2
       },
-      "wholes, each cut into one part. That is",
+      "wholes, each in one part. So it is",
       {
        "number": 2
       },
@@ -1742,7 +1782,7 @@
      ],
      "steps": [
       "2/1 means 2 wholes, each in 1 part.",
-      "2/1 = 2."
+      "So 2/1 = 2."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1805,13 +1845,17 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7/1 is the same as which whole number?",
+     "text": "Which whole number is the same as 7/1?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 7
       },
-      "wholes",
-      "is the same as which whole number?"
+      "over",
+      {
+       "number": 1
+      },
+      "?"
      ]
     },
     "stimulus": {
@@ -1822,7 +1866,10 @@
       {
        "number": 7
       },
-      "wholes"
+      "over",
+      {
+       "number": 1
+      }
      ]
     },
     "explanation": {
@@ -1830,12 +1877,15 @@
       {
        "number": 7
       },
-      "wholes",
+      "over",
+      {
+       "number": 1
+      },
       "means",
       {
        "number": 7
       },
-      "wholes, each cut into one part. That is",
+      "wholes, each in one part. So it is",
       {
        "number": 7
       },
@@ -1843,7 +1893,7 @@
      ],
      "steps": [
       "7/1 means 7 wholes, each in 1 part.",
-      "7/1 = 7."
+      "So 7/1 = 7."
      ],
      "visual": {
       "kind": "numberLine",
@@ -1906,13 +1956,17 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "9/1 is the same as which whole number?",
+     "text": "Which whole number is the same as 9/1?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 9
       },
-      "wholes",
-      "is the same as which whole number?"
+      "over",
+      {
+       "number": 1
+      },
+      "?"
      ]
     },
     "stimulus": {
@@ -1923,7 +1977,10 @@
       {
        "number": 9
       },
-      "wholes"
+      "over",
+      {
+       "number": 1
+      }
      ]
     },
     "explanation": {
@@ -1931,12 +1988,15 @@
       {
        "number": 9
       },
-      "wholes",
+      "over",
+      {
+       "number": 1
+      },
       "means",
       {
        "number": 9
       },
-      "wholes, each cut into one part. That is",
+      "wholes, each in one part. So it is",
       {
        "number": 9
       },
@@ -1944,7 +2004,7 @@
      ],
      "steps": [
       "9/1 means 9 wholes, each in 1 part.",
-      "9/1 = 9."
+      "So 9/1 = 9."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2007,13 +2067,14 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "8/8 is the same as which whole number?",
+     "text": "Which whole number is the same as 8/8?",
      "speak": [
+      "Which whole number is the same as",
       {
        "number": 8
       },
       "eighths",
-      "is the same as which whole number?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2029,24 +2090,23 @@
     },
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 8
       },
-      "parts of each whole.",
+      "eighths make one whole. So",
       {
        "number": 8
       },
-      "parts make",
+      "eighths",
+      "is",
       {
        "number": 1
       },
-      "whole."
+      "."
      ],
      "steps": [
-      "It takes 8 parts of 8 to make 1 whole.",
-      "8 parts make 8 ÷ 8 = 1 whole.",
-      "8/8 = 1."
+      "8 eighths make 1 whole.",
+      "So 8/8 = 1."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2170,24 +2230,32 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole.",
       {
        "number": 6
       },
-      "parts make",
+      "halves make",
       {
        "number": 3
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 6
+      },
+      "halves",
+      "is",
+      {
+       "number": 3
+      },
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "6 parts make 6 ÷ 2 = 3 wholes.",
-      "6/2 = 3."
+      "2 halves make 1 whole.",
+      "6 halves make 3 wholes: 6 ÷ 2 = 3.",
+      "So 6/2 = 3."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2266,24 +2334,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole.",
       {
        "number": 8
       },
-      "parts make",
+      "halves make",
       {
        "number": 4
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 8
+      },
+      "halves",
+      "is",
+      {
+       "number": 4
+      },
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "8 parts make 8 ÷ 2 = 4 wholes.",
-      "8/2 = 4."
+      "2 halves make 1 whole.",
+      "8 halves make 4 wholes: 8 ÷ 2 = 4.",
+      "So 8/2 = 4."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2362,24 +2438,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole.",
       {
        "number": 8
       },
-      "parts make",
+      "halves make",
       {
        "number": 4
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 8
+      },
+      "halves",
+      "is",
+      {
+       "number": 4
+      },
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "8 parts make 8 ÷ 2 = 4 wholes.",
-      "8/2 = 4."
+      "2 halves make 1 whole.",
+      "8 halves make 4 wholes: 8 ÷ 2 = 4.",
+      "So 8/2 = 4."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2458,24 +2542,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole.",
       {
        "number": 8
       },
-      "parts make",
+      "halves make",
       {
        "number": 4
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 8
+      },
+      "halves",
+      "is",
+      {
+       "number": 4
+      },
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "8 parts make 8 ÷ 2 = 4 wholes.",
-      "8/2 = 4."
+      "2 halves make 1 whole.",
+      "8 halves make 4 wholes: 8 ÷ 2 = 4.",
+      "So 8/2 = 4."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2554,24 +2646,32 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 4
       },
-      "parts of each whole.",
+      "fourths make one whole.",
       {
        "number": 16
       },
-      "parts make",
+      "fourths make",
       {
        "number": 4
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 16
+      },
+      "fourths",
+      "is",
+      {
+       "number": 4
+      },
+      "."
      ],
      "steps": [
-      "It takes 4 parts of 4 to make 1 whole.",
-      "16 parts make 16 ÷ 4 = 4 wholes.",
-      "16/4 = 4."
+      "4 fourths make 1 whole.",
+      "16 fourths make 4 wholes: 16 ÷ 4 = 4.",
+      "So 16/4 = 4."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2650,24 +2750,32 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole.",
       {
        "number": 6
       },
-      "parts make",
+      "halves make",
       {
        "number": 3
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 6
+      },
+      "halves",
+      "is",
+      {
+       "number": 3
+      },
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "6 parts make 6 ÷ 2 = 3 wholes.",
-      "6/2 = 3."
+      "2 halves make 1 whole.",
+      "6 halves make 3 wholes: 6 ÷ 2 = 3.",
+      "So 6/2 = 3."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2746,24 +2854,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 2
       },
-      "parts of each whole.",
+      "halves make one whole.",
       {
        "number": 4
       },
-      "parts make",
+      "halves make",
       {
        "number": 2
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 4
+      },
+      "halves",
+      "is",
+      {
+       "number": 2
+      },
+      "."
      ],
      "steps": [
-      "It takes 2 parts of 2 to make 1 whole.",
-      "4 parts make 4 ÷ 2 = 2 wholes.",
-      "4/2 = 2."
+      "2 halves make 1 whole.",
+      "4 halves make 2 wholes: 4 ÷ 2 = 2.",
+      "So 4/2 = 2."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2842,24 +2958,32 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 3
       },
-      "parts of each whole.",
+      "thirds make one whole.",
       {
        "number": 6
       },
-      "parts make",
+      "thirds make",
       {
        "number": 2
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 6
+      },
+      "thirds",
+      "is",
+      {
+       "number": 2
+      },
+      "."
      ],
      "steps": [
-      "It takes 3 parts of 3 to make 1 whole.",
-      "6 parts make 6 ÷ 3 = 2 wholes.",
-      "6/3 = 2."
+      "3 thirds make 1 whole.",
+      "6 thirds make 2 wholes: 6 ÷ 3 = 2.",
+      "So 6/3 = 2."
      ],
      "visual": {
       "kind": "numberLine",
@@ -2938,24 +3062,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 4
       },
-      "parts of each whole.",
+      "fourths make one whole.",
       {
        "number": 8
       },
-      "parts make",
+      "fourths make",
       {
        "number": 2
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 8
+      },
+      "fourths",
+      "is",
+      {
+       "number": 2
+      },
+      "."
      ],
      "steps": [
-      "It takes 4 parts of 4 to make 1 whole.",
-      "8 parts make 8 ÷ 4 = 2 wholes.",
-      "8/4 = 2."
+      "4 fourths make 1 whole.",
+      "8 fourths make 2 wholes: 8 ÷ 4 = 2.",
+      "So 8/4 = 2."
      ],
      "visual": {
       "kind": "numberLine",
@@ -3034,24 +3166,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Count the",
       {
        "number": 4
       },
-      "parts of each whole.",
+      "fourths make one whole.",
       {
        "number": 12
       },
-      "parts make",
+      "fourths make",
       {
        "number": 3
       },
-      "wholes."
+      "wholes. So",
+      {
+       "number": 12
+      },
+      "fourths",
+      "is",
+      {
+       "number": 3
+      },
+      "."
      ],
      "steps": [
-      "It takes 4 parts of 4 to make 1 whole.",
-      "12 parts make 12 ÷ 4 = 3 wholes.",
-      "12/4 = 3."
+      "4 fourths make 1 whole.",
+      "12 fourths make 3 wholes: 12 ÷ 4 = 3.",
+      "So 12/4 = 3."
      ],
      "visual": {
       "kind": "numberLine",

@@ -1,15 +1,17 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { STORY_COUNTABLES } from '../../../data/countables';
 import { STORY_NAMES } from '../../../data/storyProblems';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
-import { addExplanation, addQuestion, borrows, carries, equation, plusPrompt, subtractExplanation, subtractQuestion } from '../g2/addSubtract';
+import { addExplanation, addQuestion, borrows, carries, equation, minusPrompt, plusPrompt, subtractExplanation, subtractQuestion } from '../g2/addSubtract';
 
 // Math grade 3 B.1 to B.4: adding and subtracting within 1,000 with regrouping, estimating, two-step stories.
+// B.1 and B.2 are asked and talked through by the grade 2 helpers (plusPrompt, minusPrompt, addExplanation,
+// subtractExplanation in g2/addSubtract.ts), so the wording of both grades stays the same.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint };
 const digit = (n: number, place: number): number => Math.floor(n / 10 ** place) % 10;
 
 // Two numbers that fit a rule, found by trying.
@@ -26,7 +28,7 @@ function find(pick: () => [number, number], fits: (a: number, b: number) => bool
 
 // The sum written in columns, the way it is done on paper.
 function inColumns(a: number, b: number, op: '+' | '-'): QuestionDraft {
-  const asked = op === '+' ? plusPrompt(a, b) : { text: `${a} minus ${b} equals what?`, speak: [{ number: a }, 'minus', { number: b }, 'equals what?'] as Say };
+  const asked = op === '+' ? plusPrompt(a, b) : minusPrompt(a, b);
   return {
     type: 'columnSum',
     mode: 'look',
@@ -92,7 +94,7 @@ export const subtractRegroup1000Generator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Take away the ones, then the tens, then the hundreds. When there are not enough, break one from the next place.', speak: ['Take away the ones, then the tens, then the hundreds. When there are not enough, break one from the next place.'], visual: equation(642, '-', 375) },
     { beat: 'watch', text: `642 minus 375. ${subtractExplanation(642, 375).steps.join(' ')}`, speak: [{ number: 642 }, 'minus', { number: 375 }, '.', ...subtractExplanation(642, 375).speak], visual: subtractExplanation(642, 375).visual },
-    { beat: 'try', text: '731 minus 248 equals what?', speak: [{ number: 731 }, 'minus', { number: 248 }, 'equals what?'], visual: equation(731, '-', 248, '=', 'blank'), reveal: { text: subtractExplanation(731, 248).steps.join(' '), speak: subtractExplanation(731, 248).speak, visual: subtractExplanation(731, 248).visual } },
+    { beat: 'try', text: minusPrompt(731, 248).text, speak: minusPrompt(731, 248).speak, visual: equation(731, '-', 248, '=', 'blank'), reveal: { text: subtractExplanation(731, 248).steps.join(' '), speak: subtractExplanation(731, 248).speak, visual: subtractExplanation(731, 248).visual } },
     { beat: 'remember', text: 'A hundred breaks into ten tens. A ten breaks into ten ones.', speak: ['A hundred breaks into ten tens. A ten breaks into ten ones.'], visual: subtractExplanation(642, 375).visual },
   ],
   oracle: 'subtract',
@@ -131,15 +133,20 @@ function estimating(level: Level, rng: Rng): QuestionDraft {
     const right = rng.bool();
     const claim = right ? exact : exact + rng.pick([-1, 1]) * rng.int(25, 30) * 10;
     const safeClaim = claim > 0 ? claim : exact + rng.int(25, 30) * 10;
-    const prompt = `Sam says ${a} ${signWord(op)} ${b} is ${safeClaim}. Is that reasonable?`;
+    // Reasonable means close to the estimate: within one hundred of it. A right answer is always less than 100
+    // away (each number moves less than 50 when it is rounded); a wrong one is always more than 100 away.
+    const prompt = `Sam says ${a} ${signWord(op)} ${b} is ${safeClaim}. Use an estimate to check. Is Sam's answer reasonable?`;
     const isReasonable = Math.abs(safeClaim - guess) <= to;
-    const why = estimateExplanation(a, b, op, to);
+    const [ra, rb] = [roundTo(a, to), roundTo(b, to)];
+    const verdict = isReasonable
+      ? { text: `${safeClaim} is less than ${to} away from ${guess}, so Sam's answer is reasonable.`, speak: [{ number: safeClaim }, 'is less than', { number: to }, 'away from', { number: guess }, ", so Sam's answer is reasonable."] as Say }
+      : { text: `${safeClaim} is more than ${to} away from ${guess}, so Sam's answer is not reasonable.`, speak: [{ number: safeClaim }, 'is more than', { number: to }, 'away from', { number: guess }, ", so Sam's answer is not reasonable."] as Say };
     return {
       type: 'choice',
       mode: 'look',
       fixedOrder: true,
       facts: { a, b, to, op, ask: 'reasonable', claim: safeClaim, options: [true, false] },
-      prompt: { text: prompt, speak: ['Sam says', { number: a }, signWord(op), { number: b }, 'is', { number: safeClaim }, '. Is that reasonable?'] },
+      prompt: { text: prompt, speak: ['Sam says', { number: a }, signWord(op), { number: b }, 'is', { number: safeClaim }, ". Use an estimate to check. Is Sam's answer reasonable?"] },
       stimulus: equation(a, op, b, '=', safeClaim),
       options: [
         { kind: 'text', value: 'Yes', size: 'l', speak: ['Yes'] },
@@ -147,13 +154,16 @@ function estimating(level: Level, rng: Rng): QuestionDraft {
       ],
       answerIndex: isReasonable ? 0 : 1,
       explanation: {
-        speak: [...why.speak, ...(isReasonable ? (['Yes.', { number: safeClaim }, 'is close to that.'] as Say) : (['No.', { number: safeClaim }, 'is too far from that.'] as Say))],
-        steps: [...why.steps.slice(1), isReasonable ? `${safeClaim} is close to ${guess}, so yes.` : `${safeClaim} is far from ${guess}, so no.`],
-        visual: why.visual,
+        speak: [{ number: a }, 'rounds to', { number: ra }, '.', { number: b }, 'rounds to', { number: rb }, '.', { number: ra }, signWord(op), { number: rb }, 'is', { number: guess }, '. That is the estimate.', ...verdict.speak],
+        steps: [`${a} rounds to ${ra}. ${b} rounds to ${rb}.`, `${ra} ${signWord(op)} ${rb} is ${guess}. That is the estimate.`, verdict.text],
+        visual: equation(ra, op, rb, '=', guess),
+        hint: { text: "Round each number to the nearest hundred and work out the estimate. Is Sam's answer close to it?" },
       },
     };
   }
   const prompt = to === 10 ? `Round each number to the nearest ten, then ${op === '+' ? 'add' : 'subtract'}. What is the estimate?` : `Round each number to the nearest hundred, then ${op === '+' ? 'add' : 'subtract'}. What is the estimate?`;
+  // The question already says to round, so the hint says how.
+  const hint: Hint = { text: `Look at the ${to === 10 ? 'ones' : 'tens'} digit of each number. 5 or more rounds up. Less than 5 rounds down.` };
   // The estimate, the exact answer a child might give instead, and round numbers a step or two away.
   // The place of the estimate is picked first, so it is not always in the middle.
   const below = [...new Set([exact, guess - to, guess - 2 * to])].filter((value) => value >= 0 && value < guess);
@@ -170,7 +180,7 @@ function estimating(level: Level, rng: Rng): QuestionDraft {
     stimulus: equation(a, op, b),
     options: values.map((value) => numeral(value, 'l')),
     answerIndex: values.indexOf(guess),
-    explanation: estimateExplanation(a, b, op, to),
+    explanation: { ...estimateExplanation(a, b, op, to), hint },
   };
 }
 
@@ -216,19 +226,27 @@ interface Story {
   b: number;
   op2: Op;
   c: number;
+  hint: Hint; // what to find first, never the first answer itself: planning the two steps is the skill
 }
+
+// Things a child might really have hundreds of. Level 1 stories count in the hundreds; the others use story things.
+const MANY_THINGS: readonly string[] = ['stickers', 'beads', 'marbles', 'stamps', 'shells'];
 
 function story(level: Level, rng: Rng): Story {
   const name = rng.pick(STORY_NAMES);
   const thing = rng.pick(STORY_COUNTABLES);
   if (level === 1) {
+    const things = rng.pick(MANY_THINGS);
     const a = rng.int(120, 480);
     const b = rng.int(25, 240);
     const c = rng.int(15, Math.min(a + b - 10, 260));
+    // The name once at the start and once in the question, so it never sounds like a list.
     return {
-      text: `${name} has ${a} ${thing.many}. ${name} gets ${b} more, then gives away ${c}. How many ${thing.many} does ${name} have now?`,
-      speak: [`${name} has`, { number: a }, `${thing.many}.`, `${name} gets`, { number: b }, 'more, then gives away', { number: c }, '.', `How many ${thing.many} does ${name} have now?`],
+      text: `${name} has ${a} ${things}, gets ${b} more, then gives away ${c}. How many ${things} does ${name} have now?`,
+      speak: [`${name} has`, { number: a }, `${things}, gets`, { number: b }, 'more, then gives away', { number: c }, '.', `How many ${things} does ${name} have now?`],
       a, op1: '+', b, op2: '-', c,
+      // No number in it: when as many are given away as there were at the start, the answer is the number gotten.
+      hint: { text: `First find how many ${things} ${name} has after getting more.` },
     };
   }
   if (level === 2) {
@@ -239,6 +257,7 @@ function story(level: Level, rng: Rng): Story {
       text: `There are ${a} boxes with ${b} ${thing.many} in each. ${name} adds ${c} more ${thing.many}. How many ${thing.many} are there now?`,
       speak: ['There are', { number: a }, 'boxes with', { number: b }, `${thing.many} in each.`, `${name} adds`, { number: c }, `more ${thing.many}.`, `How many ${thing.many} are there now?`],
       a, op1: '×', b, op2: '+', c,
+      hint: { text: `First find how many ${thing.many} are in the ${a} boxes.` },
     };
   }
   const bags = rng.int(2, 6);
@@ -246,9 +265,10 @@ function story(level: Level, rng: Rng): Story {
   const c = rng.int(2, 8);
   const a = bags * each;
   return {
-    text: `${name} shares ${a} ${thing.many} equally into ${bags} bags. Then ${c} more ${thing.many} go into one bag. How many ${thing.many} are in that bag now?`,
-    speak: [`${name} shares`, { number: a }, `${thing.many} equally into`, { number: bags }, 'bags. Then', { number: c }, `more ${thing.many} go into one bag.`, `How many ${thing.many} are in that bag now?`],
+    text: `${name} puts ${a} ${thing.many} into ${bags} bags, the same number in each. Then ${c} more ${thing.many} go into one bag. How many ${thing.many} are in that bag now?`,
+    speak: [`${name} puts`, { number: a }, `${thing.many} into`, { number: bags }, 'bags, the same number in each. Then', { number: c }, `more ${thing.many} go into one bag.`, `How many ${thing.many} are in that bag now?`],
     a, op1: '÷', b: bags, op2: '+', c,
+    hint: { text: `First find how many ${thing.many} go in each bag.` },
   };
 }
 
@@ -262,7 +282,7 @@ function twoStepProblems(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: s.text, speak: s.speak },
     answer,
     maxDigits: 3,
-    explanation: twoStepExplanation(s.a, s.op1, s.b, s.op2, s.c),
+    explanation: { ...twoStepExplanation(s.a, s.op1, s.b, s.op2, s.c), hint: s.hint },
   };
 }
 

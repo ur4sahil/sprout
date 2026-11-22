@@ -6,10 +6,18 @@ import type { Skill } from '../../catalogue';
 
 const CATEGORIES = { B: 'B. Adding and subtracting', C: 'C. Multiplication', D: 'D. Division', E: 'E. Fractions', F: 'F. Measurement and data' } as const;
 
+// Skills whose questions have changed since the wave shipped, and the version each is on now. The wording audit,
+// round 2 (Nov 22, 2026), changed every skill but C.11; C.10 and E.6 read data/h5-stories.ts, which changed.
+const VERSIONS: Record<string, number> = {
+  'M-3-B5': 2, 'M-3-B6': 2, 'M-3-C8': 2, 'M-3-C9': 2, 'M-3-C10': 2, 'M-3-C12': 2, 'M-3-D4': 2, 'M-3-D5': 2,
+  'M-3-E5': 2, 'M-3-E6': 2, 'M-3-E7': 2, 'M-3-F8': 2, 'M-3-F9': 2, 'M-3-F10': 2,
+};
+
 function row(code: string, name: string, speakName: Say, strand: string, ladder: string, icon: Visual, itemTypes: ItemType[], ccss: string): Skill {
   const letter = code[0] as keyof typeof CATEGORIES;
+  const id = `M-3-${code.replace('.', '')}`;
   return {
-    id: `M-3-${code.replace('.', '')}`,
+    id,
     subject: 'math',
     grade: '3',
     category: CATEGORIES[letter],
@@ -19,7 +27,7 @@ function row(code: string, name: string, speakName: Say, strand: string, ladder:
     ladder,
     icon,
     speakName,
-    version: 1,
+    version: VERSIONS[id] ?? 1,
     itemTypes,
     maxLevel: 3,
     prereqs: [],

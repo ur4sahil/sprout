@@ -1,6 +1,6 @@
 {
  "skillId": "M-3-F2",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -82,18 +82,25 @@
   "answerIndex": 1,
   "explanation": {
    "speak": [
-    "Start at",
-    {
-     "time": {
-      "hour": 10,
-      "minute": 0
-     }
-    },
-    ".",
+    "Count on",
     {
      "number": 2
     },
-    "hours later is",
+    "hours:",
+    {
+     "time": {
+      "hour": 11,
+      "minute": 0
+     }
+    },
+    ",",
+    {
+     "time": {
+      "hour": 12,
+      "minute": 0
+     }
+    },
+    ". It will be",
     {
      "time": {
       "hour": 12,
@@ -103,13 +110,16 @@
     "."
    ],
    "steps": [
-    "2 hours after 10:00 is 12:00.",
+    "Count on 2 hours: 11:00, 12:00.",
     "It will be 12:00."
    ],
    "visual": {
     "kind": "clock",
     "hour": 12,
     "minute": 0
+   },
+   "hint": {
+    "text": "Count on one hour at a time."
    }
   },
   "skillId": "M-3-F2",
@@ -200,18 +210,32 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 8,
-        "minute": 0
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 3
       },
-      "hours later is",
+      "hours:",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 11,
@@ -221,13 +245,16 @@
       "."
      ],
      "steps": [
-      "3 hours after 8:00 is 11:00.",
+      "Count on 3 hours: 9:00, 10:00, 11:00.",
       "It will be 11:00."
      ],
      "visual": {
       "kind": "clock",
       "hour": 11,
       "minute": 0
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -316,18 +343,25 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 9,
-        "minute": 0
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 2
       },
-      "hours later is",
+      "hours:",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 11,
@@ -337,13 +371,16 @@
       "."
      ],
      "steps": [
-      "2 hours after 9:00 is 11:00.",
+      "Count on 2 hours: 10:00, 11:00.",
       "It will be 11:00."
      ],
      "visual": {
       "kind": "clock",
       "hour": 11,
       "minute": 0
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -432,18 +469,25 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 9,
-        "minute": 0
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 2
       },
-      "hours later is",
+      "hours:",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 11,
@@ -453,13 +497,16 @@
       "."
      ],
      "steps": [
-      "2 hours after 9:00 is 11:00.",
+      "Count on 2 hours: 10:00, 11:00.",
       "It will be 11:00."
      ],
      "visual": {
       "kind": "clock",
       "hour": 11,
       "minute": 0
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -548,18 +595,18 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 12,
-        "minute": 0
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 1
       },
-      "hour later is",
+      "hour:",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 1,
@@ -569,13 +616,16 @@
       "."
      ],
      "steps": [
-      "1 hour after 12:00 is 1:00.",
+      "Count on 1 hour: 1:00.",
       "It will be 1:00."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 0
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -664,18 +714,18 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 9,
-        "minute": 30
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 1
       },
-      "hour later is",
+      "hour:",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 30
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 10,
@@ -685,13 +735,16 @@
       "."
      ],
      "steps": [
-      "1 hour after 9:30 is 10:30.",
+      "Count on 1 hour: 10:30.",
       "It will be 10:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 30
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -780,18 +833,32 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 7,
-        "minute": 0
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 3
       },
-      "hours later is",
+      "hours:",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 10,
@@ -801,13 +868,16 @@
       "."
      ],
      "steps": [
-      "3 hours after 7:00 is 10:00.",
+      "Count on 3 hours: 8:00, 9:00, 10:00.",
       "It will be 10:00."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 0
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -896,18 +966,39 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 1,
-        "minute": 0
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 4
       },
-      "hours later is",
+      "hours:",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 0
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 5,
+        "minute": 0
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 5,
@@ -917,13 +1008,16 @@
       "."
      ],
      "steps": [
-      "4 hours after 1:00 is 5:00.",
+      "Count on 4 hours: 2:00, 3:00, 4:00, 5:00.",
       "It will be 5:00."
      ],
      "visual": {
       "kind": "clock",
       "hour": 5,
       "minute": 0
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -1012,18 +1106,25 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 2,
-        "minute": 30
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 2
       },
-      "hours later is",
+      "hours:",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 30
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 30
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 4,
@@ -1033,13 +1134,16 @@
       "."
      ],
      "steps": [
-      "2 hours after 2:30 is 4:30.",
+      "Count on 2 hours: 3:30, 4:30.",
       "It will be 4:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 30
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -1128,18 +1232,18 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 3,
-        "minute": 30
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 1
       },
-      "hour later is",
+      "hour:",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 30
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 4,
@@ -1149,13 +1253,16 @@
       "."
      ],
      "steps": [
-      "1 hour after 3:30 is 4:30.",
+      "Count on 1 hour: 4:30.",
       "It will be 4:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 30
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -1244,18 +1351,32 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 7,
-        "minute": 30
-       }
-      },
-      ".",
+      "Count on",
       {
        "number": 3
       },
-      "hours later is",
+      "hours:",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 30
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      ",",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 30
+       }
+      },
+      ". It will be",
       {
        "time": {
         "hour": 10,
@@ -1265,13 +1386,16 @@
       "."
      ],
      "steps": [
-      "3 hours after 7:30 is 10:30.",
+      "Count on 3 hours: 8:30, 9:30, 10:30.",
       "It will be 10:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 30
+     },
+     "hint": {
+      "text": "Count on one hour at a time."
      }
     },
     "skillId": "M-3-F2",
@@ -1362,25 +1486,29 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 8,
-        "minute": 0
-       }
-      },
-      ".",
       {
        "number": 1
       },
-      "hour later is",
+      "and a half hours is",
+      {
+       "number": 1
+      },
+      "hour and",
+      {
+       "number": 30
+      },
+      "minutes. Count on",
+      {
+       "number": 1
+      },
+      "hour:",
       {
        "time": {
         "hour": 9,
         "minute": 0
        }
       },
-      ".",
+      ". Then",
       {
        "number": 30
       },
@@ -1394,14 +1522,17 @@
       "."
      ],
      "steps": [
-      "1 hour after 8:00 is 9:00.",
-      "30 more minutes after 9:00 is 9:30.",
+      "1 and a half hours is 1 hour and 30 minutes.",
+      "Count on 1 hour: 9:00. Then 30 more minutes: 9:30.",
       "It will be 9:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 9,
       "minute": 30
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -1487,18 +1618,22 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
+      "Half an hour is",
+      {
+       "number": 30
+      },
+      "minutes.",
+      {
+       "number": 30
+      },
+      "minutes after",
       {
        "time": {
         "hour": 9,
         "minute": 15
        }
       },
-      ".",
-      {
-       "number": 30
-      },
-      "more minutes is",
+      "is",
       {
        "time": {
         "hour": 9,
@@ -1508,13 +1643,16 @@
       "."
      ],
      "steps": [
-      "30 more minutes after 9:15 is 9:45.",
-      "It will be 9:45."
+      "Half an hour is 30 minutes.",
+      "30 minutes after 9:15 is 9:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 9,
       "minute": 45
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -1603,25 +1741,29 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 9,
-        "minute": 0
-       }
-      },
-      ".",
       {
        "number": 1
       },
-      "hour later is",
+      "and a half hours is",
+      {
+       "number": 1
+      },
+      "hour and",
+      {
+       "number": 30
+      },
+      "minutes. Count on",
+      {
+       "number": 1
+      },
+      "hour:",
       {
        "time": {
         "hour": 10,
         "minute": 0
        }
       },
-      ".",
+      ". Then",
       {
        "number": 30
       },
@@ -1635,14 +1777,17 @@
       "."
      ],
      "steps": [
-      "1 hour after 9:00 is 10:00.",
-      "30 more minutes after 10:00 is 10:30.",
+      "1 and a half hours is 1 hour and 30 minutes.",
+      "Count on 1 hour: 10:00. Then 30 more minutes: 10:30.",
       "It will be 10:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 30
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -1728,18 +1873,22 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
+      "Half an hour is",
+      {
+       "number": 30
+      },
+      "minutes.",
+      {
+       "number": 30
+      },
+      "minutes after",
       {
        "time": {
         "hour": 12,
         "minute": 15
        }
       },
-      ".",
-      {
-       "number": 30
-      },
-      "more minutes is",
+      "is",
       {
        "time": {
         "hour": 12,
@@ -1749,13 +1898,16 @@
       "."
      ],
      "steps": [
-      "30 more minutes after 12:15 is 12:45.",
-      "It will be 12:45."
+      "Half an hour is 30 minutes.",
+      "30 minutes after 12:15 is 12:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 12,
       "minute": 45
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -1841,18 +1993,22 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
+      "Half an hour is",
+      {
+       "number": 30
+      },
+      "minutes.",
+      {
+       "number": 30
+      },
+      "minutes after",
       {
        "time": {
         "hour": 9,
         "minute": 45
        }
       },
-      ".",
-      {
-       "number": 30
-      },
-      "more minutes is",
+      "is",
       {
        "time": {
         "hour": 10,
@@ -1862,13 +2018,16 @@
       "."
      ],
      "steps": [
-      "30 more minutes after 9:45 is 10:15.",
-      "It will be 10:15."
+      "Half an hour is 30 minutes.",
+      "30 minutes after 9:45 is 10:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 15
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -1957,25 +2116,29 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 7,
-        "minute": 0
-       }
-      },
-      ".",
       {
        "number": 1
       },
-      "hour later is",
+      "and a half hours is",
+      {
+       "number": 1
+      },
+      "hour and",
+      {
+       "number": 30
+      },
+      "minutes. Count on",
+      {
+       "number": 1
+      },
+      "hour:",
       {
        "time": {
         "hour": 8,
         "minute": 0
        }
       },
-      ".",
+      ". Then",
       {
        "number": 30
       },
@@ -1989,14 +2152,17 @@
       "."
      ],
      "steps": [
-      "1 hour after 7:00 is 8:00.",
-      "30 more minutes after 8:00 is 8:30.",
+      "1 and a half hours is 1 hour and 30 minutes.",
+      "Count on 1 hour: 8:00. Then 30 more minutes: 8:30.",
       "It will be 8:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 8,
       "minute": 30
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -2085,25 +2251,36 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 1,
-        "minute": 0
-       }
-      },
-      ".",
       {
        "number": 2
       },
-      "hours later is",
+      "and a half hours is",
+      {
+       "number": 2
+      },
+      "hours and",
+      {
+       "number": 30
+      },
+      "minutes. Count on",
+      {
+       "number": 2
+      },
+      "hours:",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 0
+       }
+      },
+      ",",
       {
        "time": {
         "hour": 3,
         "minute": 0
        }
       },
-      ".",
+      ". Then",
       {
        "number": 30
       },
@@ -2117,14 +2294,17 @@
       "."
      ],
      "steps": [
-      "2 hours after 1:00 is 3:00.",
-      "30 more minutes after 3:00 is 3:30.",
+      "2 and a half hours is 2 hours and 30 minutes.",
+      "Count on 2 hours: 2:00, 3:00. Then 30 more minutes: 3:30.",
       "It will be 3:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 3,
       "minute": 30
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -2210,18 +2390,22 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Start at",
+      "Half an hour is",
+      {
+       "number": 30
+      },
+      "minutes.",
+      {
+       "number": 30
+      },
+      "minutes after",
       {
        "time": {
         "hour": 2,
         "minute": 30
        }
       },
-      ".",
-      {
-       "number": 30
-      },
-      "more minutes is",
+      "is",
       {
        "time": {
         "hour": 3,
@@ -2231,13 +2415,16 @@
       "."
      ],
      "steps": [
-      "30 more minutes after 2:30 is 3:00.",
-      "It will be 3:00."
+      "Half an hour is 30 minutes.",
+      "30 minutes after 2:30 is 3:00."
      ],
      "visual": {
       "kind": "clock",
       "hour": 3,
       "minute": 0
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -2323,18 +2510,22 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
+      "Half an hour is",
+      {
+       "number": 30
+      },
+      "minutes.",
+      {
+       "number": 30
+      },
+      "minutes after",
       {
        "time": {
         "hour": 3,
         "minute": 45
        }
       },
-      ".",
-      {
-       "number": 30
-      },
-      "more minutes is",
+      "is",
       {
        "time": {
         "hour": 4,
@@ -2344,13 +2535,16 @@
       "."
      ],
      "steps": [
-      "30 more minutes after 3:45 is 4:15.",
-      "It will be 4:15."
+      "Half an hour is 30 minutes.",
+      "30 minutes after 3:45 is 4:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 4,
       "minute": 15
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -2439,25 +2633,36 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Start at",
-      {
-       "time": {
-        "hour": 7,
-        "minute": 45
-       }
-      },
-      ".",
       {
        "number": 2
       },
-      "hours later is",
+      "and a half hours is",
+      {
+       "number": 2
+      },
+      "hours and",
+      {
+       "number": 30
+      },
+      "minutes. Count on",
+      {
+       "number": 2
+      },
+      "hours:",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      ",",
       {
        "time": {
         "hour": 9,
         "minute": 45
        }
       },
-      ".",
+      ". Then",
       {
        "number": 30
       },
@@ -2471,14 +2676,17 @@
       "."
      ],
      "steps": [
-      "2 hours after 7:45 is 9:45.",
-      "30 more minutes after 9:45 is 10:15.",
+      "2 and a half hours is 2 hours and 30 minutes.",
+      "Count on 2 hours: 8:45, 9:45. Then 30 more minutes: 10:15.",
       "It will be 10:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 10,
       "minute": 15
+     },
+     "hint": {
+      "text": "Half an hour is 30 minutes. Count on any whole hours first, then 30 more minutes."
      }
     },
     "skillId": "M-3-F2",
@@ -2537,7 +2745,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "Count on in fives from",
       {
        "time": {
         "hour": 8,
@@ -2551,16 +2759,15 @@
         "minute": 35
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 35
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 8:00.",
-      "Count on in fives to 8:35.",
-      "That is 35 minutes."
+      "Count on in fives from 8:00 to 8:35.",
+      "That is 35 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -2632,7 +2839,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "Count on in fives from",
       {
        "time": {
         "hour": 9,
@@ -2646,16 +2853,15 @@
         "minute": 35
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 20
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 9:15.",
-      "Count on in fives to 9:35.",
-      "That is 20 minutes."
+      "Count on in fives from 9:15 to 9:35.",
+      "That is 20 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -2727,7 +2933,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "Count on in fives from",
       {
        "time": {
         "hour": 9,
@@ -2741,16 +2947,15 @@
         "minute": 30
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 30
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 9:00.",
-      "Count on in fives to 9:30.",
-      "That is 30 minutes."
+      "Count on in fives from 9:00 to 9:30.",
+      "That is 30 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -2822,7 +3027,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "Count on in fives from",
       {
        "time": {
         "hour": 12,
@@ -2836,16 +3041,15 @@
         "minute": 35
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 20
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 12:15.",
-      "Count on in fives to 12:35.",
-      "That is 20 minutes."
+      "Count on in fives from 12:15 to 12:35.",
+      "That is 20 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -2917,7 +3121,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "From",
       {
        "time": {
         "hour": 9,
@@ -2928,19 +3132,34 @@
       {
        "time": {
         "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes. Then",
+      {
+       "number": 5
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
         "minute": 5
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 20
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 9:45.",
-      "Count on in fives to 10:05.",
-      "That is 20 minutes."
+      "9:45 to 10:00 is 15 minutes.",
+      "10:00 to 10:05 is 5 minutes.",
+      "15 + 5 = 20 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -3012,7 +3231,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "Count on in fives from",
       {
        "time": {
         "hour": 7,
@@ -3026,16 +3245,15 @@
         "minute": 40
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 40
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 7:00.",
-      "Count on in fives to 7:40.",
-      "That is 40 minutes."
+      "Count on in fives from 7:00 to 7:40.",
+      "That is 40 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -3107,7 +3325,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "Count on in fives from",
       {
        "time": {
         "hour": 1,
@@ -3121,16 +3339,15 @@
         "minute": 55
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 55
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 1:00.",
-      "Count on in fives to 1:55.",
-      "That is 55 minutes."
+      "Count on in fives from 1:00 to 1:55.",
+      "That is 55 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -3202,7 +3419,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "Count on in fives from",
       {
        "time": {
         "hour": 2,
@@ -3216,16 +3433,15 @@
         "minute": 0
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 25
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 2:35.",
-      "Count on in fives to 3:00.",
-      "That is 25 minutes."
+      "Count on in fives from 2:35 to 3:00.",
+      "That is 25 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -3297,7 +3513,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "From",
       {
        "time": {
         "hour": 3,
@@ -3308,19 +3524,34 @@
       {
        "time": {
         "hour": 4,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "minutes. Then",
+      {
+       "number": 5
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 4,
         "minute": 5
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 15
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 3:50.",
-      "Count on in fives to 4:05.",
-      "That is 15 minutes."
+      "3:50 to 4:00 is 10 minutes.",
+      "4:00 to 4:05 is 5 minutes.",
+      "10 + 5 = 15 minutes long."
      ],
      "visual": {
       "kind": "row",
@@ -3392,7 +3623,7 @@
     "maxDigits": 2,
     "explanation": {
      "speak": [
-      "Count on from",
+      "From",
       {
        "time": {
         "hour": 7,
@@ -3403,19 +3634,34 @@
       {
        "time": {
         "hour": 8,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "minutes. Then",
+      {
+       "number": 35
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 8,
         "minute": 35
        }
       },
-      "in fives. That is",
+      ". That is",
       {
        "number": 40
       },
-      "minutes."
+      "minutes long."
      ],
      "steps": [
-      "Start at 7:55.",
-      "Count on in fives to 8:35.",
-      "That is 40 minutes."
+      "7:55 to 8:00 is 5 minutes.",
+      "8:00 to 8:35 is 35 minutes.",
+      "5 + 35 = 40 minutes long."
      ],
      "visual": {
       "kind": "row",
