@@ -28,9 +28,9 @@ describe('wrangler.jsonc', () => {
     expect(vars.some((name) => /KEY|SECRET|TOKEN|PEPPER|PASSWORD/i.test(name))).toBe(false);
   });
 
-  it('keeps the live app on Kokoro until the owner switches (plan section 20)', () => {
-    expect(readConfig().vars.VOICE_ENGINE).toBe('kokoro');
-    expect(readConfig().vars.VOICE_URL).toBe('https://sprout-voice.logstocks.com');
+  it('runs the live app on the new voices: the owner switched on Nov 22, 2026 (plan section 20)', () => {
+    expect(readConfig().vars.VOICE_ENGINE).toBe('piper');
+    expect(readConfig().vars.VOICE_URL).toBe('https://sprout-piper.logstocks.com');
   });
 
   it('serves the app for deep links and sends /api to the Worker first, and the build file, which says the voice', () => {
