@@ -1,23 +1,27 @@
+import type { SoundKey } from '../../../../engine/letterSounds';
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Say, SortBin } from '../../../../engine/types';
+import type { Explanation, Level, QuestionDraft, Say, SortBin } from '../../../../engine/types';
 import type { PartPicture } from '../../../data/h4-phonics';
 import { END_PART_READ, END_PART_WORDS, END_PARTS, ENDING_NAMES, ENDING_SENTENCES, ENDINGS, PLAIN_VERBS, Y_AS_E, Y_AS_I } from '../../../data/h4-phonics';
 import type { SkillGenerator } from '../../../generator';
 import { cap, row } from '../pk/parts';
-import { blankSay, choice, explain, letters, lesson, pic, plain, said, sort } from './h4-parts';
+import { choice, explain, lesson, pic, plain, said, sort } from './h4-parts';
+import type { Line } from './wording';
+import { gapSay, hint, line, shownSound, soundRun, spell } from './wording';
 
 // Language Arts grade 1 A.6 to A.8 (plan section 15 wave H4). Oracle: h4ela.
 
 // ---- A.6 Endings s, ed, ing ----
 // Levels: find the word with an ending / pick the word that fits a sentence with a clue / find the root word.
 
-const CLUE: Record<'s' | 'ed' | 'ing', string> = {
-  ed: 'Yesterday means it already happened, so add ed.',
-  ing: 'Is tells us it is happening right now, so add ing.',
-  s: 'Every day, and just one person, so add s.',
-};
-const endingSay = (ending: string): Say => ['Which word ends with', ...letters(ending), '?'];
+// The clue in each sentence, named as a word, and the ending it calls for, spelled out.
+function clueLine(ending: 's' | 'ed' | 'ing', name: string): Line {
+  if (ending === 'ed') return line('The word yesterday tells us it already happened, so add ed.', ['The word', { word: 'yesterday' }, 'tells us it already happened, so add', ...spell('ed'), '.']);
+  if (ending === 'ing') return line('The words right now tell us it is happening now, so add ing.', ['The words right now tell us it is happening now, so add', ...spell('ing'), '.']);
+  return line(`It happens every day, and ${name} is one person, so add s.`, [`It happens every day, and ${name} is one person, so add`, { letter: 's' }, '.']);
+}
+const endingSay = (ending: string): Say => ['Which word ends with', ...spell(ending), '?'];
 
 function endings(level: Level, rng: Rng): QuestionDraft {
   const verb = rng.pick(PLAIN_VERBS);
@@ -25,6 +29,7 @@ function endings(level: Level, rng: Rng): QuestionDraft {
   const right = `${verb}${ending}`;
   if (level === 1) {
     const options = rng.shuffle(ENDINGS.map((each) => `${verb}${each}`));
+    const why = line(`${cap(right)} is ${verb} with ${ending} on the end.`, [{ word: cap(right) }, 'is', { word: verb }, 'with', ...spell(ending), 'on the end.']);
     return choice({
       prompt: `Which word ends with ${ending}?`,
       speak: endingSay(ending),
@@ -32,22 +37,23 @@ function endings(level: Level, rng: Rng): QuestionDraft {
       options,
       right,
       facts: { relation: 'ending', target: ending, read: options },
-      why: explain([`${cap(right)} is ${verb} with ${ending} on the end.`], plain(`${verb} + ${ending} = ${right}`, 'xl'), [{ word: right }, 'is', { word: verb }, 'with', ...letters(ending), 'on the end.']),
+      why: explain([why], plain(`${verb} + ${ending} = ${right}`, 'xl'), undefined, hint('Look at the last letters of each word.')),
     });
   }
   if (level === 2) {
-    const sentence = ENDING_SENTENCES[ending].replace('NAME', rng.pick(ENDING_NAMES));
+    const name = rng.pick(ENDING_NAMES);
+    const sentence = ENDING_SENTENCES[ending].replace('NAME', name);
     const options = rng.shuffle(ENDINGS.map((each) => `${verb}${each}`));
     const done = sentence.replace('___', right);
     return choice({
       prompt: 'Which word fits the sentence?',
-      speak: ['Which word fits the sentence?', blankSay(sentence)],
+      speak: ['Which word fits the sentence?', gapSay(sentence)],
       options,
       right,
       size: 'l',
       facts: { relation: 'endingSentence', target: sentence, base: verb },
-      stimulus: { ...plain(sentence), speak: [blankSay(sentence)] },
-      why: explain([CLUE[ending], done], said(done), [CLUE[ending], done]),
+      stimulus: { ...plain(sentence), speak: [gapSay(sentence)] },
+      why: explain([clueLine(ending, name), done], said(done), undefined, hint('Look for the words that tell when it happens.')),
     });
   }
   const options = rng.shuffle([verb, ...ENDINGS.filter((each) => each !== ending).map((each) => `${verb}${each}`)]);
@@ -58,7 +64,12 @@ function endings(level: Level, rng: Rng): QuestionDraft {
     options,
     right: verb,
     facts: { relation: 'root', target: right, read: options },
-    why: explain([`Take ${ending} off ${right}.`, `The root word is ${verb}.`], plain(`${right} − ${ending} = ${verb}`, 'xl'), ['Take the ending off', { word: right }, '. The root word is', { word: verb }, '.']),
+    why: explain(
+      [line(`Take ${ending} off ${right}.`, ['Take', ...spell(ending), 'off', { word: right }, '.']), `The root word is ${verb}.`],
+      plain(`${right} − ${ending} = ${verb}`, 'xl'),
+      ['Take the ending off', { word: right }, '. The root word is', { word: verb }, '.'],
+      hint('Cover the ending. What word is left?'),
+    ),
   });
 }
 
@@ -85,33 +96,28 @@ export const endingsGenerator: SkillGenerator = {
 const gapOf = (entry: PartPicture): string => entry.word.replace(entry.part, '__');
 const MISSING = 'Which letters are missing?';
 
-function partWhy(entry: PartPicture): ReturnType<typeof explain> {
-  const told = entry.word.endsWith(entry.part) ? 'ends with' : entry.word.startsWith(entry.part) ? 'starts with' : 'has';
+// The sounds a letter group makes: ck is one sound, /k/; nk is two, /ng/ /k/.
+const PART_SOUNDS: Record<string, readonly SoundKey[]> = { ck: ['ck'], ng: ['ng'], nk: ['ng', 'k'], oi: ['oi'], oy: ['oy'], ou: ['ou'], ow: ['ow'] };
+
+const toldOf = (entry: PartPicture): string => (entry.word.endsWith(entry.part) ? 'ends with' : entry.word.startsWith(entry.part) ? 'starts with' : 'has');
+
+// "Ring ends with ng: /ng/.", said with the letters, then the sound.
+export function partLine(entry: PartPicture): Line {
+  const told = toldOf(entry);
   const tail = told === 'has' ? ' in the middle' : '';
-  return explain([`${cap(entry.word)} ${told} ${entry.part}${tail}.`], row(pic(entry.emoji), plain(entry.word, 'xl')), [{ word: entry.word }, told, ...letters(entry.part), tail ? 'in the middle.' : '.']);
+  const sounds = soundRun(PART_SOUNDS[entry.part] ?? []);
+  return line(`${cap(entry.word)} ${told} ${entry.part}${tail}: ${sounds.text}.`, [{ word: cap(entry.word) }, told, ...spell(entry.part), `${tail}:`.trim(), ...sounds.say, '.']);
 }
 
-function endParts(level: Level, rng: Rng): QuestionDraft {
-  if (level === 3) {
-    const part = rng.pick(END_PARTS);
-    const options = rng.shuffle(END_PARTS.map((each) => rng.pick(END_PART_READ.filter((entry) => entry.part === each)).word));
-    const right = options.find((each) => each.endsWith(part)) as string;
-    return choice({
-      prompt: `Which word ends with ${part}?`,
-      speak: endingSay(part),
-      mode: 'read',
-      options,
-      right,
-      facts: { relation: 'endsWith', target: part, read: options },
-      why: explain([`${cap(right)} ends with ${part}.`], plain(right, 'xl'), ['It ends with', ...letters(part), '.']),
-    });
-  }
-  return missingPart(level === 1 ? END_PARTS.slice(0, 2) : END_PARTS, END_PART_WORDS, rng);
+const LISTEN_END = hint('Say the word slowly. Listen to its last sound.');
+
+function partWhy(entry: PartPicture): Explanation {
+  return explain([partLine(entry)], row(pic(entry.emoji), plain(entry.word, 'xl')), undefined, LISTEN_END);
 }
 
-// A picture and its word with a gap; the word is heard, never shown whole. Grade 2 A.4 uses it too.
-// The letters are chosen first, so each is right about as often as the others.
-export function missingPart(shown: readonly string[], words: readonly PartPicture[], rng: Rng): QuestionDraft {
+// A picture and its word with a gap; the word is heard, never shown whole. Grade 2 A.4 uses it too, with its
+// own explanation. The letters are chosen first, so each is right about as often as the others.
+export function missingPart(shown: readonly string[], words: readonly PartPicture[], rng: Rng, why: (entry: PartPicture) => Explanation = partWhy): QuestionDraft {
   const part = rng.pick(shown);
   const entry = rng.pick(words.filter((each) => each.part === part));
   return choice({
@@ -123,8 +129,28 @@ export function missingPart(shown: readonly string[], words: readonly PartPictur
     right: part,
     facts: { relation: 'part', target: entry.word },
     stimulus: row(pic(entry.emoji), plain(gapOf(entry), 'xl')),
-    why: partWhy(entry),
+    why: why(entry),
   });
+}
+
+function endParts(level: Level, rng: Rng): QuestionDraft {
+  if (level === 3) {
+    const part = rng.pick(END_PARTS);
+    const options = rng.shuffle(END_PARTS.map((each) => rng.pick(END_PART_READ.filter((entry) => entry.part === each)).word));
+    const right = options.find((each) => each.endsWith(part)) as string;
+    const sounds = soundRun(PART_SOUNDS[part] ?? []);
+    const why = line(`${cap(right)} ends with ${part}: ${sounds.text}.`, [{ word: cap(right) }, 'ends with', ...spell(part), ':', ...sounds.say, '.']);
+    return choice({
+      prompt: `Which word ends with ${part}?`,
+      speak: endingSay(part),
+      mode: 'read',
+      options,
+      right,
+      facts: { relation: 'endsWith', target: part, read: options },
+      why: explain([why], plain(right, 'xl'), ['It ends with', ...spell(part), '.'], hint('Look at the last two letters of each word.')),
+    });
+  }
+  return missingPart(level === 1 ? END_PARTS.slice(0, 2) : END_PARTS, END_PART_WORDS, rng);
 }
 
 const DUCK = END_PART_WORDS[0] as PartPicture;
@@ -148,24 +174,29 @@ export const endPartsGenerator: SkillGenerator = {
 };
 
 // ---- A.8 Y as a vowel ----
-// Levels: sort 4 words / sort 6 words / pick the word where y sounds like e or like i. Read, never spoken.
+// Levels: sort 4 words / sort 6 words / pick the word where y says /ē/ or /ī/. Read, never spoken.
 
+const Y_SOUND: Record<'e' | 'i', SoundKey> = { e: 'long-e', i: 'long-i' };
 const Y_BINS: SortBin[] = [
-  { label: 'y sounds like e', speak: [{ letter: 'y' }, 'sounds like', { letter: 'e' }] },
-  { label: 'y sounds like i', speak: [{ letter: 'y' }, 'sounds like', { letter: 'i' }] },
+  { label: `y says ${shownSound('long-e')}`, speak: [{ letter: 'y' }, 'says', { sound: 'long-e' }] },
+  { label: `y says ${shownSound('long-i')}`, speak: [{ letter: 'y' }, 'says', { sound: 'long-i' }] },
 ];
-const Y_RULE = ['In a short word like my, y sounds like i.', 'At the end of a longer word like happy, y sounds like e.'];
-const yWhy = explain(Y_RULE, plain('my   happy', 'xl'), [{ word: 'my' }, 'has', { letter: 'y' }, 'sounding like', { letter: 'i' }, '.', { word: 'happy' }, 'has', { letter: 'y' }, 'sounding like', { letter: 'e' }, '.']);
+// The rule the h4ela oracle checks: y says /ī/ when it is the word's only vowel, /ē/ when another vowel comes first.
+const Y_LINES: Line[] = [
+  line(`When y is the only vowel, as in my, it says ${shownSound('long-i')}.`, ['When', { letter: 'y' }, 'is the only vowel, as in', { word: 'my' }, ', it says', { sound: 'long-i' }, '.']),
+  line(`When another vowel comes before it, as in happy, it says ${shownSound('long-e')}.`, ['When another vowel comes before it, as in', { word: 'happy' }, ', it says', { sound: 'long-e' }, '.']),
+];
+const yWhy = explain(Y_LINES, plain('my   happy', 'xl'), undefined, hint('Look for another vowel before the y.'));
 
 function yVowel(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
-    const sound = rng.pick(['e', 'i']);
+    const sound = rng.pick(['e', 'i'] as const);
     const [own, other] = sound === 'e' ? [Y_AS_E, Y_AS_I] : [Y_AS_I, Y_AS_E];
     const right = rng.pick(own);
     const options = rng.shuffle([right, ...rng.sample(other, 2)]);
     return choice({
-      prompt: `In which word does y sound like ${sound}?`,
-      speak: ['In which word does', { letter: 'y' }, 'sound like', { letter: sound }, '?'],
+      prompt: `In which word does y say ${shownSound(Y_SOUND[sound])}?`,
+      speak: ['In which word does', { letter: 'y' }, 'say', { sound: Y_SOUND[sound] }, '?'],
       mode: 'read',
       options,
       right,
@@ -178,7 +209,8 @@ function yVowel(level: Level, rng: Rng): QuestionDraft {
   const iWords = rng.sample(Y_AS_I, each);
   const items = rng.shuffle([...eWords, ...iWords]);
   return sort({
-    prompt: 'Read each word. How does its y sound?',
+    prompt: 'Read each word. Put it with the sound its y makes.',
+    speak: ['Read each word. Put it with the sound its', { letter: 'y' }, 'makes.'],
     mode: 'read',
     items,
     bins: Y_BINS,

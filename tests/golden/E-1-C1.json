@@ -1,25 +1,25 @@
 {
  "skillId": "E-1-C1",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "sort",
   "mode": "look",
   "facts": {
    "itemAttrs": [
     "noun",
-    "noun",
     "verb",
-    "verb"
+    "verb",
+    "noun"
    ],
    "binAttrs": [
     "noun",
     "verb"
    ],
    "items": [
-    "girl",
     "tree",
-    "sing",
-    "run"
+    "eat",
+    "run",
+    "girl"
    ]
   },
   "prompt": {
@@ -29,16 +29,6 @@
    ]
   },
   "items": [
-   {
-    "kind": "text",
-    "value": "girl",
-    "size": "l",
-    "speak": [
-     {
-      "word": "girl"
-     }
-    ]
-   },
    {
     "kind": "text",
     "value": "tree",
@@ -51,11 +41,11 @@
    },
    {
     "kind": "text",
-    "value": "sing",
+    "value": "eat",
     "size": "l",
     "speak": [
      {
-      "word": "sing"
+      "word": "eat"
      }
     ]
    },
@@ -66,6 +56,16 @@
     "speak": [
      {
       "word": "run"
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "girl",
+    "size": "l",
+    "speak": [
+     {
+      "word": "girl"
      }
     ]
    }
@@ -86,24 +86,24 @@
   ],
   "answerBin": [
    0,
-   0,
    1,
-   1
+   1,
+   0
   ],
   "explanation": {
    "speak": [
     {
-     "word": "tree"
+     "word": "Tree"
     },
     "names something.",
     {
-     "word": "sing"
+     "word": "Run"
     },
     "is something you do."
    ],
    "steps": [
     "Tree names something.",
-    "Sing is something you do."
+    "Run is something you do."
    ],
    "visual": {
     "kind": "row",
@@ -120,21 +120,24 @@
      },
      {
       "kind": "text",
-      "value": "sing",
+      "value": "run",
       "size": "l",
       "speak": [
        {
-        "word": "sing"
+        "word": "run"
        }
       ]
      }
     ]
+   },
+   "hint": {
+    "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
    }
   },
   "skillId": "E-1-C1",
   "level": 1,
   "seed": 421,
-  "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"girl\",\"tree\",\"sing\",\"run\"]}"
+  "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"verb\",\"noun\"],\"items\":[\"tree\",\"eat\",\"run\",\"girl\"]}"
  },
  "levels": {
   "1": [
@@ -145,18 +148,18 @@
      "itemAttrs": [
       "verb",
       "noun",
-      "verb",
-      "noun"
+      "noun",
+      "verb"
      ],
      "binAttrs": [
       "noun",
       "verb"
      ],
      "items": [
-      "run",
+      "swim",
       "girl",
-      "read",
-      "ball"
+      "ball",
+      "run"
      ]
     },
     "prompt": {
@@ -168,11 +171,11 @@
     "items": [
      {
       "kind": "text",
-      "value": "run",
+      "value": "swim",
       "size": "l",
       "speak": [
        {
-        "word": "run"
+        "word": "swim"
        }
       ]
      },
@@ -188,21 +191,21 @@
      },
      {
       "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
       "value": "ball",
       "size": "l",
       "speak": [
        {
         "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       {
+        "word": "run"
        }
       ]
      }
@@ -224,23 +227,23 @@
     "answerBin": [
      1,
      0,
-     1,
-     0
+     0,
+     1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "girl"
+       "word": "Girl"
       },
       "names something.",
       {
-       "word": "run"
+       "word": "Swim"
       },
       "is something you do."
      ],
      "steps": [
       "Girl names something.",
-      "Run is something you do."
+      "Swim is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -257,141 +260,6 @@
        },
        {
         "kind": "text",
-        "value": "run",
-        "size": "l",
-        "speak": [
-         {
-          "word": "run"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-1-C1",
-    "level": 1,
-    "seed": 1,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"verb\",\"noun\"],\"items\":[\"run\",\"girl\",\"read\",\"ball\"]}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "itemAttrs": [
-      "noun",
-      "verb",
-      "noun",
-      "verb"
-     ],
-     "binAttrs": [
-      "noun",
-      "verb"
-     ],
-     "items": [
-      "tree",
-      "swim",
-      "dog",
-      "run"
-     ]
-    },
-    "prompt": {
-     "text": "Put each word in its group.",
-     "speak": [
-      "Put each word in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "tree",
-      "size": "l",
-      "speak": [
-       {
-        "word": "tree"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "swim",
-      "size": "l",
-      "speak": [
-       {
-        "word": "swim"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "dog",
-      "size": "l",
-      "speak": [
-       {
-        "word": "dog"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "run",
-      "size": "l",
-      "speak": [
-       {
-        "word": "run"
-       }
-      ]
-     }
-    ],
-    "bins": [
-     {
-      "label": "Naming words",
-      "speak": [
-       "Naming words"
-      ]
-     },
-     {
-      "label": "Action words",
-      "speak": [
-       "Action words"
-      ]
-     }
-    ],
-    "answerBin": [
-     0,
-     1,
-     0,
-     1
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "word": "dog"
-      },
-      "names something.",
-      {
-       "word": "swim"
-      },
-      "is something you do."
-     ],
-     "steps": [
-      "Dog names something.",
-      "Swim is something you do."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "dog",
-        "size": "l",
-        "speak": [
-         {
-          "word": "dog"
-         }
-        ]
-       },
-       {
-        "kind": "text",
         "value": "swim",
         "size": "l",
         "speak": [
@@ -401,20 +269,23 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 1,
-    "seed": 2,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"verb\"],\"items\":[\"tree\",\"swim\",\"dog\",\"run\"]}"
+    "seed": 1,
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"swim\",\"girl\",\"ball\",\"run\"]}"
    },
    {
     "type": "sort",
     "mode": "look",
     "facts": {
      "itemAttrs": [
-      "verb",
       "noun",
+      "verb",
       "verb",
       "noun"
      ],
@@ -423,145 +294,10 @@
       "verb"
      ],
      "items": [
-      "read",
-      "bed",
-      "jump",
-      "tree"
-     ]
-    },
-    "prompt": {
-     "text": "Put each word in its group.",
-     "speak": [
-      "Put each word in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "bed",
-      "size": "l",
-      "speak": [
-       {
-        "word": "bed"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "jump",
-      "size": "l",
-      "speak": [
-       {
-        "word": "jump"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "tree",
-      "size": "l",
-      "speak": [
-       {
-        "word": "tree"
-       }
-      ]
-     }
-    ],
-    "bins": [
-     {
-      "label": "Naming words",
-      "speak": [
-       "Naming words"
-      ]
-     },
-     {
-      "label": "Action words",
-      "speak": [
-       "Action words"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     0,
-     1,
-     0
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "word": "tree"
-      },
-      "names something.",
-      {
-       "word": "read"
-      },
-      "is something you do."
-     ],
-     "steps": [
-      "Tree names something.",
-      "Read is something you do."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "tree",
-        "size": "l",
-        "speak": [
-         {
-          "word": "tree"
-         }
-        ]
-       },
-       {
-        "kind": "text",
-        "value": "read",
-        "size": "l",
-        "speak": [
-         {
-          "word": "read"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-1-C1",
-    "level": 1,
-    "seed": 3,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"verb\",\"noun\"],\"items\":[\"read\",\"bed\",\"jump\",\"tree\"]}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "itemAttrs": [
-      "noun",
-      "verb",
-      "noun",
-      "verb"
-     ],
-     "binAttrs": [
-      "noun",
-      "verb"
-     ],
-     "items": [
-      "girl",
-      "read",
       "tree",
-      "eat"
+      "eat",
+      "run",
+      "dog"
      ]
     },
     "prompt": {
@@ -571,26 +307,6 @@
      ]
     },
     "items": [
-     {
-      "kind": "text",
-      "value": "girl",
-      "size": "l",
-      "speak": [
-       {
-        "word": "girl"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
      {
       "kind": "text",
       "value": "tree",
@@ -610,6 +326,164 @@
         "word": "eat"
        }
       ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       {
+        "word": "run"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "dog",
+      "size": "l",
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Naming words",
+      "speak": [
+       "Naming words"
+      ]
+     },
+     {
+      "label": "Action words",
+      "speak": [
+       "Action words"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "Dog"
+      },
+      "names something.",
+      {
+       "word": "Run"
+      },
+      "is something you do."
+     ],
+     "steps": [
+      "Dog names something.",
+      "Run is something you do."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "dog",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "run",
+        "size": "l",
+        "speak": [
+         {
+          "word": "run"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
+     }
+    },
+    "skillId": "E-1-C1",
+    "level": 1,
+    "seed": 2,
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"verb\",\"noun\"],\"items\":[\"tree\",\"eat\",\"run\",\"dog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "noun",
+      "verb",
+      "noun",
+      "verb"
+     ],
+     "binAttrs": [
+      "noun",
+      "verb"
+     ],
+     "items": [
+      "bed",
+      "swim",
+      "tree",
+      "sing"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "bed",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bed"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sing"
+       }
+      ]
      }
     ],
     "bins": [
@@ -635,48 +509,51 @@
     "explanation": {
      "speak": [
       {
-       "word": "girl"
+       "word": "Tree"
       },
       "names something.",
       {
-       "word": "read"
+       "word": "Sing"
       },
       "is something you do."
      ],
      "steps": [
-      "Girl names something.",
-      "Read is something you do."
+      "Tree names something.",
+      "Sing is something you do."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "girl",
+        "value": "tree",
         "size": "l",
         "speak": [
          {
-          "word": "girl"
+          "word": "tree"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "read",
+        "value": "sing",
         "size": "l",
         "speak": [
          {
-          "word": "read"
+          "word": "sing"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 1,
-    "seed": 4,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"verb\"],\"items\":[\"girl\",\"read\",\"tree\",\"eat\"]}"
+    "seed": 3,
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"verb\"],\"items\":[\"bed\",\"swim\",\"tree\",\"sing\"]}"
    },
    {
     "type": "sort",
@@ -694,9 +571,9 @@
      ],
      "items": [
       "tree",
-      "car",
-      "read",
-      "run"
+      "girl",
+      "jump",
+      "sing"
      ]
     },
     "prompt": {
@@ -718,129 +595,14 @@
      },
      {
       "kind": "text",
-      "value": "car",
+      "value": "girl",
       "size": "l",
       "speak": [
        {
-        "word": "car"
+        "word": "girl"
        }
       ]
      },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "run",
-      "size": "l",
-      "speak": [
-       {
-        "word": "run"
-       }
-      ]
-     }
-    ],
-    "bins": [
-     {
-      "label": "Naming words",
-      "speak": [
-       "Naming words"
-      ]
-     },
-     {
-      "label": "Action words",
-      "speak": [
-       "Action words"
-      ]
-     }
-    ],
-    "answerBin": [
-     0,
-     0,
-     1,
-     1
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "word": "tree"
-      },
-      "names something.",
-      {
-       "word": "read"
-      },
-      "is something you do."
-     ],
-     "steps": [
-      "Tree names something.",
-      "Read is something you do."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "tree",
-        "size": "l",
-        "speak": [
-         {
-          "word": "tree"
-         }
-        ]
-       },
-       {
-        "kind": "text",
-        "value": "read",
-        "size": "l",
-        "speak": [
-         {
-          "word": "read"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-1-C1",
-    "level": 1,
-    "seed": 5,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"tree\",\"car\",\"read\",\"run\"]}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "itemAttrs": [
-      "verb",
-      "noun",
-      "noun",
-      "verb"
-     ],
-     "binAttrs": [
-      "noun",
-      "verb"
-     ],
-     "items": [
-      "jump",
-      "car",
-      "ball",
-      "read"
-     ]
-    },
-    "prompt": {
-     "text": "Put each word in its group.",
-     "speak": [
-      "Put each word in its group."
-     ]
-    },
-    "items": [
      {
       "kind": "text",
       "value": "jump",
@@ -853,131 +615,6 @@
      },
      {
       "kind": "text",
-      "value": "car",
-      "size": "l",
-      "speak": [
-       {
-        "word": "car"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "ball",
-      "size": "l",
-      "speak": [
-       {
-        "word": "ball"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     }
-    ],
-    "bins": [
-     {
-      "label": "Naming words",
-      "speak": [
-       "Naming words"
-      ]
-     },
-     {
-      "label": "Action words",
-      "speak": [
-       "Action words"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     0,
-     0,
-     1
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "word": "car"
-      },
-      "names something.",
-      {
-       "word": "jump"
-      },
-      "is something you do."
-     ],
-     "steps": [
-      "Car names something.",
-      "Jump is something you do."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "car",
-        "size": "l",
-        "speak": [
-         {
-          "word": "car"
-         }
-        ]
-       },
-       {
-        "kind": "text",
-        "value": "jump",
-        "size": "l",
-        "speak": [
-         {
-          "word": "jump"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-1-C1",
-    "level": 1,
-    "seed": 6,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"jump\",\"car\",\"ball\",\"read\"]}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "itemAttrs": [
-      "verb",
-      "verb",
-      "noun",
-      "noun"
-     ],
-     "binAttrs": [
-      "noun",
-      "verb"
-     ],
-     "items": [
-      "sing",
-      "read",
-      "girl",
-      "ball"
-     ]
-    },
-    "prompt": {
-     "text": "Put each word in its group.",
-     "speak": [
-      "Put each word in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
       "value": "sing",
       "size": "l",
       "speak": [
@@ -985,36 +622,6 @@
         "word": "sing"
        }
       ]
-     },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "girl",
-      "size": "l",
-      "speak": [
-       {
-        "word": "girl"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "ball",
-      "size": "l",
-      "speak": [
-       {
-        "word": "ball"
-       }
-      ]
      }
     ],
     "bins": [
@@ -1032,19 +639,19 @@
      }
     ],
     "answerBin": [
-     1,
-     1,
      0,
-     0
+     0,
+     1,
+     1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "girl"
+       "word": "Girl"
       },
       "names something.",
       {
-       "word": "sing"
+       "word": "Sing"
       },
       "is something you do."
      ],
@@ -1076,12 +683,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 1,
-    "seed": 7,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"verb\",\"noun\",\"noun\"],\"items\":[\"sing\",\"read\",\"girl\",\"ball\"]}"
+    "seed": 4,
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"tree\",\"girl\",\"jump\",\"sing\"]}"
    },
    {
     "type": "sort",
@@ -1090,8 +700,8 @@
      "itemAttrs": [
       "verb",
       "noun",
-      "noun",
-      "verb"
+      "verb",
+      "noun"
      ],
      "binAttrs": [
       "noun",
@@ -1099,9 +709,9 @@
      ],
      "items": [
       "sing",
-      "girl",
       "car",
-      "swim"
+      "run",
+      "tree"
      ]
     },
     "prompt": {
@@ -1123,11 +733,159 @@
      },
      {
       "kind": "text",
-      "value": "girl",
+      "value": "car",
       "size": "l",
       "speak": [
        {
-        "word": "girl"
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       {
+        "word": "run"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Naming words",
+      "speak": [
+       "Naming words"
+      ]
+     },
+     {
+      "label": "Action words",
+      "speak": [
+       "Action words"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "Tree"
+      },
+      "names something.",
+      {
+       "word": "Run"
+      },
+      "is something you do."
+     ],
+     "steps": [
+      "Tree names something.",
+      "Run is something you do."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "tree",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "run",
+        "size": "l",
+        "speak": [
+         {
+          "word": "run"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
+     }
+    },
+    "skillId": "E-1-C1",
+    "level": 1,
+    "seed": 5,
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"verb\",\"noun\"],\"items\":[\"sing\",\"car\",\"run\",\"tree\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "noun",
+      "verb",
+      "verb",
+      "noun"
+     ],
+     "binAttrs": [
+      "noun",
+      "verb"
+     ],
+     "items": [
+      "ball",
+      "jump",
+      "sing",
+      "car"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l",
+      "speak": [
+       {
+        "word": "jump"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sing"
        }
       ]
      },
@@ -1138,6 +896,134 @@
       "speak": [
        {
         "word": "car"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Naming words",
+      "speak": [
+       "Naming words"
+      ]
+     },
+     {
+      "label": "Action words",
+      "speak": [
+       "Action words"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "Car"
+      },
+      "names something.",
+      {
+       "word": "Sing"
+      },
+      "is something you do."
+     ],
+     "steps": [
+      "Car names something.",
+      "Sing is something you do."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sing",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sing"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
+     }
+    },
+    "skillId": "E-1-C1",
+    "level": 1,
+    "seed": 6,
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"verb\",\"noun\"],\"items\":[\"ball\",\"jump\",\"sing\",\"car\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "noun",
+      "verb",
+      "noun",
+      "verb"
+     ],
+     "binAttrs": [
+      "noun",
+      "verb"
+     ],
+     "items": [
+      "ball",
+      "sing",
+      "girl",
+      "swim"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sing"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "girl",
+      "size": "l",
+      "speak": [
+       {
+        "word": "girl"
        }
       ]
      },
@@ -1167,19 +1053,157 @@
      }
     ],
     "answerBin": [
-     1,
      0,
+     1,
      0,
      1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "car"
+       "word": "Girl"
       },
       "names something.",
       {
-       "word": "swim"
+       "word": "Swim"
+      },
+      "is something you do."
+     ],
+     "steps": [
+      "Girl names something.",
+      "Swim is something you do."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "l",
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "swim",
+        "size": "l",
+        "speak": [
+         {
+          "word": "swim"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
+     }
+    },
+    "skillId": "E-1-C1",
+    "level": 1,
+    "seed": 7,
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"verb\"],\"items\":[\"ball\",\"sing\",\"girl\",\"swim\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "verb",
+      "verb",
+      "noun",
+      "noun"
+     ],
+     "binAttrs": [
+      "noun",
+      "verb"
+     ],
+     "items": [
+      "swim",
+      "jump",
+      "girl",
+      "car"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l",
+      "speak": [
+       {
+        "word": "jump"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "girl",
+      "size": "l",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Naming words",
+      "speak": [
+       "Naming words"
+      ]
+     },
+     {
+      "label": "Action words",
+      "speak": [
+       "Action words"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "Car"
+      },
+      "names something.",
+      {
+       "word": "Swim"
       },
       "is something you do."
      ],
@@ -1211,21 +1235,24 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 1,
     "seed": 8,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"sing\",\"girl\",\"car\",\"swim\"]}"
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"verb\",\"noun\",\"noun\"],\"items\":[\"swim\",\"jump\",\"girl\",\"car\"]}"
    },
    {
     "type": "sort",
     "mode": "look",
     "facts": {
      "itemAttrs": [
+      "noun",
+      "noun",
       "verb",
-      "noun",
-      "noun",
       "verb"
      ],
      "binAttrs": [
@@ -1233,10 +1260,10 @@
       "verb"
      ],
      "items": [
-      "swim",
       "bed",
       "car",
-      "eat"
+      "run",
+      "swim"
      ]
     },
     "prompt": {
@@ -1246,16 +1273,6 @@
      ]
     },
     "items": [
-     {
-      "kind": "text",
-      "value": "swim",
-      "size": "l",
-      "speak": [
-       {
-        "word": "swim"
-       }
-      ]
-     },
      {
       "kind": "text",
       "value": "bed",
@@ -1278,11 +1295,21 @@
      },
      {
       "kind": "text",
-      "value": "eat",
+      "value": "run",
       "size": "l",
       "speak": [
        {
-        "word": "eat"
+        "word": "run"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
        }
       ]
      }
@@ -1302,25 +1329,25 @@
      }
     ],
     "answerBin": [
+     0,
+     0,
      1,
-     0,
-     0,
      1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "bed"
+       "word": "Bed"
       },
       "names something.",
       {
-       "word": "eat"
+       "word": "Swim"
       },
       "is something you do."
      ],
      "steps": [
       "Bed names something.",
-      "Eat is something you do."
+      "Swim is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -1337,21 +1364,24 @@
        },
        {
         "kind": "text",
-        "value": "eat",
+        "value": "swim",
         "size": "l",
         "speak": [
          {
-          "word": "eat"
+          "word": "swim"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 1,
     "seed": 9,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"swim\",\"bed\",\"car\",\"eat\"]}"
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"bed\",\"car\",\"run\",\"swim\"]}"
    },
    {
     "type": "sort",
@@ -1359,8 +1389,8 @@
     "facts": {
      "itemAttrs": [
       "noun",
-      "verb",
       "noun",
+      "verb",
       "verb"
      ],
      "binAttrs": [
@@ -1369,9 +1399,9 @@
      ],
      "items": [
       "dog",
-      "swim",
       "ball",
-      "read"
+      "jump",
+      "swim"
      ]
     },
     "prompt": {
@@ -1393,16 +1423,6 @@
      },
      {
       "kind": "text",
-      "value": "swim",
-      "size": "l",
-      "speak": [
-       {
-        "word": "swim"
-       }
-      ]
-     },
-     {
-      "kind": "text",
       "value": "ball",
       "size": "l",
       "speak": [
@@ -1413,11 +1433,21 @@
      },
      {
       "kind": "text",
-      "value": "read",
+      "value": "jump",
       "size": "l",
       "speak": [
        {
-        "word": "read"
+        "word": "jump"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
        }
       ]
      }
@@ -1438,24 +1468,24 @@
     ],
     "answerBin": [
      0,
-     1,
      0,
+     1,
      1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "ball"
+       "word": "Ball"
       },
       "names something.",
       {
-       "word": "swim"
+       "word": "Jump"
       },
       "is something you do."
      ],
      "steps": [
       "Ball names something.",
-      "Swim is something you do."
+      "Jump is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -1472,21 +1502,24 @@
        },
        {
         "kind": "text",
-        "value": "swim",
+        "value": "jump",
         "size": "l",
         "speak": [
          {
-          "word": "swim"
+          "word": "jump"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 1,
     "seed": 10,
-    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"verb\"],\"items\":[\"dog\",\"swim\",\"ball\",\"read\"]}"
+    "key": "E-1-C1|1|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"dog\",\"ball\",\"jump\",\"swim\"]}"
    }
   ],
   "2": [
@@ -1499,20 +1532,20 @@
       "verb",
       "noun",
       "noun",
-      "verb",
-      "noun"
+      "noun",
+      "verb"
      ],
      "binAttrs": [
       "noun",
       "verb"
      ],
      "items": [
-      "read",
-      "run",
-      "ball",
-      "girl",
       "swim",
-      "car"
+      "run",
+      "girl",
+      "ball",
+      "car",
+      "sing"
      ]
     },
     "prompt": {
@@ -1524,11 +1557,11 @@
     "items": [
      {
       "kind": "text",
-      "value": "read",
+      "value": "swim",
       "size": "l",
       "speak": [
        {
-        "word": "read"
+        "word": "swim"
        }
       ]
      },
@@ -1544,16 +1577,6 @@
      },
      {
       "kind": "text",
-      "value": "ball",
-      "size": "l",
-      "speak": [
-       {
-        "word": "ball"
-       }
-      ]
-     },
-     {
-      "kind": "text",
       "value": "girl",
       "size": "l",
       "speak": [
@@ -1564,11 +1587,11 @@
      },
      {
       "kind": "text",
-      "value": "swim",
+      "value": "ball",
       "size": "l",
       "speak": [
        {
-        "word": "swim"
+        "word": "ball"
        }
       ]
      },
@@ -1579,6 +1602,16 @@
       "speak": [
        {
         "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sing"
        }
       ]
      }
@@ -1602,23 +1635,23 @@
      1,
      0,
      0,
-     1,
-     0
+     0,
+     1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "girl"
+       "word": "Girl"
       },
       "names something.",
       {
-       "word": "run"
+       "word": "Swim"
       },
       "is something you do."
      ],
      "steps": [
       "Girl names something.",
-      "Run is something you do."
+      "Swim is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -1635,45 +1668,48 @@
        },
        {
         "kind": "text",
-        "value": "run",
+        "value": "swim",
         "size": "l",
         "speak": [
          {
-          "word": "run"
+          "word": "swim"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 2,
     "seed": 1,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"verb\",\"noun\",\"noun\",\"verb\",\"noun\"],\"items\":[\"read\",\"run\",\"ball\",\"girl\",\"swim\",\"car\"]}"
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"verb\",\"noun\",\"noun\",\"noun\",\"verb\"],\"items\":[\"swim\",\"run\",\"girl\",\"ball\",\"car\",\"sing\"]}"
    },
    {
     "type": "sort",
     "mode": "look",
     "facts": {
      "itemAttrs": [
-      "noun",
       "verb",
       "noun",
-      "verb",
       "noun",
-      "verb"
+      "verb",
+      "verb",
+      "noun"
      ],
      "binAttrs": [
       "noun",
       "verb"
      ],
      "items": [
-      "dog",
-      "swim",
+      "eat",
       "bed",
-      "read",
       "tree",
-      "run"
+      "swim",
+      "run",
+      "dog"
      ]
     },
     "prompt": {
@@ -1685,21 +1721,11 @@
     "items": [
      {
       "kind": "text",
-      "value": "dog",
+      "value": "eat",
       "size": "l",
       "speak": [
        {
-        "word": "dog"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "swim",
-      "size": "l",
-      "speak": [
-       {
-        "word": "swim"
+        "word": "eat"
        }
       ]
      },
@@ -1715,16 +1741,6 @@
      },
      {
       "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
       "value": "tree",
       "size": "l",
       "speak": [
@@ -1735,11 +1751,31 @@
      },
      {
       "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
+       }
+      ]
+     },
+     {
+      "kind": "text",
       "value": "run",
       "size": "l",
       "speak": [
        {
         "word": "run"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "dog",
+      "size": "l",
+      "speak": [
+       {
+        "word": "dog"
        }
       ]
      }
@@ -1759,27 +1795,27 @@
      }
     ],
     "answerBin": [
-     0,
      1,
      0,
-     1,
      0,
-     1
+     1,
+     1,
+     0
     ],
     "explanation": {
      "speak": [
       {
-       "word": "dog"
+       "word": "Dog"
       },
       "names something.",
       {
-       "word": "swim"
+       "word": "Run"
       },
       "is something you do."
      ],
      "steps": [
       "Dog names something.",
-      "Swim is something you do."
+      "Run is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -1796,182 +1832,24 @@
        },
        {
         "kind": "text",
-        "value": "swim",
+        "value": "run",
         "size": "l",
         "speak": [
          {
-          "word": "swim"
+          "word": "run"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 2,
     "seed": 2,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"verb\",\"noun\",\"verb\"],\"items\":[\"dog\",\"swim\",\"bed\",\"read\",\"tree\",\"run\"]}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "itemAttrs": [
-      "verb",
-      "verb",
-      "verb",
-      "noun",
-      "noun",
-      "noun"
-     ],
-     "binAttrs": [
-      "noun",
-      "verb"
-     ],
-     "items": [
-      "jump",
-      "read",
-      "sing",
-      "car",
-      "tree",
-      "bed"
-     ]
-    },
-    "prompt": {
-     "text": "Put each word in its group.",
-     "speak": [
-      "Put each word in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "jump",
-      "size": "l",
-      "speak": [
-       {
-        "word": "jump"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "sing",
-      "size": "l",
-      "speak": [
-       {
-        "word": "sing"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "car",
-      "size": "l",
-      "speak": [
-       {
-        "word": "car"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "tree",
-      "size": "l",
-      "speak": [
-       {
-        "word": "tree"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "bed",
-      "size": "l",
-      "speak": [
-       {
-        "word": "bed"
-       }
-      ]
-     }
-    ],
-    "bins": [
-     {
-      "label": "Naming words",
-      "speak": [
-       "Naming words"
-      ]
-     },
-     {
-      "label": "Action words",
-      "speak": [
-       "Action words"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     1,
-     1,
-     0,
-     0,
-     0
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "word": "tree"
-      },
-      "names something.",
-      {
-       "word": "read"
-      },
-      "is something you do."
-     ],
-     "steps": [
-      "Tree names something.",
-      "Read is something you do."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "tree",
-        "size": "l",
-        "speak": [
-         {
-          "word": "tree"
-         }
-        ]
-       },
-       {
-        "kind": "text",
-        "value": "read",
-        "size": "l",
-        "speak": [
-         {
-          "word": "read"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-1-C1",
-    "level": 2,
-    "seed": 3,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"verb\",\"verb\",\"noun\",\"noun\",\"noun\"],\"items\":[\"jump\",\"read\",\"sing\",\"car\",\"tree\",\"bed\"]}"
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"noun\",\"verb\",\"verb\",\"noun\"],\"items\":[\"eat\",\"bed\",\"tree\",\"swim\",\"run\",\"dog\"]}"
    },
    {
     "type": "sort",
@@ -1980,8 +1858,8 @@
      "itemAttrs": [
       "noun",
       "verb",
-      "verb",
       "noun",
+      "verb",
       "noun",
       "verb"
      ],
@@ -1990,12 +1868,12 @@
       "verb"
      ],
      "items": [
-      "girl",
-      "jump",
-      "read",
       "bed",
+      "run",
+      "car",
+      "swim",
       "tree",
-      "eat"
+      "sing"
      ]
     },
     "prompt": {
@@ -2005,36 +1883,6 @@
      ]
     },
     "items": [
-     {
-      "kind": "text",
-      "value": "girl",
-      "size": "l",
-      "speak": [
-       {
-        "word": "girl"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "jump",
-      "size": "l",
-      "speak": [
-       {
-        "word": "jump"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
      {
       "kind": "text",
       "value": "bed",
@@ -2042,177 +1890,6 @@
       "speak": [
        {
         "word": "bed"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "tree",
-      "size": "l",
-      "speak": [
-       {
-        "word": "tree"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "eat",
-      "size": "l",
-      "speak": [
-       {
-        "word": "eat"
-       }
-      ]
-     }
-    ],
-    "bins": [
-     {
-      "label": "Naming words",
-      "speak": [
-       "Naming words"
-      ]
-     },
-     {
-      "label": "Action words",
-      "speak": [
-       "Action words"
-      ]
-     }
-    ],
-    "answerBin": [
-     0,
-     1,
-     1,
-     0,
-     0,
-     1
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "word": "girl"
-      },
-      "names something.",
-      {
-       "word": "read"
-      },
-      "is something you do."
-     ],
-     "steps": [
-      "Girl names something.",
-      "Read is something you do."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "girl",
-        "size": "l",
-        "speak": [
-         {
-          "word": "girl"
-         }
-        ]
-       },
-       {
-        "kind": "text",
-        "value": "read",
-        "size": "l",
-        "speak": [
-         {
-          "word": "read"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-1-C1",
-    "level": 2,
-    "seed": 4,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"girl\",\"jump\",\"read\",\"bed\",\"tree\",\"eat\"]}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "itemAttrs": [
-      "noun",
-      "verb",
-      "noun",
-      "noun",
-      "verb",
-      "verb"
-     ],
-     "binAttrs": [
-      "noun",
-      "verb"
-     ],
-     "items": [
-      "car",
-      "eat",
-      "tree",
-      "ball",
-      "read",
-      "run"
-     ]
-    },
-    "prompt": {
-     "text": "Put each word in its group.",
-     "speak": [
-      "Put each word in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "car",
-      "size": "l",
-      "speak": [
-       {
-        "word": "car"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "eat",
-      "size": "l",
-      "speak": [
-       {
-        "word": "eat"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "tree",
-      "size": "l",
-      "speak": [
-       {
-        "word": "tree"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "ball",
-      "size": "l",
-      "speak": [
-       {
-        "word": "ball"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
        }
       ]
      },
@@ -2225,6 +1902,46 @@
         "word": "run"
        }
       ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sing"
+       }
+      ]
      }
     ],
     "bins": [
@@ -2245,24 +1962,24 @@
      0,
      1,
      0,
-     0,
      1,
+     0,
      1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "tree"
+       "word": "Tree"
       },
       "names something.",
       {
-       "word": "read"
+       "word": "Sing"
       },
       "is something you do."
      ],
      "steps": [
       "Tree names something.",
-      "Read is something you do."
+      "Sing is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -2279,32 +1996,35 @@
        },
        {
         "kind": "text",
-        "value": "read",
+        "value": "sing",
         "size": "l",
         "speak": [
          {
-          "word": "read"
+          "word": "sing"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 2,
-    "seed": 5,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"car\",\"eat\",\"tree\",\"ball\",\"read\",\"run\"]}"
+    "seed": 3,
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"verb\",\"noun\",\"verb\"],\"items\":[\"bed\",\"run\",\"car\",\"swim\",\"tree\",\"sing\"]}"
    },
    {
     "type": "sort",
     "mode": "look",
     "facts": {
      "itemAttrs": [
-      "verb",
       "noun",
       "verb",
       "noun",
       "noun",
+      "verb",
       "verb"
      ],
      "binAttrs": [
@@ -2312,12 +2032,12 @@
       "verb"
      ],
      "items": [
-      "read",
       "girl",
-      "jump",
-      "car",
-      "ball",
-      "eat"
+      "swim",
+      "bed",
+      "tree",
+      "sing",
+      "jump"
      ]
     },
     "prompt": {
@@ -2327,16 +2047,6 @@
      ]
     },
     "items": [
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
      {
       "kind": "text",
       "value": "girl",
@@ -2349,145 +2059,24 @@
      },
      {
       "kind": "text",
-      "value": "jump",
+      "value": "swim",
       "size": "l",
       "speak": [
        {
-        "word": "jump"
+        "word": "swim"
        }
       ]
      },
      {
       "kind": "text",
-      "value": "car",
+      "value": "bed",
       "size": "l",
       "speak": [
        {
-        "word": "car"
+        "word": "bed"
        }
       ]
      },
-     {
-      "kind": "text",
-      "value": "ball",
-      "size": "l",
-      "speak": [
-       {
-        "word": "ball"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "eat",
-      "size": "l",
-      "speak": [
-       {
-        "word": "eat"
-       }
-      ]
-     }
-    ],
-    "bins": [
-     {
-      "label": "Naming words",
-      "speak": [
-       "Naming words"
-      ]
-     },
-     {
-      "label": "Action words",
-      "speak": [
-       "Action words"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     0,
-     1,
-     0,
-     0,
-     1
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "word": "car"
-      },
-      "names something.",
-      {
-       "word": "jump"
-      },
-      "is something you do."
-     ],
-     "steps": [
-      "Car names something.",
-      "Jump is something you do."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "car",
-        "size": "l",
-        "speak": [
-         {
-          "word": "car"
-         }
-        ]
-       },
-       {
-        "kind": "text",
-        "value": "jump",
-        "size": "l",
-        "speak": [
-         {
-          "word": "jump"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-1-C1",
-    "level": 2,
-    "seed": 6,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"read\",\"girl\",\"jump\",\"car\",\"ball\",\"eat\"]}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "itemAttrs": [
-      "noun",
-      "verb",
-      "verb",
-      "verb",
-      "noun",
-      "noun"
-     ],
-     "binAttrs": [
-      "noun",
-      "verb"
-     ],
-     "items": [
-      "tree",
-      "read",
-      "jump",
-      "sing",
-      "girl",
-      "ball"
-     ]
-    },
-    "prompt": {
-     "text": "Put each word in its group.",
-     "speak": [
-      "Put each word in its group."
-     ]
-    },
-    "items": [
      {
       "kind": "text",
       "value": "tree",
@@ -2495,26 +2084,6 @@
       "speak": [
        {
         "word": "tree"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "read",
-      "size": "l",
-      "speak": [
-       {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "jump",
-      "size": "l",
-      "speak": [
-       {
-        "word": "jump"
        }
       ]
      },
@@ -2530,21 +2099,11 @@
      },
      {
       "kind": "text",
-      "value": "girl",
+      "value": "jump",
       "size": "l",
       "speak": [
        {
-        "word": "girl"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "ball",
-      "size": "l",
-      "speak": [
-       {
-        "word": "ball"
+        "word": "jump"
        }
       ]
      }
@@ -2566,19 +2125,19 @@
     "answerBin": [
      0,
      1,
-     1,
-     1,
      0,
-     0
+     0,
+     1,
+     1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "girl"
+       "word": "Girl"
       },
       "names something.",
       {
-       "word": "sing"
+       "word": "Sing"
       },
       "is something you do."
      ],
@@ -2610,36 +2169,39 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 2,
-    "seed": 7,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"verb\",\"verb\",\"noun\",\"noun\"],\"items\":[\"tree\",\"read\",\"jump\",\"sing\",\"girl\",\"ball\"]}"
+    "seed": 4,
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"girl\",\"swim\",\"bed\",\"tree\",\"sing\",\"jump\"]}"
    },
    {
     "type": "sort",
     "mode": "look",
     "facts": {
      "itemAttrs": [
-      "noun",
-      "verb",
       "verb",
       "noun",
+      "verb",
       "noun",
-      "verb"
+      "verb",
+      "noun"
      ],
      "binAttrs": [
       "noun",
       "verb"
      ],
      "items": [
-      "girl",
-      "jump",
       "sing",
       "tree",
-      "car",
-      "swim"
+      "jump",
+      "ball",
+      "run",
+      "car"
      ]
     },
     "prompt": {
@@ -2649,26 +2211,6 @@
      ]
     },
     "items": [
-     {
-      "kind": "text",
-      "value": "girl",
-      "size": "l",
-      "speak": [
-       {
-        "word": "girl"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "jump",
-      "size": "l",
-      "speak": [
-       {
-        "word": "jump"
-       }
-      ]
-     },
      {
       "kind": "text",
       "value": "sing",
@@ -2691,21 +2233,41 @@
      },
      {
       "kind": "text",
-      "value": "car",
+      "value": "jump",
       "size": "l",
       "speak": [
        {
-        "word": "car"
+        "word": "jump"
        }
       ]
      },
      {
       "kind": "text",
-      "value": "swim",
+      "value": "ball",
       "size": "l",
       "speak": [
        {
-        "word": "swim"
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       {
+        "word": "run"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
        }
       ]
      }
@@ -2725,9 +2287,337 @@
      }
     ],
     "answerBin": [
+     1,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "Tree"
+      },
+      "names something.",
+      {
+       "word": "Run"
+      },
+      "is something you do."
+     ],
+     "steps": [
+      "Tree names something.",
+      "Run is something you do."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "tree",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "run",
+        "size": "l",
+        "speak": [
+         {
+          "word": "run"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
+     }
+    },
+    "skillId": "E-1-C1",
+    "level": 2,
+    "seed": 5,
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"verb\",\"noun\",\"verb\",\"noun\"],\"items\":[\"sing\",\"tree\",\"jump\",\"ball\",\"run\",\"car\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "verb",
+      "noun",
+      "noun",
+      "verb",
+      "verb",
+      "noun"
+     ],
+     "binAttrs": [
+      "noun",
+      "verb"
+     ],
+     "items": [
+      "sing",
+      "girl",
+      "car",
+      "eat",
+      "jump",
+      "ball"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sing"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "girl",
+      "size": "l",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "eat",
+      "size": "l",
+      "speak": [
+       {
+        "word": "eat"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l",
+      "speak": [
+       {
+        "word": "jump"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Naming words",
+      "speak": [
+       "Naming words"
+      ]
+     },
+     {
+      "label": "Action words",
+      "speak": [
+       "Action words"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
      0,
      1,
      1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "Car"
+      },
+      "names something.",
+      {
+       "word": "Sing"
+      },
+      "is something you do."
+     ],
+     "steps": [
+      "Car names something.",
+      "Sing is something you do."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sing",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sing"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
+     }
+    },
+    "skillId": "E-1-C1",
+    "level": 2,
+    "seed": 6,
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"noun\",\"verb\",\"verb\",\"noun\"],\"items\":[\"sing\",\"girl\",\"car\",\"eat\",\"jump\",\"ball\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "verb",
+      "verb",
+      "noun",
+      "noun",
+      "noun",
+      "verb"
+     ],
+     "binAttrs": [
+      "noun",
+      "verb"
+     ],
+     "items": [
+      "swim",
+      "run",
+      "tree",
+      "girl",
+      "ball",
+      "sing"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       {
+        "word": "run"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "girl",
+      "size": "l",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sing"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Naming words",
+      "speak": [
+       "Naming words"
+      ]
+     },
+     {
+      "label": "Action words",
+      "speak": [
+       "Action words"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
      0,
      0,
      1
@@ -2735,11 +2625,175 @@
     "explanation": {
      "speak": [
       {
-       "word": "car"
+       "word": "Girl"
       },
       "names something.",
       {
-       "word": "swim"
+       "word": "Swim"
+      },
+      "is something you do."
+     ],
+     "steps": [
+      "Girl names something.",
+      "Swim is something you do."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "l",
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "swim",
+        "size": "l",
+        "speak": [
+         {
+          "word": "swim"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
+     }
+    },
+    "skillId": "E-1-C1",
+    "level": 2,
+    "seed": 7,
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"verb\",\"noun\",\"noun\",\"noun\",\"verb\"],\"items\":[\"swim\",\"run\",\"tree\",\"girl\",\"ball\",\"sing\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "verb",
+      "verb",
+      "noun",
+      "verb",
+      "noun",
+      "noun"
+     ],
+     "binAttrs": [
+      "noun",
+      "verb"
+     ],
+     "items": [
+      "jump",
+      "swim",
+      "girl",
+      "run",
+      "tree",
+      "car"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l",
+      "speak": [
+       {
+        "word": "jump"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "girl",
+      "size": "l",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       {
+        "word": "run"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Naming words",
+      "speak": [
+       "Naming words"
+      ]
+     },
+     {
+      "label": "Action words",
+      "speak": [
+       "Action words"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "Car"
+      },
+      "names something.",
+      {
+       "word": "Swim"
       },
       "is something you do."
      ],
@@ -2771,12 +2825,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 2,
     "seed": 8,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"girl\",\"jump\",\"sing\",\"tree\",\"car\",\"swim\"]}"
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"verb\",\"noun\",\"verb\",\"noun\",\"noun\"],\"items\":[\"jump\",\"swim\",\"girl\",\"run\",\"tree\",\"car\"]}"
    },
    {
     "type": "sort",
@@ -2785,9 +2842,9 @@
      "itemAttrs": [
       "verb",
       "noun",
+      "noun",
+      "noun",
       "verb",
-      "noun",
-      "noun",
       "verb"
      ],
      "binAttrs": [
@@ -2795,11 +2852,11 @@
       "verb"
      ],
      "items": [
-      "eat",
-      "bed",
       "run",
       "car",
+      "bed",
       "tree",
+      "eat",
       "swim"
      ]
     },
@@ -2810,26 +2867,6 @@
      ]
     },
     "items": [
-     {
-      "kind": "text",
-      "value": "eat",
-      "size": "l",
-      "speak": [
-       {
-        "word": "eat"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "bed",
-      "size": "l",
-      "speak": [
-       {
-        "word": "bed"
-       }
-      ]
-     },
      {
       "kind": "text",
       "value": "run",
@@ -2852,11 +2889,31 @@
      },
      {
       "kind": "text",
+      "value": "bed",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bed"
+       }
+      ]
+     },
+     {
+      "kind": "text",
       "value": "tree",
       "size": "l",
       "speak": [
        {
         "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "eat",
+      "size": "l",
+      "speak": [
+       {
+        "word": "eat"
        }
       ]
      },
@@ -2888,25 +2945,25 @@
     "answerBin": [
      1,
      0,
+     0,
+     0,
      1,
-     0,
-     0,
      1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "bed"
+       "word": "Bed"
       },
       "names something.",
       {
-       "word": "eat"
+       "word": "Swim"
       },
       "is something you do."
      ],
      "steps": [
       "Bed names something.",
-      "Eat is something you do."
+      "Swim is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -2923,21 +2980,24 @@
        },
        {
         "kind": "text",
-        "value": "eat",
+        "value": "swim",
         "size": "l",
         "speak": [
          {
-          "word": "eat"
+          "word": "swim"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 2,
     "seed": 9,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"eat\",\"bed\",\"run\",\"car\",\"tree\",\"swim\"]}"
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"verb\",\"noun\",\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"run\",\"car\",\"bed\",\"tree\",\"eat\",\"swim\"]}"
    },
    {
     "type": "sort",
@@ -2946,9 +3006,9 @@
      "itemAttrs": [
       "noun",
       "verb",
+      "noun",
+      "noun",
       "verb",
-      "noun",
-      "noun",
       "verb"
      ],
      "binAttrs": [
@@ -2957,10 +3017,10 @@
      ],
      "items": [
       "car",
-      "read",
-      "swim",
+      "jump",
       "dog",
       "ball",
+      "swim",
       "sing"
      ]
     },
@@ -2983,21 +3043,11 @@
      },
      {
       "kind": "text",
-      "value": "read",
+      "value": "jump",
       "size": "l",
       "speak": [
        {
-        "word": "read"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "swim",
-      "size": "l",
-      "speak": [
-       {
-        "word": "swim"
+        "word": "jump"
        }
       ]
      },
@@ -3018,6 +3068,16 @@
       "speak": [
        {
         "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       {
+        "word": "swim"
        }
       ]
      },
@@ -3049,25 +3109,25 @@
     "answerBin": [
      0,
      1,
+     0,
+     0,
      1,
-     0,
-     0,
      1
     ],
     "explanation": {
      "speak": [
       {
-       "word": "ball"
+       "word": "Ball"
       },
       "names something.",
       {
-       "word": "swim"
+       "word": "Jump"
       },
       "is something you do."
      ],
      "steps": [
       "Ball names something.",
-      "Swim is something you do."
+      "Jump is something you do."
      ],
      "visual": {
       "kind": "row",
@@ -3084,21 +3144,24 @@
        },
        {
         "kind": "text",
-        "value": "swim",
+        "value": "jump",
         "size": "l",
         "speak": [
          {
-          "word": "swim"
+          "word": "jump"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Ask: is it something you can do? Or is it a person, an animal or a thing?"
      }
     },
     "skillId": "E-1-C1",
     "level": 2,
     "seed": 10,
-    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"verb\",\"noun\",\"noun\",\"verb\"],\"items\":[\"car\",\"read\",\"swim\",\"dog\",\"ball\",\"sing\"]}"
+    "key": "E-1-C1|2|{\"binAttrs\":[\"noun\",\"verb\"],\"itemAttrs\":[\"noun\",\"verb\",\"noun\",\"noun\",\"verb\",\"verb\"],\"items\":[\"car\",\"jump\",\"dog\",\"ball\",\"swim\",\"sing\"]}"
    }
   ]
  }

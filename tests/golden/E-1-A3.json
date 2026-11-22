@@ -1,6 +1,6 @@
 {
  "skillId": "E-1-A3",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "listen",
@@ -13,9 +13,9 @@
    ]
   },
   "prompt": {
-   "text": "Find the word.",
+   "text": "Listen. Tap the word.",
    "speak": [
-    "Find the word",
+    "Tap the word",
     {
      "word": "tube"
     },
@@ -45,15 +45,38 @@
     {
      "letter": "u"
     },
-    "say its name. The word is",
+    "say its name:",
+    {
+     "sound": "long-u"
+    },
+    ".",
+    "The word is",
     {
      "word": "tube"
     },
     "."
    ],
    "steps": [
-    "The e at the end makes the u say its name.",
+    "The e at the end makes the u say its name: /ū/.",
     "The word is tube."
+   ],
+   "stepsSay": [
+    [
+     "The",
+     {
+      "letter": "e"
+     },
+     "at the end makes the",
+     {
+      "letter": "u"
+     },
+     "say its name:",
+     {
+      "sound": "long-u"
+     },
+     "."
+    ],
+    null
    ],
    "visual": {
     "kind": "row",
@@ -79,6 +102,9 @@
       ]
      }
     ]
+   },
+   "hint": {
+    "text": "Listen to the vowel. Does it say its name?"
    }
   },
   "skillId": "E-1-A3",
@@ -100,9 +126,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "hope"
       },
@@ -132,15 +158,38 @@
       {
        "letter": "o"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-o"
+      },
+      ".",
+      "The word is",
       {
        "word": "hope"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the o say its name.",
+      "The e at the end makes the o say its name: /ō/.",
       "The word is hope."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "o"
+       },
+       "say its name:",
+       {
+        "sound": "long-o"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -166,6 +215,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -185,9 +237,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cube"
       },
@@ -217,15 +269,38 @@
       {
        "letter": "u"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-u"
+      },
+      ".",
+      "The word is",
       {
        "word": "cube"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the u say its name.",
+      "The e at the end makes the u say its name: /ū/.",
       "The word is cube."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "u"
+       },
+       "say its name:",
+       {
+        "sound": "long-u"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -251,6 +326,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -270,9 +348,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cub"
       },
@@ -302,15 +380,46 @@
       {
        "letter": "u"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "u"
+      },
+      ", as in",
+      {
+       "word": "up"
+      },
+      ".",
+      "The word is",
       {
        "word": "cub"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the u is short.",
+      "There is no e at the end, so the u is short: /u/, as in up.",
       "The word is cub."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "u"
+       },
+       "is short:",
+       {
+        "sound": "u"
+       },
+       ", as in",
+       {
+        "word": "up"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -336,6 +445,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -355,9 +467,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "not"
       },
@@ -387,15 +499,46 @@
       {
        "letter": "o"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "o"
+      },
+      ", as in",
+      {
+       "word": "octopus"
+      },
+      ".",
+      "The word is",
       {
        "word": "not"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the o is short.",
+      "There is no e at the end, so the o is short: /o/, as in octopus.",
       "The word is not."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "o"
+       },
+       "is short:",
+       {
+        "sound": "o"
+       },
+       ", as in",
+       {
+        "word": "octopus"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -421,6 +564,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -440,9 +586,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cub"
       },
@@ -472,15 +618,46 @@
       {
        "letter": "u"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "u"
+      },
+      ", as in",
+      {
+       "word": "up"
+      },
+      ".",
+      "The word is",
       {
        "word": "cub"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the u is short.",
+      "There is no e at the end, so the u is short: /u/, as in up.",
       "The word is cub."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "u"
+       },
+       "is short:",
+       {
+        "sound": "u"
+       },
+       ", as in",
+       {
+        "word": "up"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -506,6 +683,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -525,9 +705,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cane"
       },
@@ -557,15 +737,38 @@
       {
        "letter": "a"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-a"
+      },
+      ".",
+      "The word is",
       {
        "word": "cane"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the a say its name.",
+      "The e at the end makes the a say its name: /ā/.",
       "The word is cane."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "a"
+       },
+       "say its name:",
+       {
+        "sound": "long-a"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -591,6 +794,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -610,9 +816,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cap"
       },
@@ -642,15 +848,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "cap"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is cap."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -676,6 +913,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -695,9 +935,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "kit"
       },
@@ -727,15 +967,46 @@
       {
        "letter": "i"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "i"
+      },
+      ", as in",
+      {
+       "word": "itch"
+      },
+      ".",
+      "The word is",
       {
        "word": "kit"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the i is short.",
+      "There is no e at the end, so the i is short: /i/, as in itch.",
       "The word is kit."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "i"
+       },
+       "is short:",
+       {
+        "sound": "i"
+       },
+       ", as in",
+       {
+        "word": "itch"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -761,6 +1032,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -780,9 +1054,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "kite"
       },
@@ -812,15 +1086,38 @@
       {
        "letter": "i"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-i"
+      },
+      ".",
+      "The word is",
       {
        "word": "kite"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the i say its name.",
+      "The e at the end makes the i say its name: /ī/.",
       "The word is kite."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "i"
+       },
+       "say its name:",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -846,6 +1143,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -865,9 +1165,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cane"
       },
@@ -897,15 +1197,38 @@
       {
        "letter": "a"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-a"
+      },
+      ".",
+      "The word is",
       {
        "word": "cane"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the a say its name.",
+      "The e at the end makes the a say its name: /ā/.",
       "The word is cane."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "a"
+       },
+       "say its name:",
+       {
+        "sound": "long-a"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -931,6 +1254,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -953,9 +1279,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "hope"
       },
@@ -990,15 +1316,38 @@
       {
        "letter": "o"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-o"
+      },
+      ".",
+      "The word is",
       {
        "word": "hope"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the o say its name.",
+      "The e at the end makes the o say its name: /ō/.",
       "The word is hope."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "o"
+       },
+       "say its name:",
+       {
+        "sound": "long-o"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1024,6 +1373,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1044,9 +1396,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cube"
       },
@@ -1081,15 +1433,38 @@
       {
        "letter": "u"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-u"
+      },
+      ".",
+      "The word is",
       {
        "word": "cube"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the u say its name.",
+      "The e at the end makes the u say its name: /ū/.",
       "The word is cube."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "u"
+       },
+       "say its name:",
+       {
+        "sound": "long-u"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1115,6 +1490,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1135,9 +1513,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cub"
       },
@@ -1172,15 +1550,46 @@
       {
        "letter": "u"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "u"
+      },
+      ", as in",
+      {
+       "word": "up"
+      },
+      ".",
+      "The word is",
       {
        "word": "cub"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the u is short.",
+      "There is no e at the end, so the u is short: /u/, as in up.",
       "The word is cub."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "u"
+       },
+       "is short:",
+       {
+        "sound": "u"
+       },
+       ", as in",
+       {
+        "word": "up"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1206,6 +1615,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1226,9 +1638,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "not"
       },
@@ -1263,15 +1675,46 @@
       {
        "letter": "o"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "o"
+      },
+      ", as in",
+      {
+       "word": "octopus"
+      },
+      ".",
+      "The word is",
       {
        "word": "not"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the o is short.",
+      "There is no e at the end, so the o is short: /o/, as in octopus.",
       "The word is not."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "o"
+       },
+       "is short:",
+       {
+        "sound": "o"
+       },
+       ", as in",
+       {
+        "word": "octopus"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1297,6 +1740,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1317,9 +1763,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cub"
       },
@@ -1354,15 +1800,46 @@
       {
        "letter": "u"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "u"
+      },
+      ", as in",
+      {
+       "word": "up"
+      },
+      ".",
+      "The word is",
       {
        "word": "cub"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the u is short.",
+      "There is no e at the end, so the u is short: /u/, as in up.",
       "The word is cub."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "u"
+       },
+       "is short:",
+       {
+        "sound": "u"
+       },
+       ", as in",
+       {
+        "word": "up"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1388,6 +1865,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1408,9 +1888,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cane"
       },
@@ -1445,15 +1925,38 @@
       {
        "letter": "a"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-a"
+      },
+      ".",
+      "The word is",
       {
        "word": "cane"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the a say its name.",
+      "The e at the end makes the a say its name: /ā/.",
       "The word is cane."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "a"
+       },
+       "say its name:",
+       {
+        "sound": "long-a"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1479,6 +1982,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1499,9 +2005,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cap"
       },
@@ -1536,15 +2042,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "cap"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is cap."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1570,6 +2107,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1590,9 +2130,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "kit"
       },
@@ -1627,15 +2167,46 @@
       {
        "letter": "i"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "i"
+      },
+      ", as in",
+      {
+       "word": "itch"
+      },
+      ".",
+      "The word is",
       {
        "word": "kit"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the i is short.",
+      "There is no e at the end, so the i is short: /i/, as in itch.",
       "The word is kit."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "i"
+       },
+       "is short:",
+       {
+        "sound": "i"
+       },
+       ", as in",
+       {
+        "word": "itch"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1661,6 +2232,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1681,9 +2255,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "kite"
       },
@@ -1718,15 +2292,38 @@
       {
        "letter": "i"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-i"
+      },
+      ".",
+      "The word is",
       {
        "word": "kite"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the i say its name.",
+      "The e at the end makes the i say its name: /ī/.",
       "The word is kite."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "i"
+       },
+       "say its name:",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1752,6 +2349,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1772,9 +2372,9 @@
      ]
     },
     "prompt": {
-     "text": "Find the word.",
+     "text": "Listen. Tap the word.",
      "speak": [
-      "Find the word",
+      "Tap the word",
       {
        "word": "cane"
       },
@@ -1809,15 +2409,38 @@
       {
        "letter": "a"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-a"
+      },
+      ".",
+      "The word is",
       {
        "word": "cane"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the a say its name.",
+      "The e at the end makes the a say its name: /ā/.",
       "The word is cane."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "a"
+       },
+       "say its name:",
+       {
+        "sound": "long-a"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1843,6 +2466,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Listen to the vowel. Does it say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -1909,15 +2535,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "can"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is can."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -1943,6 +2600,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2007,15 +2667,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "man"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is man."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2041,6 +2732,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2105,15 +2799,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "man"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is man."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2139,6 +2864,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2203,15 +2931,38 @@
       {
        "letter": "o"
       },
-      "say its name. The word is",
+      "say its name:",
+      {
+       "sound": "long-o"
+      },
+      ".",
+      "The word is",
       {
        "word": "note"
       },
       "."
      ],
      "steps": [
-      "The e at the end makes the o say its name.",
+      "The e at the end makes the o say its name: /ō/.",
       "The word is note."
+     ],
+     "stepsSay": [
+      [
+       "The",
+       {
+        "letter": "e"
+       },
+       "at the end makes the",
+       {
+        "letter": "o"
+       },
+       "say its name:",
+       {
+        "sound": "long-o"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2237,6 +2988,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2301,15 +3055,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "man"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is man."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2335,6 +3120,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2399,15 +3187,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "can"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is can."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2433,6 +3252,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2497,15 +3319,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "cap"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is cap."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2531,6 +3384,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2595,15 +3451,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "cap"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is cap."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2629,6 +3516,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2693,15 +3583,46 @@
       {
        "letter": "i"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "i"
+      },
+      ", as in",
+      {
+       "word": "itch"
+      },
+      ".",
+      "The word is",
       {
        "word": "pin"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the i is short.",
+      "There is no e at the end, so the i is short: /i/, as in itch.",
       "The word is pin."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "i"
+       },
+       "is short:",
+       {
+        "sound": "i"
+       },
+       ", as in",
+       {
+        "word": "itch"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2727,6 +3648,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",
@@ -2791,15 +3715,46 @@
       {
        "letter": "a"
       },
-      "is short. The word is",
+      "is short:",
+      {
+       "sound": "a"
+      },
+      ", as in",
+      {
+       "word": "apple"
+      },
+      ".",
+      "The word is",
       {
        "word": "can"
       },
       "."
      ],
      "steps": [
-      "There is no e at the end, so the a is short.",
+      "There is no e at the end, so the a is short: /a/, as in apple.",
       "The word is can."
+     ],
+     "stepsSay": [
+      [
+       "There is no",
+       {
+        "letter": "e"
+       },
+       "at the end, so the",
+       {
+        "letter": "a"
+       },
+       "is short:",
+       {
+        "sound": "a"
+       },
+       ", as in",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "row",
@@ -2825,6 +3780,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Does the vowel say its name?"
      }
     },
     "skillId": "E-1-A3",

@@ -1,6 +1,6 @@
 {
  "skillId": "E-2-A5",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "sort",
   "mode": "read",
@@ -25,9 +25,13 @@
    ]
   },
   "prompt": {
-   "text": "Read each word. Is the sound soft or hard?",
+   "text": "Read each word. Is its c soft or hard? Put it in that group.",
    "speak": [
-    "Read each word. Is the sound soft or hard?"
+    "Read each word. Is its",
+    {
+     "letter": "c"
+    },
+    "soft or hard? Put it in that group."
    ]
   },
   "items": [
@@ -54,21 +58,29 @@
   ],
   "bins": [
    {
-    "label": "c sounds like s",
+    "label": "Soft c: /s/",
     "speak": [
+     "Soft",
      {
       "letter": "c"
      },
-     "sounds like the start of sun"
+     ",",
+     {
+      "sound": "s"
+     }
     ]
    },
    {
-    "label": "c sounds like k",
+    "label": "Hard c: /k/",
     "speak": [
+     "Hard",
      {
       "letter": "c"
      },
-     "sounds like the start of kite"
+     ",",
+     {
+      "sound": "c"
+     }
     ]
    }
   ],
@@ -80,17 +92,115 @@
   ],
   "explanation": {
    "speak": [
-    "When e, i or y comes right after c or g, it makes the soft sound.",
-    "Any other letter after it makes the hard sound."
+    "When",
+    {
+     "letter": "e"
+    },
+    ",",
+    {
+     "letter": "i"
+    },
+    "or",
+    {
+     "letter": "y"
+    },
+    "comes right after",
+    {
+     "letter": "c"
+    },
+    ", the",
+    {
+     "letter": "c"
+    },
+    "is soft:",
+    {
+     "sound": "s"
+    },
+    ", as in",
+    {
+     "word": "city"
+    },
+    ".",
+    "Any other letter after it, or no letter, makes the",
+    {
+     "letter": "c"
+    },
+    "hard:",
+    {
+     "sound": "c"
+    },
+    ", as in",
+    {
+     "word": "cat"
+    },
+    "."
    ],
    "steps": [
-    "When e, i or y comes right after c or g, it makes the soft sound.",
-    "Any other letter after it, or none, makes the hard sound."
+    "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+    "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+   ],
+   "stepsSay": [
+    [
+     "When",
+     {
+      "letter": "e"
+     },
+     ",",
+     {
+      "letter": "i"
+     },
+     "or",
+     {
+      "letter": "y"
+     },
+     "comes right after",
+     {
+      "letter": "c"
+     },
+     ", the",
+     {
+      "letter": "c"
+     },
+     "is soft:",
+     {
+      "sound": "s"
+     },
+     ", as in",
+     {
+      "word": "city"
+     },
+     "."
+    ],
+    [
+     "Any other letter after it, or no letter, makes the",
+     {
+      "letter": "c"
+     },
+     "hard:",
+     {
+      "sound": "c"
+     },
+     ", as in",
+     {
+      "word": "cat"
+     },
+     "."
+    ]
    ],
    "visual": {
     "kind": "text",
     "value": "city   cat",
     "size": "xl"
+   },
+   "hint": {
+    "text": "Look at the letter right after the c.",
+    "say": [
+     "Look at the letter right after the",
+     {
+      "letter": "c"
+     },
+     "."
+    ]
    }
   },
   "skillId": "E-2-A5",
@@ -124,9 +234,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -153,21 +267,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -179,17 +301,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -221,9 +441,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -250,21 +474,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -276,17 +508,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -318,9 +648,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -347,21 +681,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -373,17 +715,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -415,9 +855,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -444,21 +888,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -470,17 +922,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -512,9 +1062,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -541,21 +1095,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -567,17 +1129,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -609,9 +1269,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -638,21 +1302,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -664,17 +1336,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -706,9 +1476,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -735,21 +1509,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -761,17 +1543,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -803,9 +1683,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -832,21 +1716,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -858,17 +1750,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -900,9 +1890,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -929,21 +1923,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -955,17 +1957,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -997,9 +2097,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1026,21 +2130,29 @@
     ],
     "bins": [
      {
-      "label": "c sounds like s",
+      "label": "Soft c: /s/",
       "speak": [
+       "Soft",
        {
         "letter": "c"
        },
-       "sounds like the start of sun"
+       ",",
+       {
+        "sound": "s"
+       }
       ]
      },
      {
-      "label": "c sounds like k",
+      "label": "Hard c: /k/",
       "speak": [
+       "Hard",
        {
         "letter": "c"
        },
-       "sounds like the start of kite"
+       ",",
+       {
+        "sound": "c"
+       }
       ]
      }
     ],
@@ -1052,17 +2164,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      ", the",
+      {
+       "letter": "c"
+      },
+      "is soft:",
+      {
+       "sound": "s"
+      },
+      ", as in",
+      {
+       "word": "city"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "c"
+      },
+      "hard:",
+      {
+       "sound": "c"
+      },
+      ", as in",
+      {
+       "word": "cat"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c, the c is soft: /s/, as in city.",
+      "Any other letter after it, or no letter, makes the c hard: /k/, as in cat."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       ", the",
+       {
+        "letter": "c"
+       },
+       "is soft:",
+       {
+        "sound": "s"
+       },
+       ", as in",
+       {
+        "word": "city"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "c"
+       },
+       "hard:",
+       {
+        "sound": "c"
+       },
+       ", as in",
+       {
+        "word": "cat"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1096,9 +2306,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1125,21 +2339,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1151,17 +2373,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1193,9 +2513,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1222,21 +2546,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1248,17 +2580,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1290,9 +2720,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1319,21 +2753,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1345,17 +2787,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1387,9 +2927,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1416,21 +2960,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1442,17 +2994,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1484,9 +3134,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1513,21 +3167,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1539,17 +3201,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1581,9 +3341,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1610,21 +3374,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1636,17 +3408,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1678,9 +3548,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1707,21 +3581,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1733,17 +3615,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1775,9 +3755,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1804,21 +3788,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1830,17 +3822,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1872,9 +3962,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1901,21 +3995,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -1927,17 +4029,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -1969,9 +4169,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -1998,21 +4202,29 @@
     ],
     "bins": [
      {
-      "label": "g sounds like j",
+      "label": "Soft g: /j/",
       "speak": [
+       "Soft",
        {
         "letter": "g"
        },
-       "sounds like the start of jam"
+       ",",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "g sounds like g in go",
+      "label": "Hard g: /g/",
       "speak": [
+       "Hard",
        {
         "letter": "g"
        },
-       "sounds like the start of go"
+       ",",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2024,17 +4236,115 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "g"
+      },
+      ", the",
+      {
+       "letter": "g"
+      },
+      "is soft:",
+      {
+       "sound": "j"
+      },
+      ", as in",
+      {
+       "word": "gem"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes the",
+      {
+       "letter": "g"
+      },
+      "hard:",
+      {
+       "sound": "g"
+      },
+      ", as in",
+      {
+       "word": "gum"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after g, the g is soft: /j/, as in gem.",
+      "Any other letter after it, or no letter, makes the g hard: /g/, as in gum."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "g"
+       },
+       ", the",
+       {
+        "letter": "g"
+       },
+       "is soft:",
+       {
+        "sound": "j"
+       },
+       ", as in",
+       {
+        "word": "gem"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes the",
+       {
+        "letter": "g"
+       },
+       "hard:",
+       {
+        "sound": "g"
+       },
+       ", as in",
+       {
+        "word": "gum"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "gem   gum",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2072,9 +4382,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2111,15 +4429,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2133,17 +4465,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2179,9 +4605,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2218,15 +4652,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2240,17 +4688,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2286,9 +4828,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2325,15 +4875,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2347,17 +4911,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2393,9 +5051,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2432,15 +5098,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2454,17 +5134,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2500,9 +5274,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2539,15 +5321,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2561,17 +5357,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2607,9 +5497,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2646,15 +5544,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2668,17 +5580,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2714,9 +5720,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2753,15 +5767,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2775,17 +5803,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2821,9 +5943,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2860,15 +5990,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2882,17 +6026,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -2928,9 +6166,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -2967,15 +6213,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -2989,17 +6249,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",
@@ -3035,9 +6389,17 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. Is the sound soft or hard?",
+     "text": "Read each word. Is its c or g soft or hard? Put it in that group.",
      "speak": [
-      "Read each word. Is the sound soft or hard?"
+      "Read each word. Is its",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      "soft or hard? Put it in that group."
      ]
     },
     "items": [
@@ -3074,15 +6436,29 @@
     ],
     "bins": [
      {
-      "label": "Soft: like s or j",
+      "label": "Soft: /s/ or /j/",
       "speak": [
-       "Soft, like the start of sun or jam"
+       "Soft,",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       }
       ]
      },
      {
-      "label": "Hard: like k or g",
+      "label": "Hard: /k/ or /g/",
       "speak": [
-       "Hard, like the start of kite or go"
+       "Hard,",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       }
       ]
      }
     ],
@@ -3096,17 +6472,111 @@
     ],
     "explanation": {
      "speak": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it makes the hard sound."
+      "When",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "or",
+      {
+       "letter": "y"
+      },
+      "comes right after",
+      {
+       "letter": "c"
+      },
+      "or",
+      {
+       "letter": "g"
+      },
+      ", it is soft:",
+      {
+       "sound": "s"
+      },
+      "or",
+      {
+       "sound": "j"
+      },
+      ".",
+      "Any other letter after it, or no letter, makes it hard:",
+      {
+       "sound": "c"
+      },
+      "or",
+      {
+       "sound": "g"
+      },
+      "."
      ],
      "steps": [
-      "When e, i or y comes right after c or g, it makes the soft sound.",
-      "Any other letter after it, or none, makes the hard sound."
+      "When e, i or y comes right after c or g, it is soft: /s/ or /j/.",
+      "Any other letter after it, or no letter, makes it hard: /k/ or /g/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "or",
+       {
+        "letter": "y"
+       },
+       "comes right after",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       ", it is soft:",
+       {
+        "sound": "s"
+       },
+       "or",
+       {
+        "sound": "j"
+       },
+       "."
+      ],
+      [
+       "Any other letter after it, or no letter, makes it hard:",
+       {
+        "sound": "c"
+       },
+       "or",
+       {
+        "sound": "g"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "city   cat",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look at the letter right after the c or g.",
+      "say": [
+       "Look at the letter right after the",
+       {
+        "letter": "c"
+       },
+       "or",
+       {
+        "letter": "g"
+       },
+       "."
+      ]
      }
     },
     "skillId": "E-2-A5",

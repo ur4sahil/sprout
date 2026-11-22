@@ -5,6 +5,7 @@ import { ABC_GROUPS_2, DICTIONARY_WORDS, SHADES, TWO_MEANINGS } from '../../../d
 import type { SkillGenerator } from '../../../generator';
 import { choice, explain, lesson, order, plain, said } from '../g1/h4-parts';
 import { abcQuestion } from '../g1/h4-words';
+import { hint } from '../g1/wording';
 import { cap } from '../pk/parts';
 
 // Language Arts grade 2 B.6 to B.9 (plan section 15 wave H4). Oracle: h4ela.
@@ -15,8 +16,10 @@ import { cap } from '../pk/parts';
 function shades(level: Level, rng: Rng): QuestionDraft {
   const scale = rng.pick(SHADES);
   const [weak, middle, strong] = scale;
-  const why = explain([`${cap(weak)}, ${middle}, ${strong}.`, 'Each word is stronger than the one before it.'], plain(`${weak} → ${middle} → ${strong}`));
-  if (level === 3) return order('Put the words in order, from weakest to strongest.', 'look', rng.shuffle(scale), scale, { relation: 'shadeOrder', target: middle }, why);
+  const nudge = hint(level === 1 ? 'Think about how much each word says. Which says the most?' : level === 2 ? 'Think about how much each word says. Which says the least?' : 'Find the weakest word first.');
+  const why = explain([`${cap(weak)}, ${middle}, ${strong}.`, 'Each word is stronger than the one before it.'], plain(`${weak} → ${middle} → ${strong}`), undefined, nudge);
+  // Worded as the other order questions are: which one to tap first.
+  if (level === 3) return order('Put the words in order, from weakest to strongest. Tap the weakest first.', 'look', rng.shuffle(scale), scale, { relation: 'shadeOrder', target: middle }, why);
   const strongest = level === 1;
   return choice({
     prompt: strongest ? 'Which word is the strongest?' : 'Which word is the weakest?',
@@ -53,7 +56,7 @@ function twoMeanings(level: Level, rng: Rng): QuestionDraft {
   const which = rng.int(0, 1);
   const sentence = entry.sentences[which] as string;
   const meaning = entry.meanings[which] as string;
-  const why = explain([`${sentence}`, `Here ${entry.word} means ${meaning}.`], said(sentence));
+  const why = explain([`${sentence}`, `Here ${entry.word} means ${meaning}.`], said(sentence), undefined, hint(level === 3 ? 'Read each sentence. In which one does the word have that meaning?' : 'Read the whole sentence. Which meaning makes sense in it?'));
   if (level === 3) {
     return choice({
       prompt: `Which sentence uses ${entry.word} to mean ${meaning}?`,
@@ -102,8 +105,7 @@ export const twoMeaningsGenerator: SkillGenerator = {
 
 function abcSecond(level: Level, rng: Rng): QuestionDraft {
   const group = rng.pick(ABC_GROUPS_2);
-  const letter = (group[0] as string).charAt(0);
-  return abcQuestion(level, rng.sample(group, level === 3 ? 4 : 3), `They all start with ${letter}, so look at the second letter.`, rng);
+  return abcQuestion(level, rng.sample(group, level === 3 ? 4 : 3), 1, rng);
 }
 
 export const abcSecondGenerator: SkillGenerator = {
@@ -141,14 +143,15 @@ function guideWords(level: Level, rng: Rng): QuestionDraft {
     // Level 3 offers the words just before and just after the page, which are the easiest to slip on.
     const near = [list[i - 1], list[j + 1]].filter((each): each is string => each !== undefined);
     const wrong = level === 3 ? [...near, ...rng.sample(outside.filter((each) => !near.includes(each)), 3 - near.length)] : rng.sample(outside, 2);
+    // The question says where guide words are, so "that page" points to a page the child has been told about.
     return choice({
-      prompt: `The guide words are ${a} and ${b}. Which word is on that page?`,
+      prompt: `${cap(a)} and ${b} are the guide words at the top of a dictionary page. Which word is on that page?`,
       options: rng.shuffle([right, ...wrong]),
       right,
       spoken: true,
       stimulus: plain(`${a} — ${b}`, 'l'),
       facts: { relation: 'guide', target: `${a} ${b}` },
-      why: explain(['A word on the page comes between the two guide words in ABC order.', `${a}, ${right}, ${b}.`], plain(`${a} — ${right} — ${b}`), ['A word on the page comes between the two guide words in ABC order.', `${a}, ${right}, ${b}.`]),
+      why: explain(['A word on the page comes between the two guide words in ABC order.', `${cap(right)} comes after ${a} and before ${b}.`], plain(`${a} — ${right} — ${b}`), undefined, hint('Which word comes after the first guide word, and before the last one, in ABC order?')),
     });
   }
 }

@@ -1,12 +1,12 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Explanation, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Compound } from '../../../data/phonics1';
 import { COMPOUNDS, OPPOSITES_1, SAME_MEANING } from '../../../data/phonics1';
 import type { SkillGenerator } from '../../../generator';
 import { hearAndTap, spellSightWord } from '../k/sightWords';
-import type { Explanation } from '../pk/parts';
 import { cap, picture, row } from '../pk/parts';
+import { hint, spell } from './wording';
 
 // Language Arts grade 1 B.1 to B.3.
 
@@ -16,7 +16,26 @@ const silent = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 1
 // ---- B.1 Sight words, set 4 ----
 // Family: Sight words. Oracles: wordSet, spell. Levels: hear and tap / spell with tiles.
 
-const setFour = (level: Level, rng: Rng): QuestionDraft => (level === 1 ? hearAndTap(4, 2, rng) : spellSightWord(4, rng));
+// The kindergarten pieces make the question; grade 1 words it the way its other heard skills are worded.
+// No word of set 4 in the hint (how, think and of are in it): the hint must not name the answer.
+const TAP_HINT = hint('Listen to the first sound. Which word starts with that letter?');
+const SPELL = 'Listen. Tap the letters to spell the word.';
+const SPELL_HINT = hint('Say the word slowly, one sound at a time. Find a letter for each sound.');
+
+function setFour(level: Level, rng: Rng): QuestionDraft {
+  if (level === 1) {
+    const question = hearAndTap(4, 2, rng);
+    return { ...question, explanation: { ...question.explanation, hint: TAP_HINT } };
+  }
+  const question = spellSightWord(4, rng);
+  if (question.type !== 'tiles') return question;
+  const target = question.answer;
+  return {
+    ...question,
+    prompt: { text: SPELL, speak: ['Tap the letters to spell', { word: target }, '.'] },
+    explanation: { ...question.explanation, speak: [{ word: cap(target) }, 'is spelled', ...spell(target), '.'], steps: [`${cap(target)} is spelled ${target.split('').join(', ')}.`], hint: SPELL_HINT },
+  };
+}
 
 export const sightWordsFourGenerator: SkillGenerator = {
   skillId: 'E-1-B1',
@@ -41,10 +60,10 @@ export const sightWordsFourGenerator: SkillGenerator = {
 // The word is heard and built, never matched half to half: halves cross-match into other real words.
 
 const whole = (entry: Compound): string => `${entry.first}${entry.second}`;
-const BUILD = 'Build the word.';
-const buildSpeak = (entry: Compound): Say => ['Build the word', { word: whole(entry) }, '.'];
+const BUILD = 'Listen. Tap the two words that make the word.';
+const buildSpeak = (entry: Compound): Say => ['Tap the two words that make', { word: whole(entry) }, '.'];
 
-function compoundExplanation(entry: Compound): Explanation {
+function compoundExplanation(entry: Compound): Explanation & { visual: Visual } {
   return {
     speak: [{ word: entry.first }, 'and', { word: entry.second }, 'make', { word: whole(entry) }, '.'],
     steps: [`${cap(entry.first)} and ${entry.second} make ${whole(entry)}.`],
@@ -66,7 +85,7 @@ function compounds(level: Level, rng: Rng): QuestionDraft {
     slots: 2,
     bank: rng.shuffle([entry.first, entry.second, ...spare]),
     answer: whole(entry),
-    explanation: compoundExplanation(entry),
+    explanation: { ...compoundExplanation(entry), hint: hint('Say the word slowly. Listen for the two small words in it.') },
   };
 }
 
@@ -101,9 +120,14 @@ const sameAs = (value: string): string[] => partnersIn(SAME_MEANING, value);
 const oppositesOf = (value: string): string[] => [...new Set([value, ...sameAs(value)].flatMap((each) => partnersIn(OPPOSITES_1, each)).flatMap((each) => [each, ...sameAs(each)]))];
 const ALL_WORDS: readonly string[] = [...new Set([...OPPOSITES_1.flat(), ...SAME_MEANING.flat()])];
 
+const MEANING_HINT: Record<Kind, string> = {
+  opposite: 'Say the word. Which word means something very different?',
+  same: 'Say the word. Which word could take its place in a sentence?',
+};
+
 function meaningExplanation(kind: Kind, target: string, answer: string): Explanation {
   const told = kind === 'opposite' ? 'are opposites.' : 'mean the same.';
-  return { speak: [{ word: target }, 'and', { word: answer }, told], steps: [`${cap(target)} and ${answer} ${told}`], visual: row(wordSaid(target), wordSaid(answer)) };
+  return { speak: [{ word: cap(target) }, 'and', { word: answer }, told], steps: [`${cap(target)} and ${answer} ${told}`], visual: row(wordSaid(target), wordSaid(answer)), hint: hint(MEANING_HINT[kind]) };
 }
 
 const meaningPrompt = (kind: Kind, target: string): { text: string; speak: Say } =>

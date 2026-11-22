@@ -1,11 +1,13 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { Level, QuestionDraft } from '../../../../engine/types';
+import type { Level, QuestionDraft, Say, SayPart } from '../../../../engine/types';
 import { SIGHT_5 } from '../../../data/h4-phonics';
 import { ABC_WORDS_1, WORD_GROUPS } from '../../../data/h4-words';
 import type { SkillGenerator } from '../../../generator';
 import { cap, pickApart } from '../pk/parts';
 import { choice, explain, lesson, order, plain, said } from './h4-parts';
+import type { Line } from './wording';
+import { hint, line, listed } from './wording';
 
 // Language Arts grade 1 B.4 to B.6 (plan section 15 wave H4). Oracle: h4ela.
 
@@ -30,7 +32,7 @@ function sightFive(level: Level, rng: Rng): QuestionDraft {
     right: target,
     size: 'xl',
     facts: { relation: 'sight5', target },
-    why: explain([`This word is ${target}.`], plain(target, 'xl'), ['This word is', { word: target }, '.']),
+    why: explain([`This word is ${target}.`], plain(target, 'xl'), ['This word is', { word: target }, '.'], hint('Think about how the word starts and ends. Find a word that looks that way.')),
   });
 }
 
@@ -53,22 +55,39 @@ export const sightFiveGenerator: SkillGenerator = {
 
 // ---- B.5 ABC order to the first letter ----
 // Levels: which word comes first / put 3 words in order / put 4 words in order. Grade 2 B.8 uses the same
-// questions with words that share a first letter.
+// questions with words that share a first letter, and looks at the second letter (`at` 1).
 
 const byAbc = (words: readonly string[]): string[] => [...words].sort();
+const big = (word: string, at: number): string => word.charAt(at).toUpperCase();
 
-export function abcQuestion(level: Level, words: readonly string[], rule: string, rng: Rng): QuestionDraft {
+// The steps name the letter that decides each word's place, in the order the words are shown, then put the
+// letters in ABC order: "Sun starts with S, queen with Q, jam with J." "J comes first, then Q, then S."
+function abcSteps(level: Level, shown: readonly string[], at: 0 | 1): Line[] {
+  const sorted = byAbc(shown);
+  // The first word "starts with" its letter and the others are "with" theirs; for the second letter, each "has" it.
+  const verb = (i: number): string => (at === 1 ? 'has' : i === 0 ? 'starts with' : 'with');
+  const named = shown.map((word, i) => `${i === 0 ? cap(word) : word} ${verb(i)} ${big(word, at)}`).join(', ');
+  const namedSay = shown.flatMap((word, i): SayPart[] => [...(i === 0 ? [] : [',']), { word: i === 0 ? cap(word) : word }, verb(i), { letter: big(word, at) }]);
+  const [first = '', ...rest] = sorted.map((word) => big(word, at));
+  const order = `${first} comes first, ${rest.map((letter) => `then ${letter}`).join(', ')}.`;
+  const orderSay: Say = [{ letter: first }, 'comes first', ...rest.flatMap((letter): SayPart[] => [', then', { letter }]), '.'];
+  const lines: Line[] = [line(`${named}.`, [...namedSay, '.']), line(order, orderSay)];
+  if (at === 1) lines.unshift(line(`They all start with ${big(shown[0] as string, 0)}, so look at the second letter.`, ['They all start with', { letter: big(shown[0] as string, 0) }, ', so look at the second letter.']));
+  lines.push(level === 1 ? `So ${sorted[0]} comes first.` : `In ABC order: ${sorted.join(', ')}.`);
+  return lines;
+}
+
+export function abcQuestion(level: Level, words: readonly string[], at: 0 | 1, rng: Rng): QuestionDraft {
   const sorted = byAbc(words);
-  const why = explain([rule, `In ABC order: ${sorted.join(', ')}.`], plain(sorted.join(', ')), [rule, `In ABC order: ${sorted.join(', ')}.`]);
-  if (level === 1) {
-    return choice({ prompt: 'Which word comes first in ABC order?', options: rng.shuffle(words), right: sorted[0] as string, spoken: true, facts: { relation: 'abcFirst', target: sorted.join(' ') }, why });
-  }
   const shown = rng.shuffle(words);
+  const nudge = hint(at === 0 ? 'Look at the first letter of each word. Which comes first in the alphabet?' : 'They all start with the same letter. Look at the second letter of each word.');
+  const why = explain(abcSteps(level, shown, at), plain(sorted.join(', ')), [at === 0 ? 'Look at the first letter of each word.' : 'Look at the second letter of each word.', `In ABC order: ${sorted.join(', ')}.`], nudge);
+  if (level === 1) return choice({ prompt: 'Which word comes first in ABC order?', options: shown, right: sorted[0] as string, spoken: true, facts: { relation: 'abcFirst', target: sorted.join(' ') }, why });
   return order('Put the words in ABC order. Tap the first one first.', 'look', shown, sorted, { relation: 'abcOrder', target: sorted.join(' ') }, why);
 }
 
 function abcFirst(level: Level, rng: Rng): QuestionDraft {
-  return abcQuestion(level, rng.sample(ABC_WORDS_1, level === 3 ? 4 : 3), 'Look at the first letter of each word.', rng);
+  return abcQuestion(level, rng.sample(ABC_WORDS_1, level === 3 ? 4 : 3), 0, rng);
 }
 
 export const abcOrderGenerator: SkillGenerator = {
@@ -100,13 +119,13 @@ function wordGroups(level: Level, rng: Rng): QuestionDraft {
     const wrong = pickApart(others, 2, rng, () => true).map((each) => rng.pick(each.words));
     return choice({
       prompt: 'Which word belongs in this group?',
-      speak: ['Which word belongs with', shown, '?'],
+      speak: ['Which word belongs with', listed([a, b, c]), '?'],
       options: rng.shuffle([right, ...wrong]),
       right,
       spoken: true,
-      stimulus: said(shown),
+      stimulus: { ...plain(shown), speak: [`${cap(listed([a, b, c]))}.`] },
       facts: { relation: 'groupFits', target: shown },
-      why: explain([`${cap(shown)} are all ${group.name}.`, `${cap(right)} is one too.`], plain(`${shown}, ${right}`)),
+      why: explain([`${cap(listed([a, b, c]))} are all ${group.name}.`, `${cap(right)} is one too.`], plain(`${shown}, ${right}`), undefined, hint('What is the same about these words? Find one more like them.')),
     });
   }
   if (level === 2) {
@@ -119,20 +138,21 @@ function wordGroups(level: Level, rng: Rng): QuestionDraft {
       right: odd,
       spoken: true,
       facts: { relation: 'oddWord', target: byAbc(options).join(' ') },
-      why: explain([`${cap(same.join(', '))} are all ${group.name}.`, `${cap(odd)} is not.`], plain(same.join(', '))),
+      why: explain([`${cap(listed(same))} are all ${group.name}.`, `${cap(odd)} is not.`], plain(same.join(', ')), undefined, hint('Find what three of the words have in common.')),
     });
   }
-  const shown = rng.sample(group.words, 3).join(', ');
+  const words = rng.sample(group.words, 3);
+  const shown = words.join(', ');
   const options = rng.shuffle([group.name, ...rng.sample(others, 2).map((each) => each.name)]);
   return choice({
     prompt: 'What group do these words belong to?',
-    speak: ['What group do these words belong to?', shown],
+    speak: ['What group do these words belong to?', `${cap(listed(words))}.`],
     options,
     right: group.name,
     spoken: true,
-    stimulus: said(shown),
+    stimulus: { ...plain(shown), speak: [`${cap(listed(words))}.`] },
     facts: { relation: 'groupName', target: shown },
-    why: explain([`${cap(shown)} are all ${group.name}.`], plain(shown)),
+    why: explain([`${cap(listed(words))} are all ${group.name}.`], plain(shown), undefined, hint('What kind of things are these?')),
   });
 }
 

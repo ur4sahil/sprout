@@ -58,4 +58,5 @@ export const DESCRIBING_PICTURES: readonly { word: string; emoji: string }[] = [
 ];
 
 export const OPPOSITES_1: readonly (readonly [string, string])[] = [['big', 'small'], ['hot', 'cold'], ['up', 'down'], ['fast', 'slow'], ['happy', 'sad'], ['open', 'shut'], ['wet', 'dry'], ['day', 'night']];
-export const SAME_MEANING: readonly (readonly [string, string])[] = [['big', 'large'], ['small', 'little'], ['happy', 'glad'], ['fast', 'quick'], ['shut', 'close'], ['start', 'begin']];
+// Shut goes with closed, not close: close can also be said to mean near, and these words are heard.
+export const SAME_MEANING: readonly (readonly [string, string])[] = [['big', 'large'], ['small', 'little'], ['happy', 'glad'], ['fast', 'quick'], ['shut', 'closed'], ['start', 'begin']];

@@ -1,27 +1,36 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Explanation, Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { ANTONYMS, ANTONYMS_HARD, CONTRACTIONS, HOMOPHONES, PREFIXED, SUFFIXED, SYNONYMS, SYNONYMS_HARD } from '../../../data/phonics2';
 import type { SkillGenerator } from '../../../generator';
 import { cap } from '../pk/parts';
+import type { Line } from '../g1/wording';
+import { gapSay, hint, line, spell, stepsOf } from '../g1/wording';
 
 // Language Arts grade 2 B.1 to B.5: prefixes, suffixes, contractions, synonyms and antonyms, homophones.
-// These are about meaning, so words may be heard when tapped, except homophones, which sound alike.
+// These are about meaning, so words may be heard when tapped, except homophones, which sound alike. A word part
+// (un, re, ful, er) is spelled when it is said, because a voice reads "er" as a filler sound and "re" as "ray".
 
 const said = (value: string): Visual => ({ kind: 'text', value, size: 'l', speak: [value] });
 const plain = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kind: 'text', value, size });
-const sentenceSay = (sentence: string): Say => [sentence.replace('___', 'blank')];
+const sentenceSay = (sentence: string): Say => [gapSay(sentence)];
+
+// The explanation: its steps (with their own speech where they need it), what is said as it opens, the picture
+// and the hint.
+function explained(lines: readonly Line[], visual: Visual, nudge: Hint): Explanation {
+  return { speak: lines.flatMap((each): Say => (typeof each === 'string' ? [each] : each.say)), ...stepsOf(lines), visual, hint: nudge };
+}
 
 function oneOf(rng: Rng, right: string, pool: readonly string[], count = 2): string[] {
   return rng.shuffle([right, ...rng.sample([...new Set(pool.filter((each) => each !== right))], count)]);
 }
 
-function ask(prompt: string, choices: string[], right: string, facts: Record<string, string | string[]>, explanation: { speak: Say; steps: string[]; visual: Visual }, stimulus?: Visual): QuestionDraft {
+function ask(prompt: string, choices: string[], right: string, facts: Record<string, string | string[]>, explanation: Explanation, stimulus?: Visual, speak?: Say): QuestionDraft {
   return {
     type: 'choice',
     mode: 'look',
     facts: { ...facts, options: choices },
-    prompt: { text: prompt, speak: [prompt] },
+    prompt: { text: prompt, speak: speak ?? [prompt] },
     ...(stimulus ? { stimulus } : {}),
     options: choices.map(said),
     answerIndex: choices.indexOf(right),
@@ -33,13 +42,17 @@ function ask(prompt: string, choices: string[], right: string, facts: Record<str
 // Levels: what an un word means / which word means "do again" / mixed. Oracle: ela2.
 
 const PREFIX_RULE = 'un at the start means not, or the opposite. re at the start means again.';
+type Prefixed = (typeof PREFIXED)[number];
+// What this word's prefix means: un makes a describing word "not", and an action "the opposite"; re means again.
+const prefixGloss = (entry: Prefixed): string => (entry.prefix === 're' ? 'again' : entry.meaning.startsWith('not ') ? 'not' : 'the opposite');
 
-function prefixQuestion(entry: (typeof PREFIXED)[number], toMeaning: boolean, rng: Rng): QuestionDraft {
-  const why = { speak: [PREFIX_RULE, `${entry.word} means ${entry.meaning}.`] as Say, steps: [PREFIX_RULE, `${cap(entry.word)} means ${entry.meaning}.`], visual: plain(`${entry.prefix} + ${entry.base} = ${entry.word}`) };
+function prefixQuestion(entry: Prefixed, toMeaning: boolean, rng: Rng): QuestionDraft {
+  const rule = line(`The letters ${entry.prefix} at the start mean ${prefixGloss(entry)}.`, ['The letters', ...spell(entry.prefix), 'at the start mean', `${prefixGloss(entry)}.`]);
+  const why = explained([rule, `${cap(entry.word)} means ${entry.meaning}.`], plain(`${entry.prefix} + ${entry.base} = ${entry.word}`), hint('Find the base word. What do the letters at the start add?'));
   if (toMeaning) {
-    // The wrong meanings: the other prefix's meaning of the same base, and another word's meaning.
+    // Every meaning is about the same base word: the other prefix's meaning, and one that adds no prefix's.
     const swapped = entry.prefix === 'un' ? `${entry.base} again` : `not ${entry.base}`;
-    const other = rng.pick(PREFIXED.filter((each) => each.base !== entry.base)).meaning;
+    const other = entry.meaning.startsWith('not ') ? `very ${entry.base}` : `${entry.base} slowly`;
     const choices = rng.shuffle([entry.meaning, swapped, other]);
     return ask(`What does ${entry.word} mean?`, choices, entry.meaning, { target: entry.word, relation: 'prefixMeaning' }, why, plain(entry.word, 'xl'));
   }
@@ -75,19 +88,29 @@ export const prefixesGenerator: SkillGenerator = {
 // Levels: what the word means / which word fits the sentence / mixed. Oracle: ela2.
 
 const SUFFIX_RULE = 'ful means full of. less means without. er means more. est means the most.';
-const baseOf = (meaning: string): string => meaning.replace(/^(full of|without an?|without|more|most) /, '');
+type Suffixed = (typeof SUFFIXED)[number];
+// What each ending means, said for this word only.
+const SUFFIX_GLOSS: Record<Suffixed['suffix'], string> = { ful: 'full of', less: 'without', er: 'more, when you compare two', est: 'the most, when you compare more than two' };
+// The wrong meanings: the same base word with the meaning of another ending, all of them real phrases.
+function otherMeanings(entry: Suffixed): [string, string] {
+  const { base } = entry;
+  if (entry.suffix === 'ful') return [`without ${base}`, `a little ${base}`];
+  if (entry.suffix === 'less') return [`full of ${base}`, `a little ${base}`];
+  if (entry.suffix === 'er') return [`the most ${base} of all`, `not ${base}`];
+  return [`more ${base} than another`, `not ${base}`];
+}
 
-function suffixQuestion(entry: (typeof SUFFIXED)[number], toMeaning: boolean, rng: Rng): QuestionDraft {
-  const why = { speak: [SUFFIX_RULE, `${entry.word} means ${entry.meaning}.`] as Say, steps: [SUFFIX_RULE, `${cap(entry.word)} means ${entry.meaning}.`], visual: plain(entry.word, 'xl') };
+function suffixQuestion(entry: Suffixed, toMeaning: boolean, rng: Rng): QuestionDraft {
+  const rule = line(`The ending ${entry.suffix} means ${SUFFIX_GLOSS[entry.suffix]}.`, ['The ending', ...spell(entry.suffix), 'means', `${SUFFIX_GLOSS[entry.suffix]}.`]);
+  const lines = [rule, `${cap(entry.word)} means ${entry.meaning}.`];
   if (toMeaning) {
-    const base = baseOf(entry.meaning);
-    const forms = [`full of ${base}`, `without ${base}`, `more ${base}`, `most ${base}`].filter((each) => each !== entry.meaning && !(entry.suffix === 'less' && each.startsWith('without')));
-    const choices = rng.shuffle([entry.meaning, ...rng.sample(forms, 2)]);
-    return ask(`What does ${entry.word} mean?`, choices, entry.meaning, { target: entry.word, relation: 'suffixMeaning' }, why, plain(entry.word, 'xl'));
+    const choices = rng.shuffle([entry.meaning, ...otherMeanings(entry)]);
+    return ask(`What does ${entry.word} mean?`, choices, entry.meaning, { target: entry.word, relation: 'suffixMeaning' }, explained(lines, plain(entry.word, 'xl'), hint('Find the base word. What does the ending add?')), plain(entry.word, 'xl'));
   }
   // The other words have other bases, so only one fits the sentence.
-  const choices = oneOf(rng, entry.word, SUFFIXED.filter((each) => baseOf(each.meaning) !== baseOf(entry.meaning) && each.suffix !== entry.suffix).map((each) => each.word));
-  return ask('Which word fits the sentence?', choices, entry.word, { target: entry.sentence, relation: 'suffixSentence' }, { ...why, visual: plain(entry.sentence.replace('___', entry.word)) }, { ...plain(entry.sentence), speak: sentenceSay(entry.sentence) });
+  const choices = oneOf(rng, entry.word, SUFFIXED.filter((each) => each.base !== entry.base && each.suffix !== entry.suffix).map((each) => each.word));
+  const prompt = 'Which word fits the sentence?';
+  return ask(prompt, choices, entry.word, { target: entry.sentence, relation: 'suffixSentence' }, explained(lines, plain(entry.sentence.replace('___', entry.word)), hint('Try each word in the gap. Which one makes sense?')), { ...plain(entry.sentence), speak: sentenceSay(entry.sentence) }, [prompt, ...sentenceSay(entry.sentence)]);
 }
 
 function suffixes(level: Level, rng: Rng): QuestionDraft {
@@ -106,7 +129,7 @@ export const suffixesGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: SUFFIX_RULE, speak: [SUFFIX_RULE], visual: plain('help + ful = helpful') },
     { beat: 'watch', text: 'Helpful means full of help. Fearless means without fear.', speak: ['Helpful means full of help. Fearless means without fear.'], visual: plain('fear + less = fearless') },
-    { beat: 'try', text: 'What does tallest mean?', speak: ['What does tallest mean?'], visual: plain('tallest', 'xl'), reveal: { text: 'Tallest means most tall.', speak: ['Tallest means most tall.'], visual: plain('tall + est = tallest') } },
+    { beat: 'try', text: 'What does tallest mean?', speak: ['What does tallest mean?'], visual: plain('tallest', 'xl'), reveal: { text: 'Tallest means the most tall of all.', speak: ['Tallest means the most tall of all.'], visual: plain('tall + est = tallest') } },
     { beat: 'remember', text: SUFFIX_RULE, speak: [SUFFIX_RULE], visual: plain('help + ful = helpful') },
   ],
   oracle: 'ela2',
@@ -119,15 +142,17 @@ const CONTRACTION_RULE = 'A contraction joins two words into one. An apostrophe 
 
 function contractions(level: Level, rng: Rng): QuestionDraft {
   const entry = rng.pick(CONTRACTIONS);
-  const why = { speak: [CONTRACTION_RULE, `${entry.short} is short for ${entry.long}.`] as Say, steps: [CONTRACTION_RULE, `${entry.short} = ${entry.long}.`], visual: plain(`${entry.long} → ${entry.short}`) };
+  const lines = [CONTRACTION_RULE, `${cap(entry.short)} is short for ${entry.long}.`];
+  const toShort = hint('Say the two words fast, as one word. Which word sounds like that?');
   const others = CONTRACTIONS.filter((each) => each !== entry);
-  if (level === 2) return ask(`What two words make ${entry.short}?`, oneOf(rng, entry.long, others.map((each) => each.long)), entry.long, { target: entry.short, relation: 'contractionLong' }, why, plain(entry.short, 'xl'));
+  if (level === 2) return ask(`What two words make ${entry.short}?`, oneOf(rng, entry.long, others.map((each) => each.long)), entry.long, { target: entry.short, relation: 'contractionLong' }, explained(lines, plain(`${entry.long} → ${entry.short}`), hint('Which letters did the apostrophe take the place of?')), plain(entry.short, 'xl'));
   if (level === 3) {
     const sentence = entry.sentence.replace('___', entry.long);
     const shownSentence = sentence[0]?.toUpperCase() + sentence.slice(1);
-    return ask(`Which word can take the place of "${entry.long}"?`, oneOf(rng, entry.short, others.map((each) => each.short)), entry.short, { target: entry.long, relation: 'contractionShort' }, why, { ...plain(shownSentence), speak: [shownSentence] });
+    const prompt = `Which word can take the place of "${entry.long}"?`;
+    return ask(prompt, oneOf(rng, entry.short, others.map((each) => each.short)), entry.short, { target: entry.long, relation: 'contractionShort' }, explained(lines, plain(`${entry.long} → ${entry.short}`), toShort), { ...plain(shownSentence), speak: [shownSentence] }, [prompt, shownSentence]);
   }
-  return ask(`Which word is short for ${entry.long}?`, oneOf(rng, entry.short, others.map((each) => each.short)), entry.short, { target: entry.long, relation: 'contractionShort' }, why);
+  return ask(`Which word is short for ${entry.long}?`, oneOf(rng, entry.short, others.map((each) => each.short)), entry.short, { target: entry.long, relation: 'contractionShort' }, explained(lines, plain(`${entry.long} → ${entry.short}`), toShort));
 }
 
 export const contractionsGenerator: SkillGenerator = {
@@ -159,9 +184,12 @@ function synonyms(level: Level, rng: Rng): QuestionDraft {
   // A wrong option is never linked to the target or to the right word in any list, so only one fits.
   const pool = [...new Set(pairs.flat())].filter((each) => each !== target && each !== right && !all.some(([a, b]) => (a === each || b === each) && [a, b].some((x) => x === target || x === right)));
   const choices = rng.shuffle([right, ...rng.sample(pool, 2)]);
-  const prompt = `Which word means ${same ? 'the same as' : 'the opposite of'} ${target}?`;
+  // Worded as in grade 1 B.3: "means the same as" and "is the opposite of".
+  const relation = same ? 'means the same as' : 'is the opposite of';
+  const prompt = `Which word ${relation} ${target}?`;
   const rule = same ? 'Words that mean the same are synonyms.' : 'Words that mean the opposite are antonyms.';
-  return ask(prompt, choices, right, { target, relation: same ? 'synonym' : 'antonym' }, { speak: [rule, `${right} means ${same ? 'the same as' : 'the opposite of'} ${target}.`], steps: [rule, `${cap(right)} means ${same ? 'the same as' : 'the opposite of'} ${target}.`], visual: plain(`${target} ${same ? '=' : '↔'} ${right}`) }, said(target));
+  const nudge = hint(same ? 'Say the word. Which word could take its place in a sentence?' : 'Say the word. Which word means something very different?');
+  return ask(prompt, choices, right, { target, relation: same ? 'synonym' : 'antonym' }, explained([rule, `${cap(right)} ${relation} ${target}.`], plain(`${target} ${same ? '=' : '↔'} ${right}`), nudge), said(target));
 }
 
 export const synonymsGenerator: SkillGenerator = {
@@ -185,14 +213,19 @@ export const synonymsGenerator: SkillGenerator = {
 // Levels: to, two, too / there, their and for, four / mixed. The words sound alike, so they are not spoken.
 // Oracle: ela2.
 
+// A phrase with numbers in it, said with number parts: "is the number 2".
+function wordsOf(text: string): Say {
+  return text.split(/(\d+)/).filter((each) => each.trim() !== '').map((each) => (/^\d+$/.test(each) ? { number: Number(each) } : each.trim()));
+}
+
 function homophones(level: Level, rng: Rng): QuestionDraft {
   const pool = level === 1 ? HOMOPHONES.filter((each) => each.group.includes('two')) : level === 2 ? HOMOPHONES.filter((each) => each.group.includes('their') || each.group.includes('four')) : HOMOPHONES;
   const entry = rng.pick(pool);
   const prompt = 'Which word fits the sentence?';
-  const meaning: Record<string, string> = { two: 'two is the number 2.', to: 'to points where something goes.', too: 'too means also, or more than enough.', there: 'there means in that place.', their: 'their means it belongs to them.', four: 'four is the number 4.', for: 'for means it is meant for someone.', sea: 'sea is the big salty water.', see: 'see is what eyes do.', won: 'won means came first.', one: 'one is the number 1.', write: 'write is what a pencil helps you do.', right: 'right means correct, or the side opposite left.' };
-  const line = `${cap(meaning[entry.word] ?? entry.word)}`;
-  // Said aloud, a number is a word: "two is the number two".
-  const lineSaid = line.replace(/\d+/g, (digits) => ({ '1': 'one', '2': 'two', '4': 'four' })[digits] ?? digits);
+  // Heard aloud, two, to and too are one sound, so the step spells the word before it says what it means.
+  const meaning: Record<string, string> = { two: 'is the number 2', to: 'shows where you go', too: 'means also, or more than enough', there: 'means in that place', their: 'means it belongs to them', four: 'is the number 4', for: 'tells who gets something', sea: 'is the big salty water', see: 'is what your eyes do', won: 'means came first', one: 'is the number 1', write: 'is what you do with a pencil', right: 'means correct, or the side opposite left' };
+  const spelledLine = `${cap(entry.word)}, spelled ${entry.word.split('').join(', ')}, ${meaning[entry.word] ?? 'is the word here'}.`;
+  const done = entry.sentence.replace('___', entry.word);
   return {
     type: 'choice',
     mode: 'look',
@@ -202,7 +235,12 @@ function homophones(level: Level, rng: Rng): QuestionDraft {
     stimulus: { ...plain(entry.sentence), speak: sentenceSay(entry.sentence) },
     options: entry.group.map((each) => plain(each, 'xl')),
     answerIndex: entry.group.indexOf(entry.word),
-    explanation: { speak: ['These words sound the same but mean different things.', lineSaid], steps: ['These words sound the same but mean different things.', line, entry.sentence.replace('___', entry.word)], visual: plain(entry.sentence.replace('___', entry.word)) },
+    explanation: {
+      speak: ['These words sound the same but mean different things.', { word: cap(entry.word) }, ', spelled', ...spell(entry.word), ',', ...wordsOf(meaning[entry.word] ?? 'is the word here'), '.'],
+      steps: ['These words sound the same but mean different things.', spelledLine, done],
+      visual: plain(done),
+      hint: hint('These words sound the same. Think about what the sentence means.'),
+    },
   };
 }
 

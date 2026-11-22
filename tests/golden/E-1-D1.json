@@ -1,13 +1,13 @@
 {
  "skillId": "E-1-D1",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "read",
   "facts": {
    "id": "story19-1",
    "read": [
-    "Max has a loud drum. Ava can not read her note. Max stops so Ava can read."
+    "Max has a loud drum. Ava wants to read her note. Max stops so Ava can read."
    ]
   },
   "prompt": {
@@ -18,7 +18,7 @@
   },
   "stimulus": {
    "kind": "text",
-   "value": "Max has a loud drum. Ava can not read her note. Max stops so Ava can read.",
+   "value": "Max has a loud drum. Ava wants to read her note. Max stops so Ava can read.",
    "size": "m"
   },
   "options": [
@@ -51,12 +51,15 @@
     "kind": "text",
     "value": "Max has a loud drum.",
     "size": "m"
+   },
+   "hint": {
+    "text": "Look back at the story. Find the sentence that answers the question."
    }
   },
   "skillId": "E-1-D1",
   "level": 1,
   "seed": 431,
-  "key": "E-1-D1|1|{\"id\":\"story19-1\",\"read\":[\"Max has a loud drum. Ava can not read her note. Max stops so Ava can read.\"]}"
+  "key": "E-1-D1|1|{\"id\":\"story19-1\",\"read\":[\"Max has a loud drum. Ava wants to read her note. Max stops so Ava can read.\"]}"
  },
  "levels": {
   "1": [
@@ -110,6 +113,9 @@
       "kind": "text",
       "value": "Mia makes a cupcake for Ava.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -167,6 +173,9 @@
       "kind": "text",
       "value": "Rain came down in the night.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -224,6 +233,9 @@
       "kind": "text",
       "value": "Rain came down in the night.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -237,7 +249,7 @@
     "facts": {
      "id": "story19-1",
      "read": [
-      "Max has a loud drum. Ava can not read her note. Max stops so Ava can read."
+      "Max has a loud drum. Ava wants to read her note. Max stops so Ava can read."
      ]
     },
     "prompt": {
@@ -248,7 +260,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "Max has a loud drum. Ava can not read her note. Max stops so Ava can read.",
+     "value": "Max has a loud drum. Ava wants to read her note. Max stops so Ava can read.",
      "size": "m"
     },
     "options": [
@@ -281,12 +293,15 @@
       "kind": "text",
       "value": "Max has a loud drum.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 1,
     "seed": 4,
-    "key": "E-1-D1|1|{\"id\":\"story19-1\",\"read\":[\"Max has a loud drum. Ava can not read her note. Max stops so Ava can read.\"]}"
+    "key": "E-1-D1|1|{\"id\":\"story19-1\",\"read\":[\"Max has a loud drum. Ava wants to read her note. Max stops so Ava can read.\"]}"
    },
    {
     "type": "choice",
@@ -294,7 +309,7 @@
     "facts": {
      "id": "story14-1",
      "read": [
-      "Max and Zoe make a snowman. The sun came out and was hot. Soon the snowman was not there."
+      "Max and Zoe make a snowman. The sun comes out and is hot. Soon the snowman is not there."
      ]
     },
     "prompt": {
@@ -305,7 +320,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "Max and Zoe make a snowman. The sun came out and was hot. Soon the snowman was not there.",
+     "value": "Max and Zoe make a snowman. The sun comes out and is hot. Soon the snowman is not there.",
      "size": "m"
     },
     "options": [
@@ -338,12 +353,15 @@
       "kind": "text",
       "value": "Max and Zoe make a snowman.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 1,
     "seed": 5,
-    "key": "E-1-D1|1|{\"id\":\"story14-1\",\"read\":[\"Max and Zoe make a snowman. The sun came out and was hot. Soon the snowman was not there.\"]}"
+    "key": "E-1-D1|1|{\"id\":\"story14-1\",\"read\":[\"Max and Zoe make a snowman. The sun comes out and is hot. Soon the snowman is not there.\"]}"
    },
    {
     "type": "choice",
@@ -351,7 +369,7 @@
     "facts": {
      "id": "story11-1",
      "read": [
-      "Sam can not find his cap. He looks under the bed. The cap is under the bed."
+      "Sam wants to find his cap. He looks under the bed. The cap is under the bed."
      ]
     },
     "prompt": {
@@ -362,7 +380,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "Sam can not find his cap. He looks under the bed. The cap is under the bed.",
+     "value": "Sam wants to find his cap. He looks under the bed. The cap is under the bed.",
      "size": "m"
     },
     "options": [
@@ -386,21 +404,24 @@
     "explanation": {
      "speak": [
       "The story says:",
-      "Sam can not find his cap."
+      "Sam wants to find his cap."
      ],
      "steps": [
-      "The story says: Sam can not find his cap."
+      "The story says: Sam wants to find his cap."
      ],
      "visual": {
       "kind": "text",
       "value": "Sam can not find his cap.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 1,
     "seed": 6,
-    "key": "E-1-D1|1|{\"id\":\"story11-1\",\"read\":[\"Sam can not find his cap. He looks under the bed. The cap is under the bed.\"]}"
+    "key": "E-1-D1|1|{\"id\":\"story11-1\",\"read\":[\"Sam wants to find his cap. He looks under the bed. The cap is under the bed.\"]}"
    },
    {
     "type": "choice",
@@ -452,6 +473,9 @@
       "kind": "text",
       "value": "Sam gives the hat to Max.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -509,6 +533,9 @@
       "kind": "text",
       "value": "A big crab sat on a shell.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -566,6 +593,9 @@
       "kind": "text",
       "value": "A big crab sat on a shell.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -579,7 +609,7 @@
     "facts": {
      "id": "story11-1",
      "read": [
-      "Sam can not find his cap. He looks under the bed. The cap is under the bed."
+      "Sam wants to find his cap. He looks under the bed. The cap is under the bed."
      ]
     },
     "prompt": {
@@ -590,7 +620,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "Sam can not find his cap. He looks under the bed. The cap is under the bed.",
+     "value": "Sam wants to find his cap. He looks under the bed. The cap is under the bed.",
      "size": "m"
     },
     "options": [
@@ -614,21 +644,24 @@
     "explanation": {
      "speak": [
       "The story says:",
-      "Sam can not find his cap."
+      "Sam wants to find his cap."
      ],
      "steps": [
-      "The story says: Sam can not find his cap."
+      "The story says: Sam wants to find his cap."
      ],
      "visual": {
       "kind": "text",
       "value": "Sam can not find his cap.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 1,
     "seed": 10,
-    "key": "E-1-D1|1|{\"id\":\"story11-1\",\"read\":[\"Sam can not find his cap. He looks under the bed. The cap is under the bed.\"]}"
+    "key": "E-1-D1|1|{\"id\":\"story11-1\",\"read\":[\"Sam wants to find his cap. He looks under the bed. The cap is under the bed.\"]}"
    }
   ],
   "2": [
@@ -682,6 +715,9 @@
       "kind": "text",
       "value": "Ava thanks Mia with a hug.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -739,6 +775,9 @@
       "kind": "text",
       "value": "Ava was dry in the tent.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -796,6 +835,9 @@
       "kind": "text",
       "value": "Ava was dry in the tent.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -809,7 +851,7 @@
     "facts": {
      "id": "story19-2",
      "read": [
-      "Max has a loud drum. Ava can not read her note. Max stops so Ava can read."
+      "Max has a loud drum. Ava wants to read her note. Max stops so Ava can read."
      ]
     },
     "prompt": {
@@ -820,7 +862,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "Max has a loud drum. Ava can not read her note. Max stops so Ava can read.",
+     "value": "Max has a loud drum. Ava wants to read her note. Max stops so Ava can read.",
      "size": "m"
     },
     "options": [
@@ -853,12 +895,15 @@
       "kind": "text",
       "value": "Max stops so Ava can read.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 2,
     "seed": 4,
-    "key": "E-1-D1|2|{\"id\":\"story19-2\",\"read\":[\"Max has a loud drum. Ava can not read her note. Max stops so Ava can read.\"]}"
+    "key": "E-1-D1|2|{\"id\":\"story19-2\",\"read\":[\"Max has a loud drum. Ava wants to read her note. Max stops so Ava can read.\"]}"
    },
    {
     "type": "choice",
@@ -866,34 +911,34 @@
     "facts": {
      "id": "story14-2",
      "read": [
-      "Max and Zoe make a snowman. The sun came out and was hot. Soon the snowman was not there."
+      "Max and Zoe make a snowman. The sun comes out and is hot. Soon the snowman is not there."
      ]
     },
     "prompt": {
-     "text": "Why was the snowman not there?",
+     "text": "Why is the snowman not there?",
      "speak": [
-      "Why was the snowman not there?"
+      "Why is the snowman not there?"
      ]
     },
     "stimulus": {
      "kind": "text",
-     "value": "Max and Zoe make a snowman. The sun came out and was hot. Soon the snowman was not there.",
+     "value": "Max and Zoe make a snowman. The sun comes out and is hot. Soon the snowman is not there.",
      "size": "m"
     },
     "options": [
      {
       "kind": "text",
-      "value": "The sun was hot",
+      "value": "The sun is hot",
       "size": "m"
      },
      {
       "kind": "text",
-      "value": "Max ran away",
+      "value": "Max runs away",
       "size": "m"
      },
      {
       "kind": "text",
-      "value": "A dog ate it",
+      "value": "A dog eats it",
       "size": "m"
      }
     ],
@@ -901,21 +946,24 @@
     "explanation": {
      "speak": [
       "The story says:",
-      "The sun came out and was hot."
+      "The sun comes out and is hot."
      ],
      "steps": [
-      "The story says: The sun came out and was hot."
+      "The story says: The sun comes out and is hot."
      ],
      "visual": {
       "kind": "text",
       "value": "The sun came out and was hot.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 2,
     "seed": 5,
-    "key": "E-1-D1|2|{\"id\":\"story14-2\",\"read\":[\"Max and Zoe make a snowman. The sun came out and was hot. Soon the snowman was not there.\"]}"
+    "key": "E-1-D1|2|{\"id\":\"story14-2\",\"read\":[\"Max and Zoe make a snowman. The sun comes out and is hot. Soon the snowman is not there.\"]}"
    },
    {
     "type": "choice",
@@ -923,7 +971,7 @@
     "facts": {
      "id": "story11-2",
      "read": [
-      "Sam can not find his cap. He looks under the bed. The cap is under the bed."
+      "Sam wants to find his cap. He looks under the bed. The cap is under the bed."
      ]
     },
     "prompt": {
@@ -934,7 +982,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "Sam can not find his cap. He looks under the bed. The cap is under the bed.",
+     "value": "Sam wants to find his cap. He looks under the bed. The cap is under the bed.",
      "size": "m"
     },
     "options": [
@@ -967,12 +1015,15 @@
       "kind": "text",
       "value": "He looks under the bed.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 2,
     "seed": 6,
-    "key": "E-1-D1|2|{\"id\":\"story11-2\",\"read\":[\"Sam can not find his cap. He looks under the bed. The cap is under the bed.\"]}"
+    "key": "E-1-D1|2|{\"id\":\"story11-2\",\"read\":[\"Sam wants to find his cap. He looks under the bed. The cap is under the bed.\"]}"
    },
    {
     "type": "choice",
@@ -1024,6 +1075,9 @@
       "kind": "text",
       "value": "The hat is too big.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -1081,6 +1135,9 @@
       "kind": "text",
       "value": "The crab ran when Ava came.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -1138,6 +1195,9 @@
       "kind": "text",
       "value": "The crab ran when Ava came.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
@@ -1151,7 +1211,7 @@
     "facts": {
      "id": "story11-2",
      "read": [
-      "Sam can not find his cap. He looks under the bed. The cap is under the bed."
+      "Sam wants to find his cap. He looks under the bed. The cap is under the bed."
      ]
     },
     "prompt": {
@@ -1162,7 +1222,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "Sam can not find his cap. He looks under the bed. The cap is under the bed.",
+     "value": "Sam wants to find his cap. He looks under the bed. The cap is under the bed.",
      "size": "m"
     },
     "options": [
@@ -1195,12 +1255,15 @@
       "kind": "text",
       "value": "He looks under the bed.",
       "size": "m"
+     },
+     "hint": {
+      "text": "Look back at the story. Find the sentence that answers the question."
      }
     },
     "skillId": "E-1-D1",
     "level": 2,
     "seed": 10,
-    "key": "E-1-D1|2|{\"id\":\"story11-2\",\"read\":[\"Sam can not find his cap. He looks under the bed. The cap is under the bed.\"]}"
+    "key": "E-1-D1|2|{\"id\":\"story11-2\",\"read\":[\"Sam wants to find his cap. He looks under the bed. The cap is under the bed.\"]}"
    }
   ]
  }

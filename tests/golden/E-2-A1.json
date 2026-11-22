@@ -1,6 +1,6 @@
 {
  "skillId": "E-2-A1",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "read",
@@ -9,13 +9,13 @@
    "relation": "teamWord2",
    "read": [
     "bow",
-    "rain",
-    "hay"
+    "hay",
+    "peach"
    ],
    "options": [
     "bow",
-    "rain",
-    "hay"
+    "hay",
+    "peach"
    ]
   },
   "prompt": {
@@ -38,12 +38,12 @@
    },
    {
     "kind": "text",
-    "value": "rain",
+    "value": "hay",
     "size": "l"
    },
    {
     "kind": "text",
-    "value": "hay",
+    "value": "peach",
     "size": "l"
    }
   ],
@@ -51,21 +51,85 @@
   "explanation": {
    "speak": [
     {
-     "word": "bow"
+     "word": "Bow"
     },
-    "is spelled with",
+    "ends with",
+    {
+     "letter": "o"
+    },
+    ",",
+    {
+     "letter": "w"
+    },
+    ":",
+    {
+     "sound": "long-o"
+    },
+    ".",
+    "The letters",
     {
      "letter": "o"
     },
     {
      "letter": "w"
     },
-    ".",
-    "Two letters side by side can make one vowel sound."
+    "and",
+    {
+     "letter": "o"
+    },
+    {
+     "letter": "a"
+    },
+    "both say",
+    {
+     "sound": "long-o"
+    },
+    "."
    ],
    "steps": [
-    "Bow is spelled with ow.",
-    "Two letters side by side can make one vowel sound."
+    "Bow ends with ow: /ō/.",
+    "The letters ow and oa both say /ō/."
+   ],
+   "stepsSay": [
+    [
+     {
+      "word": "Bow"
+     },
+     "ends with",
+     {
+      "letter": "o"
+     },
+     ",",
+     {
+      "letter": "w"
+     },
+     ":",
+     {
+      "sound": "long-o"
+     },
+     "."
+    ],
+    [
+     "The letters",
+     {
+      "letter": "o"
+     },
+     {
+      "letter": "w"
+     },
+     "and",
+     {
+      "letter": "o"
+     },
+     {
+      "letter": "a"
+     },
+     "both say",
+     {
+      "sound": "long-o"
+     },
+     "."
+    ]
    ],
    "visual": {
     "kind": "row",
@@ -92,12 +156,15 @@
       ]
      }
     ]
+   },
+   "hint": {
+    "text": "Say the name of the picture. Which word spells it?"
    }
   },
   "skillId": "E-2-A1",
   "level": 1,
   "seed": 501,
-  "key": "E-2-A1|1|{\"read\":[\"bow\",\"rain\",\"hay\"],\"relation\":\"teamWord2\",\"target\":\"bow\"}"
+  "key": "E-2-A1|1|{\"read\":[\"bow\",\"hay\",\"peach\"],\"relation\":\"teamWord2\",\"target\":\"bow\"}"
  },
  "levels": {
   "1": [
@@ -108,13 +175,13 @@
      "target": "seal",
      "relation": "teamWord2",
      "read": [
+      "crayon",
       "hay",
-      "snow",
       "seal"
      ],
      "options": [
+      "crayon",
       "hay",
-      "snow",
       "seal"
      ]
     },
@@ -133,12 +200,12 @@
     "options": [
      {
       "kind": "text",
-      "value": "hay",
+      "value": "crayon",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "snow",
+      "value": "hay",
       "size": "l"
      },
      {
@@ -151,21 +218,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "seal"
+       "word": "Seal"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "ea"
+      },
+      ".",
+      "The letters",
       {
        "letter": "e"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "ea"
+      },
+      "."
      ],
      "steps": [
-      "Seal is spelled with ea.",
-      "Two letters side by side can make one vowel sound."
+      "Seal has ea in the middle: /ē/.",
+      "The letters ea and ee both say /ē/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Seal"
+       },
+       "has",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "ea"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "ea"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -192,12 +323,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 1,
-    "key": "E-2-A1|1|{\"read\":[\"hay\",\"snow\",\"seal\"],\"relation\":\"teamWord2\",\"target\":\"seal\"}"
+    "key": "E-2-A1|1|{\"read\":[\"crayon\",\"hay\",\"seal\"],\"relation\":\"teamWord2\",\"target\":\"seal\"}"
    },
    {
     "type": "choice",
@@ -206,14 +340,14 @@
      "target": "goat",
      "relation": "teamWord2",
      "read": [
-      "feet",
-      "bee",
-      "goat"
+      "sheep",
+      "goat",
+      "leaf"
      ],
      "options": [
-      "feet",
-      "bee",
-      "goat"
+      "sheep",
+      "goat",
+      "leaf"
      ]
     },
     "prompt": {
@@ -231,39 +365,103 @@
     "options": [
      {
       "kind": "text",
-      "value": "feet",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "bee",
+      "value": "sheep",
       "size": "l"
      },
      {
       "kind": "text",
       "value": "goat",
       "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "leaf",
+      "size": "l"
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       {
-       "word": "goat"
+       "word": "Goat"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "oa"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "w"
+      },
+      "both say",
+      {
+       "sound": "oa"
+      },
+      "."
      ],
      "steps": [
-      "Goat is spelled with oa.",
-      "Two letters side by side can make one vowel sound."
+      "Goat has oa in the middle: /ō/.",
+      "The letters oa and ow both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Goat"
+       },
+       "has",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "oa"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "both say",
+       {
+        "sound": "oa"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -290,27 +488,30 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 2,
-    "key": "E-2-A1|1|{\"read\":[\"feet\",\"bee\",\"goat\"],\"relation\":\"teamWord2\",\"target\":\"goat\"}"
+    "key": "E-2-A1|1|{\"read\":[\"sheep\",\"goat\",\"leaf\"],\"relation\":\"teamWord2\",\"target\":\"goat\"}"
    },
    {
     "type": "choice",
     "mode": "read",
     "facts": {
-     "target": "boat",
+     "target": "goat",
      "relation": "teamWord2",
      "read": [
-      "seal",
-      "boat",
+      "goat",
+      "bee",
       "snow"
      ],
      "options": [
-      "seal",
-      "boat",
+      "goat",
+      "bee",
       "snow"
      ]
     },
@@ -322,19 +523,19 @@
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "⛵",
+     "emoji": "🐐",
      "count": 1,
      "layout": "row"
     },
     "options": [
      {
       "kind": "text",
-      "value": "seal",
+      "value": "goat",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "boat",
+      "value": "bee",
       "size": "l"
      },
      {
@@ -343,57 +544,124 @@
       "size": "l"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       {
-       "word": "boat"
+       "word": "Goat"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "oa"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "w"
+      },
+      "both say",
+      {
+       "sound": "oa"
+      },
+      "."
      ],
      "steps": [
-      "Boat is spelled with oa.",
-      "Two letters side by side can make one vowel sound."
+      "Goat has oa in the middle: /ō/.",
+      "The letters oa and ow both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Goat"
+       },
+       "has",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "oa"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "both say",
+       {
+        "sound": "oa"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "⛵",
+        "emoji": "🐐",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "boat"
+          "word": "goat"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "boat",
+        "value": "goat",
         "size": "l",
         "speak": [
          {
-          "word": "boat"
+          "word": "goat"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 3,
-    "key": "E-2-A1|1|{\"read\":[\"seal\",\"boat\",\"snow\"],\"relation\":\"teamWord2\",\"target\":\"boat\"}"
+    "key": "E-2-A1|1|{\"read\":[\"goat\",\"bee\",\"snow\"],\"relation\":\"teamWord2\",\"target\":\"goat\"}"
    },
    {
     "type": "choice",
@@ -402,14 +670,14 @@
      "target": "snow",
      "relation": "teamWord2",
      "read": [
-      "leaf",
       "snow",
-      "peach"
+      "peach",
+      "leaf"
      ],
      "options": [
-      "leaf",
       "snow",
-      "peach"
+      "peach",
+      "leaf"
      ]
     },
     "prompt": {
@@ -427,11 +695,6 @@
     "options": [
      {
       "kind": "text",
-      "value": "leaf",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "snow",
       "size": "l"
      },
@@ -439,27 +702,96 @@
       "kind": "text",
       "value": "peach",
       "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "leaf",
+      "size": "l"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       {
-       "word": "snow"
+       "word": "Snow"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "w"
+      },
+      ":",
+      {
+       "sound": "long-o"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "w"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "both say",
+      {
+       "sound": "long-o"
+      },
+      "."
      ],
      "steps": [
-      "Snow is spelled with ow.",
-      "Two letters side by side can make one vowel sound."
+      "Snow ends with ow: /ō/.",
+      "The letters ow and oa both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Snow"
+       },
+       "ends with",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "w"
+       },
+       ":",
+       {
+        "sound": "long-o"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "both say",
+       {
+        "sound": "long-o"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -486,12 +818,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 4,
-    "key": "E-2-A1|1|{\"read\":[\"leaf\",\"snow\",\"peach\"],\"relation\":\"teamWord2\",\"target\":\"snow\"}"
+    "key": "E-2-A1|1|{\"read\":[\"snow\",\"peach\",\"leaf\"],\"relation\":\"teamWord2\",\"target\":\"snow\"}"
    },
    {
     "type": "choice",
@@ -500,14 +835,14 @@
      "target": "boat",
      "relation": "teamWord2",
      "read": [
-      "play",
-      "peach",
-      "boat"
+      "bowl",
+      "boat",
+      "hay"
      ],
      "options": [
-      "play",
-      "peach",
-      "boat"
+      "bowl",
+      "boat",
+      "hay"
      ]
     },
     "prompt": {
@@ -525,39 +860,103 @@
     "options": [
      {
       "kind": "text",
-      "value": "play",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "peach",
+      "value": "bowl",
       "size": "l"
      },
      {
       "kind": "text",
       "value": "boat",
       "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hay",
+      "size": "l"
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       {
-       "word": "boat"
+       "word": "Boat"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "oa"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "w"
+      },
+      "both say",
+      {
+       "sound": "oa"
+      },
+      "."
      ],
      "steps": [
-      "Boat is spelled with oa.",
-      "Two letters side by side can make one vowel sound."
+      "Boat has oa in the middle: /ō/.",
+      "The letters oa and ow both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Boat"
+       },
+       "has",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "oa"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "both say",
+       {
+        "sound": "oa"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -584,12 +983,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 5,
-    "key": "E-2-A1|1|{\"read\":[\"play\",\"peach\",\"boat\"],\"relation\":\"teamWord2\",\"target\":\"boat\"}"
+    "key": "E-2-A1|1|{\"read\":[\"bowl\",\"boat\",\"hay\"],\"relation\":\"teamWord2\",\"target\":\"boat\"}"
    },
    {
     "type": "choice",
@@ -599,13 +1001,13 @@
      "relation": "teamWord2",
      "read": [
       "leaf",
-      "hay",
-      "bow"
+      "bow",
+      "crayon"
      ],
      "options": [
       "leaf",
-      "hay",
-      "bow"
+      "bow",
+      "crayon"
      ]
     },
     "prompt": {
@@ -628,12 +1030,12 @@
      },
      {
       "kind": "text",
-      "value": "hay",
+      "value": "bow",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "bow",
+      "value": "crayon",
       "size": "l"
      }
     ],
@@ -641,21 +1043,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "leaf"
+       "word": "Leaf"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "ea"
+      },
+      ".",
+      "The letters",
       {
        "letter": "e"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "ea"
+      },
+      "."
      ],
      "steps": [
-      "Leaf is spelled with ea.",
-      "Two letters side by side can make one vowel sound."
+      "Leaf has ea in the middle: /ē/.",
+      "The letters ea and ee both say /ē/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Leaf"
+       },
+       "has",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "ea"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "ea"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -682,12 +1148,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 6,
-    "key": "E-2-A1|1|{\"read\":[\"leaf\",\"hay\",\"bow\"],\"relation\":\"teamWord2\",\"target\":\"leaf\"}"
+    "key": "E-2-A1|1|{\"read\":[\"leaf\",\"bow\",\"crayon\"],\"relation\":\"teamWord2\",\"target\":\"leaf\"}"
    },
    {
     "type": "choice",
@@ -697,13 +1166,13 @@
      "relation": "teamWord2",
      "read": [
       "peach",
-      "rain",
-      "seal"
+      "soap",
+      "rain"
      ],
      "options": [
       "peach",
-      "rain",
-      "seal"
+      "soap",
+      "rain"
      ]
     },
     "prompt": {
@@ -726,34 +1195,98 @@
      },
      {
       "kind": "text",
-      "value": "rain",
+      "value": "soap",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "seal",
+      "value": "rain",
       "size": "l"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       {
-       "word": "rain"
+       "word": "Rain"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "a"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "in the middle:",
+      {
+       "sound": "ai"
+      },
+      ".",
+      "The letters",
       {
        "letter": "a"
       },
       {
        "letter": "i"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "y"
+      },
+      "both say",
+      {
+       "sound": "ai"
+      },
+      "."
      ],
      "steps": [
-      "Rain is spelled with ai.",
-      "Two letters side by side can make one vowel sound."
+      "Rain has ai in the middle: /ā/.",
+      "The letters ai and ay both say /ā/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Rain"
+       },
+       "has",
+       {
+        "letter": "a"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "in the middle:",
+       {
+        "sound": "ai"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "i"
+       },
+       "and",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "y"
+       },
+       "both say",
+       {
+        "sound": "ai"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -780,12 +1313,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 7,
-    "key": "E-2-A1|1|{\"read\":[\"peach\",\"rain\",\"seal\"],\"relation\":\"teamWord2\",\"target\":\"rain\"}"
+    "key": "E-2-A1|1|{\"read\":[\"peach\",\"soap\",\"rain\"],\"relation\":\"teamWord2\",\"target\":\"rain\"}"
    },
    {
     "type": "choice",
@@ -794,14 +1330,14 @@
      "target": "train",
      "relation": "teamWord2",
      "read": [
-      "train",
-      "hay",
-      "feet"
+      "soap",
+      "goat",
+      "train"
      ],
      "options": [
-      "train",
-      "hay",
-      "feet"
+      "soap",
+      "goat",
+      "train"
      ]
     },
     "prompt": {
@@ -819,39 +1355,103 @@
     "options": [
      {
       "kind": "text",
+      "value": "soap",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "goat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
       "value": "train",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "hay",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "feet",
       "size": "l"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       {
-       "word": "train"
+       "word": "Train"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "a"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "in the middle:",
+      {
+       "sound": "ai"
+      },
+      ".",
+      "The letters",
       {
        "letter": "a"
       },
       {
        "letter": "i"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "y"
+      },
+      "both say",
+      {
+       "sound": "ai"
+      },
+      "."
      ],
      "steps": [
-      "Train is spelled with ai.",
-      "Two letters side by side can make one vowel sound."
+      "Train has ai in the middle: /ā/.",
+      "The letters ai and ay both say /ā/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Train"
+       },
+       "has",
+       {
+        "letter": "a"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "in the middle:",
+       {
+        "sound": "ai"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "i"
+       },
+       "and",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "y"
+       },
+       "both say",
+       {
+        "sound": "ai"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -878,26 +1478,29 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 8,
-    "key": "E-2-A1|1|{\"read\":[\"train\",\"hay\",\"feet\"],\"relation\":\"teamWord2\",\"target\":\"train\"}"
+    "key": "E-2-A1|1|{\"read\":[\"soap\",\"goat\",\"train\"],\"relation\":\"teamWord2\",\"target\":\"train\"}"
    },
    {
     "type": "choice",
     "mode": "read",
     "facts": {
-     "target": "tray",
+     "target": "crayon",
      "relation": "teamWord2",
      "read": [
-      "tray",
+      "crayon",
       "tree",
       "rain"
      ],
      "options": [
-      "tray",
+      "crayon",
       "tree",
       "rain"
      ]
@@ -910,14 +1513,14 @@
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "🍽️",
+     "emoji": "🖍️",
      "count": 1,
      "layout": "row"
     },
     "options": [
      {
       "kind": "text",
-      "value": "tray",
+      "value": "crayon",
       "size": "l"
      },
      {
@@ -935,53 +1538,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "tray"
+       "word": "Crayon"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "a"
+      },
+      ",",
+      {
+       "letter": "y"
+      },
+      "in the middle:",
+      {
+       "sound": "ay"
+      },
+      ".",
+      "The letters",
       {
        "letter": "a"
       },
       {
        "letter": "y"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "both say",
+      {
+       "sound": "ay"
+      },
+      "."
      ],
      "steps": [
-      "Tray is spelled with ay.",
-      "Two letters side by side can make one vowel sound."
+      "Crayon has ay in the middle: /ā/.",
+      "The letters ay and ai both say /ā/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Crayon"
+       },
+       "has",
+       {
+        "letter": "a"
+       },
+       ",",
+       {
+        "letter": "y"
+       },
+       "in the middle:",
+       {
+        "sound": "ay"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "y"
+       },
+       "and",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "i"
+       },
+       "both say",
+       {
+        "sound": "ay"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "🍽️",
+        "emoji": "🖍️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "tray"
+          "word": "crayon"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "tray",
+        "value": "crayon",
         "size": "l",
         "speak": [
          {
-          "word": "tray"
+          "word": "crayon"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 9,
-    "key": "E-2-A1|1|{\"read\":[\"tray\",\"tree\",\"rain\"],\"relation\":\"teamWord2\",\"target\":\"tray\"}"
+    "key": "E-2-A1|1|{\"read\":[\"crayon\",\"tree\",\"rain\"],\"relation\":\"teamWord2\",\"target\":\"crayon\"}"
    },
    {
     "type": "choice",
@@ -990,14 +1660,14 @@
      "target": "leaf",
      "relation": "teamWord2",
      "read": [
-      "bowl",
       "leaf",
-      "bow"
+      "crayon",
+      "train"
      ],
      "options": [
-      "bowl",
       "leaf",
-      "bow"
+      "crayon",
+      "train"
      ]
     },
     "prompt": {
@@ -1015,39 +1685,103 @@
     "options": [
      {
       "kind": "text",
-      "value": "bowl",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "leaf",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "bow",
+      "value": "crayon",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "train",
       "size": "l"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       {
-       "word": "leaf"
+       "word": "Leaf"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "ea"
+      },
+      ".",
+      "The letters",
       {
        "letter": "e"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "ea"
+      },
+      "."
      ],
      "steps": [
-      "Leaf is spelled with ea.",
-      "Two letters side by side can make one vowel sound."
+      "Leaf has ea in the middle: /ē/.",
+      "The letters ea and ee both say /ē/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Leaf"
+       },
+       "has",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "ea"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "ea"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1074,12 +1808,15 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say the name of the picture. Which word spells it?"
      }
     },
     "skillId": "E-2-A1",
     "level": 1,
     "seed": 10,
-    "key": "E-2-A1|1|{\"read\":[\"bowl\",\"leaf\",\"bow\"],\"relation\":\"teamWord2\",\"target\":\"leaf\"}"
+    "key": "E-2-A1|1|{\"read\":[\"leaf\",\"crayon\",\"train\"],\"relation\":\"teamWord2\",\"target\":\"leaf\"}"
    }
   ],
   "2": [
@@ -1143,21 +1880,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "seal"
+       "word": "Seal"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "ea"
+      },
+      ".",
+      "The letters",
       {
        "letter": "e"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "ea"
+      },
+      "."
      ],
      "steps": [
-      "Seal is spelled with ea.",
-      "Two letters side by side can make one vowel sound."
+      "Seal has ea in the middle: /ē/.",
+      "The letters ea and ee both say /ē/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Seal"
+       },
+       "has",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "ea"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "ea"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1184,6 +1985,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -1251,21 +2055,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "goat"
+       "word": "Goat"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "oa"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "w"
+      },
+      "both say",
+      {
+       "sound": "oa"
+      },
+      "."
      ],
      "steps": [
-      "Goat is spelled with oa.",
-      "Two letters side by side can make one vowel sound."
+      "Goat has oa in the middle: /ō/.",
+      "The letters oa and ow both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Goat"
+       },
+       "has",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "oa"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "both say",
+       {
+        "sound": "oa"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1292,6 +2160,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -1303,7 +2174,7 @@
     "type": "choice",
     "mode": "look",
     "facts": {
-     "target": "boat",
+     "target": "goat",
      "relation": "team2",
      "options": [
       "ea",
@@ -1322,18 +2193,18 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "⛵",
+       "emoji": "🐐",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "boat"
+         "word": "goat"
         }
        ]
       },
       {
        "kind": "text",
-       "value": "b__t",
+       "value": "g__t",
        "size": "xl"
       }
      ]
@@ -1359,53 +2230,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "boat"
+       "word": "Goat"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "oa"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "w"
+      },
+      "both say",
+      {
+       "sound": "oa"
+      },
+      "."
      ],
      "steps": [
-      "Boat is spelled with oa.",
-      "Two letters side by side can make one vowel sound."
+      "Goat has oa in the middle: /ō/.",
+      "The letters oa and ow both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Goat"
+       },
+       "has",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "oa"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "both say",
+       {
+        "sound": "oa"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "⛵",
+        "emoji": "🐐",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "boat"
+          "word": "goat"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "boat",
+        "value": "goat",
         "size": "l",
         "speak": [
          {
-          "word": "boat"
+          "word": "goat"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
     "level": 2,
     "seed": 3,
-    "key": "E-2-A1|2|{\"relation\":\"team2\",\"target\":\"boat\"}"
+    "key": "E-2-A1|2|{\"relation\":\"team2\",\"target\":\"goat\"}"
    },
    {
     "type": "choice",
@@ -1467,21 +2405,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "snow"
+       "word": "Snow"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "w"
+      },
+      ":",
+      {
+       "sound": "long-o"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "w"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "both say",
+      {
+       "sound": "long-o"
+      },
+      "."
      ],
      "steps": [
-      "Snow is spelled with ow.",
-      "Two letters side by side can make one vowel sound."
+      "Snow ends with ow: /ō/.",
+      "The letters ow and oa both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Snow"
+       },
+       "ends with",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "w"
+       },
+       ":",
+       {
+        "sound": "long-o"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "both say",
+       {
+        "sound": "long-o"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1508,6 +2510,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -1575,21 +2580,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "boat"
+       "word": "Boat"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "o"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "oa"
+      },
+      ".",
+      "The letters",
       {
        "letter": "o"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "w"
+      },
+      "both say",
+      {
+       "sound": "oa"
+      },
+      "."
      ],
      "steps": [
-      "Boat is spelled with oa.",
-      "Two letters side by side can make one vowel sound."
+      "Boat has oa in the middle: /ō/.",
+      "The letters oa and ow both say /ō/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Boat"
+       },
+       "has",
+       {
+        "letter": "o"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "oa"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "o"
+       },
+       {
+        "letter": "w"
+       },
+       "both say",
+       {
+        "sound": "oa"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1616,6 +2685,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -1683,21 +2755,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "leaf"
+       "word": "Leaf"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "ea"
+      },
+      ".",
+      "The letters",
       {
        "letter": "e"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "ea"
+      },
+      "."
      ],
      "steps": [
-      "Leaf is spelled with ea.",
-      "Two letters side by side can make one vowel sound."
+      "Leaf has ea in the middle: /ē/.",
+      "The letters ea and ee both say /ē/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Leaf"
+       },
+       "has",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "ea"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "ea"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1724,6 +2860,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -1791,21 +2930,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "rain"
+       "word": "Rain"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "a"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "in the middle:",
+      {
+       "sound": "ai"
+      },
+      ".",
+      "The letters",
       {
        "letter": "a"
       },
       {
        "letter": "i"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "y"
+      },
+      "both say",
+      {
+       "sound": "ai"
+      },
+      "."
      ],
      "steps": [
-      "Rain is spelled with ai.",
-      "Two letters side by side can make one vowel sound."
+      "Rain has ai in the middle: /ā/.",
+      "The letters ai and ay both say /ā/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Rain"
+       },
+       "has",
+       {
+        "letter": "a"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "in the middle:",
+       {
+        "sound": "ai"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "i"
+       },
+       "and",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "y"
+       },
+       "both say",
+       {
+        "sound": "ai"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1832,6 +3035,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -1899,21 +3105,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "train"
+       "word": "Train"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "a"
+      },
+      ",",
+      {
+       "letter": "i"
+      },
+      "in the middle:",
+      {
+       "sound": "ai"
+      },
+      ".",
+      "The letters",
       {
        "letter": "a"
       },
       {
        "letter": "i"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "y"
+      },
+      "both say",
+      {
+       "sound": "ai"
+      },
+      "."
      ],
      "steps": [
-      "Train is spelled with ai.",
-      "Two letters side by side can make one vowel sound."
+      "Train has ai in the middle: /ā/.",
+      "The letters ai and ay both say /ā/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Train"
+       },
+       "has",
+       {
+        "letter": "a"
+       },
+       ",",
+       {
+        "letter": "i"
+       },
+       "in the middle:",
+       {
+        "sound": "ai"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "i"
+       },
+       "and",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "y"
+       },
+       "both say",
+       {
+        "sound": "ai"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -1940,6 +3210,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -1951,12 +3224,12 @@
     "type": "choice",
     "mode": "look",
     "facts": {
-     "target": "tray",
+     "target": "crayon",
      "relation": "team2",
      "options": [
-      "ay",
       "oa",
-      "ea"
+      "ay",
+      "ee"
      ]
     },
     "prompt": {
@@ -1970,18 +3243,18 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "🍽️",
+       "emoji": "🖍️",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "tray"
+         "word": "crayon"
         }
        ]
       },
       {
        "kind": "text",
-       "value": "tr__",
+       "value": "cr__on",
        "size": "xl"
       }
      ]
@@ -1989,71 +3262,138 @@
     "options": [
      {
       "kind": "text",
-      "value": "ay",
-      "size": "xl"
-     },
-     {
-      "kind": "text",
       "value": "oa",
       "size": "xl"
      },
      {
       "kind": "text",
-      "value": "ea",
+      "value": "ay",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
       "size": "xl"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       {
-       "word": "tray"
+       "word": "Crayon"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "a"
+      },
+      ",",
+      {
+       "letter": "y"
+      },
+      "in the middle:",
+      {
+       "sound": "ay"
+      },
+      ".",
+      "The letters",
       {
        "letter": "a"
       },
       {
        "letter": "y"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "both say",
+      {
+       "sound": "ay"
+      },
+      "."
      ],
      "steps": [
-      "Tray is spelled with ay.",
-      "Two letters side by side can make one vowel sound."
+      "Crayon has ay in the middle: /ā/.",
+      "The letters ay and ai both say /ā/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Crayon"
+       },
+       "has",
+       {
+        "letter": "a"
+       },
+       ",",
+       {
+        "letter": "y"
+       },
+       "in the middle:",
+       {
+        "sound": "ay"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "y"
+       },
+       "and",
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "i"
+       },
+       "both say",
+       {
+        "sound": "ay"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "🍽️",
+        "emoji": "🖍️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "tray"
+          "word": "crayon"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "tray",
+        "value": "crayon",
         "size": "l",
         "speak": [
          {
-          "word": "tray"
+          "word": "crayon"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
     "level": 2,
     "seed": 9,
-    "key": "E-2-A1|2|{\"relation\":\"team2\",\"target\":\"tray\"}"
+    "key": "E-2-A1|2|{\"relation\":\"team2\",\"target\":\"crayon\"}"
    },
    {
     "type": "choice",
@@ -2115,21 +3455,85 @@
     "explanation": {
      "speak": [
       {
-       "word": "leaf"
+       "word": "Leaf"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "a"
+      },
+      "in the middle:",
+      {
+       "sound": "ea"
+      },
+      ".",
+      "The letters",
       {
        "letter": "e"
       },
       {
        "letter": "a"
       },
-      ".",
-      "Two letters side by side can make one vowel sound."
+      "and",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "ea"
+      },
+      "."
      ],
      "steps": [
-      "Leaf is spelled with ea.",
-      "Two letters side by side can make one vowel sound."
+      "Leaf has ea in the middle: /ē/.",
+      "The letters ea and ee both say /ē/."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Leaf"
+       },
+       "has",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "a"
+       },
+       "in the middle:",
+       {
+        "sound": "ea"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "a"
+       },
+       "and",
+       {
+        "letter": "e"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "ea"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -2156,6 +3560,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -2169,7 +3576,7 @@
     "type": "choice",
     "mode": "look",
     "facts": {
-     "target": "pie",
+     "target": "tie",
      "relation": "team2",
      "options": [
       "igh",
@@ -2188,18 +3595,18 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "🥧",
+       "emoji": "👔",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "pie"
+         "word": "tie"
         }
        ]
       },
       {
        "kind": "text",
-       "value": "p__",
+       "value": "t___",
        "size": "xl"
       }
      ]
@@ -2225,53 +3632,155 @@
     "explanation": {
      "speak": [
       {
-       "word": "pie"
+       "word": "Tie"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      ":",
+      {
+       "sound": "ie"
+      },
+      ".",
+      "The letters",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      {
+       "letter": "h"
+      },
+      "and",
       {
        "letter": "i"
       },
       {
        "letter": "e"
       },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "often come at or near the end, as in",
+      {
+       "word": "pie"
+      },
+      "."
      ],
      "steps": [
-      "Pie is spelled with ie.",
-      "igh and ie make the long i sound."
+      "Tie ends with ie: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters ie often come at or near the end, as in pie."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Tie"
+       },
+       "ends with",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       ":",
+       {
+        "sound": "ie"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "often come at or near the end, as in",
+       {
+        "word": "pie"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "🥧",
+        "emoji": "👔",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "pie"
+          "word": "tie"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "pie",
+        "value": "tie",
         "size": "l",
         "speak": [
          {
-          "word": "pie"
+          "word": "tie"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
     "level": 3,
     "seed": 1,
-    "key": "E-2-A1|3|{\"relation\":\"team2\",\"target\":\"pie\"}"
+    "key": "E-2-A1|3|{\"relation\":\"team2\",\"target\":\"tie\"}"
    },
    {
     "type": "choice",
@@ -2307,7 +3816,7 @@
       },
       {
        "kind": "text",
-       "value": "t__",
+       "value": "t___",
        "size": "xl"
       }
      ]
@@ -2333,21 +3842,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "tie"
+       "word": "Tie"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      ":",
+      {
+       "sound": "ie"
+      },
+      ".",
+      "The letters",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      {
+       "letter": "h"
+      },
+      "and",
       {
        "letter": "i"
       },
       {
        "letter": "e"
       },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "often come at or near the end, as in",
+      {
+       "word": "pie"
+      },
+      "."
      ],
      "steps": [
-      "Tie is spelled with ie.",
-      "igh and ie make the long i sound."
+      "Tie ends with ie: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters ie often come at or near the end, as in pie."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Tie"
+       },
+       "ends with",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       ":",
+       {
+        "sound": "ie"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "often come at or near the end, as in",
+       {
+        "word": "pie"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -2374,6 +3982,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -2415,7 +4026,7 @@
       },
       {
        "kind": "text",
-       "value": "t__",
+       "value": "t___",
        "size": "xl"
       }
      ]
@@ -2441,21 +4052,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "tie"
+       "word": "Tie"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      ":",
+      {
+       "sound": "ie"
+      },
+      ".",
+      "The letters",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      {
+       "letter": "h"
+      },
+      "and",
       {
        "letter": "i"
       },
       {
        "letter": "e"
       },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "often come at or near the end, as in",
+      {
+       "word": "pie"
+      },
+      "."
      ],
      "steps": [
-      "Tie is spelled with ie.",
-      "igh and ie make the long i sound."
+      "Tie ends with ie: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters ie often come at or near the end, as in pie."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Tie"
+       },
+       "ends with",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       ":",
+       {
+        "sound": "ie"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "often come at or near the end, as in",
+       {
+        "word": "pie"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -2482,6 +4192,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -2523,7 +4236,7 @@
       },
       {
        "kind": "text",
-       "value": "fr__s",
+       "value": "fr___s",
        "size": "xl"
       }
      ]
@@ -2549,21 +4262,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "fries"
+       "word": "Fries"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "in the middle:",
+      {
+       "sound": "ie"
+      },
+      ".",
+      "The letters",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      {
+       "letter": "h"
+      },
+      "and",
       {
        "letter": "i"
       },
       {
        "letter": "e"
       },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "often come at or near the end, as in",
+      {
+       "word": "pie"
+      },
+      "."
      ],
      "steps": [
-      "Fries is spelled with ie.",
-      "igh and ie make the long i sound."
+      "Fries has ie in the middle: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters ie often come at or near the end, as in pie."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Fries"
+       },
+       "has",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "in the middle:",
+       {
+        "sound": "ie"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "often come at or near the end, as in",
+       {
+        "word": "pie"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -2590,6 +4402,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -2631,7 +4446,7 @@
       },
       {
        "kind": "text",
-       "value": "t__",
+       "value": "t___",
        "size": "xl"
       }
      ]
@@ -2657,21 +4472,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "tie"
+       "word": "Tie"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      ":",
+      {
+       "sound": "ie"
+      },
+      ".",
+      "The letters",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      {
+       "letter": "h"
+      },
+      "and",
       {
        "letter": "i"
       },
       {
        "letter": "e"
       },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "often come at or near the end, as in",
+      {
+       "word": "pie"
+      },
+      "."
      ],
      "steps": [
-      "Tie is spelled with ie.",
-      "igh and ie make the long i sound."
+      "Tie ends with ie: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters ie often come at or near the end, as in pie."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Tie"
+       },
+       "ends with",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       ":",
+       {
+        "sound": "ie"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "often come at or near the end, as in",
+       {
+        "word": "pie"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -2698,6 +4612,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -2739,7 +4656,7 @@
       },
       {
        "kind": "text",
-       "value": "p__",
+       "value": "p___",
        "size": "xl"
       }
      ]
@@ -2765,21 +4682,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "pie"
+       "word": "Pie"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      ":",
+      {
+       "sound": "ie"
+      },
+      ".",
+      "The letters",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      {
+       "letter": "h"
+      },
+      "and",
       {
        "letter": "i"
       },
       {
        "letter": "e"
       },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "often come at or near the end, as in",
+      {
+       "word": "pie"
+      },
+      "."
      ],
      "steps": [
-      "Pie is spelled with ie.",
-      "igh and ie make the long i sound."
+      "Pie ends with ie: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters ie often come at or near the end, as in pie."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Pie"
+       },
+       "ends with",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       ":",
+       {
+        "sound": "ie"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "often come at or near the end, as in",
+       {
+        "word": "pie"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -2806,6 +4822,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -2873,9 +4892,26 @@
     "explanation": {
      "speak": [
       {
-       "word": "light"
+       "word": "Light"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "g"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      "in the middle:",
+      {
+       "sound": "igh"
+      },
+      ".",
+      "The letters",
       {
        "letter": "i"
       },
@@ -2885,12 +4921,115 @@
       {
        "letter": "h"
       },
+      "and",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "g"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      "often come before a",
+      {
+       "letter": "t"
+      },
+      ", as in",
+      {
+       "word": "night"
+      },
+      "."
      ],
      "steps": [
-      "Light is spelled with igh.",
-      "igh and ie make the long i sound."
+      "Light has igh in the middle: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters igh often come before a t, as in night."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Light"
+       },
+       "has",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "g"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       "in the middle:",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "g"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       "often come before a",
+       {
+        "letter": "t"
+       },
+       ", as in",
+       {
+        "word": "night"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -2917,6 +5056,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -2984,9 +5126,26 @@
     "explanation": {
      "speak": [
       {
-       "word": "light"
+       "word": "Light"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "g"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      "in the middle:",
+      {
+       "sound": "igh"
+      },
+      ".",
+      "The letters",
       {
        "letter": "i"
       },
@@ -2996,12 +5155,115 @@
       {
        "letter": "h"
       },
+      "and",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "g"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      "often come before a",
+      {
+       "letter": "t"
+      },
+      ", as in",
+      {
+       "word": "night"
+      },
+      "."
      ],
      "steps": [
-      "Light is spelled with igh.",
-      "igh and ie make the long i sound."
+      "Light has igh in the middle: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters igh often come before a t, as in night."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Light"
+       },
+       "has",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "g"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       "in the middle:",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "g"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       "often come before a",
+       {
+        "letter": "t"
+       },
+       ", as in",
+       {
+        "word": "night"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -3028,6 +5290,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
@@ -3039,7 +5304,7 @@
     "type": "choice",
     "mode": "look",
     "facts": {
-     "target": "night",
+     "target": "light",
      "relation": "team2",
      "options": [
       "ow",
@@ -3058,18 +5323,18 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "🌙",
+       "emoji": "💡",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "night"
+         "word": "light"
         }
        ]
       },
       {
        "kind": "text",
-       "value": "n___t",
+       "value": "l___t",
        "size": "xl"
       }
      ]
@@ -3095,9 +5360,26 @@
     "explanation": {
      "speak": [
       {
-       "word": "night"
+       "word": "Light"
       },
-      "is spelled with",
+      "has",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "g"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      "in the middle:",
+      {
+       "sound": "igh"
+      },
+      ".",
+      "The letters",
       {
        "letter": "i"
       },
@@ -3107,44 +5389,150 @@
       {
        "letter": "h"
       },
+      "and",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "e"
+      },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "g"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      "often come before a",
+      {
+       "letter": "t"
+      },
+      ", as in",
+      {
+       "word": "night"
+      },
+      "."
      ],
      "steps": [
-      "Night is spelled with igh.",
-      "igh and ie make the long i sound."
+      "Light has igh in the middle: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters igh often come before a t, as in night."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Light"
+       },
+       "has",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "g"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       "in the middle:",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "g"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       "often come before a",
+       {
+        "letter": "t"
+       },
+       ", as in",
+       {
+        "word": "night"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "🌙",
+        "emoji": "💡",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "night"
+          "word": "light"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "night",
+        "value": "light",
         "size": "l",
         "speak": [
          {
-          "word": "night"
+          "word": "light"
          }
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",
     "level": 3,
     "seed": 9,
-    "key": "E-2-A1|3|{\"relation\":\"team2\",\"target\":\"night\"}"
+    "key": "E-2-A1|3|{\"relation\":\"team2\",\"target\":\"light\"}"
    },
    {
     "type": "choice",
@@ -3180,7 +5568,7 @@
       },
       {
        "kind": "text",
-       "value": "p__",
+       "value": "p___",
        "size": "xl"
       }
      ]
@@ -3206,21 +5594,120 @@
     "explanation": {
      "speak": [
       {
-       "word": "pie"
+       "word": "Pie"
       },
-      "is spelled with",
+      "ends with",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      ":",
+      {
+       "sound": "ie"
+      },
+      ".",
+      "The letters",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      {
+       "letter": "h"
+      },
+      "and",
       {
        "letter": "i"
       },
       {
        "letter": "e"
       },
+      "both say",
+      {
+       "sound": "igh"
+      },
       ".",
-      "igh and ie make the long i sound."
+      "The letters",
+      {
+       "letter": "i"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "often come at or near the end, as in",
+      {
+       "word": "pie"
+      },
+      "."
      ],
      "steps": [
-      "Pie is spelled with ie.",
-      "igh and ie make the long i sound."
+      "Pie ends with ie: /ī/.",
+      "The letters igh and ie both say /ī/.",
+      "The letters ie often come at or near the end, as in pie."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Pie"
+       },
+       "ends with",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       ":",
+       {
+        "sound": "ie"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "g"
+       },
+       {
+        "letter": "h"
+       },
+       "and",
+       {
+        "letter": "i"
+       },
+       {
+        "letter": "e"
+       },
+       "both say",
+       {
+        "sound": "igh"
+       },
+       "."
+      ],
+      [
+       "The letters",
+       {
+        "letter": "i"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "often come at or near the end, as in",
+       {
+        "word": "pie"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "row",
@@ -3247,6 +5734,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Tap the picture to hear its name. Which letters make its vowel sound?"
      }
     },
     "skillId": "E-2-A1",

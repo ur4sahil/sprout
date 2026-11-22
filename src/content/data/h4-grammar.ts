@@ -1,7 +1,8 @@
 // Grammar lists of plan section 15 wave H4 (Language Arts grades 1 and 2).
 
 // ---- Grade 1 C.4 Pronouns ----
-// The naming part and the word that can take its place.
+// The naming part and the word that can take its place. "It" is only ever a thing: a pet could be he or she,
+// and a name that a boy or a girl could have would let he and she both fit.
 export interface PronounEntry {
   noun: string;
   pronoun: 'he' | 'she' | 'it' | 'they' | 'we';
@@ -12,15 +13,15 @@ export const PRONOUN_ENTRIES: readonly PronounEntry[] = [
   { noun: 'Dad', pronoun: 'he', first: 'Dad made pancakes.', then: 'is a good cook.' },
   { noun: 'Mom', pronoun: 'she', first: 'Mom has a red hat.', then: 'wears it to the park.' },
   { noun: 'Ben', pronoun: 'he', first: 'Ben kicked the ball.', then: 'ran after it.' },
-  { noun: 'Kim', pronoun: 'she', first: 'Kim reads a book.', then: 'likes the pictures.' },
-  { noun: 'The dog', pronoun: 'it', first: 'The dog barks at the cat.', then: 'wants to play.' },
+  { noun: 'Mia', pronoun: 'she', first: 'Mia reads a book.', then: 'likes the pictures.' },
+  { noun: 'The kite', pronoun: 'it', first: 'The kite went up high.', then: 'flew over the trees.' },
   { noun: 'The ball', pronoun: 'it', first: 'The ball rolled down the hill.', then: 'went into the pond.' },
   { noun: 'The kids', pronoun: 'they', first: 'The kids went to the zoo.', then: 'saw a big lion.' },
   { noun: 'Sam and Lin', pronoun: 'they', first: 'Sam and Lin made a fort.', then: 'played in it all day.' },
   { noun: 'Grandpa', pronoun: 'he', first: 'Grandpa grows carrots.', then: 'gives some to us.' },
   { noun: 'Nan', pronoun: 'she', first: 'Nan bakes bread.', then: 'shares it with me.' },
   { noun: 'The birds', pronoun: 'they', first: 'The birds sang in the tree.', then: 'flew away at night.' },
-  { noun: 'My cat', pronoun: 'it', first: 'My cat sleeps a lot.', then: 'naps on my bed.' },
+  { noun: 'The box', pronoun: 'it', first: 'The box came in the mail.', then: 'had a gift inside.' },
 ];
 // "We" stands for a group with I in it.
 export const WE_ENTRIES: readonly PronounEntry[] = [
@@ -33,7 +34,8 @@ export const WE_ENTRIES: readonly PronounEntry[] = [
 // Naming parts that are one, and naming parts that are more than one.
 export const SUBJECTS_ONE: readonly string[] = ['The dog', 'The girl', 'Sam', 'My mom', 'The cat', 'He', 'She'];
 export const SUBJECTS_MORE: readonly string[] = ['The dogs', 'The girls', 'The kids', 'We', 'They', 'The cats'];
-// An action word for one, the same word for more than one, and how the sentence ends.
+// An action word for one, the same word for more than one, and how the sentence ends. No word for more than
+// one is also a past word: "The cat read a book" is right too, so read is not here.
 export const ACTIONS: readonly (readonly [string, string, string])[] = [
   ['runs', 'run', 'fast.'],
   ['jumps', 'jump', 'high.'],
@@ -42,7 +44,7 @@ export const ACTIONS: readonly (readonly [string, string, string])[] = [
   ['sleeps', 'sleep', 'a lot.'],
   ['swims', 'swim', 'in the pool.'],
   ['plays', 'play', 'outside.'],
-  ['reads', 'read', 'a book.'],
+  ['digs', 'dig', 'in the sand.'],
 ];
 export const BE_HAVE: readonly (readonly [string, string, string])[] = [
   ['is', 'are', 'happy.'],
@@ -111,7 +113,7 @@ export const REFLEXIVE_SUBJECTS: readonly { subject: string; reflexive: string }
   { subject: 'I', reflexive: 'myself' },
   { subject: 'Ben', reflexive: 'himself' },
   { subject: 'He', reflexive: 'himself' },
-  { subject: 'Kim', reflexive: 'herself' },
+  { subject: 'Mom', reflexive: 'herself' },
   { subject: 'She', reflexive: 'herself' },
   { subject: 'We', reflexive: 'ourselves' },
   { subject: 'They', reflexive: 'themselves' },
@@ -150,6 +152,7 @@ export const HOW_GAPS: readonly { sentence: string; adjective: string; adverb: s
 ];
 
 // ---- Grade 2 C.8 Complete sentences ----
+// Each complete sentence, with what it tells; each part of a sentence, with what it leaves out.
 export const COMPLETE: readonly string[] = [
   'The dog ran to the park.',
   'My mom makes good soup.',
@@ -170,3 +173,26 @@ export const FRAGMENTS: readonly string[] = [
   'The cat on my bed.',
   'Jumped over the log.',
 ];
+
+// What each complete sentence tells: who or what, and what they do or are.
+export const COMPLETE_PARTS: Readonly<Record<string, string>> = {
+  'The dog ran to the park.': 'It tells who: the dog. It tells what the dog did: ran to the park.',
+  'My mom makes good soup.': 'It tells who: my mom. It tells what she does: makes good soup.',
+  'We play tag at school.': 'It tells who: we. It tells what we do: play tag.',
+  'The sun is hot today.': 'It tells what: the sun. It tells what the sun is: hot.',
+  'Ben found a shell.': 'It tells who: Ben. It tells what he did: found a shell.',
+  'Birds sing in the morning.': 'It tells who: birds. It tells what they do: sing.',
+  'I like to read books.': 'It tells who: I. It tells what I do: like to read books.',
+  'The cat sleeps on my bed.': 'It tells who: the cat. It tells what it does: sleeps on my bed.',
+};
+// The part each fragment leaves out.
+export const FRAGMENT_MISSING: Readonly<Record<string, string>> = {
+  'Ran to the park.': 'It does not tell who ran.',
+  'My mom and her soup.': 'It does not tell what my mom does.',
+  'At school after lunch.': 'It does not tell who, or what they do.',
+  'The big red ball.': 'It does not tell what the ball does.',
+  'Found a shell on the.': 'It does not tell who found the shell, and it stops too soon.',
+  'In the morning.': 'It does not tell who, or what they do.',
+  'The cat on my bed.': 'It does not tell what the cat does.',
+  'Jumped over the log.': 'It does not tell who jumped.',
+};

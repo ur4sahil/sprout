@@ -1,11 +1,12 @@
 import type { Rng } from '../../../engine/rng';
 import { makeRng } from '../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Visual } from '../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Visual } from '../../../engine/types';
 import type { PictureAnswer, Pick3 } from '../../banks/comprehension';
 import { CONTEXT_WORDS, G1_FACTS, G1_STORIES, G2_FACTS, K_FACTS, K_STORIES } from '../../banks/comprehension';
 import type { Story2 } from '../../banks/reading2';
 import { STORIES_2 } from '../../banks/reading2';
 import type { SkillGenerator } from '../../generator';
+import { hint } from './g1/wording';
 
 // Reading comprehension added by the Nov 17, 2026 curriculum check (plan section 8): Kindergarten E.2 and
 // E.3 (heard), grade 1 D.2 to D.5 and grade 2 D.4 to D.6 (read). All from the authored bank in
@@ -78,8 +79,13 @@ export const kFactsGenerator: SkillGenerator = {
 
 // ---- Grades 1 and 2: the text is read, never spoken, and its answers do not speak. ----
 
-function read(id: string, text: string, q: Pick3, because: string, rng: Rng): QuestionDraft {
+// What the child looks back at: a story, a fact text, or one sentence.
+type Source = 'story' | 'text' | 'sentence';
+
+// The steps say where to look, then quote the sentence that shows the answer (or say what it shows).
+function read(id: string, text: string, q: Pick3, where: Source, shows: string, nudge: Hint, rng: Rng): QuestionDraft {
   const order = rng.shuffle([0, 1, 2]);
+  const look = `Look back at the ${where}.`;
   return {
     type: 'choice',
     mode: 'read',
@@ -88,15 +94,18 @@ function read(id: string, text: string, q: Pick3, because: string, rng: Rng): Qu
     stimulus: plain(text),
     options: order.map((i) => plain(q.answers[i] as string)),
     answerIndex: order.indexOf(0),
-    explanation: { speak: ['Look back at the text.'], steps: ['Look back at the text.', because], visual: plain(because) },
+    explanation: { speak: [look], steps: [look, shows], visual: plain(shows), hint: nudge },
   };
 }
+
+const says = (where: Source, sentence: string): string => `The ${where} says: ${sentence}`;
+const cap = (text: string): string => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
 
 // D.2 Characters and setting. Levels: who / where.
 function g1Story(level: Level, rng: Rng): QuestionDraft {
   const story = rng.pick(G1_STORIES);
   const q = level === 1 ? story.who : story.where;
-  return read(`${story.id}-${level === 1 ? 'who' : 'where'}`, story.text, q, `${q.answers[0][0]?.toUpperCase()}${q.answers[0].slice(1)}.`, rng);
+  return read(`${story.id}-${level === 1 ? 'who' : 'where'}`, story.text, q, 'story', says('story', q.because), hint(`Look back at the story. Find the sentence that tells ${level === 1 ? 'who' : 'where'}.`), rng);
 }
 
 export const g1CharactersGenerator: SkillGenerator = {
@@ -117,12 +126,16 @@ export const g1CharactersGenerator: SkillGenerator = {
   oracle: 'authored',
 };
 
-// D.3 Retell in order. Levels: put 3 events in order / what happened last.
+// D.3 Retell in order. Levels: put 3 events in order / which of three happened last.
+// An order question's steps list the answer, so its hint points to the start without placing a card.
+const FIRST_HINT = hint('Look at the start of the story. What happened first?');
+
 function retell1(level: Level, rng: Rng): QuestionDraft {
   const story = rng.pick(G1_STORIES);
   if (level === 2) {
+    // Something else may happen after these three, so the question asks which of these came last.
     const [a, b, c] = story.events;
-    return read(`${story.id}-last`, story.text, { ask: 'What happened last?', answers: [c, a, b] }, `Last: ${c}`, rng);
+    return read(`${story.id}-last`, story.text, { ask: 'Which of these happened last?', answers: [c, a, b] }, 'story', `Of these, this one happened last: ${c}`, hint('Find each one in the story. Which one comes last?'), rng);
   }
   const shown = rng.shuffle([0, 1, 2]);
   const ask = 'Put what happened in order. Tap the first thing first.';
@@ -134,7 +147,7 @@ function retell1(level: Level, rng: Rng): QuestionDraft {
     stimulus: plain(story.text),
     items: shown.map((i) => plain(story.events[i] as string)),
     answerOrder: [0, 1, 2].map((i) => shown.indexOf(i)),
-    explanation: { speak: ['First, next, last. Look back at the story.'], steps: story.events.map((each, i) => `${i + 1}. ${each}`), visual: plain(story.text) },
+    explanation: { speak: ['First, next, last. Look back at the story.'], steps: story.events.map((each, i) => `${i + 1}. ${each}`), visual: plain(story.text), hint: FIRST_HINT },
   };
 }
 
@@ -157,11 +170,14 @@ export const retell1Generator: SkillGenerator = {
 };
 
 // D.4 True or false. Levels: is this true / which sentence is true.
+// Each sentence to judge is answered by the story's own sentence about it (`proof`), true or not.
 function trueFalse(level: Level, rng: Rng): QuestionDraft {
   const story = rng.pick(G1_STORIES);
-  if (level === 2) return read(`${story.id}-truth`, story.text, { ask: 'Which sentence is true?', answers: story.truth }, `The story says: ${story.truth[0]}`, rng);
+  if (level === 2) return read(`${story.id}-truth`, story.text, { ask: 'Which sentence is true?', answers: story.truth }, 'story', says('story', story.proof[0]), hint('Check each sentence against the story.'), rng);
   const isTrue = rng.bool();
-  const statement = isTrue ? story.truth[0] : (story.truth[rng.int(1, 2)] as string);
+  const at = isTrue ? 0 : rng.int(1, 2);
+  const statement = story.truth[at] as string;
+  const proof = story.proof[at] as string;
   const ask = `Is this true? "${statement}"`;
   return {
     type: 'choice',
@@ -172,7 +188,7 @@ function trueFalse(level: Level, rng: Rng): QuestionDraft {
     stimulus: plain(story.text),
     options: [plain('Yes, true', 'l'), plain('No, not true', 'l')],
     answerIndex: isTrue ? 0 : 1,
-    explanation: { speak: ['Look back at the story.'], steps: ['Look back at the story.', `The story says: ${story.truth[0]}`], visual: plain(story.truth[0]) },
+    explanation: { speak: ['Look back at the story.'], steps: [says('story', proof), isTrue ? 'So it is true.' : 'So it is not true.'], visual: plain(proof), hint: hint('Find the part of the story that tells about this.') },
   };
 }
 
@@ -197,8 +213,8 @@ export const trueFalseGenerator: SkillGenerator = {
 function factText(texts: typeof G1_FACTS, prefix: string): (level: Level, rng: Rng) => QuestionDraft {
   return (level, rng) => {
     const text = rng.pick(texts);
-    if (level === 1) return read(`${prefix}${text.id}-topic`, text.text, { ask: 'What is this mostly about?', answers: text.topic }, `Every sentence is about ${text.topic[0]}.`, rng);
-    return read(`${prefix}${text.id}-fact`, text.text, text.fact, `${text.fact.answers[0][0]?.toUpperCase()}${text.fact.answers[0].slice(1)}.`, rng);
+    if (level === 1) return read(`${prefix}${text.id}-topic`, text.text, { ask: 'What is this mostly about?', answers: text.topic }, 'text', `Every sentence is about ${text.topic[0]}.`, hint('What does every sentence talk about?'), rng);
+    return read(`${prefix}${text.id}-fact`, text.text, text.fact, 'text', says('text', text.fact.because), hint('Find the sentence that answers the question.'), rng);
   };
 }
 
@@ -245,9 +261,9 @@ export const g2FactsGenerator: SkillGenerator = {
 function retell2(level: Level, rng: Rng): QuestionDraft {
   const story = rng.pick(STORIES_2);
   const [a, b, , d] = story.events as [string, string, string, string];
-  if (level === 2) return read(`${story.id}-middle`, story.text, { ask: 'What happened after the start and before the end?', answers: [b, d, a] }, `In the middle: ${b}`, rng);
+  if (level === 2) return read(`${story.id}-middle`, story.text, { ask: 'Which of these happened in the middle?', answers: [b, d, a] }, 'story', `Of these, this one happened in the middle: ${b}`, hint('Find how the story starts and how it ends. What happened between them?'), rng);
   const other = rng.pick(STORIES_2.filter((each) => each !== story)) as Story2;
-  return read(`${story.id}-retell-${other.id}`, story.text, { ask: 'Which is the best retelling of the story?', answers: [`${a} ${b} ${d}`, `${d} ${b} ${a}`, `${other.events[0]} ${other.events[1]} ${other.events[3]}`] }, `In order: ${a} ${b} ${d}`, rng);
+  return read(`${story.id}-retell-${other.id}`, story.text, { ask: 'Which is the best retelling of the story?', answers: [`${a} ${b} ${d}`, `${d} ${b} ${a}`, `${other.events[0]} ${other.events[1]} ${other.events[3]}`] }, 'story', `In order: ${a} ${b} ${d}`, hint('A good retelling tells the main parts of this story, in the order they happened.'), rng);
 }
 
 export const retell2Generator: SkillGenerator = {
@@ -269,14 +285,16 @@ export const retell2Generator: SkillGenerator = {
 
 // ---- Grade 2 D.6 Words in context. Levels: what the word means / which word means it. ----
 
+const CLUES = hint('Read the words around it. They are clues.');
+
 function context(level: Level, rng: Rng): QuestionDraft {
   const entry = rng.pick(CONTEXT_WORDS);
   const shown = entry.sentence;
   if (level === 2) {
-    const others = rng.sample(CONTEXT_WORDS.filter((each) => each !== entry), 2).map((each) => each.word) as [string, string];
-    return read(`${entry.word}-which`, shown, { ask: `Which word in the sentence means "${entry.answers[0]}"?`, answers: [entry.word, others[0], others[1]] }, `${entry.word} means ${entry.answers[0]}.`, rng);
+    // Every word offered is in the sentence, so the child must know which one means it.
+    return read(`${entry.word}-which`, shown, { ask: `Which word in the sentence means "${entry.answers[0]}"?`, answers: [entry.word, entry.others[0], entry.others[1]] }, 'sentence', `${cap(entry.word)} means ${entry.answers[0]}.`, hint('Try each word in its place in the sentence. Which one fits the meaning?'), rng);
   }
-  return read(`${entry.word}-means`, shown, { ask: `What does "${entry.word}" mean in this sentence?`, answers: entry.answers }, `The rest of the sentence shows that ${entry.word} means ${entry.answers[0]}.`, rng);
+  return read(`${entry.word}-means`, shown, { ask: `What does "${entry.word}" mean in this sentence?`, answers: entry.answers }, 'sentence', `The rest of the sentence shows that ${entry.word} means ${entry.answers[0]}.`, CLUES, rng);
 }
 
 export const contextWordsGenerator: SkillGenerator = {

@@ -1,9 +1,10 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Visual } from '../../../../engine/types';
 import type { Story2, StoryQuestion } from '../../../banks/reading2';
 import { STORIES_2 } from '../../../banks/reading2';
 import type { SkillGenerator } from '../../../generator';
+import { hint } from '../g1/wording';
 
 // Language Arts grade 2 D.1 to D.3, from the authored bank in banks/reading2.ts. The story is for the child
 // to read, so it is never spoken and its options do not speak. The question is spoken.
@@ -11,7 +12,7 @@ import type { SkillGenerator } from '../../../generator';
 const plain = (value: string, size: 'm' | 'l' = 'm'): Visual => ({ kind: 'text', value, size });
 const story = (entry: Story2): Visual => plain(entry.text);
 
-function choose(entry: Story2, id: string, ask: string, answers: readonly string[], because: string, rng: Rng): QuestionDraft {
+function choose(entry: Story2, id: string, ask: string, answers: readonly string[], because: string, nudge: Hint, rng: Rng): QuestionDraft {
   const choices = rng.shuffle([...answers]);
   return {
     type: 'choice',
@@ -21,7 +22,7 @@ function choose(entry: Story2, id: string, ask: string, answers: readonly string
     stimulus: story(entry),
     options: choices.map((each) => plain(each)),
     answerIndex: choices.indexOf(answers[0] as string),
-    explanation: { speak: ['Look back at the story.'], steps: ['Look back at the story.', because], visual: plain(because) },
+    explanation: { speak: ['Look back at the story.'], steps: ['Look back at the story.', because], visual: plain(because), hint: nudge },
   };
 }
 
@@ -31,7 +32,7 @@ function choose(entry: Story2, id: string, ask: string, answers: readonly string
 function readStory2(level: Level, rng: Rng): QuestionDraft {
   const entry = rng.pick(STORIES_2);
   const q: StoryQuestion = level === 1 ? entry.who : entry.why;
-  return choose(entry, `${entry.id}-${level === 1 ? 'who' : 'why'}`, q.ask, q.answers, q.because, rng);
+  return choose(entry, `${entry.id}-${level === 1 ? 'who' : 'why'}`, q.ask, q.answers, q.because, hint('Look back at the story. Find the sentence that answers the question.'), rng);
 }
 
 export const readStory2Generator: SkillGenerator = {
@@ -61,7 +62,8 @@ function mainIdea(level: Level, rng: Rng): QuestionDraft {
   const entry = rng.pick(STORIES_2);
   const ask = level === 1 ? 'Which is the best title for the story?' : 'What is the story mostly about?';
   const answers = level === 1 ? entry.title : entry.about;
-  return choose(entry, `${entry.id}-${level === 1 ? 'title' : 'about'}`, ask, answers, `The whole story is about this: ${entry.about[0]}`, rng);
+  const nudge = hint(level === 1 ? 'A good title fits the whole story, not just one part.' : 'Think about the whole story, not just one part.');
+  return choose(entry, `${entry.id}-${level === 1 ? 'title' : 'about'}`, ask, answers, `The whole story is about this: ${entry.about[0]}`, nudge, rng);
 }
 
 export const mainIdeaGenerator: SkillGenerator = {
@@ -100,7 +102,8 @@ function orderOfEvents(level: Level, rng: Rng): QuestionDraft {
     stimulus: story(entry),
     items: shown.map((i) => plain(events[i] as string)),
     answerOrder: events.map((_, i) => shown.indexOf(i)),
-    explanation: { speak: ['Look back at the story to see what happened first, next and last.'], steps: events.map((each, i) => `${i + 1}. ${each}`), visual: story(entry) },
+    // The steps list the answer, so the hint points to the start without placing a card.
+    explanation: { speak: ['Look back at the story to see what happened first, next and last.'], steps: events.map((each, i) => `${i + 1}. ${each}`), visual: story(entry), hint: hint('Look at the start of the story. What happened first?') },
   };
 }
 

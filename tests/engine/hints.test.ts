@@ -92,6 +92,7 @@ describe('the nudge', () => {
     let nudged = 0;
     let withheld = 0;
     let guarded = 0;
+    let hinted = 0;
     for (const skill of CATALOGUE) {
       for (let seed = 1; seed <= 3; seed += 1) {
         let q: Question;
@@ -103,7 +104,11 @@ describe('the nudge', () => {
         const nudge = nudgeFor(q);
         const steps = q.explanation.steps;
         const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
-        if (steps.length < 3 || listsAnswer) {
+        if (q.explanation.hint) {
+          // A question with its own hint offers it first, whatever its steps are.
+          expect(nudge?.text, skill.id).toBe(q.explanation.hint.text);
+          hinted += 1;
+        } else if (steps.length < 3 || listsAnswer) {
           expect(nudge, `${skill.id} has ${steps.length} steps and is a ${q.type}`).toBeNull();
           withheld += 1;
         } else if (givesAway(q, steps[0] ?? '', null)) {
@@ -122,6 +127,7 @@ describe('the nudge', () => {
     expect(nudged).toBeGreaterThan(100);
     expect(withheld).toBeGreaterThan(100);
     expect(guarded).toBeGreaterThan(10);
+    expect(hinted).toBeGreaterThan(100);
   });
 
   it('is said when it can be read safely, and only shown when it cannot', () => {
@@ -155,7 +161,11 @@ describe('the nudge', () => {
     expect(nudgeFor(question('M-PK-D6', 3, 1))).toBeNull(); // sort
     expect(question('M-K-B3', 1, 1).explanation.steps[0]).toBe('2 is the smallest.');
     expect(nudgeFor(question('M-K-B3', 1, 1))).toBeNull(); // order
-    expect(nudgeFor(question('E-2-D3', 1, 1))).toBeNull(); // order: "1. The turtle wanted to see the sea."
+    // An order with its own hint offers the hint, never its first step ("1. The turtle wanted to see the sea.").
+    const story = question('E-2-D3', 1, 1);
+    expect(story.type).toBe('order');
+    expect(nudgeFor(story)?.text).toBe(story.explanation.hint?.text);
+    expect(nudgeFor(story)?.text).not.toBe(story.explanation.steps[0]);
   });
 
   it('never offers a step that names the right option, the number, the word or the sign', () => {
