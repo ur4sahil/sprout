@@ -20,7 +20,8 @@ import { NOW, answer, gotIt, openApp, setUp, settled, sumOnScreen, wrongValue } 
 // the check-in's questions, lessons and their examples, fast facts), and the lesson button names that friend. Sprout
 // says everything outside: home, the garden, menus, today's plan, stickers, the check-in's closing lines, Pop. Every
 // line is also fetched early in the voice that will say it, or the early fetch is wasted. Until the server says so
-// (the live app on Kokoro), everything is said as before: the last describe below.
+// (a server on Kokoro, or an app that has not yet heard which engine its server runs), everything is said as before:
+// the last describe below.
 
 const heard = vi.hoisted(() => ({ said: [] as { say: unknown; pace: string; who: string }[] }));
 vi.mock('../../src/audio/speech', async (original) => ({
@@ -348,7 +349,7 @@ describe('outside the subjects', () => {
   });
 });
 
-describe('before the switch to the new voices (the live app on Kokoro)', () => {
+describe('before the switch to the new voices (a server on Kokoro, or one not heard from yet)', () => {
   for (const server of ['kokoro', 'not said'] as const) {
     it(`Math practice is all Sprout's, as before, with Pip still drawn beside it (server ${server})`, async () => {
       setVoiceEngine(server === 'kokoro' ? 'kokoro' : undefined);

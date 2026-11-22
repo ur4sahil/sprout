@@ -39,7 +39,9 @@ A lesson runs about 3 minutes at the slow pace.
 
 ## Phase 1: the voice switch
 
-Built and checked on the test copy (sprout-staging) first. Live keeps Kokoro until the switch.
+Built and checked on the test copy (sprout-staging) first. The owner switched the live app to Piper on Nov 22, 2026
+(`VOICE_ENGINE` `piper` in `wrangler.jsonc`); Kokoro still runs behind `https://sprout-voice.logstocks.com` for a
+switch back.
 
 1. **Voice server (Oracle box).** A Piper server beside Kokoro (`sprout-piper.service`, `127.0.0.1:8881`, the same
    `/tts` request and key). The four voices from alignment-patched copies (`python -m piper.patch_voice_with_alignment`),
