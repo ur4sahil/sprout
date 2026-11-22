@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { Blank, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Blank, Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 import { nearbyNumbers } from '../pk/parts';
@@ -32,24 +32,32 @@ function optionsFor(row: Row, rng: Rng): number[] {
 }
 
 // `asNext`: the question asked what comes next, so the answer is given as the next number, not a missing one.
-function explainRow(row: Row, asNext = false): { speak: Say; steps: string[]; visual: Visual } {
+// A question that asks which number is missing is answered "The missing number is", even when the blank is last.
+function explainRow(row: Row, asNext = false): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const answer = valueAt(row, row.blankIndex);
   const values = allValues(row);
   const counted: Say = values.map((value) => ({ number: value }));
   if (row.step === 10) {
     return {
-      speak: ['We are counting by tens.', ...counted, row.blankIndex === row.length - 1 ? 'Next is' : 'The missing number is', { number: answer }, '.'],
-      steps: ['We are counting by 10s.', `${listText(values)}.`, row.blankIndex === row.length - 1 ? `Next is ${answer}.` : `The missing number is ${answer}.`],
+      speak: ['We are counting by tens.', ...counted, asNext ? 'Next is' : 'The missing number is', { number: answer }, '.'],
+      steps: ['We are counting by 10s.', `${listText(values)}.`, asNext ? `Next is ${answer}.` : `The missing number is ${answer}.`],
       visual: rowVisual(row, true),
+      hint: { text: 'Count by tens.' },
     };
   }
   if (asNext) {
-    return { speak: ['Count on.', ...counted, 'Next is', { number: answer }, '.'], steps: [`Count on: ${listText(values)}.`, `Next is ${answer}.`], visual: rowVisual(row, true) };
+    return {
+      speak: ['Count on.', ...counted, 'Next is', { number: answer }, '.'],
+      steps: [`Count on: ${listText(values)}.`, `Next is ${answer}.`],
+      visual: rowVisual(row, true),
+      hint: { text: 'Say the numbers in the row. Then say the one that comes next.' },
+    };
   }
   return {
     speak: ['Count along the row.', ...counted, 'The missing number is', { number: answer }, '.'],
     steps: [`Count along the row: ${listText(values)}.`, `The missing number is ${answer}.`],
     visual: rowVisual(row, true),
+    hint: { text: 'Count along the row. Say a number for each spot.' },
   };
 }
 
@@ -183,13 +191,15 @@ export const countByTensGenerator: SkillGenerator = {
 // Levels: after, to 10 / before, to 10 / either, to 20 / either, to 100.
 type Side = 'after' | 'before';
 
-function sideExplanation(n: number, side: Side): { speak: Say; steps: string[]; visual: Visual } {
+// "Let's count:", the same words as the other counting steps (the wording audit, Nov 21, 2026).
+function sideExplanation(n: number, side: Side): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const answer = side === 'after' ? n + 1 : n - 1;
   const three = [n - 1, n, n + 1];
   return {
-    speak: ['Count', ...three.map((value): { number: number } => ({ number: value })), '.', { number: answer }, `comes ${side}`, { number: n }, '.'],
-    steps: [`Count ${listText(three)}.`, `${answer} comes ${side} ${n}.`],
+    speak: ["Let's count:", ...three.map((value): { number: number } => ({ number: value })), '.', { number: answer }, `comes ${side}`, { number: n }, '.'],
+    steps: [`Let's count: ${listText(three)}.`, `${answer} comes ${side} ${n}.`],
     visual: { kind: 'sequence', items: three.map((value) => numeral(value, 'l')) },
+    hint: { text: side === 'after' ? 'Count on from the number. What do you say next?' : 'Count up to the number. What do you say just before it?' },
   };
 }
 

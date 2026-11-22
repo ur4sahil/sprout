@@ -46,7 +46,7 @@ test.describe('practice', () => {
     await expect(panel.locator('[data-correct]')).toHaveText(String(right));
     // It says so, the question stays in view, and the steps come one at a time.
     await expect(panel.locator('[data-verdict]')).toHaveText(/Not quite/);
-    await expect(panel.locator('[data-asked]')).toContainText('equals what?');
+    await expect(panel.locator('[data-asked]')).toContainText(/What is \d+ plus \d+\?/);
     await expect(panel.locator('ol li')).toHaveCount(1);
     await expect(page.getByRole('button', { name: /Hear again/ })).toBeVisible();
     await checkScreen(page, 'explanation', 64);

@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import type { SkillGenerator } from '../../../generator';
 import { shape } from './parts';
@@ -14,8 +14,8 @@ const SECOND: ColorName[] = [...FIRST, 'green', 'orange', 'purple'];
 const THIRD: ColorName[] = [...SECOND, 'pink', 'brown', 'black'];
 const SHAPES: ShapeName[] = ['circle', 'square', 'triangle', 'star', 'heart'];
 
-function explain(target: ColorName, form: ShapeName): { speak: Say; steps: string[]; visual: Visual } {
-  return { speak: [`This one is ${target}.`], steps: [`This one is ${target}.`], visual: shape(form, target) };
+function explain(target: ColorName, form: ShapeName): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
+  return { speak: [`This one is ${target}.`], steps: [`This one is ${target}.`], visual: shape(form, target), hint: { text: 'Look at each one and say its color.' } };
 }
 
 function build(target: ColorName, colors: ColorName[], form: ShapeName): QuestionDraft {

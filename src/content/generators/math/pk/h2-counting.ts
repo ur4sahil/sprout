@@ -42,6 +42,8 @@ function oneMore(level: Level, rng: Rng): QuestionDraft {
     speak: ['One more than', { number: n }, 'is', { number: n + 1 }, '. Count them:', ...countAloud(n + 1), '.'],
     steps: [`One more than ${n} is ${n + 1}.`, `Count them: ${listText(Array.from({ length: n + 1 }, (_, i) => i + 1))}.`],
     visual: numbered(thing, n + 1),
+    // With the one more drawn, count them all; without it, say the next number.
+    hint: { text: level === 3 ? `Count the ${thing.many}. Then say the next number.` : 'Count all of them, the new one too.' },
   };
   const text = `${n} ${many}. One more comes. How many now?`;
   return numberChoice(n + 1, { a: n, b: 1, thing: thing.one }, text, [{ number: n }, `${many}. One more comes. How many now?`], stimulus, explanation, rng);
@@ -70,6 +72,7 @@ function oneFewer(level: Level, rng: Rng): QuestionDraft {
     speak: ['One fewer than', { number: n }, 'is', { number: n - 1 }, '.', { number: n - 1 }, 'comes just before', { number: n }, 'when we count.'],
     steps: [`One fewer than ${n} is ${n - 1}.`, `${n - 1} comes just before ${n} when we count.`],
     visual: numbered(thing, n - 1),
+    hint: { text: level === 3 ? 'Say the number that comes just before it when we count.' : 'Count the ones that are not crossed out.' },
   };
   const many = thingsWord(thing, n);
   const text = `${n} ${many}. One goes away. How many are left?`;
@@ -99,7 +102,8 @@ function sameNumber(level: Level, rng: Rng): QuestionDraft {
     counts = rng.shuffle([n, ...rng.sample(far, 2)]);
   } else counts = rng.shuffle(nearbyNumbers(n, 1, 9, rng));
   const options = counts.map((count) => (level === 3 ? group(other, count, 'scatter', rng) : tidyGroup(other, count)));
-  const prompt = 'Which group has the same number?';
+  // The same number as what: the question names the group at the top.
+  const prompt = `Which group has the same number as the ${thing.many}?`;
   return {
     type: 'choice',
     mode: 'look',
@@ -109,9 +113,10 @@ function sameNumber(level: Level, rng: Rng): QuestionDraft {
     options,
     answerIndex: counts.indexOf(n),
     explanation: {
-      speak: [n === 1 ? 'There is' : 'There are', { number: n }, `${thingsWord(thing, n)}. This group has`, { number: n }, `${thingsWord(other, n)} too. They have the same number.`],
-      steps: [`${n === 1 ? 'There is' : 'There are'} ${n} ${thingsWord(thing, n)}.`, `This group has ${n} ${thingsWord(other, n)} too.`, 'They have the same number.'],
+      speak: [n === 1 ? 'There is' : 'There are', { number: n }, `${thingsWord(thing, n)}. One group has`, { number: n }, `${thingsWord(other, n)} too. They have the same number.`],
+      steps: [`${n === 1 ? 'There is' : 'There are'} ${n} ${thingsWord(thing, n)}.`, `One group has ${n} ${thingsWord(other, n)} too.`, 'They have the same number.'],
       visual: { kind: 'row', children: [numbered(thing, n), numbered(other, n)] },
+      hint: { text: `Count the ${thing.many}. Then count each group.` },
     },
   };
 }
@@ -151,6 +156,7 @@ function numberOrder(level: Level, rng: Rng): QuestionDraft {
       speak: ["Let's count:", ...row.map((value) => ({ number: value })), '.', { number: answer }, level === 1 ? 'comes next.' : 'is missing.'],
       steps: [`Let's count: ${listText(row)}.`, `${answer} ${level === 1 ? 'comes next' : 'is missing'}.`],
       visual: { kind: 'sequence', items: row.map((value) => numeral(value, 'l')) },
+      hint: { text: level === 1 ? 'Say the numbers. Then say the one that comes next.' : 'Count along the row. Say a number for each spot.' },
     },
   };
 }
@@ -178,7 +184,8 @@ function firstLast(level: Level, rng: Rng): QuestionDraft {
   const at = { first: 0, second: 1, third: 2, last: line.length - 1 }[ask];
   const answer = line[at] as Thing;
   const offered = rng.shuffle([answer, ...rng.sample(line.filter((each) => each !== answer), 2)]);
-  const prompt = `Which animal is ${ask} in line?`;
+  // The question says where the line starts, so a child never counts from the wrong end.
+  const prompt = `The line starts at the flag. Which animal is ${ask}?`;
   const why = ask === 'first' ? `The ${answer.name} is next to the flag. It is first.` : ask === 'last' ? `The ${answer.name} is at the very end. It is last.` : `Count from the flag: first, second${ask === 'third' ? ', third' : ''}. The ${answer.name} is ${ask}.`;
   return {
     type: 'choice',
@@ -188,7 +195,12 @@ function firstLast(level: Level, rng: Rng): QuestionDraft {
     stimulus: { kind: 'sequence', items: [FLAG, ...line.map(animal)] },
     options: offered.map(animal),
     answerIndex: offered.indexOf(answer),
-    explanation: { speak: ['The line starts at the flag.', why], steps: ['The line starts at the flag.', why], visual: { kind: 'sequence', items: [FLAG, ...line.map(animal)] } },
+    explanation: {
+      speak: ['The line starts at the flag.', why],
+      steps: ['The line starts at the flag.', why],
+      visual: { kind: 'sequence', items: [FLAG, ...line.map(animal)] },
+      hint: { text: level === 3 ? 'Start at the flag and count: first, second, third.' : 'Start at the flag. First is next to it. Last is at the very end.' },
+    },
   };
 }
 

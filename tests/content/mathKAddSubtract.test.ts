@@ -271,8 +271,9 @@ describe('explanations read as a sentence', () => {
     expect(generateQuestion('M-K-C1', 1, 1).prompt.text).toBe('How many in all?');
     expect(generateQuestion('M-K-C5', 1, 1).prompt.text).toBe('How many are left?');
     expect(generateQuestion('M-K-C8', 1, 1).prompt.text).toBe('How many more to make 10?');
-    for (const question of all('M-K-C6', 1)) expect(question.prompt.text).toBe(`${n(question, 'a')} take away ${n(question, 'b')} equals what?`);
-    for (const question of all('M-K-C9', 1)) expect(question.prompt.text).toBe(`${n(question, 'total')} is ${n(question, 'a')} and what?`);
+    // The owner's wording (Nov 22, 2026) in place of the plan's "5 take away 1 equals what?" and "4 is 1 and what?".
+    for (const question of all('M-K-C6', 1)) expect(question.prompt.text).toBe(`What is ${n(question, 'a')} take away ${n(question, 'b')}?`);
+    for (const question of all('M-K-C9', 1)) expect(question.prompt.text).toBe(`${n(question, 'a')} and what make ${n(question, 'total')}?`);
     for (const question of all('M-K-C10', 1)) expect(shown(question)).toBe(`${n(question, 'a')} plus ${n(question, 'b')} is ${n(question, 'a') + n(question, 'b')}.`);
     for (const question of all('M-K-C11', 1)) expect(shown(question)).toBe(`${n(question, 'a')} take away ${n(question, 'b')} is ${n(question, 'a') - n(question, 'b')}.`);
     for (const question of all('M-K-D1', 1)) expect(shown(question)).toBe(`A full ten and ${n(question, 'ones')} more is ${10 + n(question, 'ones')}.`);

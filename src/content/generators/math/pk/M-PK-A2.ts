@@ -1,10 +1,11 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { countAloud, listText, numeral } from '../../../generator';
+import { COUNT_HINT } from './parts';
 
 // Math pre-K A.2, Count to 5. Family: Count objects.
 // Levels: 1 to 5 objects in a row / as dots on a die / scattered.
@@ -31,12 +32,13 @@ function thingsWord(thing: Countable, n: number): string {
   return n === 1 ? thing.one : thing.many;
 }
 
-function explain(thing: Countable, n: number): { speak: Say; steps: string[]; visual: Visual } {
+function explain(thing: Countable, n: number): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const there = n === 1 ? 'There is' : 'There are';
   return {
     speak: ["Let's count.", ...countAloud(n), `${there}`, { number: n }, `${thingsWord(thing, n)}.`],
     steps: [`Let's count: ${listText(Array.from({ length: n }, (_, i) => i + 1))}.`, `${there} ${n} ${thingsWord(thing, n)}.`],
     visual: { kind: 'emojiGroup', emoji: thing.emoji, count: n, layout: 'row', numbered: true },
+    hint: COUNT_HINT,
   };
 }
 

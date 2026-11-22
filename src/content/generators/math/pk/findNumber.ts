@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { silentNumeral } from './parts';
@@ -16,6 +16,9 @@ function explain(n: number): { speak: Say; steps: string[]; visual: Visual } {
 function numerals(...values: number[]): Visual {
   return { kind: 'row', children: values.slice().sort((x, y) => x - y).map((value) => numeral(value)) };
 }
+
+// The pre-K hint. It never shows the number asked for: this is a listen question.
+const FIND_HINT: Hint = { text: 'Listen again. Then look at the shape of each number.' };
 
 // `values` are the numerals offered, smallest first. `n` is the one asked for.
 export function findNumberQuestion(n: number, values: number[]): QuestionDraft {
@@ -63,7 +66,8 @@ function lesson(a: number, b: number, c: number): LessonStep[] {
 export function findNumberSkill(skillId: string, maxLevel: Level, pick: (level: Level, rng: Rng) => { n: number; values: number[] }, lessonNumbers: [number, number, number], exampleSeed: number): SkillGenerator {
   const generate = (level: Level, rng: Rng): QuestionDraft => {
     const { n, values } = pick(level, rng);
-    return findNumberQuestion(n, values.slice().sort((x, y) => x - y));
+    const question = findNumberQuestion(n, values.slice().sort((x, y) => x - y));
+    return { ...question, explanation: { ...question.explanation, hint: FIND_HINT } };
   };
   return {
     skillId,

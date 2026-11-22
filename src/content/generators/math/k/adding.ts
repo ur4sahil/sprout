@@ -1,18 +1,18 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 import { apple, star, tidyGroup } from '../pk/parts';
-import { explain as countOn } from './M-K-C4';
+import { explain as countOn, plusPrompt } from './M-K-C4';
 import type { PlaceWeights } from './numerals';
 import { numeralChoices } from './numerals';
 
 // Math K C.1 to C.3. Families: Add with pictures (C.1, C.3) and Add (C.2). Oracle: add.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint: Hint };
 
 // ---- Add with pictures ----
 
@@ -32,6 +32,7 @@ function picturesExplanation(thing: Countable, a: number, b: number): Explanatio
     speak: [{ number: a }, 'and', { number: b }, 'more. Count them all.', { number: sum }, '.'],
     steps: [`${a} and ${b} more.`, `Count them all: ${listText(Array.from({ length: sum }, (_, i) => i + 1))}.`],
     visual: countedTogether(thing, a, b),
+    hint: { text: 'Count all of them, in both groups. Touch each picture as you count.' },
   };
 }
 
@@ -130,11 +131,8 @@ function plusExplanation(a: number, b: number): Explanation {
     speak: ['Zero means none.', { number: sum }, 'and none more is', { number: sum }, '.'],
     steps: ['Zero means none.', `${a} + ${b} = ${sum}`],
     visual: { kind: 'equation', parts: [a, '+', b, '=', sum] },
+    hint: { text: 'Zero means none. Adding none changes nothing.' },
   };
-}
-
-function plusPrompt(a: number, b: number): { text: string; speak: Say } {
-  return { text: `${a} plus ${b} equals what?`, speak: [{ number: a }, 'plus', { number: b }, 'equals what?'] };
 }
 
 function plusQuestion(a: number, b: number, typed: boolean, rng: Rng, weights: PlaceWeights = [1, 1, 1]): QuestionDraft {
@@ -167,7 +165,7 @@ function addTo5Lesson(): LessonStep[] {
     },
     {
       beat: 'watch',
-      text: '3 plus 1. Start at 3. Count on 1 more: 4.',
+      text: `3 plus 1. ${countOn(3, 1).steps.slice(0, 2).join(' ')}`,
       speak: [{ number: 3 }, 'plus', { number: 1 }, '.', ...countOn(3, 1).speak],
       visual: { kind: 'equation', parts: [3, '+', 1, '=', 4] },
     },
@@ -176,7 +174,7 @@ function addTo5Lesson(): LessonStep[] {
       text: plusPrompt(2, 3).text,
       speak: plusPrompt(2, 3).speak,
       visual: { kind: 'equation', parts: [2, '+', 3, '=', 'blank'] },
-      reveal: { text: 'Start at 3. Count on 2 more: 4, 5.', speak: countOn(2, 3).speak, visual: { kind: 'equation', parts: [2, '+', 3, '=', 5] } },
+      reveal: { text: countOn(2, 3).steps.slice(0, 2).join(' '), speak: countOn(2, 3).speak, visual: { kind: 'equation', parts: [2, '+', 3, '=', 5] } },
     },
     { beat: 'remember', text: 'Start with the bigger number.', speak: ['Start with the bigger number.'], visual: { kind: 'numberLine', min: 0, max: 5, step: 1 } },
   ];

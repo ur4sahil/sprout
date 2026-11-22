@@ -1,14 +1,16 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { listText } from '../../../generator';
 import { tidyGroup } from '../pk/parts';
-import type { Explanation } from './h1-parts';
-import { equation, h1Skill, lessonOf, mathText, numberChoice, shown, spoken } from './h1-parts';
+import { equation, h1Skill, lessonOf, mathText, numberChoice, sayMath, shown, spoken } from './h1-parts';
 import { numeralChoices } from './numerals';
 import { crossedGroup } from './subtracting';
+
+// An explanation with the hint and spoken steps the generator gives (h1-parts' type has neither).
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint; stepsSay?: (Say | null)[] };
 
 // Math kindergarten, plan section 15 wave H1: C.12 add on a number line, C.13 take away on a number line,
 // C.14 plus or take away, C.15 addition sentences, C.16 subtraction sentences, C.17 make 5.
@@ -20,6 +22,10 @@ const range = (from: number, to: number): number[] => Array.from({ length: Math.
 // ---- C.12 Add on a number line ----
 // Start at a, hop b. Levels: sums to 5 / to 10 / to 10, typed. Oracle: add.
 
+// A sum said aloud the kindergarten way, with a full stop: "4 − 1 = 3." is "four take away one equals three."
+// stepSay would say "minus", the grade 1 word.
+const kSum = (expr: string, after = '.'): Say => [...sayMath(expr, TAKE), after];
+
 function hopExplanation(a: number, b: number, op: '+' | '-', max: number): Explanation {
   const end = op === '+' ? a + b : a - b;
   const hops = range(op === '+' ? a + 1 : a - 1, end);
@@ -28,6 +34,8 @@ function hopExplanation(a: number, b: number, op: '+' | '-', max: number): Expla
     speak: say,
     steps: [`Start at ${a}.`, `Hop ${op === '+' ? 'forward' : 'back'} ${b}: ${listText(hops)}.`, `${shown(`${a} ${op} ${b}`)} = ${end}.`],
     visual: { kind: 'numberLine', min: 0, max, step: 1, marked: [a, end] },
+    stepsSay: [null, null, kSum(`${a} ${op} ${b} = ${end}`)],
+    hint: { text: `Put your finger on the start number. Count each hop ${op === '+' ? 'forward' : 'back'}.` },
   };
 }
 
@@ -88,13 +96,21 @@ const signOptions = (): Visual[] => [
   { kind: 'text', value: '−', size: 'xl', speak: [TAKE] },
 ];
 
-function signExplanation(a: number, b: number, op: '+' | '-', visual: Visual): Explanation {
+// Why: groups put together or some crossed out (the picture), or the number grew or shrank (the sentence). Then the
+// sentence and its sign, said "plus" or "take away".
+function signExplanation(a: number, b: number, op: '+' | '-', visual: Visual, picture: boolean): Explanation {
   const result = op === '+' ? a + b : a - b;
-  const line = `${shown(`${a} ${op} ${b}`)} = ${result}`;
+  const why = picture
+    ? op === '+' ? 'The two groups are put together.' : 'Some are crossed out. They are taken away.'
+    : op === '+' ? `${result} is bigger than ${a}, so we add.` : `${result} is smaller than ${a}, so we take away.`;
+  const sentence = `${shown(`${a} ${op} ${b}`)} = ${result}.`;
+  const sign: Say = kSum(`${a} ${op} ${b} = ${result}`, `. The sign is ${op === '+' ? 'plus' : TAKE}.`);
   return {
-    speak: [...spoken(`${a}`), op === '+' ? 'plus' : TAKE, ...spoken(`${b} is ${result}. The sign is`), op === '+' ? 'plus.' : `${TAKE}.`],
-    steps: [`${line}.`, `The sign is ${op === '+' ? '+' : '−'}.`],
+    speak: [...spoken(why), ...sign],
+    steps: [why, `${sentence} The sign is ${op === '+' ? '+' : '−'}.`],
     visual,
+    stepsSay: [null, sign],
+    hint: { text: picture ? 'Look at the picture. Are two groups put together, or are some crossed out?' : 'Look at the first number and the last number. Did it get bigger or smaller?' },
   };
 }
 
@@ -119,7 +135,7 @@ function plusOrTakeAway(level: Level, rng: Rng): QuestionDraft {
       stimulus: visual,
       options: signOptions(),
       answerIndex,
-      explanation: signExplanation(a, b, op, visual),
+      explanation: signExplanation(a, b, op, visual, true),
     };
   }
   const prompt = 'Which sign makes it true?';
@@ -132,7 +148,7 @@ function plusOrTakeAway(level: Level, rng: Rng): QuestionDraft {
     stimulus: equation(a, 'blank', b, '=', result),
     options: signOptions(),
     answerIndex,
-    explanation: signExplanation(a, b, op, equation(a, op, b, '=', result)),
+    explanation: signExplanation(a, b, op, equation(a, op, b, '=', result), false),
   };
 }
 
@@ -159,11 +175,14 @@ function scene(op: '+' | '-', one: Countable, two: Countable, a: number, b: numb
   return { kind: 'emojiGroup', emoji: one.emoji, count: a, emoji2: two.emoji, count2: b, layout: a + b <= 6 ? 'row' : 'grid5' };
 }
 
-function sentenceExplanation(op: '+' | '-', one: Countable, two: Countable, a: number, b: number): Explanation {
+function sentenceExplanation(op: '+' | '-', one: Countable, two: Countable, a: number, b: number, level: Level): Explanation {
   const result = op === '+' ? a + b : a - b;
   const sentence = `${a} ${op} ${b} = ${result}`;
   const first = op === '+' ? `Count them: ${a} ${a === 1 ? one.one : one.many} and ${b} ${b === 1 ? two.one : two.many}.` : `There are ${a} ${a === 1 ? one.one : one.many}. ${b} ${b === 1 ? 'is' : 'are'} crossed out.`;
-  return { speak: [...spoken(first), ...spoken('So')], steps: [first, `So ${shown(sentence)}.`], visual: scene(op, one, two, a, b) };
+  const hint = op === '+'
+    ? level === 3 ? 'In each picture, count each kind of thing.' : 'Count each kind of thing. Find the sentence with those numbers.'
+    : level === 3 ? 'In each picture, count them all, then the crossed out ones.' : 'Count them all. Then count the crossed out ones.';
+  return { speak: [...spoken(first), ...spoken('So')], steps: [first, `So ${shown(sentence)}.`], visual: scene(op, one, two, a, b), stepsSay: [null, ['So', ...kSum(sentence)]], hint: { text: hint } };
 }
 
 function sentences(op: '+' | '-') {
@@ -173,7 +192,7 @@ function sentences(op: '+' | '-') {
     const a = op === '+' ? rng.int(1, max - 1) : rng.int(2, max);
     const b = op === '+' ? rng.int(1, max - a) : rng.int(1, a - 1);
     const result = op === '+' ? a + b : a - b;
-    const explanation = sentenceExplanation(op, one, two, a, b);
+    const explanation = sentenceExplanation(op, one, two, a, b, level);
     explanation.speak = [...explanation.speak, ...speakSentence(`${a} ${op} ${b} = ${result}`), '.'];
     const facts = { a, b, op, one: one.one, two: two.one };
     if (level === 3) {
@@ -242,10 +261,20 @@ export const subtractionSentenceGenerator: SkillGenerator = h1Skill({
 // Levels: five spots, some filled, how many more / a group of things, how many more to make 5 / typed,
 // 2 plus what equals 5 or what plus 2 equals 5, from 0 to 5. Oracle: missing.
 
-function fiveExplanation(have: number): Explanation {
+function fiveExplanation(have: number, hint: Hint): Explanation {
   const more = 5 - have;
+  const there = have === 0 ? 'None are there yet.' : have === 1 ? '1 is there.' : `${have} are there.`;
+  const needed = more === 0 ? 'No more are needed.' : more === 1 ? '1 more is needed.' : `${more} more are needed.`;
   const line = `${have} and ${more} make 5.`;
-  return { speak: spoken(`${have} are there. ${more} more are needed. ${line}`), steps: [`${have} are there.`, `${more} more are needed.`, line], visual: { kind: 'emojiGroup', emoji: '⚫', count: have, emoji2: '⚪', count2: more, layout: 'row' } };
+  return { speak: spoken(`${there} ${needed} ${line}`), steps: [there, needed, line], visual: { kind: 'emojiGroup', emoji: '⚫', count: have, emoji2: '⚪', count2: more, layout: 'row' }, hint };
+}
+
+// The typed level shows only the sum, so its hint counts up from the number shown. It never names the answer:
+// with 0 shown the answer is 5, and with 5 shown it is 0.
+function countUpToFive(known: number): Hint {
+  if (known === 0) return { text: 'Zero means none.' };
+  if (known === 5) return { text: 'There are 5 already. Do you need any more?' };
+  return { text: `Start at ${known}. Count up to 5.` };
 }
 
 function makeFive(level: Level, rng: Rng): QuestionDraft {
@@ -258,11 +287,12 @@ function makeFive(level: Level, rng: Rng): QuestionDraft {
       type: 'numberPad',
       mode: 'look',
       facts: blank === 'a' ? { a: answer, b: known, total: 5, blank } : { a: known, b: answer, total: 5, blank },
-      prompt: blank === 'a' ? { text: `? + ${known} = 5`, speak: ['What plus', { number: known }, 'equals', { number: 5 }, '?'] } : { text: `${known} + ? = 5`, speak: [{ number: known }, 'plus what equals', { number: 5 }, '?'] },
+      // The sum is shown once, in the picture; the question says it in words, as at Make 10 level 3.
+      prompt: blank === 'a' ? { text: `What plus ${known} equals 5?`, speak: ['What plus', { number: known }, 'equals', { number: 5 }, '?'] } : { text: `${known} plus what equals 5?`, speak: [{ number: known }, 'plus what equals', { number: 5 }, '?'] },
       stimulus: equation(x as number | string, '+', y as number | string, '=', 5),
       answer,
       maxDigits: 1,
-      explanation: fiveExplanation(known),
+      explanation: fiveExplanation(known, countUpToFive(known)),
     };
   }
   const have = rng.int(1, 4);
@@ -276,7 +306,7 @@ function makeFive(level: Level, rng: Rng): QuestionDraft {
     facts: { ...facts, options: values },
     prompt: { text: prompt, speak: spoken(prompt) },
     stimulus: level === 1 ? { kind: 'emojiGroup', emoji: '⚫', count: have, emoji2: '⚪', count2: more, layout: 'row' } : tidyGroup(thing, have),
-    explanation: fiveExplanation(have),
+    explanation: fiveExplanation(have, { text: level === 1 ? 'Each white dot needs a black dot. Count the white dots.' : `Count the ${thing.many}. Then count on to 5.` }),
     ...numberChoice(more, values),
   };
 }

@@ -63,7 +63,7 @@ const ROWS_IN: Row[] = [
 ];
 
 // Skills whose questions have changed since the wave shipped, and the version each is on now.
-const VERSIONS: Record<string, number> = { 'M-PK-C6': 2, 'M-PK-C7': 2 };
+const VERSIONS: Record<string, number> = { 'M-PK-C6': 3, 'M-PK-C7': 3, 'M-PK-A9': 2, 'M-PK-A10': 2, 'M-PK-A11': 2, 'M-PK-A12': 2, 'M-PK-A13': 2, 'M-PK-B3': 2, 'M-PK-B4': 2, 'M-PK-C4': 2, 'M-PK-C5': 2, 'M-PK-C8': 2, 'M-PK-C9': 2, 'M-PK-D4': 2, 'M-PK-D5': 2, 'M-PK-D6': 2 };
 
 function codeOf(id: string): string {
   const part = id.split('-')[2] ?? '';

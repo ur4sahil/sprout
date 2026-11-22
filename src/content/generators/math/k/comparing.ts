@@ -1,10 +1,11 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
+import { compareGroupsLines } from '../pk/moreFewer';
 import { apple, star, tidyGroup } from '../pk/parts';
 
 // Math K B.1 and B.2. Families: More or fewer, and Compare numbers. Oracle: compare.
@@ -29,22 +30,23 @@ const yesNo = (): Visual[] => [
 ];
 const side = (thing: Countable, values: number[]): Visual => ({ kind: 'row', children: values.map((n) => tidyGroup(thing, n)) });
 
-function groupsExplanation(thing: Countable, values: [number, number], ask: Ask | 'equal'): { speak: Say; steps: string[]; visual: Visual } {
+// The groups are named by their counts, never "this group", and fewer is said of things, never of a bare number
+// (compareGroupsLines, shared with pre-K B.1 and B.2).
+function groupsExplanation(thing: Countable, values: [number, number], ask: Ask | 'equal'): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const [left, right] = values;
-  const counts: Say = ['This group has', { number: left }, '. This group has', { number: right }, '.'];
-  const lines = [`This group has ${left}.`, `This group has ${right}.`];
   if (ask === 'equal') {
-    const same = left === right;
+    const some = (n: number): string => `${n} ${n === 1 ? thing.one : thing.many}`;
+    const verdict = left === right ? 'They are the same. The groups are equal.' : 'They are not the same. The groups are not equal.';
     return {
-      speak: [...counts, same ? 'They are the same. The groups are equal.' : 'They are not the same. The groups are not equal.'],
-      steps: [...lines, same ? 'They are the same. The groups are equal.' : 'They are not the same. The groups are not equal.'],
+      speak: ['One group has', { number: left }, `${left === 1 ? thing.one : thing.many}. The other group has`, { number: right }, `${right === 1 ? thing.one : thing.many}.`, verdict],
+      steps: [`One group has ${some(left)}.`, `The other group has ${some(right)}.`, verdict],
       visual: side(thing, values),
+      hint: { text: 'Count each group. Are the two counts the same?' },
     };
   }
   const answer = ask === 'most' ? Math.max(left, right) : Math.min(left, right);
-  const other = left + right - answer;
-  const than = ask === 'most' ? 'is more than' : 'is fewer than';
-  return { speak: [...counts, { number: answer }, than, { number: other }, '.'], steps: [...lines, `${answer} ${than} ${other}.`], visual: tidyGroup(thing, answer) };
+  const { lines, speak } = compareGroupsLines(thing, values, ask);
+  return { speak, steps: lines, visual: tidyGroup(thing, answer), hint: { text: ask === 'most' ? 'Count each group. Which count is bigger?' : 'Count each group. Which count is smaller?' } };
 }
 
 function moreOrFewer(thing: Countable, values: [number, number], ask: Ask): QuestionDraft {
@@ -118,7 +120,7 @@ export const moreFewerEqualGenerator: SkillGenerator = {
 // ---- B.2 Compare numbers ----
 // Levels: which is greater, to 5 / to 10 / greater or less, to 20.
 
-function numbersExplanation(values: [number, number], ask: Ask): { speak: Say; steps: string[]; visual: Visual } {
+function numbersExplanation(values: [number, number], ask: Ask): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const answer = ask === 'most' ? Math.max(...values) : Math.min(...values);
   const other = values[0] + values[1] - answer;
   const where = ask === 'most' ? 'comes after' : 'comes before';
@@ -127,6 +129,7 @@ function numbersExplanation(values: [number, number], ask: Ask): { speak: Say; s
     speak: [{ number: answer }, where, { number: other }, 'when we count.', { number: answer }, `is ${word}.`],
     steps: [`${answer} ${where} ${other} when we count.`, `${answer} is ${word}.`],
     visual: { kind: 'numberLine', min: Math.max(0, Math.min(...values) - 1), max: Math.max(...values) + 1, step: 1, marked: [answer] },
+    hint: { text: ask === 'most' ? 'Count up from the start. The number you say later is greater.' : 'Count up from the start. The number you say first is less.' },
   };
 }
 

@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { SkillGenerator } from '../../../generator';
 import { shape } from './parts';
@@ -12,8 +12,8 @@ type Ask = 'most' | 'least';
 const SHAPES: ShapeName[] = ['circle', 'square', 'triangle', 'star', 'heart'];
 const SIZE = ['s', 'm', 'l'] as const; // sizes 1, 2 and 3
 
-function explain(word: string, picture: Visual): { speak: Say; steps: string[]; visual: Visual } {
-  return { speak: [`This one is ${word}.`], steps: [`This one is ${word}.`], visual: picture };
+function explain(word: string, picture: Visual): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
+  return { speak: [`This one is ${word}.`], steps: [`This one is ${word}.`], visual: picture, hint: { text: 'Look at them side by side.' } };
 }
 
 function build(word: string, ask: Ask, values: number[], options: Visual[], extra: QuestionDraft['facts']): QuestionDraft {

@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { countAloud, listText, numeral } from '../../../generator';
 import { nearbyNumbers } from './parts';
@@ -17,21 +17,26 @@ function card(n: number, red?: number): Visual {
   return { kind: 'emojiGroup', emoji: RED, count: red, layout: 'dice', emoji2: BLUE, count2: n - red };
 }
 
-function explain(n: number, red?: number): { speak: Say; steps: string[]; visual: Visual } {
+function explain(n: number, red?: number): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const there = n === 1 ? 'There is' : 'There are';
   const dots = n === 1 ? 'dot' : 'dots';
   return {
     speak: ["Let's count.", ...countAloud(n), there, { number: n }, `${dots}.`],
     steps: [`Let's count: ${listText(Array.from({ length: n }, (_, i) => i + 1))}.`, `${there} ${n} ${dots}.`],
     visual: red === undefined ? { kind: 'emojiGroup', emoji: DOT, count: n, layout: 'dice', numbered: true } : { kind: 'emojiGroup', emoji: RED, count: red, layout: 'dice', emoji2: BLUE, count2: n - red, numbered: true },
+    hint: { text: red === undefined ? 'Touch each dot as you count. Say a number for each.' : 'Touch every dot as you count, the red and the blue. Say a number for each.' },
   };
 }
+
+// With two colours a child might count one colour only, so the question says to count them all.
+const ONE_COLOUR = 'How many dots are there?';
+const TWO_COLOURS = 'How many dots are there in all? Count the red and the blue.';
 
 function build(n: number, max: number, rng: Rng, red?: number): QuestionDraft {
   const values = nearbyNumbers(n, 1, max, rng);
   const facts: QuestionDraft['facts'] = { n, options: values };
   if (red !== undefined) facts.red = red;
-  const prompt = 'How many dots are there?';
+  const prompt = red === undefined ? ONE_COLOUR : TWO_COLOURS;
   return {
     type: 'choice',
     mode: 'look',

@@ -44,6 +44,7 @@ function moreLess(level: Level, rng: Rng): QuestionDraft {
       speak: [{ number: big }, 'comes after', { number: small }, 'when we count.', { number: answer }, `is ${word} than`, { number: other }, '.'],
       steps: [`${big} comes after ${small} when we count.`, `${answer} is ${word} than ${other}.`],
       visual: { kind: 'row', children: [{ kind: 'row', children: [numeral(small, 'l'), dots(small)] }, { kind: 'row', children: [numeral(big, 'l'), dots(big)] }] },
+      hint: { text: ask === 'most' ? 'Count up from the start. The number you say later is more.' : 'Count up from the start. The number you say first is less.' },
     },
   };
 }
@@ -77,9 +78,10 @@ function mostFewest(level: Level, rng: Rng): QuestionDraft {
     options: values.map((n) => tidyGroup(thing, n)),
     answerIndex: values.indexOf(answer),
     explanation: {
-      speak: ['The groups have', { number: values[0] as number }, ',', { number: values[1] as number }, 'and', { number: values[2] as number }, '.', { number: answer }, `is ${word}.`],
-      steps: [`The groups have ${values.join(', ')}.`, `${answer} is ${word}.`],
+      speak: ['Count each group:', { number: values[0] as number }, ',', { number: values[1] as number }, 'and', { number: values[2] as number }, '. The group of', { number: answer }, `has ${word}.`],
+      steps: [`Count each group: ${values[0]}, ${values[1]} and ${values[2]}.`, `The group of ${answer} has ${word}.`],
       visual: tidyGroup(thing, answer),
+      hint: { text: 'Count every group before you choose.' },
     },
   };
 }
@@ -114,11 +116,13 @@ function heavyLight(level: Level, rng: Rng): QuestionDraft {
   const word = level === 3 ? (want === 'most' ? 'the heaviest' : 'the lightest') : want === 'most' ? 'heavier' : 'lighter';
   const sorted = [...things].sort((x, y) => x.step - y.step);
   const answer = (want === 'most' ? sorted[sorted.length - 1] : sorted[0]) as (typeof WEIGHED)[number];
-  const heavy = sorted[sorted.length - 1] as (typeof WEIGHED)[number];
-  const light = sorted[0] as (typeof WEIGHED)[number];
   const prompt = `Which one is ${word}?`;
-  const line = `${an(heavy.name)} is heavier than ${an(light.name)}.`;
+  // The others, the nearest in weight first: "A ship is heavier than a horse and an egg."
+  const others = sorted.filter((thing) => thing !== answer).map((thing) => an(thing.name));
+  const nearest = want === 'most' ? others.reverse() : others;
+  const line = `${an(answer.name)} is ${want === 'most' ? 'heavier' : 'lighter'} than ${nearest.join(' and ')}.`;
   const lineCap = `${line.charAt(0).toUpperCase()}${line.slice(1)}`;
+  const lift = level === 3 ? (want === 'most' ? 'hardest' : 'easiest') : want === 'most' ? 'harder' : 'easier';
   return {
     type: 'choice',
     mode: 'look',
@@ -126,7 +130,7 @@ function heavyLight(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: things.map(picture),
     answerIndex: things.indexOf(answer),
-    explanation: { speak: [lineCap, `The ${answer.name} is ${word}.`], steps: [lineCap, `The ${answer.name} is ${word}.`], visual: picture(answer) },
+    explanation: { speak: [lineCap, `The ${answer.name} is ${word}.`], steps: [lineCap, `The ${answer.name} is ${word}.`], visual: picture(answer), hint: { text: `Think: which one would be ${lift} to lift?` } },
   };
 }
 

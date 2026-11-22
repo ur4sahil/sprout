@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 
@@ -20,16 +20,28 @@ function equation(a: number, b: number, level: Level): Visual {
     : { kind: 'equation', parts: [a, '+', b, '=', 'blank'] };
 }
 
-export function explain(a: number, b: number): { speak: Say; steps: string[]; visual: Visual } {
+// Counting on, said the way the child starts: at the bigger number, and why (the wording audit, Nov 21, 2026).
+// `boxFirst`: the question was written with the box on the left (level 4), so the last step is too: 7 = 1 + 6.
+export function explain(a: number, b: number, boxFirst = false): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const bigger = Math.max(a, b);
   const smaller = Math.min(a, b);
   const sum = a + b;
   const counted = Array.from({ length: smaller }, (_, i) => bigger + i + 1);
+  const start: Say = a === b ? ['Start at', { number: bigger }, '.'] : ['Start at the bigger number,', { number: bigger }, '.'];
   return {
-    speak: ['Start at', { number: bigger }, '. Count on', { number: smaller }, 'more.', { number: sum }, '.'],
-    steps: [`Start at ${bigger}.`, `Count on ${smaller} more: ${listText(counted)}.`, `${a} + ${b} = ${sum}`],
-    visual: { kind: 'equation', parts: [a, '+', b, '=', sum] },
+    speak: [...start, 'Count on', { number: smaller }, 'more.', { number: sum }, '.'],
+    steps: [a === b ? `Start at ${bigger}.` : `Start at the bigger number, ${bigger}.`, `Count on ${smaller} more: ${listText(counted)}.`, boxFirst ? `${sum} = ${a} + ${b}` : `${a} + ${b} = ${sum}`],
+    visual: { kind: 'equation', parts: boxFirst ? [sum, '=', a, '+', b] : [a, '+', b, '=', sum] },
+    hint: { text: a === b ? 'Start at one of the numbers. Then count on.' : 'Start at the bigger number. Then count on.' },
   };
+}
+
+// The sum asked the natural way (the owner's choice, Nov 22, 2026): "What is 1 plus 6?". With the box on the
+// left the question reads the same way round as the sum: "What number equals 1 plus 6?".
+export function plusPrompt(a: number, b: number, boxFirst = false): { text: string; speak: Say } {
+  return boxFirst
+    ? { text: `What number equals ${a} plus ${b}?`, speak: ['What number equals', { number: a }, 'plus', { number: b }, '?'] }
+    : { text: `What is ${a} plus ${b}?`, speak: ['What is', { number: a }, 'plus', { number: b }, '?'] };
 }
 
 // Three numerals, smallest first. Wrong answers are the usual slips: one off,
@@ -55,8 +67,7 @@ function optionsFor(a: number, b: number, rng: Rng): number[] {
 
 function build(a: number, b: number, level: Level, rng: Rng): QuestionDraft {
   const sum = a + b;
-  const promptText = `${a} plus ${b} equals what?`;
-  const prompt = { text: promptText, speak: [{ number: a }, 'plus', { number: b }, 'equals what?'] as Say };
+  const prompt = plusPrompt(a, b, level === 4);
   const stimulus = equation(a, b, level);
   if (level <= 2) {
     const values = optionsFor(a, b, rng);
@@ -79,7 +90,7 @@ function build(a: number, b: number, level: Level, rng: Rng): QuestionDraft {
     stimulus,
     answer: sum,
     maxDigits: 2,
-    explanation: explain(a, b),
+    explanation: explain(a, b, level === 4),
   };
 }
 
@@ -100,17 +111,17 @@ function lesson(): LessonStep[] {
     },
     {
       beat: 'watch',
-      text: '4 plus 2. Start at 4. Count on 2 more: 5, 6.',
+      text: `4 plus 2. ${explain(4, 2).steps.slice(0, 2).join(' ')}`,
       speak: [{ number: 4 }, 'plus', { number: 2 }, '.', ...explain(4, 2).speak],
       visual: { kind: 'equation', parts: [4, '+', 2, '=', 6] },
     },
     {
       beat: 'try',
-      text: '3 plus 5 equals what?',
-      speak: [{ number: 3 }, 'plus', { number: 5 }, 'equals what?'],
+      text: plusPrompt(3, 5).text,
+      speak: plusPrompt(3, 5).speak,
       visual: { kind: 'equation', parts: [3, '+', 5, '=', 'blank'] },
       reveal: {
-        text: 'Start at 5. Count on 3 more: 6, 7, 8.',
+        text: explain(3, 5).steps.slice(0, 2).join(' '),
         speak: explain(3, 5).speak,
         visual: { kind: 'equation', parts: [3, '+', 5, '=', 8] },
       },

@@ -1,10 +1,10 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import { COLOR_NAMES } from '../../../data/colors';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
-import { shape, twoClearColors } from './parts';
+import { a, shape, twoClearColors } from './parts';
 
 // Math pre-K D.2, What comes next: AB patterns. Family: Patterns.
 // Levels: AB by colour / by shape / by picture.
@@ -15,16 +15,24 @@ const SHAPES: ShapeName[] = ['circle', 'square', 'triangle', 'star', 'heart'];
 interface Part {
   name: string; // what it is called aloud: "red", "circle", "apple"
   picture: Visual;
+  thing?: true; // a shape or a picture, said with "a": "a circle"; a colour is said on its own: "red"
 }
 
-function explain(unit: Part[], shown: number): { speak: Say; steps: string[]; visual: Visual } {
+// "a circle", "an apple", "red".
+const called = (part: Part): string => (part.thing ? a(part.name) : part.name);
+
+export const PATTERN_HINT: Hint = { text: 'Say the pattern out loud. What comes after the last one?' };
+
+function explain(unit: Part[], shown: number): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const [first, second] = unit as [Part, Part];
   const last = unit[(shown - 1) % 2] as Part;
   const answer = unit[shown % 2] as Part;
+  const steps = [`The pattern is ${first.name}, ${second.name}, and it repeats.`, `After ${called(last)} comes ${called(answer)}.`];
   return {
-    speak: [`The pattern is ${first.name}, ${second.name}, and it repeats. After ${last.name} comes ${answer.name}.`],
-    steps: [`The pattern is ${first.name}, ${second.name}, and it repeats.`, `After ${last.name} comes ${answer.name}.`],
+    speak: [steps.join(' ')],
+    steps,
     visual: { kind: 'sequence', items: [...Array.from({ length: shown }, (_, i) => (unit[i % 2] as Part).picture), answer.picture] },
+    hint: PATTERN_HINT,
   };
 }
 
@@ -54,10 +62,10 @@ function unitFor(level: Level, rng: Rng): { by: string; unit: Part[] } {
   if (level === 2) {
     const color = rng.pick(COLOR_NAMES);
     const forms = rng.sample(SHAPES, 2);
-    return { by: 'shape', unit: forms.map((form) => ({ name: form, picture: shape(form, color) })) };
+    return { by: 'shape', unit: forms.map((form) => ({ name: form, picture: shape(form, color), thing: true })) };
   }
   const things = rng.sample(COUNTABLES, 2);
-  return { by: 'picture', unit: things.map((thing) => ({ name: thing.one, picture: { kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row' } })) };
+  return { by: 'picture', unit: things.map((thing) => ({ name: thing.one, picture: { kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row' }, thing: true })) };
 }
 
 function generate(level: Level, rng: Rng): QuestionDraft {
