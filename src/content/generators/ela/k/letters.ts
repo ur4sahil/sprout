@@ -27,7 +27,12 @@ function orderExplanation(letters: string[], answer: string, before: boolean): E
 
 const NEXT = 'Which letter comes next?';
 const MISSING = 'Which letter is missing?';
-const FILL = 'Put the next letters in ABC order.';
+// The tiles question says what to do with the tiles: tap them in order.
+const fillPrompt = (start: string): { text: string; speak: Say } => ({ text: `Tap the letters that come after ${start}, in ABC order.`, speak: ['Tap the letters that come after', { letter: start }, ', in ABC order.'] });
+// Hints never name a letter: one of them is the answer.
+const NEXT_HINT = { text: 'Sing the ABC song. What comes after the last letter here?' };
+const BEFORE_HINT = { text: 'Sing the ABC song. What comes just before the first letter here?' };
+const FILL_HINT = { text: 'Start at the letter you see. Sing the ABC song from there, and tap each letter you sing.' };
 
 function abcOrder(level: Level, rng: Rng): QuestionDraft {
   const upper = rng.bool();
@@ -43,12 +48,12 @@ function abcOrder(level: Level, rng: Rng): QuestionDraft {
       type: 'tiles',
       mode: 'look',
       facts: { letter: at(start), ask: 'run', length: 3 },
-      prompt: { text: FILL, speak: [FILL] },
+      prompt: fillPrompt(at(start)),
       stimulus: inRow([at(start), 'blank', 'blank', 'blank']),
       slots: 3,
       bank,
       answer: run.join(''),
-      explanation: { speak: [...said(all), '.'], steps: [`${all.join(', ')}.`], visual: inRow(all) },
+      explanation: { speak: [...said(all), '.'], steps: [`${all.join(', ')}.`], visual: inRow(all), hint: FILL_HINT },
     };
   }
   const before = level === 3;
@@ -71,7 +76,7 @@ function abcOrder(level: Level, rng: Rng): QuestionDraft {
     stimulus: inRow(shown),
     options: values.map((letter) => letterSaid(letter)),
     answerIndex: values.indexOf(at(answerAt)),
-    explanation: orderExplanation(letters, at(answerAt), before),
+    explanation: { ...orderExplanation(letters, at(answerAt), before), hint: before ? BEFORE_HINT : NEXT_HINT },
   };
 }
 

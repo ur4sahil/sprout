@@ -1,6 +1,6 @@
 {
  "skillId": "E-PK-B3",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -14,13 +14,13 @@
    ]
   },
   "prompt": {
-   "text": "How many claps in cat?",
+   "text": "Clap the word cat. How many claps?",
    "speak": [
-    "How many claps in",
+    "Clap the word",
     {
      "word": "cat"
     },
-    "?"
+    ". How many claps?"
    ]
   },
   "stimulus": {
@@ -59,10 +59,15 @@
   "answerIndex": 0,
   "explanation": {
    "speak": [
+    "Say it and clap:",
     {
      "word": "cat"
     },
     ".",
+    {
+     "word": "Cat"
+    },
+    "has",
     {
      "number": 1
     },
@@ -70,12 +75,34 @@
    ],
    "steps": [
     "cat",
-    "1 clap."
+    "Cat has 1 clap."
    ],
    "visual": {
     "kind": "text",
     "value": "cat",
     "size": "l"
+   },
+   "stepsSay": [
+    [
+     "Say it and clap:",
+     {
+      "word": "cat"
+     },
+     "."
+    ],
+    [
+     {
+      "word": "Cat"
+     },
+     "has",
+     {
+      "number": 1
+     },
+     "clap."
+    ]
+   ],
+   "hint": {
+    "text": "Say the word slowly and clap each part. Count your claps."
    }
   },
   "skillId": "E-PK-B3",
@@ -98,13 +125,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in apple?",
+     "text": "Clap the word apple. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "apple"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -143,10 +170,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "apple"
       },
       ".",
+      {
+       "word": "Apple"
+      },
+      "has",
       {
        "number": 2
       },
@@ -154,12 +186,34 @@
      ],
      "steps": [
       "ap · ple",
-      "2 claps."
+      "Apple has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "ap · ple",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Apple"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -180,13 +234,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in turtle?",
+     "text": "Clap the word turtle. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "turtle"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -225,10 +279,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "turtle"
       },
       ".",
+      {
+       "word": "Turtle"
+      },
+      "has",
       {
        "number": 2
       },
@@ -236,12 +295,34 @@
      ],
      "steps": [
       "tur · tle",
-      "2 claps."
+      "Turtle has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "tur · tle",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "turtle"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Turtle"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -262,13 +343,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in apple?",
+     "text": "Clap the word apple. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "apple"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -307,10 +388,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "apple"
       },
       ".",
+      {
+       "word": "Apple"
+      },
+      "has",
       {
        "number": 2
       },
@@ -318,12 +404,34 @@
      ],
      "steps": [
       "ap · ple",
-      "2 claps."
+      "Apple has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "ap · ple",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Apple"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -344,13 +452,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in turtle?",
+     "text": "Clap the word turtle. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "turtle"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -389,10 +497,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "turtle"
       },
       ".",
+      {
+       "word": "Turtle"
+      },
+      "has",
       {
        "number": 2
       },
@@ -400,12 +513,34 @@
      ],
      "steps": [
       "tur · tle",
-      "2 claps."
+      "Turtle has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "tur · tle",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "turtle"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Turtle"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -426,13 +561,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in lemon?",
+     "text": "Clap the word lemon. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "lemon"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -471,10 +606,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "lemon"
       },
       ".",
+      {
+       "word": "Lemon"
+      },
+      "has",
       {
        "number": 2
       },
@@ -482,12 +622,34 @@
      ],
      "steps": [
       "lem · on",
-      "2 claps."
+      "Lemon has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "lem · on",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "lemon"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Lemon"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -508,13 +670,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in apple?",
+     "text": "Clap the word apple. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "apple"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -553,10 +715,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "apple"
       },
       ".",
+      {
+       "word": "Apple"
+      },
+      "has",
       {
        "number": 2
       },
@@ -564,12 +731,34 @@
      ],
      "steps": [
       "ap · ple",
-      "2 claps."
+      "Apple has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "ap · ple",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Apple"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -590,13 +779,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in cat?",
+     "text": "Clap the word cat. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "cat"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -635,10 +824,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "cat"
       },
       ".",
+      {
+       "word": "Cat"
+      },
+      "has",
       {
        "number": 1
       },
@@ -646,12 +840,34 @@
      ],
      "steps": [
       "cat",
-      "1 clap."
+      "Cat has 1 clap."
      ],
      "visual": {
       "kind": "text",
       "value": "cat",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "cat"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Cat"
+       },
+       "has",
+       {
+        "number": 1
+       },
+       "clap."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -672,13 +888,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in moon?",
+     "text": "Clap the word moon. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "moon"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -717,10 +933,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "moon"
       },
       ".",
+      {
+       "word": "Moon"
+      },
+      "has",
       {
        "number": 1
       },
@@ -728,12 +949,34 @@
      ],
      "steps": [
       "moon",
-      "1 clap."
+      "Moon has 1 clap."
      ],
      "visual": {
       "kind": "text",
       "value": "moon",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "moon"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Moon"
+       },
+       "has",
+       {
+        "number": 1
+       },
+       "clap."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -754,13 +997,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in frog?",
+     "text": "Clap the word frog. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "frog"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -799,10 +1042,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "frog"
       },
       ".",
+      {
+       "word": "Frog"
+      },
+      "has",
       {
        "number": 1
       },
@@ -810,12 +1058,34 @@
      ],
      "steps": [
       "frog",
-      "1 clap."
+      "Frog has 1 clap."
      ],
      "visual": {
       "kind": "text",
       "value": "frog",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "frog"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Frog"
+       },
+       "has",
+       {
+        "number": 1
+       },
+       "clap."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -836,13 +1106,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in rainbow?",
+     "text": "Clap the word rainbow. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "rainbow"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -881,10 +1151,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "rainbow"
       },
       ".",
+      {
+       "word": "Rainbow"
+      },
+      "has",
       {
        "number": 2
       },
@@ -892,12 +1167,34 @@
      ],
      "steps": [
       "rain · bow",
-      "2 claps."
+      "Rainbow has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "rain · bow",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "rainbow"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Rainbow"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -921,13 +1218,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in apple?",
+     "text": "Clap the word apple. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "apple"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -976,10 +1273,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "apple"
       },
       ".",
+      {
+       "word": "Apple"
+      },
+      "has",
       {
        "number": 2
       },
@@ -987,12 +1289,34 @@
      ],
      "steps": [
       "ap · ple",
-      "2 claps."
+      "Apple has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "ap · ple",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Apple"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1014,13 +1338,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in umbrella?",
+     "text": "Clap the word umbrella. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "umbrella"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1069,10 +1393,15 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "umbrella"
       },
       ".",
+      {
+       "word": "Umbrella"
+      },
+      "has",
       {
        "number": 3
       },
@@ -1080,12 +1409,34 @@
      ],
      "steps": [
       "um · brel · la",
-      "3 claps."
+      "Umbrella has 3 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "um · brel · la",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "umbrella"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Umbrella"
+       },
+       "has",
+       {
+        "number": 3
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1107,13 +1458,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in banana?",
+     "text": "Clap the word banana. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "banana"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1162,10 +1513,15 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "banana"
       },
       ".",
+      {
+       "word": "Banana"
+      },
+      "has",
       {
        "number": 3
       },
@@ -1173,12 +1529,34 @@
      ],
      "steps": [
       "ba · na · na",
-      "3 claps."
+      "Banana has 3 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "ba · na · na",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "banana"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Banana"
+       },
+       "has",
+       {
+        "number": 3
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1200,13 +1578,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in umbrella?",
+     "text": "Clap the word umbrella. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "umbrella"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1255,10 +1633,15 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "umbrella"
       },
       ".",
+      {
+       "word": "Umbrella"
+      },
+      "has",
       {
        "number": 3
       },
@@ -1266,12 +1649,34 @@
      ],
      "steps": [
       "um · brel · la",
-      "3 claps."
+      "Umbrella has 3 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "um · brel · la",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "umbrella"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Umbrella"
+       },
+       "has",
+       {
+        "number": 3
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1293,13 +1698,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in dinosaur?",
+     "text": "Clap the word dinosaur. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "dinosaur"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1348,10 +1753,15 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "dinosaur"
       },
       ".",
+      {
+       "word": "Dinosaur"
+      },
+      "has",
       {
        "number": 3
       },
@@ -1359,12 +1769,34 @@
      ],
      "steps": [
       "di · no · saur",
-      "3 claps."
+      "Dinosaur has 3 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "di · no · saur",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "dinosaur"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Dinosaur"
+       },
+       "has",
+       {
+        "number": 3
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1386,13 +1818,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in apple?",
+     "text": "Clap the word apple. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "apple"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1441,10 +1873,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "apple"
       },
       ".",
+      {
+       "word": "Apple"
+      },
+      "has",
       {
        "number": 2
       },
@@ -1452,12 +1889,34 @@
      ],
      "steps": [
       "ap · ple",
-      "2 claps."
+      "Apple has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "ap · ple",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "apple"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Apple"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1479,13 +1938,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in cat?",
+     "text": "Clap the word cat. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "cat"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1534,10 +1993,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "cat"
       },
       ".",
+      {
+       "word": "Cat"
+      },
+      "has",
       {
        "number": 1
       },
@@ -1545,12 +2009,34 @@
      ],
      "steps": [
       "cat",
-      "1 clap."
+      "Cat has 1 clap."
      ],
      "visual": {
       "kind": "text",
       "value": "cat",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "cat"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Cat"
+       },
+       "has",
+       {
+        "number": 1
+       },
+       "clap."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1572,13 +2058,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in moon?",
+     "text": "Clap the word moon. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "moon"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1627,10 +2113,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "moon"
       },
       ".",
+      {
+       "word": "Moon"
+      },
+      "has",
       {
        "number": 1
       },
@@ -1638,12 +2129,34 @@
      ],
      "steps": [
       "moon",
-      "1 clap."
+      "Moon has 1 clap."
      ],
      "visual": {
       "kind": "text",
       "value": "moon",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "moon"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Moon"
+       },
+       "has",
+       {
+        "number": 1
+       },
+       "clap."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1665,13 +2178,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in frog?",
+     "text": "Clap the word frog. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "frog"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1720,10 +2233,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "frog"
       },
       ".",
+      {
+       "word": "Frog"
+      },
+      "has",
       {
        "number": 1
       },
@@ -1731,12 +2249,34 @@
      ],
      "steps": [
       "frog",
-      "1 clap."
+      "Frog has 1 clap."
      ],
      "visual": {
       "kind": "text",
       "value": "frog",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "frog"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Frog"
+       },
+       "has",
+       {
+        "number": 1
+       },
+       "clap."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",
@@ -1758,13 +2298,13 @@
      ]
     },
     "prompt": {
-     "text": "How many claps in rainbow?",
+     "text": "Clap the word rainbow. How many claps?",
      "speak": [
-      "How many claps in",
+      "Clap the word",
       {
        "word": "rainbow"
       },
-      "?"
+      ". How many claps?"
      ]
     },
     "stimulus": {
@@ -1813,10 +2353,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Say it and clap:",
       {
        "word": "rainbow"
       },
       ".",
+      {
+       "word": "Rainbow"
+      },
+      "has",
       {
        "number": 2
       },
@@ -1824,12 +2369,34 @@
      ],
      "steps": [
       "rain · bow",
-      "2 claps."
+      "Rainbow has 2 claps."
      ],
      "visual": {
       "kind": "text",
       "value": "rain · bow",
       "size": "l"
+     },
+     "stepsSay": [
+      [
+       "Say it and clap:",
+       {
+        "word": "rainbow"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Rainbow"
+       },
+       "has",
+       {
+        "number": 2
+       },
+       "claps."
+      ]
+     ],
+     "hint": {
+      "text": "Say the word slowly and clap each part. Count your claps."
      }
     },
     "skillId": "E-PK-B3",

@@ -2,7 +2,7 @@ import { CVC_WORDS } from '../../../src/content/data/cvc';
 import { FIRST_SOUNDS } from '../../../src/content/data/firstSounds';
 import { CLAP_WORDS, SOUND_SPLITS } from '../../../src/content/data/h3-sounds';
 import { ANSWERS, GAP_SENTENCES, NAMES, LONG_NAMES, REAL_SENTENCES, SEQUENCES, WHO_SENTENCES } from '../../../src/content/data/h3-stories';
-import { ACTIONS, BODY_PARTS, BODY_USES, FEELING_STORIES, FEELINGS, GO_CLASHES, GO_CLOSE, GO_PAIRS, HELPERS } from '../../../src/content/data/h3-words';
+import { ACTIONS, BODY_INSIDE, BODY_PARTS, BODY_USES, FEELING_STORIES, FEELINGS, GO_CLASHES, GO_CLOSE, GO_PAIRS, HELPERS } from '../../../src/content/data/h3-words';
 import { RHYME_FAMILIES } from '../../../src/content/data/rhymes';
 import { SENTENCE_PICTURES } from '../../../src/content/data/sentencePictures';
 import { SYLLABLE_WORDS } from '../../../src/content/data/syllables';
@@ -127,6 +127,8 @@ export const earlyWords: Oracle = (facts) => {
       return theOne(options(), (word) => word === target, relation);
     case 'bodyPart':
       found(BODY_PARTS.find((each) => each.word === target), target);
+      // A picture that also shows the part asked for (the arm shows a fist) could be argued for.
+      refuse(options(), BODY_INSIDE.filter(([inner]) => inner === target).map(([, outer]) => outer), relation);
       return theOne(options(), (word) => word === target, relation);
     case 'action':
       found(ACTIONS.find((each) => each.verb === target), target);
@@ -146,8 +148,13 @@ export const earlyWords: Oracle = (facts) => {
       const at = sequence.steps.findIndex((step) => step.word === target);
       return { kind: 'value', value: (sequence.steps[at + 1] as { word: string }).word };
     }
-    case 'whoDid':
-      return { kind: 'value', value: found(WHO_SENTENCES.find((each) => each.sentence === text(facts, 'story') && each.ask === text(facts, 'ask')), 'that sentence').answer.word };
+    case 'whoDid': {
+      // Read as written (kindergarten) or as a pre-K child hears it.
+      const story = text(facts, 'story');
+      const ask = text(facts, 'ask');
+      const said = (each: (typeof WHO_SENTENCES)[number]): boolean => (each.sentence === story && each.ask === ask) || (each.heard?.sentence === story && each.heard.ask === ask);
+      return { kind: 'value', value: found(WHO_SENTENCES.find(said), 'that sentence').answer.word };
+    }
     case 'vowel':
       return theOne(options(), (letter) => VOWELS.includes(letter.toLowerCase()) === (target === 'vowel'), relation);
     case 'printKind': {

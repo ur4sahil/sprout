@@ -9,18 +9,21 @@ import { CLAP_WORDS, SOUND_SPLITS } from '../../../data/h3-sounds';
 import { SYLLABLE_WORDS } from '../../../data/syllables';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
-import type { Explanation } from '../pk/parts';
 import { cap, letterSaid, picture, row } from '../pk/parts';
-import type { Line } from '../pk/h3-parts';
-import { beats, line, plain, said } from '../pk/h3-parts';
+import type { Line, Told } from '../pk/h3-parts';
+import { beats, letterSays, line, plain, said, sound as soundPart, soundText, spelledSay, spoken, working } from '../pk/h3-parts';
 
 // Language Arts kindergarten B.8 to B.13 (plan section 15, wave H3). Oracle: earlyWords.
-// A voice cannot say a lone sound (plan section 9): prompts use whole words, and a split such as
-// f · i · sh is shown on screen, never spoken.
+// Prompts use whole words. Steps say each sound with the recorded letter sounds (the owner's choice, Nov 21, 2026),
+// the sound first and the letter second; a split such as f · i · sh is shown and said sound by sound. A syllable is
+// not a letter sound, so a split into claps (ba · na · na) is shown and only the whole word is said.
 
 const shown = (entry: { word: string; emoji: string }): Visual => picture(entry.word, entry.emoji);
 const cvc = (word: string): CvcWord => CVC_WORDS.find((each) => each.word === word) as CvcWord;
 const rhymes = (one: string, two: string): boolean => one.slice(1) === two.slice(1);
+// "Say bin slowly. Listen to the sound in the middle. Then say each picture's name." The word is the one the
+// question names, never an option.
+const slowly = (word: string, listen: string): Line => spoken(`Say ${word} slowly. ${listen} Then say each picture's name.`, ['Say', { word }, `slowly. ${listen} Then say each picture's name.`]);
 
 // ---- B.8 Same middle sound ----
 // Levels: 2 spoken pictures / 3 / 3, one with the vowel that sounds closest (e with i, o with u).
@@ -28,12 +31,13 @@ const rhymes = (one: string, two: string): boolean => one.slice(1) === two.slice
 
 const middlePrompt = (word: string): Line => ({ text: `Which one has the same middle sound as ${word}?`, speak: ['Which one has the same middle sound as', { word }, '?'] });
 
-function middleExplanation(target: CvcWord, answer: CvcWord): Explanation {
-  return {
-    speak: [{ word: target.word }, 'and', { word: answer.word }, 'have the same middle sound. Both have the letter', { letter: target.vowel }, 'in the middle.'],
-    steps: [`${cap(target.word)} and ${answer.word} have the same middle sound.`, `Both have the letter ${target.vowel} in the middle.`],
-    visual: row(shown(target), shown(answer)),
-  };
+// "Bin and pig both have /i/ in the middle. The letter i says /i/." A vowel's name is not its sound here.
+function middleExplanation(target: CvcWord, answer: CvcWord): Told {
+  return working(
+    [spoken(`${cap(target.word)} and ${answer.word} both have ${soundText(target.vowel)} in the middle.`, [{ word: target.word }, 'and', { word: answer.word }, 'both have', soundPart(target.vowel), 'in the middle.']), letterSays(target.vowel)],
+    row(shown(target), shown(answer)),
+    slowly(target.word, 'Listen to the sound in the middle.'),
+  );
 }
 
 const MIDDLE_TARGETS = CVC_WORDS.filter((target) => CVC_WORDS.some((other) => other !== target && other.vowel === target.vowel && !rhymes(other.word, target.word)));
@@ -87,13 +91,14 @@ const END_WORDS = CVC_WORDS.filter((each) => !/[sx]$/.test(each.word));
 const END_TARGETS = END_WORDS.filter((target) => END_WORDS.some((other) => other !== target && other.word.slice(-1) === target.word.slice(-1) && !rhymes(other.word, target.word)));
 const endPrompt = (word: string): Line => ({ text: `Which one ends with the same sound as ${word}?`, speak: ['Which one ends with the same sound as', { word }, '?'] });
 
-function endExplanation(target: CvcWord, answer: CvcWord): Explanation {
+// "Pin and van both end with /n/. The letter n says /n/."
+function endExplanation(target: CvcWord, answer: CvcWord): Told {
   const last = target.word.slice(-1);
-  return {
-    speak: [{ word: target.word }, 'and', { word: answer.word }, 'end with the same sound. Both end with the letter', { letter: last }, '.'],
-    steps: [`${cap(target.word)} and ${answer.word} end with the same sound.`, `Both end with the letter ${last}.`],
-    visual: row(shown(target), shown(answer)),
-  };
+  return working(
+    [spoken(`${cap(target.word)} and ${answer.word} both end with ${soundText(last)}.`, [{ word: target.word }, 'and', { word: answer.word }, 'both end with', soundPart(last), '.']), letterSays(last)],
+    row(shown(target), shown(answer)),
+    slowly(target.word, 'Listen to the very last sound.'),
+  );
 }
 
 function sameEnd(level: Level, rng: Rng): QuestionDraft {
@@ -144,15 +149,27 @@ export const sameEndGenerator: SkillGenerator = {
 const split = (entry: SoundSplit): string => entry.sounds.join(' · ');
 const onePerLetter = (entry: SoundSplit): boolean => entry.sounds.every((each) => each.length === 1);
 const countPrompt = (word: string): Line => ({ text: `How many sounds do you hear in ${word}?`, speak: ['How many sounds do you hear in', { word }, '?'] });
+// The hint never shows the split: counting its parts would be the answer.
+const COUNT_HINT = line('Say the word slowly. Hold up a finger for each sound you hear.');
 
-function soundsExplanation(entry: SoundSplit): Explanation {
+// Each sound as it lights up (f · r · o · g is /f/, /r/, /o/, /g/), never the letters' names, which hold other sounds.
+function soundsExplanation(entry: SoundSplit): Told {
   const n = entry.sounds.length;
-  const together = !onePerLetter(entry);
-  return {
-    speak: [{ word: entry.word }, 'has', { number: n }, 'sounds.', ...(together ? ['Some letters work together to make one sound.'] : [])],
-    steps: [split(entry), `${cap(entry.word)} has ${n} sounds.`, ...(together ? ['Some letters work together to make one sound.'] : [])],
-    visual: plain(split(entry), 'l'),
-  };
+  const lines: Line[] = [
+    spoken(split(entry), entry.keys.flatMap((key, i): Say => [...(i === 0 ? [] : [',']), soundPart(key)]).concat('.')),
+    spoken(`${cap(entry.word)} has ${n} sounds.`, [{ word: entry.word }, 'has', { number: n }, 'sounds.']),
+  ];
+  // Letters that work together for one sound: "The letters s and h make one sound, /sh/."
+  const at = entry.sounds.findIndex((each) => each.length > 1);
+  const together = entry.sounds[at];
+  const key = entry.keys[at];
+  if (together !== undefined && key !== undefined) {
+    const named = together.split('');
+    lines.push(
+      spoken(`The letters ${named.join(' and ')} make one sound, ${soundText(key)}.`, ['The letters', ...named.flatMap((letter, i): Say => [...(i === 0 ? [] : ['and']), { letter }]), 'make one sound,', soundPart(key), '.']),
+    );
+  }
+  return working(lines, plain(split(entry), 'l'), COUNT_HINT);
 }
 
 function countSounds(level: Level, rng: Rng): QuestionDraft {
@@ -211,15 +228,22 @@ const soundsLike = (one: string, two: string): boolean => SOUND_GROUPS.some((gro
 const PLACE = ['first', 'middle', 'last'];
 const swapPrompt = (from: string, to: string): Line => ({ text: `Change ${from} to ${to}. Which new letter do you need?`, speak: ['Change', { word: from }, 'to', { word: to }, '. Which new letter do you need?'] });
 
-function swapExplanation(swap: Swap): Explanation {
+const SWAP_HINT = line('Say both words slowly. Listen for the sound that changes.');
+
+// The sound that changes, then the letter that spells it: "The first sound changes from /h/ to /p/."
+function swapExplanation(swap: Swap): Told {
   const old = swap.from.charAt(swap.at);
   const next = swap.to.word.charAt(swap.at);
   const place = PLACE[swap.at === 0 ? 0 : swap.at === 2 ? 2 : 1] as string;
-  return {
-    speak: [{ word: swap.from }, 'becomes', { word: swap.to.word }, `. Change the ${place} letter,`, { letter: old }, ', to', { letter: next }, '.'],
-    steps: [`${cap(swap.from)} becomes ${swap.to.word}.`, `Change the ${place} letter, ${old}, to ${next}.`],
-    visual: row(said(swap.from, [{ word: swap.from }]), said(swap.to.word, [{ word: swap.to.word }]), shown(swap.to)),
-  };
+  return working(
+    [
+      spoken(`${cap(swap.from)} becomes ${swap.to.word}.`, [{ word: swap.from }, 'becomes', { word: swap.to.word }, '.']),
+      spoken(`The ${place} sound changes from ${soundText(old)} to ${soundText(next)}.`, [`The ${place} sound changes from`, soundPart(old), 'to', soundPart(next), '.']),
+      spoken(`Change the ${place} letter, ${old}, to ${next}.`, [`Change the ${place} letter,`, { letter: old }, ', to', { letter: next }, '.']),
+    ],
+    row(said(swap.from, [{ word: swap.from }]), said(swap.to.word, [{ word: swap.to.word }]), shown(swap.to)),
+    SWAP_HINT,
+  );
 }
 
 function changeLetter(level: Level, rng: Rng): QuestionDraft {
@@ -269,15 +293,23 @@ export const changeLetterGenerator: SkillGenerator = {
 const CLAPPED: readonly ClapWord[] = [...SYLLABLE_WORDS, ...CLAP_WORDS];
 const withClaps = (n: number): ClapWord[] => CLAPPED.filter((each) => each.parts.length === n);
 const MORE = line('Which word has more claps?');
+const MORE_HINT = line('Say each word slowly and clap each part. Count your claps.');
 const claps = (n: number): string => (n === 1 ? '1 clap' : `${n} claps`);
 const clapSay = (n: number): Say => [{ number: n }, n === 1 ? 'clap.' : 'claps.'];
 
-function clapsExplanation(more: ClapWord, fewer: ClapWord): Explanation {
-  return {
-    speak: [{ word: more.word }, 'has', ...clapSay(more.parts.length), { word: fewer.word }, 'has', ...clapSay(fewer.parts.length)],
-    steps: [`${more.parts.join(' · ')}: ${claps(more.parts.length)}.`, `${fewer.parts.join(' · ')}: ${claps(fewer.parts.length)}.`],
-    visual: row(plain(more.parts.join(' · '), 'l'), plain(fewer.parts.join(' · '), 'l')),
-  };
+// "Banana has 3 claps: ba · na · na." The voice says the whole word and its count, never a part such as "na" or a
+// one-letter part such as the i of helicopter, which it would say as a letter's name.
+function clapLine(entry: ClapWord): Line {
+  const n = entry.parts.length;
+  return spoken(`${cap(entry.word)} has ${claps(n)}${n === 1 ? '' : `: ${entry.parts.join(' · ')}`}.`, [{ word: entry.word }, 'has', ...clapSay(n)]);
+}
+
+function clapsExplanation(more: ClapWord, fewer: ClapWord): Told {
+  return working(
+    [clapLine(more), clapLine(fewer), spoken(`${cap(more.word)} has more claps.`, [{ word: more.word }, 'has more claps.'])],
+    row(plain(more.parts.join(' · '), 'l'), plain(fewer.parts.join(' · '), 'l')),
+    MORE_HINT,
+  );
 }
 
 function moreClaps(level: Level, rng: Rng): QuestionDraft {
@@ -330,14 +362,18 @@ const placeVisual = (place: string, letter: string): Visual => ({ kind: 'text', 
 const placePrompt = (letter: string, word: string): Line => ({ text: `Where is the letter ${letter} in ${word}?`, speak: ['Where is the letter', { letter }, 'in', { word }, '?'] });
 const DISTINCT = CVC_WORDS.filter((each) => new Set(each.word).size === 3);
 
-function placeExplanation(entry: CvcWord, at: number): Explanation {
+// The hint never says first, middle or last: one of them is the answer.
+const PLACE_HINT = line('Point to each letter of the word, from left to right, until you find it.');
+
+// A step starts with a capital, as a sentence does: "The letter t is the last letter."
+function placeExplanation(entry: CvcWord, at: number): Told {
   const letter = entry.word.charAt(at);
   const place = PLACES[at] as string;
-  return {
-    speak: [{ letter }, `is the ${place} letter in`, { word: entry.word }, '.'],
-    steps: [entry.word.split('').join(' '), `${letter} is the ${place} letter.`],
-    visual: row(shown(entry), plain(entry.word, 'xl')),
-  };
+  return working(
+    [spoken(entry.word.split('').join(' '), spelledSay(entry.word.split(''))), spoken(`The letter ${letter} is the ${place} letter.`, ['The letter', { letter }, `is the ${place} letter.`])],
+    row(shown(entry), plain(entry.word, 'xl')),
+    PLACE_HINT,
+  );
 }
 
 function letterPlace(level: Level, rng: Rng): QuestionDraft {

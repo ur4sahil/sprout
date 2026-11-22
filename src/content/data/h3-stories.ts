@@ -22,10 +22,10 @@ const SEQUENCE_ROWS: [string, StepGroup, [string, string][], string[]][] = [
   ['rain', 'weather', [['cloud', '☁️'], ['rain', '🌧️'], ['rainbow', '🌈']], ['Clouds fill the sky.', 'Rain falls.', 'A rainbow comes out.']],
   ['snowman', 'weather', [['snow', '🌨️'], ['snowman', '⛄'], ['water', '💧']], ['Snow falls.', 'We build a snowman.', 'The sun melts it into water.']],
   ['ice', 'weather', [['ice', '🧊'], ['water', '💧']], ['Here is some ice.', 'It melts into water.']],
-  ['grow', 'growing', [['baby', '👶'], ['boy', '👦'], ['man', '👨']], ['First a baby.', 'The baby grows into a boy.', 'The boy grows into a man.']],
+  ['grow', 'growing', [['baby', '👶'], ['boy', '👦'], ['man', '👨']], ['First there is a baby.', 'The baby grows into a boy.', 'The boy grows into a man.']],
   ['chick', 'growing', [['egg', '🥚'], ['hatching chick', '🐣'], ['hen', '🐔']], ['An egg is laid.', 'A chick hatches out.', 'The chick grows into a hen.']],
   ['plant', 'growing', [['plant', '🌱'], ['flower', '🌸']], ['A little plant comes up.', 'It grows a flower.']],
-  ['bread', 'food', [['wheat', '🌾'], ['bread', '🍞'], ['sandwich', '🥪']], ['Wheat grows in a field.', 'The wheat is baked into bread.', 'The bread makes a sandwich.']],
+  ['bread', 'food', [['wheat', '🌾'], ['bread', '🍞'], ['sandwich', '🥪']], ['Wheat grows in a field.', 'We use the wheat to bake bread.', 'We make a sandwich with the bread.']],
   ['popcorn', 'food', [['corn', '🌽'], ['popcorn', '🍿']], ['Here is some corn.', 'It pops into popcorn.']],
   ['morning', 'day', [['alarm clock', '⏰'], ['toothbrush', '🪥'], ['school', '🏫']], ['The alarm clock rings.', 'We brush our teeth.', 'We go to school.']],
   ['mail', 'day', [['pencil', '✏️'], ['envelope', '✉️'], ['mailbox', '📫']], ['We write a note with a pencil.', 'We put the note in an envelope.', 'The envelope goes in the mailbox.']],
@@ -37,14 +37,21 @@ export const SEQUENCES: readonly Sequence[] = SEQUENCE_ROWS.map(([id, group, ste
 export const STEP_CLOSE: readonly (readonly [StepGroup, StepGroup])[] = [['weather', 'growing']];
 
 // ---- Who did it? (pre-K D.2, heard; kindergarten E.7, read) ----
-// `others` are the other characters in the sentence. They are offered as wrong answers.
+// `others` are the other characters in the sentence. They are offered as wrong answers. `heard` is what a pre-K
+// child hears instead, where the written question is passive ("Who gets fed?"): most 4-year-olds answer that with
+// the one doing the feeding, so it would test grammar, not listening. Kindergarten reads the written one.
 
 export interface WhoSentence {
   sentence: string;
   ask: string;
   answer: Pic;
   others: readonly Pic[];
+  heard?: { sentence: string; ask: string };
 }
+
+const HEARD: Record<string, { sentence: string; ask: string }> = {
+  'The boy feeds the pig.': { sentence: 'The boy gives the pig some food.', ask: 'Who eats the food?' },
+};
 
 const WHO_ROWS: [string, string, [string, string], [string, string][]][] = [
   ['The duck swims in the pond.', 'Who swims?', ['duck', '🦆'], []],
@@ -67,7 +74,10 @@ const WHO_ROWS: [string, string, [string, string], [string, string][]][] = [
   ['The man helps the girl.', 'Who helps?', ['man', '👨'], [['girl', '👧']]],
 ];
 
-export const WHO_SENTENCES: readonly WhoSentence[] = WHO_ROWS.map(([sentence, ask, answer, others]) => ({ sentence, ask, answer: pic(answer), others: others.map(pic) }));
+export const WHO_SENTENCES: readonly WhoSentence[] = WHO_ROWS.map(([sentence, ask, answer, others]) => {
+  const heard = HEARD[sentence];
+  return { sentence, ask, answer: pic(answer), others: others.map(pic), ...(heard === undefined ? {} : { heard }) };
+});
 
 // Every character in the list, for wrong answers that are not in the sentence.
 export const WHO_CHARACTERS: readonly Pic[] = [...new Map(WHO_SENTENCES.flatMap((each) => [each.answer, ...each.others]).map((each) => [each.word, each])).values()];
@@ -172,9 +182,10 @@ export interface Answer {
   kind: QuestionWord;
 }
 
+// A "what" is never something that is also a place: a bed and a box answer "where" too ("In bed.", "In the box.").
 const ANSWER_ROWS: Record<QuestionWord, [string, string][]> = {
   who: [['girl', '👧'], ['boy', '👦'], ['baby', '👶'], ['man', '👨'], ['woman', '👩'], ['king', '🤴']],
-  what: [['cup', '🥤'], ['ball', '⚽'], ['box', '📦'], ['key', '🔑'], ['book', '📖'], ['bed', '🛏️']],
+  what: [['cup', '🥤'], ['ball', '⚽'], ['key', '🔑'], ['book', '📖'], ['hat', '🎩'], ['spoon', '🥄']],
   where: [['house', '🏠'], ['school', '🏫'], ['beach', '🏖️'], ['castle', '🏰'], ['hospital', '🏥'], ['park', '🏞️']],
 };
 

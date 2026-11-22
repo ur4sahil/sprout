@@ -73,7 +73,7 @@ describe('A.1 and A.2: hear a letter, find it', () => {
       for (const question of choices(skillId, level)) {
         const target = question.facts.target as string;
         expect(question.mode).toBe('listen');
-        expect(question.prompt.text).toBe('Find the letter.');
+        expect(question.prompt.text).toBe('Listen. Find the letter.');
         expect(sayText(question.prompt.speak)).toContain('Find the letter');
         expect(question.prompt.speak).toContainEqual({ letter: target });
         expect(question.options).toHaveLength(level === 1 ? 2 : 3);
@@ -183,7 +183,7 @@ describe('B.1 Starts with the same sound', () => {
     for (const level of [1, 2] as Level[]) {
       for (const question of choices('E-PK-B1', level)) {
         const target = question.facts.target as string;
-        expect(question.prompt.text).toBe(`Which one starts like ${target}?`);
+        expect(question.prompt.text).toBe(`Which one starts with the same sound as ${target}?`);
         expect(question.prompt.speak).toContainEqual({ word: target });
         expect(question.options).toHaveLength(level + 1);
         const sounds = words(question).map(soundOf);
@@ -237,10 +237,11 @@ describe('B.3 Count syllables', () => {
         expect(question.facts.options).toEqual(Array.from({ length: most }, (_, i) => i + 1));
         expect(question.fixedOrder).toBe(true);
         expect(question.answerIndex).toBe(entry!.parts.length - 1);
-        expect(question.prompt.text).toBe(`How many claps in ${entry!.word}?`);
+        expect(question.prompt.text).toBe(`Clap the word ${entry!.word}. How many claps?`);
         // The explanation shows the word split into its parts.
         expect(question.explanation.steps[0]).toBe(entry!.parts.join(' · '));
-        expect(question.explanation.steps[1]).toBe(entry!.parts.length === 1 ? '1 clap.' : `${entry!.parts.length} claps.`);
+        const word = `${entry!.word.charAt(0).toUpperCase()}${entry!.word.slice(1)}`;
+        expect(question.explanation.steps[1]).toBe(entry!.parts.length === 1 ? `${word} has 1 clap.` : `${word} has ${entry!.parts.length} claps.`);
       }
       expect(counts).toEqual(new Set(Array.from({ length: most }, (_, i) => i + 1)));
     }

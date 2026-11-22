@@ -9,8 +9,9 @@ import type { SentencePicture } from '../../../data/sentencePictures';
 import { SENTENCE_PICTURES } from '../../../data/sentencePictures';
 import { TELLING } from '../../../data/sentences';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from '../pk/parts';
 import { a, cap, picture, row } from '../pk/parts';
+import type { Told } from '../pk/h3-parts';
+import { line, spoken, working } from '../pk/h3-parts';
 
 // Language Arts kindergarten D.1 to D.3 and E.1.
 
@@ -23,11 +24,24 @@ const textSaid = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kin
 
 const lowered = (sentence: string): string => sentence.charAt(0).toLowerCase() + sentence.slice(1);
 const noPeriod = (sentence: string): string => sentence.slice(0, -1);
-const CORRECT = 'Which sentence is written correctly?';
+// The same task as D.4 (names), worded the same way.
+const CORRECT = 'Which one is written the right way?';
 const RULE = 'A sentence starts with a capital letter and ends with a period.';
 const ASKS = ['capital', 'period', 'both'] as const;
 // Every way of writing it says the same words aloud.
 const written = (shown: string, sentence: string): Visual => ({ kind: 'text', value: shown, size: 'm', speak: [sentence] });
+
+// The steps point at the rule the wrong ones break: the capital (level 1), the period (level 2) or both (level 3).
+function capitalsExplanation(level: Level, sentence: string): Told {
+  const steps =
+    level === 1
+      ? [line('Look at the first letter of each one.'), line('A sentence starts with a capital letter.'), line(sentence)]
+      : level === 2
+        ? [line('Look at the end of each one.'), line('A sentence ends with a period.'), line(sentence)]
+        : [line('A sentence starts with a capital letter.'), line('It ends with a period.'), line(`Only one has both: ${sentence}`)];
+  const hint = level === 1 ? 'Check how each sentence starts.' : level === 2 ? 'Check how each sentence ends.' : 'Check how each sentence starts and how it ends.';
+  return working(steps, written(sentence, sentence), line(hint));
+}
 
 function capitals(level: Level, rng: Rng): QuestionDraft {
   const sentence = rng.pick(TELLING);
@@ -41,7 +55,7 @@ function capitals(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: CORRECT, speak: [CORRECT] },
     options: options.map((each) => written(each, sentence)),
     answerIndex: options.indexOf(sentence),
-    explanation: { speak: [RULE], steps: [RULE], visual: written(sentence, sentence) },
+    explanation: capitalsExplanation(level, sentence),
   };
 }
 
@@ -78,13 +92,17 @@ const GROUP = 'Put each word in its group.';
 const named = (entry: GroupWord): Visual => ({ kind: 'row', children: [{ kind: 'emojiGroup', emoji: entry.emoji, count: 1, layout: 'row' }, text(entry.word, 'm')], speak: [{ word: entry.word }] });
 const inGroup = (group: WordGroup): GroupWord[] => GROUP_WORDS.filter((entry) => entry.group === group);
 
-function namingExplanation(items: GroupWord[]): Explanation {
+// A sort has no step to nudge with (its steps list the groups), so its hint is a way to work.
+const NAMING_HINT = { text: 'Look at each picture. Is it a person, an animal or a thing?' };
+
+function namingExplanation(items: GroupWord[]): Told {
   // One example from each group.
   const examples = NAMING.map((group) => items.find((entry) => entry.group === group) as GroupWord);
   return {
     speak: examples.flatMap((entry): Say => [`${cap(a(entry.word).split(' ')[0] as string)}`, { word: entry.word }, `is ${KIND_OF[entry.group]}.`]),
     steps: examples.map((entry) => `${cap(a(entry.word))} is ${KIND_OF[entry.group]}.`),
     visual: row(...examples.map(named)),
+    hint: NAMING_HINT,
   };
 }
 
@@ -134,10 +152,21 @@ const ADDS_S: readonly Countable[] = COUNTABLES.filter((thing) => thing.many ===
 const MATCHES = 'Which word matches the picture?';
 const group1 = (thing: Countable, count: number): Visual => ({ kind: 'emojiGroup', emoji: thing.emoji, count, layout: 'row' });
 
-function countExplanation(thing: Countable, many: boolean, count: number): Explanation {
+function countExplanation(thing: Countable, many: boolean, count: number): Told {
   const said = many ? thing.many : thing.one;
   const first = many ? 'There is more than one.' : 'There is just one.';
-  return { speak: [first, 'We say', { word: said }, '.'], steps: [first, `We say ${said}.`], visual: row(group1(thing, count), textSaid(said)) };
+  return { speak: [first, 'We say', { word: said }, '.'], steps: [first, `We say ${said}.`], visual: row(group1(thing, count), textSaid(said)), hint: { text: 'Count the pictures. Is there one, or more than one?' } };
+}
+
+// With no picture, the step points at what in the word means more than one: the s at its end. The letter, not a
+// sound: the s of ducks says /s/, but the s of frogs says /z/.
+function writtenExplanation(thing: Countable, many: boolean): Told {
+  const s = { letter: 's' };
+  const steps = many
+    ? [spoken(`${cap(thing.many)} ends with the letter s.`, [{ word: thing.many }, 'ends with the letter', s, '.']), spoken(`The s means more than one ${thing.one}.`, ['The', s, 'means more than one', { word: thing.one }, '.'])]
+    : [spoken(`${cap(thing.one)} has no s at the end.`, [{ word: thing.one }, 'has no', s, 'at the end.']), spoken(`It means just one ${thing.one}.`, ['It means just one', { word: thing.one }, '.'])];
+  // A read hint never says the words to read.
+  return working(steps, row(group1(thing, many ? 3 : 1), textSaid(many ? thing.many : thing.one)), line('Look at the end of each word.'));
 }
 
 function oneOrMany(level: Level, rng: Rng): QuestionDraft {
@@ -153,7 +182,7 @@ function oneOrMany(level: Level, rng: Rng): QuestionDraft {
   }
   // Written only: no picture, and the words are read, not heard.
   const prompt = many ? 'Which word means more than one?' : 'Which word means just one?';
-  return { type: 'choice', mode: 'read', facts: { ...facts, read: [thing.one, thing.many] }, prompt: { text: prompt, speak: [prompt] }, options: options.map((each) => text(each)), answerIndex: options.indexOf(answer), explanation: countExplanation(thing, many, many ? 3 : 1) };
+  return { type: 'choice', mode: 'read', facts: { ...facts, read: [thing.one, thing.many] }, prompt: { text: prompt, speak: [prompt] }, options: options.map((each) => text(each)), answerIndex: options.indexOf(answer), explanation: writtenExplanation(thing, many) };
 }
 
 const BALL = COUNTABLES.find((thing) => thing.one === 'ball') as Countable;
@@ -183,8 +212,17 @@ export const oneOrManyGenerator: SkillGenerator = {
 const WHICH_PICTURE = 'Which picture matches the sentence?';
 const shown = (entry: SentencePicture): Visual => picture(entry.word, entry.emoji);
 
-function sentenceExplanation(entry: SentencePicture): Explanation {
-  return { speak: ['The sentence says', { word: entry.word }, '.'], steps: [`The sentence says ${entry.word}.`], visual: row(text(entry.sentence, 'm'), shown(entry)) };
+// "The sentence has the word bed. The picture shows a bed.": the sentence says more than "bed", and a picture has
+// no words. Shared with E.6.
+export const seen = (word: string): string => (word === 'sun' ? 'the sun' : a(word));
+
+function sentenceExplanation(entry: SentencePicture): Told {
+  return working(
+    [line(`The sentence has the word ${entry.word}.`), line(`The picture shows ${seen(entry.word)}.`)],
+    row(text(entry.sentence, 'm'), shown(entry)),
+    // A read hint never says the words to read.
+    line('Read each word of the sentence. Which word names a picture?'),
+  );
 }
 
 function readSentence(level: Level, rng: Rng): QuestionDraft {

@@ -45,8 +45,10 @@ function thisIs(letter: string): Explanation {
 
 // ---- A.1 and A.2: hear a letter name, tap the letter ----
 
-const FIND = 'Find the letter.';
+// Every listen question starts with "Listen." on screen. The voice says the letter; the screen never shows it.
+const FIND = 'Listen. Find the letter.';
 const findSpeak = (letter: string): Say => ['Find the letter', { letter }, '.'];
+const FIND_HINT = { text: 'Tap the speaker to hear the letter again. Then look closely at each letter.' };
 
 function findQuestion(level: Level, which: Case, rng: Rng): QuestionDraft {
   const { target, values } = offered(level, which, rng);
@@ -57,7 +59,7 @@ function findQuestion(level: Level, which: Case, rng: Rng): QuestionDraft {
     prompt: { text: FIND, speak: findSpeak(target) },
     options: values.map((letter) => letterTile(letter)),
     answerIndex: values.indexOf(target),
-    explanation: thisIs(target),
+    explanation: { ...thisIs(target), hint: FIND_HINT },
   };
 }
 
@@ -100,6 +102,7 @@ export const findLowercaseGenerator = findSkill('E-PK-A2', 'lower', 52);
 // Level 1 uses big letters. Above that the letter is big or small, and every option is the same case.
 
 const SAME = 'Find the same letter.';
+const SAME_HINT = { text: 'Look at the letter above. Find the one with just the same shape.' };
 
 function sameLetter(level: Level, rng: Rng): QuestionDraft {
   const which: Case = level === 1 ? 'upper' : rng.pick<Case>(['upper', 'lower']);
@@ -113,7 +116,7 @@ function sameLetter(level: Level, rng: Rng): QuestionDraft {
     stimulus: letterSaid(target),
     options: values.map((letter) => letterTile(letter)),
     answerIndex: values.indexOf(target),
-    explanation: { speak: [...shown.speak, 'They are the same.'], steps: [...shown.steps, 'They are the same.'], visual: row(letterSaid(target), letterSaid(target)) },
+    explanation: { speak: [...shown.speak, 'They are the same.'], steps: [...shown.steps, 'They are the same.'], visual: row(letterSaid(target), letterSaid(target)), hint: SAME_HINT },
   };
 }
 

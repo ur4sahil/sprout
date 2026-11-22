@@ -1,6 +1,6 @@
 {
  "skillId": "E-PK-B4",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -51,9 +51,9 @@
    ]
   },
   "prompt": {
-   "text": "Which one does not start like house?",
+   "text": "Which one starts with a different sound from house?",
    "speak": [
-    "Which one does not start like",
+    "Which one starts with a different sound from",
     {
      "word": "house"
     },
@@ -74,7 +74,7 @@
   "explanation": {
    "speak": [
     {
-     "word": "house"
+     "word": "House"
     },
     ",",
     {
@@ -84,15 +84,23 @@
     {
      "word": "horse"
     },
-    "start with the same sound.",
+    "all start with",
     {
-     "word": "lemon"
+     "sound": "h"
     },
-    "does not."
+    ".",
+    {
+     "word": "Lemon"
+    },
+    "starts with",
+    {
+     "sound": "l"
+    },
+    "."
    ],
    "steps": [
-    "House, hat and horse start with the same sound.",
-    "Lemon does not."
+    "House, hat and horse all start with /h/.",
+    "Lemon starts with /l/."
    ],
    "visual": {
     "kind": "row",
@@ -141,6 +149,50 @@
        }
       ]
      }
+    ]
+   },
+   "stepsSay": [
+    [
+     {
+      "word": "House"
+     },
+     ",",
+     {
+      "word": "hat"
+     },
+     "and",
+     {
+      "word": "horse"
+     },
+     "all start with",
+     {
+      "sound": "h"
+     },
+     "."
+    ],
+    [
+     {
+      "word": "Lemon"
+     },
+     "starts with",
+     {
+      "sound": "l"
+     },
+     "."
+    ]
+   ],
+   "hint": {
+    "text": "House starts with /h/. Say each picture's name and listen to the very start.",
+    "say": [
+     {
+      "word": "House"
+     },
+     "starts with",
+     {
+      "sound": "h"
+     },
+     ".",
+     "Say each picture's name and listen to the very start."
     ]
    }
   },
@@ -201,9 +253,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like key?",
+     "text": "Which one starts with a different sound from key?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "key"
       },
@@ -224,7 +276,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "key"
+       "word": "Key"
       },
       ",",
       {
@@ -234,15 +286,23 @@
       {
        "word": "car"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "zebra"
+       "sound": "k"
       },
-      "does not."
+      ".",
+      {
+       "word": "Zebra"
+      },
+      "starts with",
+      {
+       "sound": "z"
+      },
+      "."
      ],
      "steps": [
-      "Key, cow and car start with the same sound.",
-      "Zebra does not."
+      "Key, cow and car all start with /k/.",
+      "Zebra starts with /z/."
      ],
      "visual": {
       "kind": "row",
@@ -291,6 +351,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Key"
+       },
+       ",",
+       {
+        "word": "cow"
+       },
+       "and",
+       {
+        "word": "car"
+       },
+       "all start with",
+       {
+        "sound": "k"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Zebra"
+       },
+       "starts with",
+       {
+        "sound": "z"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Key starts with /k/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Key"
+       },
+       "starts with",
+       {
+        "sound": "k"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -349,9 +453,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like milk?",
+     "text": "Which one starts with a different sound from milk?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "milk"
       },
@@ -372,7 +476,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "milk"
+       "word": "Milk"
       },
       ",",
       {
@@ -382,15 +486,23 @@
       {
        "word": "moon"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "fish"
+       "sound": "m"
       },
-      "does not."
+      ".",
+      {
+       "word": "Fish"
+      },
+      "starts with",
+      {
+       "sound": "f"
+      },
+      "."
      ],
      "steps": [
-      "Milk, mouse and moon start with the same sound.",
-      "Fish does not."
+      "Milk, mouse and moon all start with /m/.",
+      "Fish starts with /f/."
      ],
      "visual": {
       "kind": "row",
@@ -439,6 +551,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Milk"
+       },
+       ",",
+       {
+        "word": "mouse"
+       },
+       "and",
+       {
+        "word": "moon"
+       },
+       "all start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Fish"
+       },
+       "starts with",
+       {
+        "sound": "f"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Milk starts with /m/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Milk"
+       },
+       "starts with",
+       {
+        "sound": "m"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -497,9 +653,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like milk?",
+     "text": "Which one starts with a different sound from milk?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "milk"
       },
@@ -520,7 +676,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "milk"
+       "word": "Milk"
       },
       ",",
       {
@@ -530,15 +686,23 @@
       {
        "word": "moon"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "house"
+       "sound": "m"
       },
-      "does not."
+      ".",
+      {
+       "word": "House"
+      },
+      "starts with",
+      {
+       "sound": "h"
+      },
+      "."
      ],
      "steps": [
-      "Milk, mouse and moon start with the same sound.",
-      "House does not."
+      "Milk, mouse and moon all start with /m/.",
+      "House starts with /h/."
      ],
      "visual": {
       "kind": "row",
@@ -587,6 +751,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Milk"
+       },
+       ",",
+       {
+        "word": "mouse"
+       },
+       "and",
+       {
+        "word": "moon"
+       },
+       "all start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "House"
+       },
+       "starts with",
+       {
+        "sound": "h"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Milk starts with /m/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Milk"
+       },
+       "starts with",
+       {
+        "sound": "m"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -645,9 +853,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like rainbow?",
+     "text": "Which one starts with a different sound from rainbow?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "rainbow"
       },
@@ -668,7 +876,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "rainbow"
+       "word": "Rainbow"
       },
       ",",
       {
@@ -678,15 +886,23 @@
       {
        "word": "rabbit"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "duck"
+       "sound": "r"
       },
-      "does not."
+      ".",
+      {
+       "word": "Duck"
+      },
+      "starts with",
+      {
+       "sound": "d"
+      },
+      "."
      ],
      "steps": [
-      "Rainbow, ring and rabbit start with the same sound.",
-      "Duck does not."
+      "Rainbow, ring and rabbit all start with /r/.",
+      "Duck starts with /d/."
      ],
      "visual": {
       "kind": "row",
@@ -735,6 +951,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Rainbow"
+       },
+       ",",
+       {
+        "word": "ring"
+       },
+       "and",
+       {
+        "word": "rabbit"
+       },
+       "all start with",
+       {
+        "sound": "r"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Duck"
+       },
+       "starts with",
+       {
+        "sound": "d"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Rainbow starts with /r/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Rainbow"
+       },
+       "starts with",
+       {
+        "sound": "r"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -793,9 +1053,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like mouse?",
+     "text": "Which one starts with a different sound from mouse?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "mouse"
       },
@@ -816,7 +1076,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "mouse"
+       "word": "Mouse"
       },
       ",",
       {
@@ -826,15 +1086,23 @@
       {
        "word": "milk"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "duck"
+       "sound": "m"
       },
-      "does not."
+      ".",
+      {
+       "word": "Duck"
+      },
+      "starts with",
+      {
+       "sound": "d"
+      },
+      "."
      ],
      "steps": [
-      "Mouse, moon and milk start with the same sound.",
-      "Duck does not."
+      "Mouse, moon and milk all start with /m/.",
+      "Duck starts with /d/."
      ],
      "visual": {
       "kind": "row",
@@ -883,6 +1151,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mouse"
+       },
+       ",",
+       {
+        "word": "moon"
+       },
+       "and",
+       {
+        "word": "milk"
+       },
+       "all start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Duck"
+       },
+       "starts with",
+       {
+        "sound": "d"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Mouse starts with /m/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Mouse"
+       },
+       "starts with",
+       {
+        "sound": "m"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -941,9 +1253,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like horse?",
+     "text": "Which one starts with a different sound from horse?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "horse"
       },
@@ -964,7 +1276,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "horse"
+       "word": "Horse"
       },
       ",",
       {
@@ -974,15 +1286,23 @@
       {
        "word": "hat"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "pizza"
+       "sound": "h"
       },
-      "does not."
+      ".",
+      {
+       "word": "Pizza"
+      },
+      "starts with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Horse, house and hat start with the same sound.",
-      "Pizza does not."
+      "Horse, house and hat all start with /h/.",
+      "Pizza starts with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -1031,6 +1351,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Horse"
+       },
+       ",",
+       {
+        "word": "house"
+       },
+       "and",
+       {
+        "word": "hat"
+       },
+       "all start with",
+       {
+        "sound": "h"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Pizza"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Horse starts with /h/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Horse"
+       },
+       "starts with",
+       {
+        "sound": "h"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -1089,9 +1453,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like ball?",
+     "text": "Which one starts with a different sound from ball?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "ball"
       },
@@ -1112,7 +1476,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "ball"
+       "word": "Ball"
       },
       ",",
       {
@@ -1122,15 +1486,23 @@
       {
        "word": "bear"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "zebra"
+       "sound": "b"
       },
-      "does not."
+      ".",
+      {
+       "word": "Zebra"
+      },
+      "starts with",
+      {
+       "sound": "z"
+      },
+      "."
      ],
      "steps": [
-      "Ball, bus and bear start with the same sound.",
-      "Zebra does not."
+      "Ball, bus and bear all start with /b/.",
+      "Zebra starts with /z/."
      ],
      "visual": {
       "kind": "row",
@@ -1179,6 +1551,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Ball"
+       },
+       ",",
+       {
+        "word": "bus"
+       },
+       "and",
+       {
+        "word": "bear"
+       },
+       "all start with",
+       {
+        "sound": "b"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Zebra"
+       },
+       "starts with",
+       {
+        "sound": "z"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Ball starts with /b/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Ball"
+       },
+       "starts with",
+       {
+        "sound": "b"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -1237,9 +1653,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like cat?",
+     "text": "Which one starts with a different sound from cat?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "cat"
       },
@@ -1260,7 +1676,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "cat"
+       "word": "Cat"
       },
       ",",
       {
@@ -1270,15 +1686,23 @@
       {
        "word": "car"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "rabbit"
+       "sound": "c"
       },
-      "does not."
+      ".",
+      {
+       "word": "Rabbit"
+      },
+      "starts with",
+      {
+       "sound": "r"
+      },
+      "."
      ],
      "steps": [
-      "Cat, key and car start with the same sound.",
-      "Rabbit does not."
+      "Cat, key and car all start with /k/.",
+      "Rabbit starts with /r/."
      ],
      "visual": {
       "kind": "row",
@@ -1327,6 +1751,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Cat"
+       },
+       ",",
+       {
+        "word": "key"
+       },
+       "and",
+       {
+        "word": "car"
+       },
+       "all start with",
+       {
+        "sound": "c"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Rabbit"
+       },
+       "starts with",
+       {
+        "sound": "r"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Cat starts with /k/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Cat"
+       },
+       "starts with",
+       {
+        "sound": "c"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -1385,9 +1853,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like car?",
+     "text": "Which one starts with a different sound from car?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "car"
       },
@@ -1408,7 +1876,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "car"
+       "word": "Car"
       },
       ",",
       {
@@ -1418,15 +1886,23 @@
       {
        "word": "cat"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "tiger"
+       "sound": "c"
       },
-      "does not."
+      ".",
+      {
+       "word": "Tiger"
+      },
+      "starts with",
+      {
+       "sound": "t"
+      },
+      "."
      ],
      "steps": [
-      "Car, cow and cat start with the same sound.",
-      "Tiger does not."
+      "Car, cow and cat all start with /k/.",
+      "Tiger starts with /t/."
      ],
      "visual": {
       "kind": "row",
@@ -1475,6 +1951,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Car"
+       },
+       ",",
+       {
+        "word": "cow"
+       },
+       "and",
+       {
+        "word": "cat"
+       },
+       "all start with",
+       {
+        "sound": "c"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Tiger"
+       },
+       "starts with",
+       {
+        "sound": "t"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Car starts with /k/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Car"
+       },
+       "starts with",
+       {
+        "sound": "c"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -1533,9 +2053,9 @@
      ]
     },
     "prompt": {
-     "text": "Which one does not start like hat?",
+     "text": "Which one starts with a different sound from hat?",
      "speak": [
-      "Which one does not start like",
+      "Which one starts with a different sound from",
       {
        "word": "hat"
       },
@@ -1556,7 +2076,7 @@
     "explanation": {
      "speak": [
       {
-       "word": "hat"
+       "word": "Hat"
       },
       ",",
       {
@@ -1566,15 +2086,23 @@
       {
        "word": "house"
       },
-      "start with the same sound.",
+      "all start with",
       {
-       "word": "pear"
+       "sound": "h"
       },
-      "does not."
+      ".",
+      {
+       "word": "Pear"
+      },
+      "starts with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Hat, horse and house start with the same sound.",
-      "Pear does not."
+      "Hat, horse and house all start with /h/.",
+      "Pear starts with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -1623,6 +2151,50 @@
          }
         ]
        }
+      ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Hat"
+       },
+       ",",
+       {
+        "word": "horse"
+       },
+       "and",
+       {
+        "word": "house"
+       },
+       "all start with",
+       {
+        "sound": "h"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Pear"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Hat starts with /h/. Say each picture's name and listen to the very start.",
+      "say": [
+       {
+        "word": "Hat"
+       },
+       "starts with",
+       {
+        "sound": "h"
+       },
+       ".",
+       "Say each picture's name and listen to the very start."
       ]
      }
     },
@@ -1694,21 +2266,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "key"
+       "word": "Key"
       },
       "and",
       {
        "word": "cow"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "yarn"
+       "sound": "k"
       },
-      "does not."
+      ".",
+      {
+       "word": "Yarn"
+      },
+      "starts with",
+      {
+       "sound": "y"
+      },
+      "."
      ],
      "steps": [
-      "Key and cow start with the same sound.",
-      "Yarn does not."
+      "Key and cow both start with /k/.",
+      "Yarn starts with /y/."
      ],
      "visual": {
       "kind": "row",
@@ -1747,6 +2327,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Key"
+       },
+       "and",
+       {
+        "word": "cow"
+       },
+       "both start with",
+       {
+        "sound": "k"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Yarn"
+       },
+       "starts with",
+       {
+        "sound": "y"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -1815,21 +2424,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "mouse"
+       "word": "Mouse"
       },
       "and",
       {
        "word": "milk"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "lion"
+       "sound": "m"
       },
-      "does not."
+      ".",
+      {
+       "word": "Lion"
+      },
+      "starts with",
+      {
+       "sound": "l"
+      },
+      "."
      ],
      "steps": [
-      "Mouse and milk start with the same sound.",
-      "Lion does not."
+      "Mouse and milk both start with /m/.",
+      "Lion starts with /l/."
      ],
      "visual": {
       "kind": "row",
@@ -1868,6 +2485,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mouse"
+       },
+       "and",
+       {
+        "word": "milk"
+       },
+       "both start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Lion"
+       },
+       "starts with",
+       {
+        "sound": "l"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -1936,21 +2582,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "mouse"
+       "word": "Mouse"
       },
       "and",
       {
        "word": "milk"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "bear"
+       "sound": "m"
       },
-      "does not."
+      ".",
+      {
+       "word": "Bear"
+      },
+      "starts with",
+      {
+       "sound": "b"
+      },
+      "."
      ],
      "steps": [
-      "Mouse and milk start with the same sound.",
-      "Bear does not."
+      "Mouse and milk both start with /m/.",
+      "Bear starts with /b/."
      ],
      "visual": {
       "kind": "row",
@@ -1989,6 +2643,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mouse"
+       },
+       "and",
+       {
+        "word": "milk"
+       },
+       "both start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Bear"
+       },
+       "starts with",
+       {
+        "sound": "b"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -2057,21 +2740,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "rainbow"
+       "word": "Rainbow"
       },
       "and",
       {
        "word": "ring"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "bus"
+       "sound": "r"
       },
-      "does not."
+      ".",
+      {
+       "word": "Bus"
+      },
+      "starts with",
+      {
+       "sound": "b"
+      },
+      "."
      ],
      "steps": [
-      "Rainbow and ring start with the same sound.",
-      "Bus does not."
+      "Rainbow and ring both start with /r/.",
+      "Bus starts with /b/."
      ],
      "visual": {
       "kind": "row",
@@ -2110,6 +2801,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Rainbow"
+       },
+       "and",
+       {
+        "word": "ring"
+       },
+       "both start with",
+       {
+        "sound": "r"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Bus"
+       },
+       "starts with",
+       {
+        "sound": "b"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -2178,21 +2898,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "mouse"
+       "word": "Mouse"
       },
       "and",
       {
        "word": "moon"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "pig"
+       "sound": "m"
       },
-      "does not."
+      ".",
+      {
+       "word": "Pig"
+      },
+      "starts with",
+      {
+       "sound": "p"
+      },
+      "."
      ],
      "steps": [
-      "Mouse and moon start with the same sound.",
-      "Pig does not."
+      "Mouse and moon both start with /m/.",
+      "Pig starts with /p/."
      ],
      "visual": {
       "kind": "row",
@@ -2231,6 +2959,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Mouse"
+       },
+       "and",
+       {
+        "word": "moon"
+       },
+       "both start with",
+       {
+        "sound": "m"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Pig"
+       },
+       "starts with",
+       {
+        "sound": "p"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -2299,21 +3056,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "house"
+       "word": "House"
       },
       "and",
       {
        "word": "horse"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "dog"
+       "sound": "h"
       },
-      "does not."
+      ".",
+      {
+       "word": "Dog"
+      },
+      "starts with",
+      {
+       "sound": "d"
+      },
+      "."
      ],
      "steps": [
-      "House and horse start with the same sound.",
-      "Dog does not."
+      "House and horse both start with /h/.",
+      "Dog starts with /d/."
      ],
      "visual": {
       "kind": "row",
@@ -2352,6 +3117,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "House"
+       },
+       "and",
+       {
+        "word": "horse"
+       },
+       "both start with",
+       {
+        "sound": "h"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Dog"
+       },
+       "starts with",
+       {
+        "sound": "d"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -2420,21 +3214,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "bus"
+       "word": "Bus"
       },
       "and",
       {
        "word": "bear"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "rabbit"
+       "sound": "b"
       },
-      "does not."
+      ".",
+      {
+       "word": "Rabbit"
+      },
+      "starts with",
+      {
+       "sound": "r"
+      },
+      "."
      ],
      "steps": [
-      "Bus and bear start with the same sound.",
-      "Rabbit does not."
+      "Bus and bear both start with /b/.",
+      "Rabbit starts with /r/."
      ],
      "visual": {
       "kind": "row",
@@ -2473,6 +3275,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Bus"
+       },
+       "and",
+       {
+        "word": "bear"
+       },
+       "both start with",
+       {
+        "sound": "b"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Rabbit"
+       },
+       "starts with",
+       {
+        "sound": "r"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -2541,21 +3372,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "key"
+       "word": "Key"
       },
       "and",
       {
        "word": "car"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "octopus"
+       "sound": "k"
       },
-      "does not."
+      ".",
+      {
+       "word": "Octopus"
+      },
+      "starts with",
+      {
+       "sound": "o"
+      },
+      "."
      ],
      "steps": [
-      "Key and car start with the same sound.",
-      "Octopus does not."
+      "Key and car both start with /k/.",
+      "Octopus starts with /o/."
      ],
      "visual": {
       "kind": "row",
@@ -2594,6 +3433,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Key"
+       },
+       "and",
+       {
+        "word": "car"
+       },
+       "both start with",
+       {
+        "sound": "k"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Octopus"
+       },
+       "starts with",
+       {
+        "sound": "o"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -2662,21 +3530,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "cow"
+       "word": "Cow"
       },
       "and",
       {
        "word": "car"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "rainbow"
+       "sound": "c"
       },
-      "does not."
+      ".",
+      {
+       "word": "Rainbow"
+      },
+      "starts with",
+      {
+       "sound": "r"
+      },
+      "."
      ],
      "steps": [
-      "Cow and car start with the same sound.",
-      "Rainbow does not."
+      "Cow and car both start with /k/.",
+      "Rainbow starts with /r/."
      ],
      "visual": {
       "kind": "row",
@@ -2715,6 +3591,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Cow"
+       },
+       "and",
+       {
+        "word": "car"
+       },
+       "both start with",
+       {
+        "sound": "c"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Rainbow"
+       },
+       "starts with",
+       {
+        "sound": "r"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",
@@ -2783,21 +3688,29 @@
     "explanation": {
      "speak": [
       {
-       "word": "hat"
+       "word": "Hat"
       },
       "and",
       {
        "word": "horse"
       },
-      "start with the same sound.",
+      "both start with",
       {
-       "word": "sock"
+       "sound": "h"
       },
-      "does not."
+      ".",
+      {
+       "word": "Sock"
+      },
+      "starts with",
+      {
+       "sound": "s"
+      },
+      "."
      ],
      "steps": [
-      "Hat and horse start with the same sound.",
-      "Sock does not."
+      "Hat and horse both start with /h/.",
+      "Sock starts with /s/."
      ],
      "visual": {
       "kind": "row",
@@ -2836,6 +3749,35 @@
         ]
        }
       ]
+     },
+     "stepsSay": [
+      [
+       {
+        "word": "Hat"
+       },
+       "and",
+       {
+        "word": "horse"
+       },
+       "both start with",
+       {
+        "sound": "h"
+       },
+       "."
+      ],
+      [
+       {
+        "word": "Sock"
+       },
+       "starts with",
+       {
+        "sound": "s"
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Say each picture's name. Listen to the very first sound. Two of them start the same way."
      }
     },
     "skillId": "E-PK-B4",

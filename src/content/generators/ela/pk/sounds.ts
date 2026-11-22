@@ -11,25 +11,32 @@ import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import type { Explanation } from './parts';
 import { cap, pickApart, picture, row } from './parts';
+import type { Told } from './h3-parts';
+import { sound as soundPart, soundText, spoken, working } from './h3-parts';
 
 // Language Arts pre-K B.1 to B.3. Families: First sound, Rhymes, Syllables. Oracle: wordSet.
-// A voice cannot say a lone sound, so every prompt uses whole words (plan section 9).
+// Prompts use whole words. The steps say the sound itself with the recorded letter sounds (the owner's choice,
+// Nov 21, 2026): "Mouse and moon both start with /m/."
 
 // ---- B.1 Starts with the same sound ----
-// Levels: "Which one starts like ball?" 2 spoken pictures / 3 pictures.
+// Levels: "Which one starts with the same sound as ball?" 2 spoken pictures / 3 pictures.
+// The plan's "starts like ball" is said the way kindergarten says it (B.8, B.9), so one action has one wording.
 
 const soundPicture = (entry: { word: string; emoji: string }): Visual => picture(entry.word, entry.emoji);
 
 function sameSoundExplanation(target: SoundWord, answer: SoundWord): Explanation {
-  return {
-    speak: [{ word: target.word }, 'and', { word: answer.word }, 'start with the same sound.'],
-    steps: [`${cap(target.word)} and ${answer.word} start with the same sound.`],
-    visual: row(soundPicture(target), soundPicture(answer)),
-  };
+  const first = soundPart(target.letter);
+  const shown = soundText(target.letter);
+  return working(
+    [spoken(`${cap(target.word)} and ${answer.word} both start with ${shown}.`, [{ word: target.word }, 'and', { word: answer.word }, 'both start with', first, '.'])],
+    row(soundPicture(target), soundPicture(answer)),
+    // The word asked about and its first sound; the child still finds the picture that starts with it.
+    spoken(`${cap(target.word)} starts with ${shown}. Which picture starts with ${shown} too?`, [{ word: target.word }, 'starts with', first, '. Which picture starts with', first, 'too?']),
+  );
 }
 
 function startsLikePrompt(word: string): { text: string; speak: Say } {
-  return { text: `Which one starts like ${word}?`, speak: ['Which one starts like', { word }, '?'] };
+  return { text: `Which one starts with the same sound as ${word}?`, speak: ['Which one starts with the same sound as', { word }, '?'] };
 }
 
 function startsLike(level: Level, rng: Rng): QuestionDraft {
@@ -90,11 +97,12 @@ export const startsLikeGenerator: SkillGenerator = {
 // ---- B.2 Rhymes ----
 // Levels: "Which one rhymes with cat?" 2 spoken pictures / 3 pictures.
 
-function rhymeExplanation(target: PictureWord, answer: PictureWord): Explanation {
+function rhymeExplanation(target: PictureWord, answer: PictureWord): Told {
   return {
     speak: [{ word: target.word }, 'and', { word: answer.word }, 'end the same way. They rhyme.'],
     steps: [`${cap(target.word)} and ${answer.word} end the same way.`, 'They rhyme.'],
     visual: row(soundPicture(target), soundPicture(answer)),
+    hint: { text: `Say ${target.word}. Then say each picture's name. Listen to the end of each word.`, say: ['Say', { word: target.word }, ". Then say each picture's name. Listen to the end of each word."] },
   };
 }
 
@@ -159,20 +167,25 @@ export const rhymesGenerator: SkillGenerator = {
 // ---- B.3 Count syllables ----
 // Levels: spoken word, 1 or 2 claps / 1 to 3 claps.
 
-// The word split into its parts, as the screen shows it.
+// The word split into its parts, as the screen shows it. The voice says only the whole word: a part such as
+// "ple" or "et" is not a word a voice can read (plan section 9).
 const split = (entry: SyllableWord): string => entry.parts.join(' · ');
+const clapWord = (n: number): string => (n === 1 ? 'clap' : 'claps');
 
 function clapsExplanation(entry: SyllableWord): Explanation {
   const claps = entry.parts.length;
-  return {
-    speak: [{ word: entry.word }, '.', { number: claps }, claps === 1 ? 'clap.' : 'claps.'],
-    steps: [split(entry), `${claps} ${claps === 1 ? 'clap' : 'claps'}.`],
-    visual: { kind: 'text', value: split(entry), size: 'l' },
-  };
+  return working(
+    [
+      spoken(split(entry), ['Say it and clap:', { word: entry.word }, '.']),
+      spoken(`${cap(entry.word)} has ${claps} ${clapWord(claps)}.`, [{ word: entry.word }, 'has', { number: claps }, `${clapWord(claps)}.`]),
+    ],
+    { kind: 'text', value: split(entry), size: 'l' },
+    spoken('Say the word slowly and clap each part. Count your claps.', ['Say the word slowly and clap each part. Count your claps.']),
+  );
 }
 
 function clapsPrompt(word: string): { text: string; speak: Say } {
-  return { text: `How many claps in ${word}?`, speak: ['How many claps in', { word }, '?'] };
+  return { text: `Clap the word ${word}. How many claps?`, speak: ['Clap the word', { word }, '. How many claps?'] };
 }
 
 function claps(level: Level, rng: Rng): QuestionDraft {

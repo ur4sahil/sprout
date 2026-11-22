@@ -5,10 +5,9 @@ import type { Sequence, WhoSentence } from '../../../data/h3-stories';
 import { SEQUENCES, STEP_CLOSE, WHO_CHARACTERS, WHO_SENTENCES } from '../../../data/h3-stories';
 import type { Pic } from '../../../data/h3-words';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from './parts';
-import { picture, row } from './parts';
-import type { Line } from './h3-parts';
-import { beats, line, silent } from './h3-parts';
+import { a, picture, row } from './parts';
+import type { Line, Told } from './h3-parts';
+import { beats, line, silent, working } from './h3-parts';
 
 // Language Arts pre-K D.1 and D.2 (plan section 15, wave H3). Oracle: earlyWords.
 
@@ -22,9 +21,16 @@ const closeGroups = (one: Sequence, two: Sequence): boolean => one.group === two
 const STEPS = SEQUENCES.flatMap((sequence) => sequence.steps.slice(0, -1).map((step, at) => ({ sequence, step, at })));
 const nextPrompt = (word: string): Line => ({ text: `What comes after the ${word}?`, speak: ['What comes after the', { word }, '?'] });
 
-function nextExplanation(sequence: Sequence, at: number): Explanation {
-  const two = [sequence.lines[at] as string, sequence.lines[at + 1] as string];
-  return { speak: two, steps: two, visual: row(shown(sequence.steps[at] as Pic), shown(sequence.steps[at + 1] as Pic)) };
+// Things said with "some": "Here is some bread."
+const SOME = new Set(['bread', 'rain', 'snow', 'ice', 'water', 'corn', 'wheat', 'popcorn']);
+const hereIs = (word: string): string => `Here is ${SOME.has(word) ? `some ${word}` : a(word)}.`;
+
+// The steps start from the picture shown: its own line when it starts the sequence ("An egg is laid."), otherwise
+// "Here is some bread.", never the step before it, which the question does not show. Then what comes next.
+function nextExplanation(sequence: Sequence, at: number): Told {
+  const step = sequence.steps[at] as Pic;
+  const first = at === 0 ? (sequence.lines[0] as string) : hereIs(step.word);
+  return working([line(first), line(sequence.lines[at + 1] as string)], row(shown(step), shown(sequence.steps[at + 1] as Pic)), line(`Picture the ${step.word} in your head. What happens next?`));
 }
 
 function whatNext(level: Level, rng: Rng): QuestionDraft {
@@ -75,10 +81,14 @@ export const whatNextGenerator: SkillGenerator = {
 // 3 pictures, one of them the other character. The pictures never say their names.
 
 const WHO = 'Listen. Who is it?';
+const WHO_HINT = line('Tap the speaker to hear it again. Listen to the question at the end.');
 
-function whoExplanation(entry: WhoSentence): Explanation {
-  const answer = `${entry.ask} The ${entry.answer.word}.`;
-  return { speak: [entry.sentence, answer], steps: [entry.sentence, answer], visual: shown(entry.answer) };
+// What a pre-K child hears: the active wording where the written one is passive (`heard` in h3-stories.ts).
+const heardOf = (entry: WhoSentence): { sentence: string; ask: string } => entry.heard ?? { sentence: entry.sentence, ask: entry.ask };
+
+function whoExplanation(entry: WhoSentence): Told {
+  const { sentence, ask } = heardOf(entry);
+  return working([line(sentence), line(`${ask} The ${entry.answer.word}.`)], shown(entry.answer), WHO_HINT);
 }
 
 function whoDid(level: Level, rng: Rng): QuestionDraft {
@@ -86,11 +96,12 @@ function whoDid(level: Level, rng: Rng): QuestionDraft {
   const inSentence = [entry.answer, ...entry.others].map((each) => each.word);
   const extra = rng.sample(WHO_CHARACTERS.filter((each) => !inSentence.includes(each.word)), level === 1 ? 1 : 1);
   const options = rng.shuffle([entry.answer, ...entry.others, ...extra]);
+  const { sentence, ask } = heardOf(entry);
   return {
     type: 'choice',
     mode: 'listen',
-    facts: { relation: 'whoDid', target: entry.answer.word, story: entry.sentence, ask: entry.ask, options: options.map((each) => each.word) },
-    prompt: { text: WHO, speak: ['Listen.', entry.sentence, entry.ask] },
+    facts: { relation: 'whoDid', target: entry.answer.word, story: sentence, ask, options: options.map((each) => each.word) },
+    prompt: { text: WHO, speak: ['Listen.', sentence, ask] },
     options: options.map((each) => silent(each.emoji)),
     answerIndex: options.indexOf(entry.answer),
     explanation: whoExplanation(entry),

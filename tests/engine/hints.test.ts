@@ -134,7 +134,7 @@ describe('the nudge', () => {
           nudged += 1;
         }
         // Whatever is offered, it never names the answer.
-        if (nudge) expect(givesAway(q, nudge.text, null), `${skill.id}: ${nudge.text}`).toBe(false);
+        for (const offered of [nudge, nudgeFor(q)]) if (offered) expect(givesAway(q, offered.text, null), `${skill.id}: ${offered.text}`).toBe(false);
       }
     }
     expect(nudged).toBeGreaterThan(100);
@@ -146,7 +146,7 @@ describe('the nudge', () => {
     const counting = question('M-1-B1', 2, 7); // "Start at 9." "Count on 2 more: 10, 11." "2 + 9 = 11"
     expect(nudgeFor(counting)).toEqual({ text: 'Start at 9.', say: expect.any(Array) });
     const rhyme = question('E-K-B6', 2, 7); // two steps: the first gives the odd one out away
-    expect(nudgeFor(rhyme)).toBeNull();
+    expect(nudgeFor(withoutHint(rhyme))).toBeNull();
   });
 
   it("is the generator's own hint when it gives one, said through stepSay unless it has its own speech", () => {

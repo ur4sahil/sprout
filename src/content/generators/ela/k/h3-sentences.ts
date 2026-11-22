@@ -1,16 +1,15 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Visual } from '../../../../engine/types';
+import type { Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Answer, GapSentence, QuestionWord } from '../../../data/h3-stories';
 import { ANSWERS, ASKS_ABOUT, COUNT_SENTENCES, filled, GAP_SENTENCES, LONG_NAMES, NAME_SENTENCES, NAMES, QUESTION_WORDS } from '../../../data/h3-stories';
 import type { Action } from '../../../data/h3-words';
 import { ACTIONS, READ_VERBS } from '../../../data/h3-words';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
-import type { Explanation } from '../pk/parts';
 import { a, cap, picture, row } from '../pk/parts';
-import type { Line } from '../pk/h3-parts';
-import { beats, line, plain, silent } from '../pk/h3-parts';
+import type { Line, Told } from '../pk/h3-parts';
+import { beats, line, plain, silent, spoken, working } from '../pk/h3-parts';
 
 // Language Arts kindergarten C.4 and D.4 to D.7 (plan section 15, wave H3). Oracle: earlyWords.
 
@@ -18,10 +17,13 @@ import { beats, line, plain, silent } from '../pk/h3-parts';
 // Levels: 2 words to choose from / 3. Read: the sentence and the words are never spoken.
 // Each sentence lists wrong words that cannot fit; words that could fit are never offered.
 
-const GAP = line('Read it. Pick one word for this gap.');
+// Says what to do with the words: they are dragged (or tapped) into the space. A read question never says the
+// words to read, so neither the prompt nor the hint uses any word of a sentence or its options (the, a, in, is...).
+const GAP = line('Read this sentence. Which word fits? Drag it into this space.');
+const GAP_HINT = line('Put each word into this space. Read this sentence again. Which word makes sense?');
 
-function gapExplanation(gap: GapSentence): Explanation {
-  return { speak: ['The word is', { word: gap.answer }, '.', filled(gap)], steps: [filled(gap)], visual: plain(filled(gap), 'm') };
+function gapExplanation(gap: GapSentence): Told {
+  return { speak: ['The word is', { word: gap.answer }, '.', filled(gap)], steps: [filled(gap)], visual: plain(filled(gap), 'm'), hint: { text: GAP_HINT.text } };
 }
 
 function gapWords(level: Level, rng: Rng): QuestionDraft {
@@ -72,19 +74,27 @@ const NAME_ASK = line('Which one is written the right way?');
 const lowerFirst = (text: string): string => text.charAt(0).toLowerCase() + text.slice(1);
 const capMiddle = (name: string): string => name.charAt(0).toLowerCase() + name.charAt(1).toUpperCase() + name.slice(2);
 
-function nameExplanation(right: string, sentence: boolean): Explanation {
-  const rule = sentence ? 'Names and the word I always start with a capital letter.' : 'A name starts with a capital letter.';
-  return { speak: [rule], steps: [rule, right], visual: plain(right, 'l') };
+// One rule a sentence: "Names and the word I always start..." heard aloud sounds like "the word I always start".
+// A name alone is followed by its own capital: "Rosa starts with a capital R."
+function nameExplanation(right: string, name: string, sentence: boolean): Told {
+  const capital = name.charAt(0);
+  const steps = sentence
+    ? [line('Names start with a capital letter.'), spoken('The word I is always a capital letter.', ['The word', { letter: 'I' }, 'is always a capital letter.']), line(right)]
+    : [line('A name starts with a capital letter.'), spoken(`${name} starts with a capital ${capital}.`, [{ word: name }, 'starts with a capital', { letter: capital }, '.'])];
+  const hint = sentence ? 'Look at the first letter of the name, and at the word I.' : 'Look at the first letter of each one.';
+  return working(steps, plain(right, 'l'), sentence ? spoken(hint, ['Look at the first letter of the name, and at the word', { letter: 'I' }, '.']) : line(hint));
 }
 
 function names(level: Level, rng: Rng): QuestionDraft {
   let right: string;
+  let name: string;
   let wrong: string[];
   if (level < 3) {
     right = rng.pick([...NAMES, ...LONG_NAMES]);
+    name = right;
     wrong = level === 1 ? [right.toLowerCase()] : [right.toLowerCase(), capMiddle(right)];
   } else {
-    const name = rng.pick(NAMES);
+    name = rng.pick(NAMES);
     right = rng.pick(NAME_SENTENCES).replace('{name}', name);
     const nameLow = right.replace(name, name.toLowerCase());
     const iLow = right.replace(/\bI\b/, 'i');
@@ -98,7 +108,7 @@ function names(level: Level, rng: Rng): QuestionDraft {
     prompt: NAME_ASK,
     options: options.map((each) => plain(each, level === 3 ? 'm' : 'l')),
     answerIndex: options.indexOf(right),
-    explanation: nameExplanation(right, level === 3),
+    explanation: nameExplanation(right, name, level === 3),
   };
 }
 
@@ -126,13 +136,18 @@ export const namesGenerator: SkillGenerator = {
 // a picture, which question word does it answer: who, what, where in fixed places.
 
 const answerPicture = (each: Answer): Visual => picture(each.word, each.emoji);
-const questionPrompt = (word: QuestionWord): Line => ({ text: `Which one answers the question ${word}?`, speak: ['Which one answers the question', { word }, '?'] });
+// Never ending on the question word: "Which one answers the question where?" sounds as if the voice asks the child
+// where.
+const questionPrompt = (word: QuestionWord): Line => ({ text: `Find the one that answers a ${word} question.`, speak: ['Find the one that answers a', { word }, 'question.'] });
 const QUESTION_FOR = line('Which question does this picture answer: who, what or where?');
 const wordVisual = (word: QuestionWord): Visual => ({ kind: 'text', value: cap(word), size: 'l', speak: [{ word }] });
+const WORDS_HINT = line('Who asks about a person. What asks about a thing. Where asks about a place.');
+// When the options are the question words, the hint names none of them.
+const PICTURE_HINT = line('Is the picture a person, a thing or a place?');
 
-function questionExplanation(answer: Answer): Explanation {
+function questionExplanation(answer: Answer, hint: Line): Told {
   const steps = [`${cap(answer.kind)} asks about ${ASKS_ABOUT[answer.kind]}.`, `${cap(a(answer.word))} is ${ASKS_ABOUT[answer.kind]}.`];
-  return { speak: steps, steps, visual: answerPicture(answer) };
+  return working(steps.map(line), answerPicture(answer), hint);
 }
 
 function questionWords(level: Level, rng: Rng): QuestionDraft {
@@ -147,7 +162,7 @@ function questionWords(level: Level, rng: Rng): QuestionDraft {
       stimulus: answerPicture(answer),
       options: QUESTION_WORDS.map(wordVisual),
       answerIndex: QUESTION_WORDS.indexOf(answer.kind),
-      explanation: questionExplanation(answer),
+      explanation: questionExplanation(answer, PICTURE_HINT),
     };
   }
   const kinds: QuestionWord[] = level === 1 ? ['who', 'where'] : [...QUESTION_WORDS];
@@ -161,7 +176,7 @@ function questionWords(level: Level, rng: Rng): QuestionDraft {
     prompt: questionPrompt(asked),
     options: options.map(answerPicture),
     answerIndex: options.indexOf(answer),
-    explanation: questionExplanation(answer),
+    explanation: questionExplanation(answer, WORDS_HINT),
   };
 }
 
@@ -176,14 +191,14 @@ export const questionWordsGenerator: SkillGenerator = {
   exampleSeed: 4251,
   example: () => questionWords(1, makeRng(4251)),
   lesson: () => {
-    const school = questionExplanation(answerOf('school'));
-    const girl = questionExplanation(answerOf('girl'));
+    const school = questionExplanation(answerOf('school'), WORDS_HINT);
+    const girl = questionExplanation(answerOf('girl'), WORDS_HINT);
     return beats(
       { ...line('Who asks about a person. What asks about a thing. Where asks about a place.'), visual: row(answerPicture(answerOf('girl')), answerPicture(answerOf('ball')), answerPicture(answerOf('school'))) },
       { text: `${questionPrompt('where').text} ${school.steps.join(' ')}`, speak: [...questionPrompt('where').speak, ...school.speak], visual: school.visual },
       { ...questionPrompt('who'), visual: row(answerPicture(answerOf('house')), answerPicture(answerOf('girl'))) },
       { text: girl.steps.join(' '), speak: girl.speak, visual: girl.visual },
-      { ...line('Who is a person, what is a thing, where is a place.'), visual: row(answerPicture(answerOf('boy')), answerPicture(answerOf('box')), answerPicture(answerOf('beach'))) },
+      { ...line('Who is a person, what is a thing, where is a place.'), visual: row(answerPicture(answerOf('boy')), answerPicture(answerOf('cup')), answerPicture(answerOf('beach'))) },
     );
   },
   oracle: 'earlyWords',
@@ -193,12 +208,16 @@ export const questionWordsGenerator: SkillGenerator = {
 // Levels: sentences of 2 to 4 words, the numbers 2, 3 and 4 in fixed places / 3 to 6 words, three numbers in a row around the answer.
 
 const COUNT = line('How many words are in this sentence?');
+const COUNT_HINT = line('Point to each word as you count. Look for the spaces between words.');
 const wordsOf = (sentence: string): string[] => sentence.split(' ');
-const counted = (sentence: string): string => wordsOf(sentence).map((word, i) => `${word.replace(/[.?!]$/, '')} (${i + 1})`).join(' ');
+const bare = (word: string): string => word.replace(/[.?!]$/, '');
+const counted = (sentence: string): string => wordsOf(sentence).map((word, i) => `${bare(word)} (${i + 1})`).join(' ');
+// Counted aloud as the screen shows it, each word and then its number: "I, one, see, two, you, three."
+const countedSay = (sentence: string): Say => wordsOf(sentence).flatMap((word, i, all): Say => [`${bare(word)},`, { number: i + 1 }, i === all.length - 1 ? '.' : ',']);
 
-function countExplanation(sentence: string): Explanation {
+function countExplanation(sentence: string): Told {
   const n = wordsOf(sentence).length;
-  return { speak: [sentence, 'There are', { number: n }, 'words. A space comes between each word.'], steps: [counted(sentence), `There are ${n} words.`], visual: plain(sentence, 'm') };
+  return working([spoken(counted(sentence), countedSay(sentence)), spoken(`There are ${n} words.`, ['There are', { number: n }, 'words.'])], plain(sentence, 'm'), COUNT_HINT);
 }
 
 function countWords(level: Level, rng: Rng): QuestionDraft {
@@ -246,10 +265,12 @@ export const countWordsGenerator: SkillGenerator = {
 // Levels: 2 pictures / 3 pictures. Read: the word is never spoken, and the pictures are silent.
 
 const READ_ACTION = line('Read the action word. Which picture shows it?');
+// A read hint never says the word to read.
+const READ_ACTION_HINT = { text: 'Sound out the word. Then find someone doing it.' };
 const readable = ACTIONS.filter((each) => READ_VERBS.includes(each.verb));
 
-function readActionExplanation(answer: Action): Explanation {
-  return { speak: ['This word is', { word: answer.verb }, '.', `This one is ${answer.doing}.`], steps: [`This word is ${answer.verb}.`, `This one is ${answer.doing}.`], visual: row(plain(answer.verb, 'xl'), picture(answer.doing, answer.emoji)) };
+function readActionExplanation(answer: Action): Told {
+  return { speak: ['This word is', { word: answer.verb }, '.', `This one is ${answer.doing}.`], steps: [`This word is ${answer.verb}.`, `This one is ${answer.doing}.`], visual: row(plain(answer.verb, 'xl'), picture(answer.doing, answer.emoji)), hint: READ_ACTION_HINT };
 }
 
 function readAction(level: Level, rng: Rng): QuestionDraft {

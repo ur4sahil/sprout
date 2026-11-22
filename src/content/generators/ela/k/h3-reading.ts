@@ -7,9 +7,10 @@ import type { Pic } from '../../../data/h3-words';
 import type { SentencePicture } from '../../../data/sentencePictures';
 import { SENTENCE_PICTURES } from '../../../data/sentencePictures';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from '../pk/parts';
 import { picture, row } from '../pk/parts';
-import { beats, line, plain, silent } from '../pk/h3-parts';
+import type { Line, Told } from '../pk/h3-parts';
+import { beats, line, plain, silent, working } from '../pk/h3-parts';
+import { seen } from './sentences';
 
 // Language Arts kindergarten E.4 to E.7 (plan section 15, wave H3). Oracle: earlyWords.
 
@@ -19,11 +20,15 @@ const shown = (entry: Pic): Visual => picture(entry.word, entry.emoji);
 // Levels: which happens first, 3 spoken pictures / put all 3 pictures in order.
 
 const THREE = SEQUENCES.filter((each) => each.steps.length === 3);
-const FIRST = line('Which happens first?');
+// Pictures of things do not "happen": "Which one comes first?"
+const FIRST = line('Which one comes first?');
 const ORDER = line('Put the pictures in order: first, next, last.');
+// Hints never name a picture: its first step is the answer itself.
+const FIRST_HINT = line('Think: which one do we need before the others?');
+const ORDER_HINT = line('Find the one that has to come first. Then ask: what comes next?');
 
-function orderExplanation(sequence: Sequence): Explanation {
-  return { speak: [...sequence.lines], steps: [...sequence.lines], visual: row(...sequence.steps.map(shown)) };
+function orderExplanation(sequence: Sequence, hint: Line): Told {
+  return working(sequence.lines.map(line), row(...sequence.steps.map(shown)), hint);
 }
 
 function storyOrder(level: Level, rng: Rng): QuestionDraft {
@@ -37,7 +42,7 @@ function storyOrder(level: Level, rng: Rng): QuestionDraft {
       prompt: FIRST,
       options: items.map(shown),
       answerIndex: items.indexOf(sequence.steps[0] as Pic),
-      explanation: orderExplanation(sequence),
+      explanation: orderExplanation(sequence, FIRST_HINT),
     };
   }
   return {
@@ -47,7 +52,7 @@ function storyOrder(level: Level, rng: Rng): QuestionDraft {
     prompt: ORDER,
     items: items.map(shown),
     answerOrder: sequence.steps.map((step) => items.indexOf(step)),
-    explanation: orderExplanation(sequence),
+    explanation: orderExplanation(sequence, ORDER_HINT),
   };
 }
 
@@ -63,8 +68,8 @@ export const storyOrderGenerator: SkillGenerator = {
   exampleSeed: 4341,
   example: () => storyOrder(1, makeRng(4341)),
   lesson: () => {
-    const grow = orderExplanation(seq('grow'));
-    const rain = orderExplanation(seq('rain'));
+    const grow = orderExplanation(seq('grow'), FIRST_HINT);
+    const rain = orderExplanation(seq('rain'), ORDER_HINT);
     return beats(
       { ...line('Stories happen in order: first, next, last.'), visual: grow.visual },
       { text: `${FIRST.text} ${grow.steps.join(' ')}`, speak: [...FIRST.speak, ...grow.speak], visual: grow.visual },
@@ -84,11 +89,14 @@ const KIND_VISUALS: Visual[] = [
   { kind: 'text', value: 'Real', size: 'l', speak: ['Real'] },
   { kind: 'text', value: 'Make-believe', size: 'l', speak: [{ word: 'make-believe' }] },
 ];
-const REAL_ASK = 'Is it real or make-believe?';
+// About what happens, never "it": beside a picture of a real dog, "Is it real?" could mean the dog.
+const REAL_ASK = 'Could this really happen? Real or make-believe?';
+// Never the word "real" in the hint: it is one of the answers.
+const REAL_HINT = line('Think: have you ever seen this happen?');
 
-function realExplanation(entry: RealSentence): Explanation {
+function realExplanation(entry: RealSentence): Told {
   const said = entry.real ? 'This can really happen. It is real.' : 'This could not really happen. It is make-believe.';
-  return { speak: [entry.sentence, said], steps: [entry.sentence, said], visual: shown(entry.subject) };
+  return working([line(entry.sentence), line(said)], shown(entry.subject), REAL_HINT);
 }
 
 function realOrNot(level: Level, rng: Rng): QuestionDraft {
@@ -135,9 +143,16 @@ export const realOrNotGenerator: SkillGenerator = {
 // Levels: 2 sentences / 3 sentences. Read: the sentences are never spoken, and the picture is silent.
 
 const MATCHES = line('Which sentence matches the picture?');
+// A read hint never says the sentences to read.
+const MATCHES_HINT = line('Look at the picture. Then read each sentence. Which one tells about the picture?');
 
-function sentenceExplanation(entry: SentencePicture): Explanation {
-  return { speak: [entry.sentence, 'This sentence has the word', { word: entry.word }, ', just like the picture.'], steps: [entry.sentence, `It has the word ${entry.word}, just like the picture.`], visual: row(picture(entry.word, entry.emoji), plain(entry.sentence, 'm')) };
+// A picture has no words: "The sentence has the word bed. The picture shows a bed."
+function sentenceExplanation(entry: SentencePicture): Told {
+  return working(
+    [line(entry.sentence), line(`The sentence has the word ${entry.word}.`), line(`The picture shows ${seen(entry.word)}.`)],
+    row(picture(entry.word, entry.emoji), plain(entry.sentence, 'm')),
+    MATCHES_HINT,
+  );
 }
 
 function pickSentence(level: Level, rng: Rng): QuestionDraft {
@@ -183,8 +198,11 @@ export const pickSentenceGenerator: SkillGenerator = {
 // Levels: a sentence with one character, 2 pictures / two characters, 3 pictures, one of them the other character.
 // Read: the sentence is never spoken, and the pictures are silent.
 
-function readExplanation(entry: WhoSentence): Explanation {
-  return { speak: [entry.sentence, entry.ask, 'The', { word: entry.answer.word }, '.'], steps: [entry.sentence, `${entry.ask} The ${entry.answer.word}.`], visual: row(plain(entry.sentence, 'm'), shown(entry.answer)) };
+// A read hint never says the sentence to read.
+const READ_HINT = { text: 'Read the sentence again. Find the words that answer the question.' };
+
+function readExplanation(entry: WhoSentence): Told {
+  return { speak: [entry.sentence, entry.ask, 'The', { word: entry.answer.word }, '.'], steps: [entry.sentence, `${entry.ask} The ${entry.answer.word}.`], visual: row(plain(entry.sentence, 'm'), shown(entry.answer)), hint: READ_HINT };
 }
 
 function readAnswer(level: Level, rng: Rng): QuestionDraft {
